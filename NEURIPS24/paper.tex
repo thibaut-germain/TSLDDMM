@@ -150,6 +150,7 @@ and by $\Nset_{>0}$ is the set of positive integers.
 %Reproducing Kernel Hilbert Space (RKHS)
 \section{Background on LDDMM}
 \label{section:LDDMM}
+\sam{DIRE l'intérêt de LDDMM}
 In this part, there is no novelty, we simply expose how to
  learn the diffeomorphisms $(\phi_j)_{j\in[N]}$ using LDDMM, initially introduced in \cite{beg2005computing}.
   In a nutshell, for any $j\in [N]$, $\phi_j$ corresponds to a differential flow related to a learnable velocity field belonging to a well-chosen Reproducing Kernel Hilbert Space (RKHS).
@@ -199,14 +200,15 @@ However, given a diffeomorphism $g$, computing $\mathscr{R}(g)$ is intractable i
 To circumvent this issue, another characterization of geodesics can be considered.
  As in Riemannian geometry, 
  instead of defining geodesics from their starting and end points, it is possible to define them from their starting point (here, the identity function) and an initial velocity $v_0\in\msv$.
+ \sam{To CHANGE}
  In other words, an Exponential map on deformations is wanted:
 given $v_0\in\msv$, it has been suggested to generate diffeomorphisms as $\varphi^{\{v_0\}}=\phi^v$ with
- \begin{equation}
-  \label{eq:geodesics_shooting}
-  v=\underset{w\in \rml^2([0,1],\msv):\eqsp w_0=v_0}{\argmin} \int_0^1 || w_\tau||_\msv^2\dd \tau\eqsp ,
- \end{equation}
-since with this definition it holds $\mathscr{R}^2(\phi^v)= \int_0^1 || v_\tau||_\msv^2\dd \tau $.
-By setting $\msv$ as an RKHS, the geodesic shooting problem \eqref{eq:geodesics_shooting} has a unique solution and becomes tractable, as described in the next section.
+%  \begin{equation}
+%   \label{eq:geodesics_shooting}
+%   v=\underset{w\in \rml^2([0,1],\msv):\eqsp w_0=v_0}{\argmin} \int_0^1 || w_\tau||_\msv^2\dd \tau\eqsp ,
+%  \end{equation}
+% since with this definition it holds $\mathscr{R}^2(\phi^v)= \int_0^1 || v_\tau||_\msv^2\dd \tau $.
+ By setting $\msv$ as an RKHS, the geodesic shooting problem \eqref{eq:geodesics_shooting} has a unique solution and becomes tractable, as described in the next section.
 % Moreover, we have $\mathscr{R}(\varphi^{\{v_0\}})=||v_0||_\msv$ such that we can work with $v_0\in \msv $ instead of $v\in \rml^2([0,1],\msv)$.
 %  Therefore, compared to CNF, only $v_0$ is parametrized by using the geodesic structure and not each $v_\tau$ for any $\tau\in[0,1]$.
 %  Moreover, we have $\mathscr{R}(\phi^{\{v_0\}})=||v_0||_\msv$ such that we can work with $v_0\in \msv $ instead of $v\in L^2([0,1],\msv)$.
@@ -321,9 +323,9 @@ $\bfs_0$ will be understood as the typical representative shape common to the co
 As $\bfs_0$ is supposed to be fixed, then the representation of the time series $(s^j)_{j\in[N]}$ boils down to the one of the transformation $(\phi_j)_{j\in[N]}$.
 We aim to learn $\msg(\bfs_0)$ and $(\phi_j)_{j\in[N]} $. 
 
-First, we introduce the Large Deformation Diffeomorphic Metric Mapping (LDDMM) framework.
- Then, we explain how to learn a discretization of the graph $\msg(\bfs_0)$ and the diffeomorphisms $(\phi_j)_{j\in[N]} $ by using LDDMM and a gradient descent minimization.
-  Finally, we tackle the specificity of graph time series by deriving a representation theorem on diffeomorphisms, which enables us to select the kernel needed in LDDMM, and thus, we propose TS-LDDMM. 
+%First, we introduce the Large Deformation Diffeomorphic Metric Mapping (LDDMM) framework.
+% Then, we explain how to learn a discretization of the graph $\msg(\bfs_0)$ and the diffeomorphisms $(\phi_j)_{j\in[N]} $ by using LDDMM and a gradient descent minimization.
+  %Finally, we tackle the specificity of graph time series by deriving a representation theorem on diffeomorphisms, which enables us to select the kernel needed in LDDMM, and thus, we propose TS-LDDMM. 
   \sam{smooth this part}
   In our practical context, $\mathbf{y}$ represents one of the \textit{discretized graphs} of the time series $(s^j)_{j\in[N]}$, defined as, for any $j\in[N]$,
   \begin{equation}
@@ -363,137 +365,9 @@ First, we introduce the Large Deformation Diffeomorphic Metric Mapping (LDDMM) f
 
 %In all the following, we denote by $\mcd(\mso) $ the set of diffeomorpshim defined on an open set $\mso$ to $\mso$.
 %\sam{Transformer , en : dans les ensembles}
-\subsection{Learning diffeomorphism with LDDMM} %Thèse de Nicolas Charon
-\label{section:LDDMM}
-\sam{In this part, there is nearly no novelty, we simply expose how} to
- learn the diffeomorphisms $(\phi_j)_{j\in[N]}$ using LDDMM, initially introduced in \cite{beg2005computing}.
-  In a nutshell, for any $j\in [N]$, $\phi_j$ corresponds to a differential flow related to a learnable velocity field belonging to a well-chosen Reproducing Kernel Hilbert Space (RKHS).
-
-The basic problem that we consider in this section is the following. Given a set of targets $\mathbf{y}=(y_i)_{i\in[T_2]}$ in $\Rset^{d'}$\footnote{Note that we denote by $d'\in\nset$ the ambient space}, a set of starting points $\mathbf{x}=(x_{i})_{i\in[T_1]}$ in $\Rset^{d'}$, we aim to find a diffeomorphism $\phi$ such that the finite set of points $\mathbf{y}$ is similar in a certain sense to the set of finite sets of transformed points $\phi \cdot \mathbf{x} =(\phi(x_i))_{i\in[T_1]} $.
- The function $\phi$ is occasionally referred to as a \textit{deformation}.
-
- In our practical context, $\mathbf{y}$ represents one of the \textit{discretized graphs} of the time series $(s^j)_{j\in[N]}$, defined as, for any $j\in[N]$,
- \begin{equation}
-  \label{eq:descretized_graph}
-  \msg(\tsig^j)=(t_i^j,\tsig^j_i)_{ i\in[n_j]}\in (\Rset^{d+1})^{n_j}
- \end{equation}
-  and $\mathbf{x}$ corresponds to a discretization of the reference graph $\msg(\mathbf{s}_0)$, i.e., 
-  \begin{equation}
-    \label{eq:descretized_referenced_graph}
-    \mathbf{x}=\tilde{\msg}_0=(t_i^0,\tsig^0_i)_{i\in[\mathbf{n}_0]}\in (\Rset^{d+1})^{\mathbf{n}_0} \eqsp . 
-  \end{equation} 
-% LDDMM is designed to analyzed an existing dataset, while NF and CNF are made to generalize a dataset for data augmentation.
-\paragraph{Representing diffeomorpshims as deformations.}
-Such \textit{deformations} $\phi$ are constructed via differential flow equations, for any $x_0\in \Rset^{d'} $ and $\tau\in[0,1]$:
-\begin{equation}
-  \label{eq:LDDMM_dynamic}
-    \frac{\dd X(\tau)}{\dd \tau}= v_\tau(X(\tau)), \quad X(0)=x_0\eqsp ,
-    \phi^v_\tau(x_0)=X(\tau), \quad \phi^v=\phi^v_1  \eqsp ,
-\end{equation}
-where the velocity field is $v:\tau\in [0,1]\mapsto v_\tau\in \msv $
-and $\msv$ is a Hilbert space of continuously differentiable function
-on $\Rset^{d'}$.  If
-$||\dd u ||_{\infty}+|| u ||_{\infty}\leq ||u ||_\msv $ for any
-$u\in \msv$ and
-$v\in \rml^2([0,1],\msv)=\{v\in \rmC^0([0,1],\msv): \int_0^1 ||
-v_\tau||^2_\msv \dd \tau<\infty \} $, by \citep[Theorem 5]{glaunes2005transport}
-$\phi^v$ exists and belongs to $\mcd(\Rset^{d'})$, where we denote by $\mcd(\mso) $ the set of diffeomorpshim defined on an open set $\mso$ to $\mso$.
- Therefore, for any choice of $v$, $\phi^v$ defines a valid deformation. 
-This offers a general recipe to construct diffeomorphism given a functional space $\msv$.
-
-With this in mind, the velocity field $v$ fitting the data can be
-estimated by minimizing 
-$v \in \rml^2([0,1],\msv) \mapsto \mathscr{L}(\phi^{v}.\mathbf{x},\mathbf{y})$, where $\mathscr{L}$ is an appropriate loss function.
- However, two computational challenges arise.
-  First, this optimization problem is ill-posed, and a penalty term is needed to obtain a unique solution.
-   In addition, we have to find a parametric family $\msv_{\Theta} \subset \rml^2([0,1],\msv)$, parameterized by $\Theta$, which allows us to solve this minimization problem efficiently. 
-
-%\paragraph*{Regularizing the problem to derive uniqueness.}
-It has been proposed in \cite{miller2006geodesic} to interpret $\msv$ as a tangent space relative to the space of deformations.
-Following this geometric point of view, geodesics can be constructed on the space of deformations by using the norm of $\msv$. 
-More precisely, on the group of diffeomorphisms $\msh=\{ \phi^v:\eqsp v\in \rml^2([0,1],\msv)\}$,
- the following squared norm can be defined
- \begin{equation}
-  \label{eq:geodesics_original}
-    \mathscr{R}^2: g\in \msh\mapsto \inf_{ v\in \rml^2([0,1],\msv):\eqsp g=\phi^v} \int_0^1 || v_\tau||_\msv^2\dd \tau
- \end{equation}
-     as the minimal "energy" needed to perform the deformation $g$.
-By \citep[Theorem 6]{glaunes2005transport}, there exists $v^*\in \rml^2([0,1],\msv)$ such that the previous infimum is a minimum in $v^*$ such that $(\phi^{v^*}_\tau)_{\tau\in[0,1]}$ can be understood as the geodesic between the identity function and $g$.
-However, given a diffeomorphism $g$, computing $\mathscr{R}(g)$ is intractable in most cases. 
-To circumvent this issue, another characterization of geodesics can be considered.
- As in Riemannian geometry, 
- instead of defining geodesics from their starting and end points, it is possible to define them from their starting point (here, the identity function) and an initial velocity $v_0\in\msv$.
- In other words, an Exponential map on deformations is wanted:
-given $v_0\in\msv$, it has been suggested to generate diffeomorphisms as $\varphi^{\{v_0\}}=\phi^v$ with
- \begin{equation}
-  \label{eq:geodesics_shooting}
-  v=\underset{w\in \rml^2([0,1],\msv):\eqsp w_0=v_0}{\argmin} \int_0^1 || w_\tau||_\msv^2\dd \tau\eqsp ,
- \end{equation}
-since with this definition it holds $\mathscr{R}^2(\phi^v)= \int_0^1 || v_\tau||_\msv^2\dd \tau $.
-By setting $\msv$ as an RKHS, the geodesic shooting problem \eqref{eq:geodesics_shooting} has a unique solution and becomes tractable, as described in the next section.
-% Moreover, we have $\mathscr{R}(\varphi^{\{v_0\}})=||v_0||_\msv$ such that we can work with $v_0\in \msv $ instead of $v\in \rml^2([0,1],\msv)$.
-%  Therefore, compared to CNF, only $v_0$ is parametrized by using the geodesic structure and not each $v_\tau$ for any $\tau\in[0,1]$.
-%  Moreover, we have $\mathscr{R}(\phi^{\{v_0\}})=||v_0||_\msv$ such that we can work with $v_0\in \msv $ instead of $v\in L^2([0,1],\msv)$.
-%  %Therefore, compared to CNF, only $v_0$ is parametrized by using the geodesic structure and not each $v_\tau$ for any $\tau\in[0,1]$.
-%  This is presented with more details in the next paragraph.
-
-
-
-
-
-\paragraph{Discrete parametrization of diffeomorpshim.}
-%\alain{adapt this without mentioning applicaiton to time seriess}
-%\sam{Est ce qu'on devrait pas introduire la dicretization du graphe ici et dire que l'on peut utiliser le théoreme de représentation}
-In this part, $\msv$ is chosen as an RKHS \cite{berlinet2011reproducing} generated by a smooth kernel $K$ (e.g., Gaussian). % $K(x,y)\triangleq \exp(-|x-y|^2/\sigma^2)\operatorname{Id}_{d'}$ for any $(x,y)\in(\Rset^{d'})^2$, where $\sigma^2>0$ is the kernel width and $\operatorname{Id}_{d'}$ is the identity matrix.
-We follow \cite{durrleman2013sparse} and define a 
- discrete parameterization of the velocity fields to perform geodesics shooting \eqref{eq:geodesics_shooting}.  
-  The initial velocity field $v_0$ is chosen as a finite linear combination of the RKHS basis vector fields, 
-$\mathbf{n}_0$ control points $\msx_0=(x_{k,0})_{k\in[\mathbf{n}_0]}\in (\Rset^{d'})^{\mathbf{n}_0}$ and momentum vectors $\alpha_0=(\alpha_{k,0})_{k\in[\mathbf{n}_0]}\in (\Rset^{d'})^{\mathbf{n}_0} $ are defined such that for any $x\in \Rset^{d'}$, 
-  \begin{equation}
-    \label{eq:def_v0}
-    v_0\left(\alpha_0,\msx_0\right)(x)=\sum_{k=1}^{\mathbf{n}_0} K(x,x_{k,0})\alpha_{k,0} \eqsp .
-  \end{equation}
-   In our applications, the control points $(x_{k,0})_{k\in[\mathbf{n}_0]}$ can be understood as the discretized graph $(t_k,\mathbf{s}_0(t_k))_{k\in[\mathbf{n}_0]}$ of a starting time series $\mathbf{s}_0$. 
-  With this parametrization of $v_0$, \citet{miller2006geodesic} show that the velocity field $v$ of the solution of \eqref{eq:geodesics_shooting} keeps the same
-  structure along time, such that for any $x\in\Rset^{d'}$ and $\tau\in[0,1]$, 
-  \begin{equation}
-    \label{eq:specific_form}
-    v_\tau(x)=\sum_{k=1}^{\mathbf{n}_0} K(x,x_k(\tau))\alpha_{k}(\tau) \eqsp ,
-  \end{equation}
-  \begin{equation} 
-    \label{eq:integration}
-      \left\{
-        \begin{aligned}
-        & \frac{\dd x_k(\tau)}{\dd \tau}=v_\tau(x_k(\tau)) \eqsp, \quad
-        \frac{\dd \alpha_k(\tau)}{\dd \tau}=-\sum_{k=1}^{\mathbf{n}_0} \dd_{x_k(\tau)} K(x_k(\tau),x_l(\tau))\alpha_{l}(\tau)^\top \alpha_{k}(\tau) \eqsp  \\
-        & \alpha_k(0)=\alpha_{k,0},\quad x_k(0)=x_{k,0} \eqsp , k\in[\mathbf{n}_0] 
-        \end{aligned}
-        \right .
-  \end{equation}
-  These equations are derived from the hamiltonian $H:(\alpha_k,x_k)_{k\in [\mathbf{n}_0]}\mapsto \sum_{k,l=1}^{\mathbf{n}_0} \alpha_{k}^\top K(x_k,x_l)\alpha_{l}  $, such that
-  the velocity norm is preserved $||v_\tau||_{\msv}=||v_0||_\msv $ for any $\tau\in [0,1]$.
-   By \eqref{eq:integration}, the velocity field related to a geodesic $v^*$ is fully parametrized by its initial control points and momentum $(x_{k,0},\alpha_{k,0})_{k\in[\mathbf{n}_0]}$.
-   Thus, given a set of targets $\mathbf{y}=(y_i)_{i\in[T_2]}$ in $\Rset^{d'}$, a set of starting points $\mathbf{x}=(x_{i,0})_{i\in[T_1]}$ in $\Rset^{d'}$, a RKHS's kernel $K:\Rset^{d'}\times \Rset^{d'}\to \Rset^{d'\times d'}$, a distance on sets $\mathscr{L}$, 
- a numerical integration scheme of ODE and a penalty factor $\lambda>0$, the basic geodesic shooting step minimizes the following function using a gradient descent method:
-   \begin{equation}
-    \label{eq:relaxation}
-    \mathcal{F}_{\mathbf{x},\mathbf{y}}: (\alpha_k)_{k\in [T_1]}\mapsto \mathscr{L}\left(\varphi^{\{v_0\}}.\mathbf{x},\mathbf{y}\right)+\lambda||v_0||_\msv^2 \eqsp,  
-   \end{equation}
-   where $v_0$ is defined by \eqref{eq:def_v0} and $\varphi^{\{v_0\}}.\mathbf{x}$ is the result of the numerical integration of \eqref{eq:integration} using control points $\mathbf{x}$ and initial momentums $(\alpha_k)_{k\in[T_1]} $. 
 
    %\sam{Parler de l'unicté?}
-   \paragraph{Coming back to the representation problem \eqref{eq:transformation}.}
-   Now, we detail how to learn $(\phi^j)_{j\in[N]}$ and a discretization of the reference graph $\msg(\mathbf{s}_0)$.
-    Setting $\mathbf{y}_j=\msg(\tsig^j)$ for any $j\in[N]$ and $\tilde{\msg}_0=(t_i^0,\tsig^0_i)_{i\in[\mathbf{n}_0]}\in (\Rset^{d+1})^{\mathbf{n}_0} $ as given in \eqref{eq:descretized_graph}-\eqref{eq:descretized_referenced_graph} with $\mathbf{n}_0=\operatorname{median}((n_j)_{j\in[N]})$, the representation problem given in \eqref{eq:transformation} boils down solving:
-    \begin{equation}
-      \label{eq:general_optimization_problem}
-      \argmin_{\tilde{\msg}_0,(\alpha_k^j)_{k\in [\mathbf{n}_0]}^{j\in[N]}} \sum_{j=1}^N \mathcal{F}_{\tilde{\msg}_0,\mathbf{y}_j}\left((\alpha_k^j)_{k\in [\mathbf{n}_0]}\right)\eqsp ,
-    \end{equation}
-    which is carried out by a gradient descent on the control points $\tilde{\msg}_0$ and the momentums $\mathbf{\alpha}_j=(\alpha_k^j)_{k\in [\mathbf{n}_0]}$ for any $j\in[N]$, initialized by a dataset's time series graph of size $\mathbf{n}_0$ and by $0_{(d+1)\mathbf{n}_0}$ respectively.
-    The optimization hyperparameter details are given in \Cref{appendix:optimizers_details}.
-   The result of the minimization $\tilde{\msg}_0$ is then considered as the $\mathbf{n}_0$-samples of a common time series $\mathbf{s}_0$ and the momentums $\mathbf{\alpha}_j$ encoding $\phi_j$ yields a feature vector in $\Rset^{d \mathbf{n}_0} $ of $s^j$ for any $j\in[N]$.
-   %, which will be the representation of the time series when choosing the time series' graph sets as inputs, is dependent on the choice of kernel $K$ and the set distance $L$.
-   Finally, the vectors $(\mathbf{\alpha}_j)_{j\in[N]}$ can be analyzed with any statistical or machine learning tools such as Principal Components Analysis (PCA), Latent Discriminant Analysis (LDA), longitudinal data analysis and so on.
+
 
    %Before to specify the choice of the RKHS kernel $K$ and the loss on sets $\mathscr{L}$ in \Cref{section:time_series_specificity}, we first discuss the connection of LDDMM with normalizing flows. % to highlight the interest of the LDDMM approach.
 
