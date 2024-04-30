@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex /Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit"] 1714476323 "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.aux" "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.bbl" "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit" 1714476325
-  "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.aux" 1714476325 24668 9b435a9a564432bfd94e0b905673679b "pdflatex"
+["bibtex /Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit"] 1714482175 "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.aux" "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.bbl" "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit" 1714482177
+  "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.aux" 1714482176 24393 1a56fb139e309f180dd1eebd873eb37e "pdflatex"
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "ref.bib" 1706803285 20883 ee0ca3bfcd0588ef387c626ed8330bec ""
+  "ref.bib" 1714481647 21184 d794c84d1d5c5017eeebabab5dacee4f ""
   (generated)
   "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.bbl"
   "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.blg"
-["pdflatex"] 1714476323 "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.tex" "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.pdf" "neurips_2024_to_submit" 1714476325
+["pdflatex"] 1714482175 "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.tex" "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.pdf" "neurips_2024_to_submit" 1714482177
   "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/diffeo.jpeg" 1714465106 27157 2ceea9419e3273dc6a76da0f5cf0b0fd ""
   "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/exp_1_bis.pdf" 1714465106 130970 58a53acb719fc8a5dcb69eeb10e63512 ""
   "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/exp_2.pdf" 1714465106 69289 c17a49b4605968bf828e91a17070d98f ""
@@ -15,11 +15,11 @@
   "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/def.tex" 1706521548 15466 ac899e068c5981d0e6e1d8f22f8815eb ""
   "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/header.tex" 1701427949 3363 064463123d22cab012bcc4aa2231b9dd ""
   "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024.sty" 1714465969 11625 b5f853b54a7a098e9e5b837f826d5daa ""
-  "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.aux" 1714476325 24668 9b435a9a564432bfd94e0b905673679b "pdflatex"
-  "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.bbl" 1714476323 14038 6b641874d2772c7a2eb3988645489767 "bibtex /Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit"
-  "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.out" 1714476325 3958 5bc87596df500baa34ddc82225daeeee "pdflatex"
+  "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.aux" 1714482176 24393 1a56fb139e309f180dd1eebd873eb37e "pdflatex"
+  "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.bbl" 1714482175 14269 bed92a449a10e0d87d09e17bf9579849 "bibtex /Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit"
+  "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.out" 1714482176 3958 f46c8f10b6798de286231b4f3120c4c7 "pdflatex"
   "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.tex" 1714470164 29873 f857d44a62463a088f3778a5f61eaede ""
-  "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/paper.tex" 1714476321 77098 79c6b077a491e4e3f1badf639a6ddc8e ""
+  "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/paper.tex" 1714482172 77633 72d43134a8bd94e04dc2d2c8c36743f0 ""
   "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/pictures/mice_exp.png" 1714465106 80209 a6039e8b9f529f078b97103b7a6aefc4 ""
   "/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/pictures/samples.pdf" 1714465106 20131 df44584508d694f6650feca4fca8e9ed ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""

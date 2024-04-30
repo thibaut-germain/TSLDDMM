@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.24)  30 APR 2024 13:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.24)  30 APR 2024 15:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -990,119 +990,127 @@ Package pdftex.def Info: ./pictures/transport.jpeg  used on input line 133.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2] [3 </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/diffeo.jpeg> </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/transport.jpeg>]
+ [2]
+Underfull \vbox (badness 3417) has occurred while \output is active []
 
-LaTeX Warning: Reference `eq:geodesics_shooting' on page 4 undefined on input line 211.
+ [3 </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/diffeo.jpeg> </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/transport.jpeg>]
+
+LaTeX Warning: Reference `eq:geodesics_shooting' on page 4 undefined on input line 215.
 
 
-LaTeX Warning: Reference `eq:geodesics_shooting' on page 4 undefined on input line 227.
+LaTeX Warning: Reference `eq:geodesics_shooting' on page 4 undefined on input line 231.
 
 
 Package natbib Warning: Author undefined for citation`miller2006geodesic' 
-(natbib)                on page 4 on input line 235.
+(natbib)                on page 4 on input line 239.
 
 
-LaTeX Warning: Reference `eq:geodesics_shooting' on page 4 undefined on input line 235.
+LaTeX Warning: Reference `eq:geodesics_shooting' on page 4 undefined on input line 239.
 
 [4
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.261 
-      
+l.260    \begin{equation}
+                         
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.261 
-      ] [5] [6
-pdfTeX warning (ext4): destination with the same identifier (name{equation.5.9}) has been already used, duplicate ignored
+l.260    \begin{equation}
+                         ] [5
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.542 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.5.9}) has been already used, duplicate ignored
+l.366 
+      ] [6
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.542 
-      ] [7]
-<pictures/samples.pdf, id=324, 433.62pt x 180.675pt>
+l.498     \end{align}
+                     
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.498     \end{align}
+                     ] [7]
+<pictures/samples.pdf, id=325, 433.62pt x 180.675pt>
 File: pictures/samples.pdf Graphic file (type pdf)
 <use pictures/samples.pdf>
-Package pdftex.def Info: pictures/samples.pdf  used on input line 672.
+Package pdftex.def Info: pictures/samples.pdf  used on input line 674.
 (pdftex.def)             Requested size: 198.7425pt x 82.81099pt.
  [8 </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/pictures/samples.pdf>]
-<./pictures/exp_1_bis.pdf, id=371, 1881.0275pt x 692.5875pt>
+<./pictures/exp_1_bis.pdf, id=372, 1881.0275pt x 692.5875pt>
 File: ./pictures/exp_1_bis.pdf Graphic file (type pdf)
 <use ./pictures/exp_1_bis.pdf>
-Package pdftex.def Info: ./pictures/exp_1_bis.pdf  used on input line 753.
+Package pdftex.def Info: ./pictures/exp_1_bis.pdf  used on input line 755.
 (pdftex.def)             Requested size: 377.60951pt x 139.03287pt.
-<./pictures/exp_2.pdf, id=372, 1300.86pt x 200.75pt>
+<./pictures/exp_2.pdf, id=373, 1300.86pt x 200.75pt>
 File: ./pictures/exp_2.pdf Graphic file (type pdf)
 <use ./pictures/exp_2.pdf>
-Package pdftex.def Info: ./pictures/exp_2.pdf  used on input line 763.
+Package pdftex.def Info: ./pictures/exp_2.pdf  used on input line 765.
 (pdftex.def)             Requested size: 377.60951pt x 58.27113pt.
  [9 </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/exp_1_bis.pdf> </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/exp_2.pdf>]) (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.bbl [10] [11] [12] [13]) (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/appendix.tex [14
-pdfTeX warning (ext4): destination with the same identifier (name{equation.A.10}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.A.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.75  \begin{equation}
                       ]
-pdfTeX warning (ext4): destination with the same identifier (name{equation.B.11}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.75  \begin{equation}
                       
-pdfTeX warning (ext4): destination with the same identifier (name{equation.B.11}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.75  \begin{equation}
                       
-pdfTeX warning (ext4): destination with the same identifier (name{equation.B.11}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.75  \begin{equation}
                       
-pdfTeX warning (ext4): destination with the same identifier (name{equation.B.11}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.75  \begin{equation}
                       
-pdfTeX warning (ext4): destination with the same identifier (name{equation.B.11}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.82 \begin{equation}
                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.B.11}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.82 \begin{equation}
                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.B.11}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.82 \begin{equation}
                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.B.11}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.82 \begin{equation}
                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.B.11}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.86 \begin{equation}
                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.B.11}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.86 \begin{equation}
                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.B.11}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.86 \begin{equation}
                      
-pdfTeX warning (ext4): destination with the same identifier (name{equation.B.11}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.86 \begin{equation}
@@ -1111,6 +1119,12 @@ Overfull \hbox (62.69633pt too wide) detected at line 93
 [][][]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ^^V[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^V[]\OMS/cmsy/m/n/10 j[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 l[]k\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 x[]; []\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; [][]\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 l[] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 2 [] [] \OML/cmm/m/it/10 l[]k\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 x[]; []\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y[]; []\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 l[] \OT1/cmr/m/n/10 + [] \OML/cmm/m/it/10 l[]k\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 y[]; []\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y[]; []\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 l[] :
  []
 
+[15
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.119 ...MM kernel given in \eqref{eq:kernel_TAS}}
+                                                  ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hbox' on input line 119.
@@ -1131,12 +1145,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@@italiccorr' on input line 119.
 
-[15
-pdfTeX warning (ext4): destination with the same identifier (name{equation.B.12}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.123 
-      ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hbox' on input line 132.
@@ -1162,7 +1170,7 @@ Overfull \hbox (74.04523pt too wide) in paragraph at lines 186--202
  [][] 
  []
 
-<pictures/mice_exp.png, id=502, 492.3996pt x 214.401pt>
+<pictures/mice_exp.png, id=503, 492.3996pt x 214.401pt>
 File: pictures/mice_exp.png Graphic file (type png)
 <use pictures/mice_exp.png>
 Package pdftex.def Info: pictures/mice_exp.png  used on input line 207.
@@ -1177,21 +1185,21 @@ Overfull \hbox (43.21144pt too wide) in paragraph at lines 255--266
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `neurips_2024_to_submit.out' has not changed.
-(rerunfilecheck)             Checksum: 5BC87596DF500BAA34DDC82225DAEEEE;3958.
+(rerunfilecheck)             Checksum: F46C8F10B6798DE286231B4F3120C4C7;3958.
  ) 
 Here is how much of TeX's memory you used:
- 40599 strings out of 478268
- 907611 string characters out of 5846346
- 1406071 words of memory out of 5000000
- 57586 multiletter control sequences out of 15000+600000
+ 40597 strings out of 478268
+ 907518 string characters out of 5846346
+ 1405071 words of memory out of 5000000
+ 57584 multiletter control sequences out of 15000+600000
  532358 words of font info for 293 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,20n,83p,1098b,793s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.pdf (25 pages, 901657 bytes).
+Output written on /Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.pdf (25 pages, 902205 bytes).
 PDF statistics:
- 753 PDF objects out of 1000 (max. 8388607)
- 628 compressed objects within 7 object streams
+ 754 PDF objects out of 1000 (max. 8388607)
+ 629 compressed objects within 7 object streams
  175 named destinations out of 1000 (max. 500000)
  61659 words of extra memory for PDF output out of 61914 (max. 10000000)
 

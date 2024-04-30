@@ -150,10 +150,14 @@ and by $\Nset_{>0}$ is the set of positive integers.
 %Reproducing Kernel Hilbert Space (RKHS)
 \section{Background on LDDMM}
 \label{section:LDDMM}
-\sam{DIRE l'intérêt de LDDMM}
+
 In this part, there is no novelty, we simply expose how to
  learn the diffeomorphisms $(\phi_j)_{j\in[N]}$ using LDDMM, initially introduced in \cite{beg2005computing}.
   In a nutshell, for any $j\in [N]$, $\phi_j$ corresponds to a differential flow related to a learnable velocity field belonging to a well-chosen Reproducing Kernel Hilbert Space (RKHS).
+
+  In the next section, the time series are going to be represented by diffeomorphism parameters $(\alpha_j)_{j\in[N]}$.
+  That's why LDDMM is chosen since it offers a parametrization for diffemorphisms which is sparse and interpretable, two features particularly relevant in the biomedical context.
+ 
 
 The basic problem that we consider in this section is the following. Given a set of targets $\mathbf{y}=(y_i)_{i\in[T_2]}$ in $\Rset^{d'}$\footnote{Note that we denote by $d'\in\nset$ the ambient space}, a set of starting points $\mathbf{x}=(x_{i})_{i\in[T_1]}$ in $\Rset^{d'}$, we aim to find a diffeomorphism $\phi$ such that the finite set of points $\mathbf{y}$ is similar in a certain sense to the set of finite sets of transformed points $\phi \cdot \mathbf{x} =(\phi(x_i))_{i\in[T_1]} $.
  The function $\phi$ is occasionally referred to as a \textit{deformation}. In general, these sets $\mathbf{x},\mathbf{y}$ are meshes of continous objects, e.g surfaces, curves, images and so on.
@@ -291,16 +295,28 @@ $\mathbf{n}_0$ control points $\msx_0=(x_{k,0})_{k\in[\mathbf{n}_0]}\in (\Rset^{
     
 %  \end{algorithmic}
 %  \end{algorithm}
+\paragraph{Relation to Continuous Normalizing Flows.}
 
+One particular popular choice to address the problem of learning a diffeomorphism or a velocity field is Normalizing Flows \cite{rezende2015variational,kobyzev2020normalizing} (NF) or their continuous counterpart \cite{chen2018neural,grathwohl2019scalable,salman2018deep} (CNF).
+However, we do not rely on this class of learning algorithms for several reasons. Indeed, existing and simple normalizing flows are not suitable for the type of data that we are interested in this paper \cite{feng2023multi,deng2020modeling}. 
+  In addition,  they are primarily designed to have tractable Jacobian functions, while we do not require such property in our applications. 
+Finally, the use of a differential flow solution of an ODE
+\eqref{eq:LDDMM_dynamic} trick is also at the basis of CNF, which
+then consists of learning a velocity field to address in fitting the data through a loss aiming to address the problem
+at hand. Nevertheless, the main difference between CNF and LDDMM lies in the
+parametrization of the velocity field. LDDMM uses kernels to
+derive closed form formula and enhance interpretability while
+NF and CNF take advantage of deep neural networks to scale with
+large dataset in high dimensions.
 \section{Methodology}
 %\paragraph{Assumptions}
 %Denoting by $C^0(\msi,\msj) $ the space of continous functions between two sets $\msi,\msj$,
 
 We consider in this paper observations which consist in a population of $N$ multivariate time series, for any $j\in[N]$, $s^j \in \rmC^1(\msi_j,\Rset^{d})$. 
- Note that the time series are not defined on the same time interval.
-To ease the presentation of our methodology, we suppose that we have access to the continuous time series $(s^j)_{j\in[N]}$, while in practice, we can only access a $n_j$-samples $\tsig^j=(\tsig_i^j=s^j(t^j_i))_{i\in[n_j]}$ collected at timestamps $(t^j_i)_{i\in[n_j]}$ for any $j \in [N]$.
- However, this difference does not change the overall rationale of our method and its implementation up to minor changes, which we summarize in \eqref{eq:general_optimization_problem}.
-
+However, we can only access a $n_j$-samples $\tsig^j=(\tsig_i^j=s^j(t^j_i))_{i\in[n_j]}$ collected at timestamps $(t^j_i)_{i\in[n_j]}$ for any $j \in [N]$.
+ Note that \textbf{the number of samples $n_j$ is not necessary the same accross individuals} and the timestamps can be \textbf{irregularly sampled}.
+%To ease the presentation of our methodology, we suppose that we have access to the continuous time series $(s^j)_{j\in[N]}$, while in practice, we can only access a $n_j$-samples $\tsig^j=(\tsig_i^j=s^j(t^j_i))_{i\in[n_j]}$ collected at timestamps $(t^j_i)_{i\in[n_j]}$ for any $j \in [N]$.
+ %However, this difference does not change the overall rationale of our method and its implementation up to minor changes, which we summarize in \eqref{eq:general_optimization_problem}.
  We assume the time series population is globally homogeneous regarding their "shapes" even if inter-individual variability exists.
  Intuitively speaking, the "shape" of a time series $s:\msi\to \Rset^d$ is encoded in its graphs $\msg(s)$ defined as the set $\{(t,s(t)):\eqsp t\in\msi \} $ and not only in its values $s(\msi)=\{s(t):\eqsp t\in\msi \} $ since the time axis is crucial. % on the shape as illustrated in Figure\alain{ (mettre ref)}.
  As a motivating use-case, $s^j$ can be the time series of a heartbeat extracted from an individual's electrocardiogram (ECG), see \Cref{fig:transport}.
@@ -311,10 +327,10 @@ To ease the presentation of our methodology, we suppose that we have access to t
   %   there exist a common pattern $\mathbf{s}_0: \msi \to \Rset^d$ and individual time reparametrisations $ \psi_j\in\mcd(\msi,\msi_j) $ such that,
   %   for any $j\in[N]$, $s^j=\mathbf{s}_0\circ \psi_j^{-1} $.]
 %  \paragraph{Goals}%\sam{potentiellement changer l'ordre de time and space}
-
+\paragraph*{The deformation problem.}
 In this paper, we aim to study the inter-individual variability in the dataset by finding a relevant representation of each time series.
 Inspired from the framework of shape analysis \cite{vaillant2004statistics}, addressing similar problems in morphology,
- we propose to represent each time series' graph $\msg(s^j)$ as the transformation of a reference graph $\msg(\mathbf{s}_0)$, related to a time series $\mathbf{s}_0:\msi \to\Rset^d$, by a diffeomorphism $\phi_j$ on $\Rset^{d+1}$, for any $j\in[N]$,
+ we suggest to represent each time series' graph $\msg(s^j)$ as the transformation of a reference graph $\msg(\mathbf{s}_0)$, related to a time series $\mathbf{s}_0:\msi \to\Rset^d$, by a diffeomorphism $\phi_j$ on $\Rset^{d+1}$, for any $j\in[N]$,
 \begin{equation}
  \label{eq:transformation}
  \phi_j.\msg(\mathbf{s}_0)=\{\phi_j\left(t,\mathbf{s}_0(t)\right), \eqsp t\in \msi \} \eqsp.
@@ -326,21 +342,16 @@ We aim to learn $\msg(\bfs_0)$ and $(\phi_j)_{j\in[N]} $.
 %First, we introduce the Large Deformation Diffeomorphic Metric Mapping (LDDMM) framework.
 % Then, we explain how to learn a discretization of the graph $\msg(\bfs_0)$ and the diffeomorphisms $(\phi_j)_{j\in[N]} $ by using LDDMM and a gradient descent minimization.
   %Finally, we tackle the specificity of graph time series by deriving a representation theorem on diffeomorphisms, which enables us to select the kernel needed in LDDMM, and thus, we propose TS-LDDMM. 
-  \sam{smooth this part}
-  In our practical context, $\mathbf{y}$ represents one of the \textit{discretized graphs} of the time series $(s^j)_{j\in[N]}$, defined as, for any $j\in[N]$,
-  \begin{equation}
-   \label{eq:descretized_graph}
-   \msg(\tsig^j)=(t_i^j,\tsig^j_i)_{ i\in[n_j]}\in (\Rset^{d+1})^{n_j}
-  \end{equation}
-   and $\mathbf{x}$ corresponds to a discretization of the reference graph $\msg(\mathbf{s}_0)$, i.e., 
-   \begin{equation}
-     \label{eq:descretized_referenced_graph}
-     \mathbf{x}=\tilde{\msg}_0=(t_i^0,\tsig^0_i)_{i\in[\mathbf{n}_0]}\in (\Rset^{d+1})^{\mathbf{n}_0} \eqsp . 
-   \end{equation}
+ 
+ 
      %\sam{Parler de l'unicté?}
-     \paragraph{Coming back to the representation problem \eqref{eq:transformation}.}
-     Now, we detail how to learn $(\phi^j)_{j\in[N]}$ and a discretization of the reference graph $\msg(\mathbf{s}_0)$.
-      Setting $\mathbf{y}_j=\msg(\tsig^j)$ for any $j\in[N]$ and $\tilde{\msg}_0=(t_i^0,\tsig^0_i)_{i\in[\mathbf{n}_0]}\in (\Rset^{d+1})^{\mathbf{n}_0} $ as given in \eqref{eq:descretized_graph}-\eqref{eq:descretized_referenced_graph} with $\mathbf{n}_0=\operatorname{median}((n_j)_{j\in[N]})$, the representation problem given in \eqref{eq:transformation} boils down solving:
+     \paragraph{Optimization related to \eqref{eq:transformation}.}
+     Defining the \textit{discretized graphs} of the time series $(s^j)_{j\in[N]}$ and a discretization of the reference graph $\msg(\mathbf{s}_0)$  as, for any $j\in[N]$,
+     \begin{equation}
+      \label{eq:descretized_graph}
+      \mathbf{y}_j=\msg(\tsig^j)=(t_i^j,\tsig^j_i)_{ i\in[n_j]}\in (\Rset^{d+1})^{n_j},\quad \tilde{\msg}_0=(t_i^0,\tsig^0_i)_{i\in[\mathbf{n}_0]}\in (\Rset^{d+1})^{\mathbf{n}_0} \eqsp ,
+     \end{equation}
+       with $\mathbf{n}_0=\operatorname{median}((n_j)_{j\in[N]})$, the representation problem given in \eqref{eq:transformation} boils down solving:
       \begin{equation}
         \label{eq:general_optimization_problem}
         \argmin_{\tilde{\msg}_0,(\alpha_k^j)_{k\in [\mathbf{n}_0]}^{j\in[N]}} \sum_{j=1}^N \mathcal{F}_{\tilde{\msg}_0,\mathbf{y}_j}\left((\alpha_k^j)_{k\in [\mathbf{n}_0]}\right)\eqsp ,
@@ -400,12 +411,14 @@ We aim to learn $\msg(\bfs_0)$ and $(\phi_j)_{j\in[N]} $.
 %  \end{algorithmic}
 %  \end{algorithm}
 
+Nevertheless, \eqref{eq:general_optimization_problem} ask to define a kernel and a loss in order to perform geodesic shooting \ref{eq:relaxation}, which is the purpose of the next subsection.
    \subsection{Application of LDDMM to time series analysis: TS-LDDMM}
 %\tcr{Mettre l'applicaiton clair pour les times series}
 
         \label{section:time_series_specificity}
-        \sam{In this section, we present our theoretical contribution: we tailor the LDDMM framework to handle time series data}.
+        In this section, we present our theoretical contribution: we tailor the LDDMM framework to handle time series data.
           The reason is that applying a general diffeomorphism $\phi$ from $\Rset^{d+1}$ to a time series' graph $\msg(s)$ can result in a set $\phi.\msg(s)$ that does not correspond to the graph of any time series, as illustrated in the \Cref{fig:diffeo}.
+           Thus, Time series graph have more structure than a simple 1D curve \cite{glaunes2008large} and deserve their special analysis which will prove fruitful as demonstrated in \ref{section:experiments}.% thus this case is not an application of \cite{glaunes2004diffeomorphic}
 
 To address this challenge, we need to identify an RKHS kernel $K:\Rset^{d+1}\times \Rset^{d+1}\to \Rset^{(d+1)^2}$ that generates deformations preserving the structure of the time series graph. This goal motivates us to clarify, in \Cref{theorem:representation}, the specific representation of diffeomorphisms we require before presenting a class of kernels that produce deformations with this representation.
 
@@ -489,6 +502,7 @@ This choice for $K_\msg$ is motivated by the representation \Cref{theorem:repres
       If we denote by $\msv$ the RKHS associated with the kernel $K_{\msg}$, then for any vector field $v$ generated by \eqref{eq:integration} with $v_0$ satisfying \eqref{eq:def_v0},
        there exist $\gamma \in \msd(\Rset) $ and $f\in \rmC^1(\Rset^{d+1},\Rset^d)$ such that $\phi^v=\Psi_\gamma\circ\Phi_f $.
     \end{lemma}
+    \sam{Parler des Cauchy kernel en appndice et du choix de la loss}
     % \begin{proof}
     %   Let $v$ be a vector field generated by \eqref{eq:integration} with $v_0$ satisfying \eqref{eq:def_v0}.
     %  We remark that the first coordinate of the velocity field $v_\tau$ denoted by $v_\tau^{\text{time}}$ only depends on the time variable $t$ for any $\tau\in[0,1]$.
@@ -598,19 +612,7 @@ For further readings on curves and surfaces representation as varifolds, readers
 %   where $k_T $ is a kernel on the tangent vector space.
 
 
-\paragraph{Relation to Continuous Normalizing Flows.}
 
-One particular popular choice to address the problem of learning a diffeomorphism or a velocity field is Normalizing Flows \cite{rezende2015variational,kobyzev2020normalizing} (NF) or their continuous counterpart \cite{chen2018neural,grathwohl2019scalable,salman2018deep} (CNF).
-However, we do not rely on this class of learning algorithms for several reasons. Indeed, existing and simple normalizing flows are not suitable for the type of data that we are interested in this paper \cite{feng2023multi,deng2020modeling}. 
-  In addition,  they are primarily designed to have tractable Jacobian functions, while we do not require such property in our applications. 
-Finally, the use of a differential flow solution of an ODE
-\eqref{eq:LDDMM_dynamic} trick is also at the basis of CNF, which
-then consists of learning a velocity field to address in fitting the data through a loss aiming to address the problem
-at hand. Nevertheless, the main difference between CNF and LDDMM lies in the
-parametrization of the velocity field. LDDMM uses kernels to
-derive closed form formula and enhance interpretability while
-NF and CNF take advantage of deep neural networks to scale with
-large dataset in high dimensions.
 \sam{Parler de méthode adaptatif ici}
   
 

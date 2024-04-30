@@ -128,6 +128,11 @@ Joan Glaunes.
   courants pour la comparaison de formes et l’anatomie num{\'e}rique.
 \newblock {\em These de sciences, Universit{\'e} Paris}, 13, 2005.
 
+\bibitem{glaunes2008large}
+Joan Glaunes, Anqi Qiu, Michael~I Miller, and Laurent Younes.
+\newblock Large deformation diffeomorphic metric curve mapping.
+\newblock {\em International journal of computer vision}, 80:317--336, 2008.
+
 \bibitem{grathwohl2019scalable}
 Will Grathwohl, Ricky~TQ Chen, Jesse Bettencourt, and David Duvenaud.
 \newblock Scalable reversible generative models with free-form continuous
