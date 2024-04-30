@@ -1,0 +1,335 @@
+\begin{thebibliography}{10}
+
+\bibitem{anderson2011statistical}
+Theodore~W Anderson.
+\newblock {\em The statistical analysis of time series}.
+\newblock John Wiley \& Sons, 2011.
+
+\bibitem{asgari2023clustering}
+Asal Asgari.
+\newblock Clustering of clinical multivariate time-series utilizing recent
+  advances in machine-learning.
+\newblock 2023.
+
+\bibitem{bagnall2018uea}
+Anthony Bagnall, Hoang~Anh Dau, Jason Lines, Michael Flynn, James Large, Aaron
+  Bostrom, Paul Southam, and Eamonn Keogh.
+\newblock The uea multivariate time series classification archive, 2018.
+\newblock {\em arXiv preprint arXiv:1811.00075}, 2018.
+
+\bibitem{bar2012studying}
+Ziv Bar-Joseph, Anthony Gitter, and Itamar Simon.
+\newblock Studying and modelling dynamic biological processes using time-series
+  gene expression data.
+\newblock {\em Nature Reviews Genetics}, 13(8):552--564, 2012.
+
+\bibitem{beg2005computing}
+M~Faisal Beg, Michael~I Miller, Alain Trouv{\'e}, and Laurent Younes.
+\newblock Computing large deformation metric mappings via geodesic flows of
+  diffeomorphisms.
+\newblock {\em International journal of computer vision}, 61:139--157, 2005.
+
+\bibitem{berlinet2011reproducing}
+Alain Berlinet and Christine Thomas-Agnan.
+\newblock {\em Reproducing kernel Hilbert spaces in probability and
+  statistics}.
+\newblock Springer Science \& Business Media, 2011.
+
+\bibitem{bishop1994neural}
+Chris~M Bishop.
+\newblock Neural networks and their applications.
+\newblock {\em Review of scientific instruments}, 65(6):1803--1832, 1994.
+
+\bibitem{blazquez2021review}
+Ane Bl{\'a}zquez-Garc{\'\i}a, Angel Conde, Usue Mori, and Jose~A Lozano.
+\newblock A review on outlier/anomaly detection in time series data.
+\newblock {\em ACM Computing Surveys (CSUR)}, 54(3):1--33, 2021.
+
+\bibitem{borgwardt2006integrating}
+Karsten~M Borgwardt, Arthur Gretton, Malte~J Rasch, Hans-Peter Kriegel,
+  Bernhard Sch{\"o}lkopf, and Alex~J Smola.
+\newblock Integrating structured biological data by kernel maximum mean
+  discrepancy.
+\newblock {\em Bioinformatics}, 22(14):e49--e57, 2006.
+
+\bibitem{carmeli2010vector}
+Claudio Carmeli, Ernesto De~Vito, Alessandro Toigo, and Veronica Umanit{\'a}.
+\newblock Vector valued reproducing kernel hilbert spaces and universality.
+\newblock {\em Analysis and Applications}, 8(01):19--61, 2010.
+
+\bibitem{charon2013varifold}
+Nicolas Charon and Alain Trouv{\'e}.
+\newblock The varifold representation of nonoriented shapes for diffeomorphic
+  registration.
+\newblock {\em SIAM journal on Imaging Sciences}, 6(4):2547--2580, 2013.
+
+\bibitem{chen2018neural}
+Ricky~TQ Chen, Yulia Rubanova, Jesse Bettencourt, and David~K Duvenaud.
+\newblock Neural ordinary differential equations.
+\newblock {\em Advances in neural information processing systems}, 31, 2018.
+
+\bibitem{dau2019ucr}
+Hoang~Anh Dau, Anthony Bagnall, Kaveh Kamgar, Chin-Chia~Michael Yeh, Yan Zhu,
+  Shaghayegh Gharghabi, Chotirat~Ann Ratanamahatana, and Eamonn Keogh.
+\newblock The ucr time series archive.
+\newblock {\em IEEE/CAA Journal of Automatica Sinica}, 6(6):1293--1305, 2019.
+
+\bibitem{dempster2020rocket}
+Angus Dempster, Fran{\c{c}}ois Petitjean, and Geoffrey~I Webb.
+\newblock Rocket: exceptionally fast and accurate time series classification
+  using random convolutional kernels.
+\newblock {\em Data Mining and Knowledge Discovery}, 34(5):1454--1495, 2020.
+
+\bibitem{deng2020modeling}
+Ruizhi Deng, Bo~Chang, Marcus~A Brubaker, Greg Mori, and Andreas Lehrmann.
+\newblock Modeling continuous stochastic processes with dynamic normalizing
+  flows.
+\newblock {\em Advances in Neural Information Processing Systems},
+  33:7805--7815, 2020.
+
+\bibitem{durrleman2013sparse}
+Stanley Durrleman, St{\'e}phanie Allassonni{\`e}re, and Sarang Joshi.
+\newblock Sparse adaptive parameterization of variability in image ensembles.
+\newblock {\em International Journal of Computer Vision}, 101:161--183, 2013.
+
+\bibitem{dziugaite2015training}
+Gintare~Karolina Dziugaite, Daniel~M Roy, and Zoubin Ghahramani.
+\newblock Training generative neural networks via maximum mean discrepancy
+  optimization.
+\newblock {\em arXiv preprint arXiv:1505.03906}, 2015.
+
+\bibitem{fathy2018large}
+Yasmin Fathy, Payam Barnaghi, and Rahim Tafazolli.
+\newblock Large-scale indexing, discovery, and ranking for the internet of
+  things (iot).
+\newblock {\em ACM Computing Surveys (CSUR)}, 51(2):1--53, 2018.
+
+\bibitem{feng2023multi}
+Shibo Feng, Chunyan Miao, Ke~Xu, Jiaxiang Wu, Pengcheng Wu, Yang Zhang, and
+  Peilin Zhao.
+\newblock Multi-scale attention flow for probabilistic time series forecasting.
+\newblock {\em IEEE Transactions on Knowledge and Data Engineering}, 2023.
+
+\bibitem{franceschi2019unsupervised}
+Jean-Yves Franceschi, Aymeric Dieuleveut, and Martin Jaggi.
+\newblock Unsupervised scalable representation learning for multivariate time
+  series.
+\newblock {\em Advances in neural information processing systems}, 32, 2019.
+
+\bibitem{germain2023unsupervised}
+Thibaut Germain, Charles Truong, Laurent Oudre, and Eric Krejci.
+\newblock Unsupervised classification of plethysmography signals with advanced
+  visual representations.
+\newblock {\em Frontiers in Physiology}, 14:781, 2023.
+
+\bibitem{glaunes2005transport}
+Joan Glaunes.
+\newblock Transport par diff{\'e}omorphismes de points, de mesures et de
+  courants pour la comparaison de formes et l’anatomie num{\'e}rique.
+\newblock {\em These de sciences, Universit{\'e} Paris}, 13, 2005.
+
+\bibitem{grathwohl2019scalable}
+Will Grathwohl, Ricky~TQ Chen, Jesse Bettencourt, and David Duvenaud.
+\newblock Scalable reversible generative models with free-form continuous
+  dynamics.
+\newblock In {\em International Conference on Learning Representations},
+  page~7, 2019.
+
+\bibitem{heo2024logistic}
+Tae-Young Heo, Joon~Myoung Lee, Myung~Hun Woo, Hyeongseok Lee, and Min~Ho Cho.
+\newblock Logistic regression models for elastic shape of curves based on
+  tangent representations.
+\newblock {\em Journal of the Korean Statistical Society}, pages 1--19, 2024.
+
+\bibitem{hoymann2012lung}
+Heinz~Gerd Hoymann.
+\newblock Lung function measurements in rodents in safety pharmacology studies.
+\newblock {\em Frontiers in pharmacology}, 3:156, 2012.
+
+\bibitem{hsu2003practical}
+Chih-Wei Hsu, Chih-Chung Chang, Chih-Jen Lin, et~al.
+\newblock A practical guide to support vector classification, 2003.
+
+\bibitem{ismail2020benchmarking}
+Aya~Abdelsalam Ismail, Mohamed Gunady, Hector Corrada~Bravo, and Soheil Feizi.
+\newblock Benchmarking deep learning interpretability in time series
+  predictions.
+\newblock {\em Advances in neural information processing systems},
+  33:6441--6452, 2020.
+
+\bibitem{ismail2019deep}
+Hassan Ismail~Fawaz, Germain Forestier, Jonathan Weber, Lhassane Idoumghar, and
+  Pierre-Alain Muller.
+\newblock Deep learning for time series classification: a review.
+\newblock {\em Data mining and knowledge discovery}, 33(4):917--963, 2019.
+
+\bibitem{kaltenmark2017general}
+Irene Kaltenmark, Benjamin Charlier, and Nicolas Charon.
+\newblock A general framework for curve and surface comparison and registration
+  with oriented varifolds.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 3346--3355, 2017.
+
+\bibitem{kobyzev2020normalizing}
+Ivan Kobyzev, Simon~JD Prince, and Marcus~A Brubaker.
+\newblock Normalizing flows: An introduction and review of current methods.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  43(11):3964--3979, 2020.
+
+\bibitem{le2001locating}
+Huiling Le.
+\newblock Locating fr{\'e}chet means with application to shape spaces.
+\newblock {\em Advances in Applied Probability}, 33(2):324--338, 2001.
+
+\bibitem{lubba2019catch22}
+Carl~H Lubba, Sarab~S Sethi, Philip Knaute, Simon~R Schultz, Ben~D Fulcher, and
+  Nick~S Jones.
+\newblock catch22: Canonical time-series characteristics: Selected through
+  highly comparative time-series analysis.
+\newblock {\em Data Mining and Knowledge Discovery}, 33(6):1821--1852, 2019.
+
+\bibitem{luo2021deep}
+Yuan Luo, Ya~Xiao, Long Cheng, Guojun Peng, and Danfeng Yao.
+\newblock Deep learning-based anomaly detection in cyber-physical systems:
+  Progress and opportunities.
+\newblock {\em ACM Computing Surveys (CSUR)}, 54(5):1--36, 2021.
+
+\bibitem{madona2021pqrst}
+Putri Madona, Rahmat~Ilias Basti, and Muhammad~Mahrus Zain.
+\newblock Pqrst wave detection on ecg signals.
+\newblock {\em Gaceta Sanitaria}, 35:S364--S369, 2021.
+
+\bibitem{meng2023unsupervised}
+Qianwen Meng, Hangwei Qian, Yong Liu, Yonghui Xu, Zhiqi Shen, and Lizhen Cui.
+\newblock Unsupervised representation learning for time series: A review.
+\newblock {\em arXiv preprint arXiv:2308.01578}, 2023.
+
+\bibitem{miller2006geodesic}
+Michael~I Miller, Alain Trouv{\'e}, and Laurent Younes.
+\newblock Geodesic shooting for computational anatomy.
+\newblock {\em Journal of mathematical imaging and vision}, 24:209--228, 2006.
+
+\bibitem{muller2007dynamic}
+Meinard M{\"u}ller.
+\newblock Dynamic time warping.
+\newblock {\em Information retrieval for music and motion}, pages 69--84, 2007.
+
+\bibitem{nervo2019respiratory}
+Aur{\'e}lie Nervo, Andr{\'e}-Guilhem Calas, Florian Nachon, and Eric Krejci.
+\newblock Respiratory failure triggered by cholinesterase inhibitors may
+  involve activation of a reflex sensory pathway by acetylcholine spillover.
+\newblock {\em Toxicology}, 424:152232, 2019.
+
+\bibitem{niennattrakul2007inaccuracies}
+Vit Niennattrakul and Chotirat~Ann Ratanamahatana.
+\newblock Inaccuracies of shape averaging method using dynamic time warping for
+  time series data.
+\newblock In {\em Computational Science--ICCS 2007: 7th International
+  Conference, Beijing, China, May 27-30, 2007, Proceedings, Part I 7}, pages
+  513--520. Springer, 2007.
+
+\bibitem{pal2017riemannian}
+Susovan Pal, Roger~P Woods, Suchit Panjiyar, Elizabeth Sowell, Katherine~L
+  Narr, and Shantanu~H Joshi.
+\newblock A riemannian framework for linear and quadratic discriminant analysis
+  on the tangent space of shapes.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition Workshops}, pages 47--55, 2017.
+
+\bibitem{paparrizos2015k}
+John Paparrizos and Luis Gravano.
+\newblock k-shape: Efficient and accurate clustering of time series.
+\newblock In {\em Proceedings of the 2015 ACM SIGMOD international conference
+  on management of data}, pages 1855--1870, 2015.
+
+\bibitem{rezende2015variational}
+Danilo Rezende and Shakir Mohamed.
+\newblock Variational inference with normalizing flows.
+\newblock In {\em International conference on machine learning}, pages
+  1530--1538. PMLR, 2015.
+
+\bibitem{salman2018deep}
+Hadi Salman, Payman Yadollahpour, Tom Fletcher, and Kayhan Batmanghelich.
+\newblock Deep diffeomorphic normalizing flows.
+\newblock {\em arXiv preprint arXiv:1810.03256}, 2018.
+
+\bibitem{shirato2023identifying}
+Gota Shirato, Natalia Andrienko, and Gennady Andrienko.
+\newblock Identifying, exploring, and interpreting time series shapes in
+  multivariate time intervals.
+\newblock {\em Visual Informatics}, 7(1):77--91, 2023.
+
+\bibitem{srivastava2010shape}
+Anuj Srivastava, Eric Klassen, Shantanu~H Joshi, and Ian~H Jermyn.
+\newblock Shape analysis of elastic curves in euclidean spaces.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  33(7):1415--1428, 2010.
+
+\bibitem{tonekaboni2021unsupervised}
+Sana Tonekaboni, Danny Eytan, and Anna Goldenberg.
+\newblock Unsupervised representation learning for time series with temporal
+  neighborhood coding.
+\newblock {\em arXiv preprint arXiv:2106.00750}, 2021.
+
+\bibitem{torres2021deep}
+Jos{\'e}~F Torres, Dalil Hadjout, Abderrazak Sebaa, Francisco
+  Mart{\'\i}nez-{\'A}lvarez, and Alicia Troncoso.
+\newblock Deep learning for time series forecasting: a survey.
+\newblock {\em Big Data}, 9(1):3--21, 2021.
+
+\bibitem{trirat2024universal}
+Patara Trirat, Yooju Shin, Junhyeok Kang, Youngeun Nam, Jihye Na, Minyoung Bae,
+  Joeun Kim, Byunghyun Kim, and Jae-Gil Lee.
+\newblock Universal time-series representation learning: A survey.
+\newblock {\em arXiv preprint arXiv:2401.03717}, 2024.
+
+\bibitem{vaillant2004statistics}
+Marc Vaillant, Michael~I Miller, Laurent Younes, and Alain Trouv{\'e}.
+\newblock Statistics on diffeomorphisms via tangent space representations.
+\newblock {\em NeuroImage}, 23:S161--S169, 2004.
+
+\bibitem{vidal2021perceptual}
+Pierre-Paul Vidal and Francesco Lacquaniti.
+\newblock Perceptual-motor styles.
+\newblock {\em Experimental Brain Research}, 239(5):1359--1380, 2021.
+
+\bibitem{wang2016research}
+Kai Wang, Youjin Zhao, Qingyu Xiong, Min Fan, Guotan Sun, Longkun Ma, Tong Liu,
+  et~al.
+\newblock Research on healthy anomaly detection model based on deep learning
+  from multiple time-series physiological signals.
+\newblock {\em Scientific Programming}, 2016, 2016.
+
+\bibitem{ye2012heartbeat}
+Can Ye, BVK~Vijaya Kumar, and Miguel~Tavares Coimbra.
+\newblock Heartbeat classification using morphological and dynamic features of
+  ecg signals.
+\newblock {\em IEEE Transactions on Biomedical Engineering}, 59(10):2930--2941,
+  2012.
+
+\bibitem{ye2009time}
+Lexiang Ye and Eamonn Keogh.
+\newblock Time series shapelets: a new primitive for data mining.
+\newblock In {\em Proceedings of the 15th ACM SIGKDD international conference
+  on Knowledge discovery and data mining}, pages 947--956, 2009.
+
+\bibitem{yuan2019wave2vec}
+Ye~Yuan, Guangxu Xun, Qiuling Suo, Kebin Jia, and Aidong Zhang.
+\newblock Wave2vec: Deep representation learning for clinical temporal data.
+\newblock {\em Neurocomputing}, 324:31--42, 2019.
+
+\bibitem{zhang2018visual}
+Quan-shi Zhang and Song-Chun Zhu.
+\newblock Visual interpretability for deep learning: a survey.
+\newblock {\em Frontiers of Information Technology \& Electronic Engineering},
+  19(1):27--39, 2018.
+
+\bibitem{zhuang2020adabelief}
+Juntang Zhuang, Tommy Tang, Yifan Ding, Sekhar~C Tatikonda, Nicha Dvornek,
+  Xenophon Papademetris, and James Duncan.
+\newblock Adabelief optimizer: Adapting stepsizes by the belief in observed
+  gradients.
+\newblock {\em Advances in neural information processing systems},
+  33:18795--18806, 2020.
+
+\end{thebibliography}

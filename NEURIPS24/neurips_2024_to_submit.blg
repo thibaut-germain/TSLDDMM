@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: neurips_2024_to_submit.aux
+The style file: plain.bst
+Database file #1: ref.bib
+Warning--empty journal in asgari2023clustering
+You've used 56 entries,
+            2118 wiz_defined-function locations,
+            819 strings with 15458 characters,
+and the built_in function-call counts, 21127 in all, are:
+= -- 2052
+> -- 1216
+< -- 9
++ -- 486
+- -- 422
+* -- 1620
+:= -- 3573
+add.period$ -- 169
+call.type$ -- 56
+change.case$ -- 375
+chr.to.int$ -- 0
+cite$ -- 57
+duplicate$ -- 696
+empty$ -- 1462
+format.name$ -- 422
+if$ -- 4280
+int.to.chr$ -- 0
+int.to.str$ -- 56
+missing$ -- 57
+newline$ -- 282
+num.names$ -- 112
+pop$ -- 342
+preamble$ -- 1
+purify$ -- 321
+quote$ -- 0
+skip$ -- 502
+stack$ -- 0
+substring$ -- 1332
+swap$ -- 135
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 220
+warning$ -- 1
+while$ -- 198
+width$ -- 58
+write$ -- 606
+(There was 1 warning)
