@@ -1,10 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{anderson2011statistical}
-Theodore~W Anderson.
-\newblock {\em The statistical analysis of time series}.
-\newblock John Wiley \& Sons, 2011.
-
 \bibitem{asgari2023clustering}
 Asal Asgari.
 \newblock Clustering of clinical multivariate time-series utilizing recent
@@ -34,16 +29,6 @@ Alain Berlinet and Christine Thomas-Agnan.
 \newblock {\em Reproducing kernel Hilbert spaces in probability and
   statistics}.
 \newblock Springer Science \& Business Media, 2011.
-
-\bibitem{bishop1994neural}
-Chris~M Bishop.
-\newblock Neural networks and their applications.
-\newblock {\em Review of scientific instruments}, 65(6):1803--1832, 1994.
-
-\bibitem{blazquez2021review}
-Ane Bl{\'a}zquez-Garc{\'\i}a, Angel Conde, Usue Mori, and Jose~A Lozano.
-\newblock A review on outlier/anomaly detection in time series data.
-\newblock {\em ACM Computing Surveys (CSUR)}, 54(3):1--33, 2021.
 
 \bibitem{borgwardt2006integrating}
 Karsten~M Borgwardt, Arthur Gretton, Malte~J Rasch, Hans-Peter Kriegel,
@@ -98,12 +83,6 @@ Gintare~Karolina Dziugaite, Daniel~M Roy, and Zoubin Ghahramani.
   optimization.
 \newblock {\em arXiv preprint arXiv:1505.03906}, 2015.
 
-\bibitem{fathy2018large}
-Yasmin Fathy, Payam Barnaghi, and Rahim Tafazolli.
-\newblock Large-scale indexing, discovery, and ranking for the internet of
-  things (iot).
-\newblock {\em ACM Computing Surveys (CSUR)}, 51(2):1--53, 2018.
-
 \bibitem{feng2023multi}
 Shibo Feng, Chunyan Miao, Ke~Xu, Jiaxiang Wu, Pengcheng Wu, Yang Zhang, and
   Peilin Zhao.
@@ -140,12 +119,6 @@ Will Grathwohl, Ricky~TQ Chen, Jesse Bettencourt, and David Duvenaud.
 \newblock In {\em International Conference on Learning Representations},
   page~7, 2019.
 
-\bibitem{heo2024logistic}
-Tae-Young Heo, Joon~Myoung Lee, Myung~Hun Woo, Hyeongseok Lee, and Min~Ho Cho.
-\newblock Logistic regression models for elastic shape of curves based on
-  tangent representations.
-\newblock {\em Journal of the Korean Statistical Society}, pages 1--19, 2024.
-
 \bibitem{hoymann2012lung}
 Heinz~Gerd Hoymann.
 \newblock Lung function measurements in rodents in safety pharmacology studies.
@@ -154,13 +127,6 @@ Heinz~Gerd Hoymann.
 \bibitem{hsu2003practical}
 Chih-Wei Hsu, Chih-Chung Chang, Chih-Jen Lin, et~al.
 \newblock A practical guide to support vector classification, 2003.
-
-\bibitem{ismail2020benchmarking}
-Aya~Abdelsalam Ismail, Mohamed Gunady, Hector Corrada~Bravo, and Soheil Feizi.
-\newblock Benchmarking deep learning interpretability in time series
-  predictions.
-\newblock {\em Advances in neural information processing systems},
-  33:6441--6452, 2020.
 
 \bibitem{ismail2019deep}
 Hassan Ismail~Fawaz, Germain Forestier, Jonathan Weber, Lhassane Idoumghar, and
@@ -192,12 +158,6 @@ Carl~H Lubba, Sarab~S Sethi, Philip Knaute, Simon~R Schultz, Ben~D Fulcher, and
 \newblock catch22: Canonical time-series characteristics: Selected through
   highly comparative time-series analysis.
 \newblock {\em Data Mining and Knowledge Discovery}, 33(6):1821--1852, 2019.
-
-\bibitem{luo2021deep}
-Yuan Luo, Ya~Xiao, Long Cheng, Guojun Peng, and Danfeng Yao.
-\newblock Deep learning-based anomaly detection in cyber-physical systems:
-  Progress and opportunities.
-\newblock {\em ACM Computing Surveys (CSUR)}, 54(5):1--36, 2021.
 
 \bibitem{madona2021pqrst}
 Putri Madona, Rahmat~Ilias Basti, and Muhammad~Mahrus Zain.
@@ -264,23 +224,11 @@ Gota Shirato, Natalia Andrienko, and Gennady Andrienko.
   multivariate time intervals.
 \newblock {\em Visual Informatics}, 7(1):77--91, 2023.
 
-\bibitem{srivastava2010shape}
-Anuj Srivastava, Eric Klassen, Shantanu~H Joshi, and Ian~H Jermyn.
-\newblock Shape analysis of elastic curves in euclidean spaces.
-\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
-  33(7):1415--1428, 2010.
-
 \bibitem{tonekaboni2021unsupervised}
 Sana Tonekaboni, Danny Eytan, and Anna Goldenberg.
 \newblock Unsupervised representation learning for time series with temporal
   neighborhood coding.
 \newblock {\em arXiv preprint arXiv:2106.00750}, 2021.
-
-\bibitem{torres2021deep}
-Jos{\'e}~F Torres, Dalil Hadjout, Abderrazak Sebaa, Francisco
-  Mart{\'\i}nez-{\'A}lvarez, and Alicia Troncoso.
-\newblock Deep learning for time series forecasting: a survey.
-\newblock {\em Big Data}, 9(1):3--21, 2021.
 
 \bibitem{trirat2024universal}
 Patara Trirat, Yooju Shin, Junhyeok Kang, Youngeun Nam, Jihye Na, Minyoung Bae,
@@ -292,11 +240,6 @@ Patara Trirat, Yooju Shin, Junhyeok Kang, Youngeun Nam, Jihye Na, Minyoung Bae,
 Marc Vaillant, Michael~I Miller, Laurent Younes, and Alain Trouv{\'e}.
 \newblock Statistics on diffeomorphisms via tangent space representations.
 \newblock {\em NeuroImage}, 23:S161--S169, 2004.
-
-\bibitem{vidal2021perceptual}
-Pierre-Paul Vidal and Francesco Lacquaniti.
-\newblock Perceptual-motor styles.
-\newblock {\em Experimental Brain Research}, 239(5):1359--1380, 2021.
 
 \bibitem{wang2016research}
 Kai Wang, Youjin Zhao, Qingyu Xiong, Min Fan, Guotan Sun, Longkun Ma, Tong Liu,
@@ -317,17 +260,6 @@ Lexiang Ye and Eamonn Keogh.
 \newblock Time series shapelets: a new primitive for data mining.
 \newblock In {\em Proceedings of the 15th ACM SIGKDD international conference
   on Knowledge discovery and data mining}, pages 947--956, 2009.
-
-\bibitem{yuan2019wave2vec}
-Ye~Yuan, Guangxu Xun, Qiuling Suo, Kebin Jia, and Aidong Zhang.
-\newblock Wave2vec: Deep representation learning for clinical temporal data.
-\newblock {\em Neurocomputing}, 324:31--42, 2019.
-
-\bibitem{zhang2018visual}
-Quan-shi Zhang and Song-Chun Zhu.
-\newblock Visual interpretability for deep learning: a survey.
-\newblock {\em Frontiers of Information Technology \& Electronic Engineering},
-  19(1):27--39, 2018.
 
 \bibitem{zhuang2020adabelief}
 Juntang Zhuang, Tommy Tang, Yifan Ding, Sekhar~C Tatikonda, Nicha Dvornek,

@@ -33,31 +33,45 @@
 %k shape, shapelets , ye2009time
 %\thi{à reformuler pour faire moins stupide}
 
-\sam{Aller droit au but, se servir de la section related works pour détailler, notamment enlever le premier paragraphe dire directement que l'on veut faire du unsupervised represnetation learning for time series mais en s'intéressant par ticulièrement à la notion de shape.
-Parler du contexte biomédical, définir la shape. Parler de shape analysis, introduire notre problème de représentation, dire que nous on propose une structure adapté aux time series.}
-A time series is a set of values indexed by time \cite{trirat2024universal}.
-This type of data is prevalent in biology and medicine for recording physiological time series \cite{wang2016research,bar2012studying,germain2023unsupervised}, as well as in the broader context of the Internet of Things sensors \cite{fathy2018large} and measurements in physical systems \cite{luo2021deep}.
- However, due to the nature of such data, which have different sample sizes and incorporate a temporal evolution, classical statistical analysis, and machine learning methods need refinement \cite{anderson2011statistical}.
- One option to tackle this issue is to derive a feature representation of time series, which depends on the problem at hand \cite{trirat2024universal}.
+%\sam{Aller droit au but, se servir de la section related works pour détailler, notamment enlever le premier paragraphe dire directement que l'on veut faire du unsupervised represnetation learning for time series mais en s'intéressant par ticulièrement à la notion de shape.
+%Parler du contexte biomédical, définir la shape. Parler de shape analysis, introduire notre problème de représentation, dire que nous on propose une structure adapté aux time series.}
 
- When the goal is to analyze the inter-individual variability of a time series dataset, which is of prime interest in medicine and biology,
-  the features encode the specificity of an individual compared to another. 
+In this paper, we propose an unsupervised representation learning method (URL) for time series \cite{trirat2024universal,meng2023unsupervised} by giving a special attention to their \textit{shapes} for studying inter-variability in biomedical applications.
+In particular, the method handle time series with \textbf{irregular sampling} and \textbf{different sizes}.
+This work belongs to the shape analysis literrature: %which focus on the statistical analysis of various mathematical objects invariant under rotations, dilations, or time parameterization.
+ we extend Large Deformation Diffeomorphic Metric Mapping (LDDMM) \cite{beg2005computing,vaillant2004statistics} to the case of time series data by applying difformations to their graph.
+However, time series graph have more structure than 1D curves:
+ a graph time series transformation by a general diffeomorphism is not always a graph time series.
+This work is at the crossroad of URL for time series and shape analysis; we hope it will benefit to both communities.
+%A time series is a set of values indexed by time \cite{trirat2024universal}.
+%This type of data is prevalent in biology and medicine for recording physiological time series , as well as in the broader context of the Internet of Things sensors \cite{fathy2018large} and measurements in physical systems \cite{luo2021deep}.
+ %However, due to the nature of such data, which have different sample sizes and incorporate a temporal evolution, classical statistical analysis, and machine learning methods need refinement \cite{anderson2011statistical}.
+ %One option to tackle this issue is to derive a feature representation of time series, which depends on the problem at hand \cite{trirat2024universal}.
+
+ Our goal is to analyze the inter-individual variability of a time series dataset, which is of prime interest in medicine and biology \cite{wang2016research,bar2012studying,germain2023unsupervised}.
+  More specifically, we aim to find an unsupervised features representation method which encode the specificity of an individual compared to another. 
   In physiology, studying the different \textit{shapes} in a time series related to biological phenomena and their variations according to individual or pathology is common.
   However, a \textit{shape} has no clear definition; it is more an intuitive way to speak about the silhouette of a pattern in a time series. In this paper, we refer to as the shape of a time series, the graph of this signal.
+
+  Although a community structure with representatives can be learned in an unsupervised way using contrastive loss \cite{franceschi2019unsupervised,tonekaboni2021unsupervised,meng2023unsupervised}
+  or similarity measures \cite{asgari2023clustering,germain2023unsupervised,paparrizos2015k,ye2009time},
+     studying the inter-individual variability of shapes within a cluster \cite{niennattrakul2007inaccuracies,shirato2023identifying} is still an open problem in URL.
+     %In this paper, we aim to go beyond group structure by giving an unsupervised data-driven method that represents the specificity of each individual's shape \cite{vidal2021perceptual}.
   %For instance, the shape of a heartbeat in an Electrocardiogram (ECG) -the pattern- has been well studied \cite{madona2021pqrst} with the PQRST decomposition (see figure\sam{fill}).
   %There exist several methods to detect and segment patterns in a time series (\sam{mettre ref thibuat} ).
    %The goal is then to study their shape according to the property of the individual.
 
-   In most clinical studies, depending on expert knowledge, people inspect hand-crafted features such as the mean, wavelets decomposition, or temporal correlation \cite{anderson2011statistical} to keep interpretability.
-   However, this approach is time-consuming and potentially biased by priors, especially in exploratory research.
-   Given the success of neural networks \cite{bishop1994neural}, features can now be automatically extracted, depending only on the data, by choosing an objective to optimize and a neural architecture tailored to the problem \cite{ismail2019deep,blazquez2021review,torres2021deep}, even in an unsupervised way \cite{meng2023unsupervised}.
-   Moreover, depending on the method, it is still possible to have an interpretability of the features.
-    For instance, among individuals, a contrastive clustering method can be applied to spot community structures \cite{franceschi2019unsupervised,tonekaboni2021unsupervised,meng2023unsupervised}.
-    More generally, interpretability \cite{yuan2019wave2vec,zhang2018visual,ismail2020benchmarking} is possible by visualizing the shapes of representative patterns to which the model is sensitive.
-    Other methods, based on similarity measures \cite{asgari2023clustering,germain2023unsupervised,paparrizos2015k}, also propose to perform clustering on shapes in time series or to find some representatives \cite{ye2009time}.
-    Although a community structure with representatives can be learned in an unsupervised way,
-     studying the inter-individual variability of shapes within a cluster \cite{niennattrakul2007inaccuracies,shirato2023identifying} is still an open problem.
-     In this paper, we aim to go beyond group structure by giving an unsupervised data-driven method that represents the specificity of each individual's shape \cite{vidal2021perceptual}.% \thi{In an individual cluster ?}
+  %  In most clinical studies, depending on expert knowledge, people inspect hand-crafted features such as the mean, wavelets decomposition, or temporal correlation \cite{anderson2011statistical} to keep interpretability.
+  %  However, this approach is time-consuming and potentially biased by priors, especially in exploratory research.
+  %  Given the success of neural networks \cite{bishop1994neural}, features can now be automatically extracted, depending only on the data, by choosing an objective to optimize and a neural architecture tailored to the problem \cite{ismail2019deep,blazquez2021review,torres2021deep}, even in an unsupervised way \cite{meng2023unsupervised}.
+  %  Moreover, depending on the method, it is still possible to have an interpretability of the features.
+  %   For instance, among individuals, a contrastive clustering method can be applied to spot community structures \cite{franceschi2019unsupervised,tonekaboni2021unsupervised,meng2023unsupervised}.
+  %   More generally, interpretability \cite{yuan2019wave2vec,zhang2018visual,ismail2020benchmarking} is possible by visualizing the shapes of representative patterns to which the model is sensitive.
+  %   Other methods, based on similarity measures \cite{asgari2023clustering,germain2023unsupervised,paparrizos2015k}, also propose to perform clustering on shapes in time series or to find some representatives \cite{ye2009time}.
+
+    %Although a community structure with representatives can be learned in an unsupervised way,
+    % studying the inter-individual variability of shapes within a cluster \cite{niennattrakul2007inaccuracies,shirato2023identifying} is still an open problem.
+     %In this paper, we aim to go beyond group structure by giving an unsupervised data-driven method that represents the specificity of each individual's shape \cite{vidal2021perceptual}.% \thi{In an individual cluster ?}
 
 % Alternatively, one can represent time series with an embedding that can be processed using conventional tools. % or we can represent the time series with an embedding which can be treated by classical tools.
 
@@ -73,30 +87,26 @@ This type of data is prevalent in biology and medicine for recording physiologic
 %      While current unsupervised methods separate representations into clusters, our focus is on the inter-individual variability within one cluster.
 %       Typically, we aim to perform Principal Components Analysis (PCA) \cite{bro2014principal} on individual patterns with similar shapes. The representation is dependant on the input dataset.
 
-This type of question has already been addressed in shape analysis \cite{vaillant2004statistics}, a community focusing on the statistical analysis of various mathematical objects invariant under rotations, dilations, or time parameterization.
-The main idea is to represent these different objects in a complete Riemannian manifold $(\mathcal{M},\mathbf{g})$ with a metric $\mathbf{g}$ adapted to the geometry of the problem \cite{miller2006geodesic}.
- Then, any set of points in $\mathcal{M}$ can be represented as points in the tangent space of their Frechet mean $\mathbf{m}_0$ \cite{pal2017riemannian,le2001locating} by considering their logarithms.
-  %Thus, instead of working on the manifold $\mathcal{M}$, we can work in the tangent space, which is an Euclidean space at $\mathbf{m}_0$.
+%This type of question has already been addressed in shape analysis \cite{vaillant2004statistics}, a community focusing on the statistical analysis of various mathematical objects invariant under rotations, dilations, or time parameterization.
+%However, time series data with their specific structure has not been properly adressed.
 
- \citet{srivastava2010shape,heo2024logistic} address the representation of curves $C:\msi \to \Rset^d$, $\msi\subset \Rset$, having unitary velocity by using the Square-Root Velocity (SRV) representation.
- However, the case of time series has not been adequately addressed, considering the special attention the time axis requires.
- For instance, the SRV representation applies after a reparametrization in time, such that the original time evolution of the time series is not represented in the final features.
-
- To tackle this issue, we propose not to see time series through their curve $\{s_t:\eqsp t\in\msi\}$, but through their graph $\msg(s)=\{(t,s(t)):\eqsp t\in \msi\} $. 
- Then, we follow the Large Deformation Diffeomorphic Metric Mapping (LDDMM) framework \cite{beg2005computing,vaillant2004statistics} to analyze these graphs.
+ First, we propose not to see time series through their curve $\{s_t:\eqsp t\in\msi\}$, but through their graph $\msg(s)=\{(t,s(t)):\eqsp t\in \msi\} $. 
+ Then, building on the shape analysis litterature, we follow the Large Deformation Diffeomorphic Metric Mapping (LDDMM) framework \cite{beg2005computing,vaillant2004statistics} to analyze these graphs.
   The idea is to represent each element $(\msg(s^j))_{j\in[N]}$ of the dataset as the transformation of a reference graph $\msg(\mathbf{s}_0)$ by a diffeomorphism.
   Then, the diffeomorphism is learned by integrating an ordinary differential equation parameterized by a Reproducing Kernel Hilbert Space (RKHS).
    The parameters $(\alpha_j)_{j\in[N]}$ encoding the diffemorphisms $(\phi_j)_{j\in[N]}$ yield the representation features of the graphs $(\msg(s^j))_{j\in[N]}$.
-    Finally, these features encoding the shapes can feed any statistical or machine learning model.
-   Compared to Normalizing Flows \cite{rezende2015variational,kobyzev2020normalizing} or Continuous Normalizing Flows \cite{chen2018neural,grathwohl2019scalable,salman2018deep} for diffeomorphisms learning, the number of hyperparameters to tune is minimal, and the related optimization problem is well-posed.
-   However, a graph time series transformation by a general diffeomorphism is not always a graph time series, see e.g. \Cref{fig:diffeo}.
+    Finally, these features encoding the shapes can feed any statistical or machine learning model as in URL.
+
+   However, a graph time series transformation by a general diffeomorphism is not always a graph time series, see e.g. \Cref{fig:diffeo}, thus a graph time series is more than a simple 1D curve \cite{glaunes2008large}.
+   Our contributions arise from this observation.
+   %In this regard, this work is not an application of LDDMM to 1D curves \cite{glaunes2008large}.
     We solve this issue by specifying the class of diffeomorphisms to consider and showing how to learn them.
      This change is fruitful in representing time transformation as illustrated in \Cref{fig:transport}.
 
      Our contributions can be summarized as follows:
      \begin{itemize}
        \item We propose an unsupervised method (TS-LDDMM) to analyze inter-individual variability of shapes in a time series dataset.
-       We especially motivate our extension of LDDMM to time series by introducing a theoretical framework.
+       We especially motivate our extension of LDDMM to time series by introducing a theoretical framework with a representation theorem for time series graph (\Cref{theorem:representation}) and kernels related to their structure (\Cref{lemma:choice_of_kernel_V}).
        \item We demonstrate the identifiability of the model by estimating the true generating parameter of synthetic data, and we highlight the sensitivity of our method with respect to its hyperparameters, also providing guidelines for tuning.
        We highlight the \textit{interpretability} of TS-LDDMM for studying the inter-individual variability in a clinical dataset.
         We illustrate the quantitative interest of the representation on classification tasks on real shape-based datasets.
@@ -140,6 +150,25 @@ The main idea is to represent these different objects in a complete Riemannian m
 \end{figure*}
 
 \section{Related Works}
+The main idea is to represent these different objects in a complete Riemannian manifold $(\mathcal{M},\mathbf{g})$ with a metric $\mathbf{g}$ adapted to the geometry of the problem \cite{miller2006geodesic}.
+ Then, any set of points in $\mathcal{M}$ can be represented as points in the tangent space of their Frechet mean $\mathbf{m}_0$ \cite{pal2017riemannian,le2001locating} by considering their logarithms.
+% Depending on the tasks, e.g classification \cite{ismail2019deep}, anomaly detection \cite{blazquez2021review}, forecasting \cite{torres2021deep} or clustering , a meaningful vector representation of time series can be derived.
+%  Initially, in this research, handcrafted features were computed from time series, such as the mean, wavelets \cite{percival2000wavelet}, or Fourier coefficients \cite{bloomfield2004fourier}, depending on expert knowledge.
+%   However, this approach is time-consuming and potentially biased by priors.
+%   Observing the success of neural networks, features are automatically extracted by choosing an objective to optimize and a neural architecture tailored to the problem.
+%    Taking a set of time series as input, features can be identified by solving specific supervised tasks—classification \cite{ismail2019deep}, anomaly detection \cite{blazquez2021review}, forecasting \cite{torres2021deep}— or in an unsupervised manner by deriving labels from the inputs \cite{meng2023unsupervised}.
+%    \thi{Rajouter une image, et une phrase par rapport au temps}
+%    Although the deep learning approach is particularly effective for supervised tasks, annotated datasets are rare, making unsupervised methods more practical.
+%    These methods have proven effective in identifying different patterns in the data and providing a vector representation that segregates well into clusters \cite{meng2023unsupervised}.
+%     However, they may lack precision on small and homogeneous datasets with only one typical shape, often arising from clinical experiments addressing a specific phenomenon (refer to figures).
+%      While current unsupervised methods separate representations into clusters, our focus is on the inter-individual variability within one cluster.
+%       Typically, we aim to perform Principal Components Analysis (PCA) \cite{bro2014principal} on individual patterns with similar shapes. The representation is dependant on the input dataset.
+
+ %\citet{srivastava2010shape,heo2024logistic} address the representation of curves $C:\msi \to \Rset^d$, $\msi\subset \Rset$, having unitary velocity by using the Square-Root Velocity (SRV) representation.
+ %However, the case of time series has not been adequately addressed, considering the special attention the time axis requires.
+ %For instance, the SRV representation applies after a reparametrization in time, such that the original time evolution of the time series is not represented in the final features.
+ In this regard, this work is not an application of LDDMM to 1D curves \cite{glaunes2008large}.
+ Compared to Normalizing Flows \cite{rezende2015variational,kobyzev2020normalizing} or Continuous Normalizing Flows \cite{chen2018neural,grathwohl2019scalable,salman2018deep} for diffeomorphisms learning, the number of hyperparameters to tune is minimal, and the related optimization problem is well-posed.
 \section{Notations}
 We denote by integer ranges by $[k:l]=\{k,\ldots,l\}\subset \mathcal{P}(\Zset)$ and $ [l]=[1:l]$ with $k,l\in \Nset$,
 by $\rmC^m(\msi,\mse)$ the set of $m$-times continously differentiable function defined on an open set $\msu$ to a normed vector space $\mse$,
@@ -499,6 +528,7 @@ Similarly, selecting a loss function on sets $\mathscr{L}$ that considers the te
     parametrized by the widths $\sigma_{T,0},\sigma_{T,1},\sigma_x>0$ and the constants $c_0,c_1>0$.
 This choice for $K_\msg$ is motivated by the representation \Cref{theorem:representation} and the following result. 
     \begin{lemma}
+      \label{lemma:choice_of_kernel_V}
       If we denote by $\msv$ the RKHS associated with the kernel $K_{\msg}$, then for any vector field $v$ generated by \eqref{eq:integration} with $v_0$ satisfying \eqref{eq:def_v0},
        there exist $\gamma \in \msd(\Rset) $ and $f\in \rmC^1(\Rset^{d+1},\Rset^d)$ such that $\phi^v=\Psi_\gamma\circ\Phi_f $.
     \end{lemma}

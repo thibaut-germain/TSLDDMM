@@ -91,16 +91,24 @@
 
 
 \begin{abstract}
+    [TO CHANGE]
     Analyzing the inter-individual variability within a cluster of time series is particularly appealing in medicine and biology.
     Individuals have specificities depending on their genes or disease
      while sharing, on average, a similar pattern in the features of their corresponding time series. For instance, an electrocardiogram presents a typical shape of the heartbeat, which varies depending on the individual.
     In this paper, we propose an unsupervised representation method (TS-LDDMM) to analyze inter-individual variability of time series dataset.
     Inspired by the shape analysis literature, we extend Large Deformation Diffeomorphic Metric Mapping (LDDMM) to time series, considering the temporal evolution as their distinctive feature.  
-    Given a dataset of $N$ individual's time series $(s^j)_{j\in[N]}$,
-     we learn a time series of reference $\mathbf{s}_0$ encoding the common part of the individuals as well as diffeomorphisms $(\phi^j)_{j\in[N]}$ encoding the specificities of each individual:
-     $s^j$ is seen as the transformation of $\mathbf{s}_0$ by $\phi_j$.
-     Then, the parameters $(\alpha_j)_{j\in[N]}$ encoding the diffeomorphisms $(\phi^j)_{j\in[N]}$ are used as the features representation related to each time series $s^j$.
-     These features can be post-processed with any statistical or machine learning tools. 
+    % Given a dataset of $N$ individual's time series $(s^j)_{j\in[N]}$,
+    %  we learn a time series of reference $\mathbf{s}_0$ encoding the common part of the individuals as well as diffeomorphisms $(\phi^j)_{j\in[N]}$ encoding the specificities of each individual:
+    %  $s^j$ is seen as the transformation of $\mathbf{s}_0$ by $\phi_j$.
+    %  Then, the parameters $(\alpha_j)_{j\in[N]}$ encoding the diffeomorphisms $(\phi^j)_{j\in[N]}$ are used as the features representation related to each time series $s^j$.
+    In this paper, we propose an unsupervised representation learning method (URL) for time series \cite{trirat2024universal,meng2023unsupervised} by giving a special attention to their \textit{shapes} for studying inter-variability in biomedical applications.
+    In particular, the method handle time series with \textbf{irregular sampling} and \textbf{different sizes}.
+    This work belongs to the shape analysis literrature: %which focus on the statistical analysis of various mathematical objects invariant under rotations, dilations, or time parameterization.
+     we extend Large Deformation Diffeomorphic Metric Mapping (LDDMM) \cite{beg2005computing,vaillant2004statistics} to the case of time series data by applying difformations to their graph.
+    However, time series graph have more structure than 1D curves:
+     a graph time series transformation by a general diffeomorphism is not always a graph time series. Our contribution arise from this observation.
+    This work is at the crossroad of URL for time series and shape analysis; we hope it will benefit to both communities.
+    % These features can be post-processed with any statistical or machine learning tools. 
      We demonstrate the advantages of our representation compared to existing methods using synthetic data and real-world examples, motivated by applications in medicine.
 \end{abstract}
 

@@ -4,45 +4,45 @@ The top-level auxiliary file: neurips_2024_to_submit.aux
 The style file: plain.bst
 Database file #1: ref.bib
 Warning--empty journal in asgari2023clustering
-You've used 57 entries,
+You've used 45 entries,
             2118 wiz_defined-function locations,
-            825 strings with 15609 characters,
-and the built_in function-call counts, 21517 in all, are:
-= -- 2091
-> -- 1239
-< -- 9
-+ -- 495
-- -- 430
-* -- 1652
-:= -- 3640
-add.period$ -- 172
-call.type$ -- 57
-change.case$ -- 382
+            759 strings with 13493 characters,
+and the built_in function-call counts, 17140 in all, are:
+= -- 1657
+> -- 1000
+< -- 8
++ -- 399
+- -- 348
+* -- 1298
+:= -- 2896
+add.period$ -- 136
+call.type$ -- 45
+change.case$ -- 306
 chr.to.int$ -- 0
-cite$ -- 58
-duplicate$ -- 707
-empty$ -- 1488
-format.name$ -- 430
-if$ -- 4357
+cite$ -- 46
+duplicate$ -- 569
+empty$ -- 1179
+format.name$ -- 348
+if$ -- 3482
 int.to.chr$ -- 0
-int.to.str$ -- 57
-missing$ -- 58
-newline$ -- 287
-num.names$ -- 114
-pop$ -- 347
+int.to.str$ -- 45
+missing$ -- 45
+newline$ -- 227
+num.names$ -- 90
+pop$ -- 286
 preamble$ -- 1
-purify$ -- 327
+purify$ -- 262
 quote$ -- 0
-skip$ -- 509
+skip$ -- 418
 stack$ -- 0
-substring$ -- 1362
-swap$ -- 136
-text.length$ -- 9
+substring$ -- 1055
+swap$ -- 119
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 224
+type$ -- 178
 warning$ -- 1
-while$ -- 202
-width$ -- 59
-write$ -- 617
+while$ -- 155
+width$ -- 47
+write$ -- 486
 (There was 1 warning)
