@@ -97,17 +97,17 @@
    The parameters $(\alpha_j)_{j\in[N]}$ encoding the diffemorphisms $(\phi_j)_{j\in[N]}$ yield the representation features of the graphs $(\msg(s^j))_{j\in[N]}$.
     Finally, these features encoding the shapes can feed any statistical or machine learning model as in URL.
 
-   However, a graph time series transformation by a general diffeomorphism is not always a graph time series, see e.g. \Cref{fig:diffeo}, thus a graph time series is more than a simple 1D curve \cite{glaunes2008large}.
+   However, a graph time series transformation by a general diffeomorphism is not always a graph time series, see e.g. \Cref{fig:diffeo}, thus a graph time series is more than a simple curve \cite{glaunes2008large}.
    Our contributions arise from this observation.
    %In this regard, this work is not an application of LDDMM to 1D curves \cite{glaunes2008large}.
     We solve this issue by specifying the class of diffeomorphisms to consider and showing how to learn them.
      This change is fruitful in representing time transformation as illustrated in \Cref{fig:transport}.
-     In particular, the method can handle \textit{irregularly sampled} time series having \textit{different sizes}.
+     %In particular, the method can handle \textit{irregularly sampled} time series with \textit{variable sizes}.
 
      Our contributions can be summarized as follows:
      \begin{itemize}
-       \item We propose an unsupervised method (TS-LDDMM) to analyze inter-individual variability of shapes in a time series dataset.
-       We especially motivate our extension of LDDMM to time series by introducing a theoretical framework with a representation theorem for time series graph (\Cref{theorem:representation}) and kernels related to their structure (\Cref{lemma:choice_of_kernel_V}).
+       \item We propose an unsupervised method (TS-LDDMM) to analyze inter-individual variability of shapes in a time series dataset. In particular, the method can handle \textit{irregularly sampled} time series with \textit{variable sizes}.
+       \item We motivate our extension of LDDMM to time series by introducing a theoretical framework with a representation theorem for time series graph (\Cref{theorem:representation}) and kernels related to their structure (\Cref{lemma:choice_of_kernel_V}).
        \item We demonstrate the identifiability of the model by estimating the true generating parameter of synthetic data, and we highlight the sensitivity of our method with respect to its hyperparameters, also providing guidelines for tuning.
        We highlight the \textit{interpretability} of TS-LDDMM for studying the inter-individual variability in a clinical dataset.
         We illustrate the quantitative interest of the representation on classification tasks on real shape-based datasets.
