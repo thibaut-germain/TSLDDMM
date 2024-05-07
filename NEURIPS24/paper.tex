@@ -36,13 +36,13 @@
 %\sam{Aller droit au but, se servir de la section related works pour détailler, notamment enlever le premier paragraphe dire directement que l'on veut faire du unsupervised represnetation learning for time series mais en s'intéressant par ticulièrement à la notion de shape.
 %Parler du contexte biomédical, définir la shape. Parler de shape analysis, introduire notre problème de représentation, dire que nous on propose une structure adapté aux time series.}
 
-In this paper, we propose an unsupervised representation learning method (URL) for time series \cite{trirat2024universal,meng2023unsupervised} by giving a special attention to their \textit{shapes} for studying inter-variability in biomedical applications.
-In particular, the method handle time series with \textbf{irregular sampling} and \textbf{different sizes}.
-This work belongs to the shape analysis literrature: %which focus on the statistical analysis of various mathematical objects invariant under rotations, dilations, or time parameterization.
- we extend Large Deformation Diffeomorphic Metric Mapping (LDDMM) \cite{beg2005computing,vaillant2004statistics} to the case of time series data by applying difformations to their graph.
-However, time series graph have more structure than 1D curves:
- a graph time series transformation by a general diffeomorphism is not always a graph time series.
-This work is at the crossroad of URL for time series and shape analysis; we hope it will benefit to both communities.
+% In this paper, we propose an unsupervised representation learning method (URL) for time series \cite{trirat2024universal,meng2023unsupervised} by giving a special attention to their \textit{shapes} for studying inter-variability in biomedical applications.
+% In particular, the method handle time series with \textbf{irregular sampling} and \textbf{different sizes}.
+% This work belongs to the shape analysis literrature: %which focus on the statistical analysis of various mathematical objects invariant under rotations, dilations, or time parameterization.
+%  we extend Large Deformation Diffeomorphic Metric Mapping (LDDMM) \cite{beg2005computing,vaillant2004statistics} to the case of time series data by applying difformations to their graph.
+% However, time series graph have more structure than 1D curves:
+%  a graph time series transformation by a general diffeomorphism is not always a graph time series.
+% This work is at the crossroad of URL for time series and shape analysis; we hope it will benefit to both communities.
 %A time series is a set of values indexed by time \cite{trirat2024universal}.
 %This type of data is prevalent in biology and medicine for recording physiological time series , as well as in the broader context of the Internet of Things sensors \cite{fathy2018large} and measurements in physical systems \cite{luo2021deep}.
  %However, due to the nature of such data, which have different sample sizes and incorporate a temporal evolution, classical statistical analysis, and machine learning methods need refinement \cite{anderson2011statistical}.
@@ -53,7 +53,7 @@ This work is at the crossroad of URL for time series and shape analysis; we hope
   In physiology, studying the different \textit{shapes} in a time series related to biological phenomena and their variations according to individual or pathology is common.
   However, a \textit{shape} has no clear definition; it is more an intuitive way to speak about the silhouette of a pattern in a time series. In this paper, we refer to as the shape of a time series, the graph of this signal.
 
-  Although a community structure with representatives can be learned in an unsupervised way using contrastive loss \cite{franceschi2019unsupervised,tonekaboni2021unsupervised,meng2023unsupervised}
+  Although a community structure with representatives can be learned in an unsupervised way \cite{trirat2024universal,meng2023unsupervised} using contrastive loss \cite{franceschi2019unsupervised,tonekaboni2021unsupervised,meng2023unsupervised}
   or similarity measures \cite{asgari2023clustering,germain2023unsupervised,paparrizos2015k,ye2009time},
      studying the inter-individual variability of shapes within a cluster \cite{niennattrakul2007inaccuracies,shirato2023identifying} is still an open problem in URL.
      %In this paper, we aim to go beyond group structure by giving an unsupervised data-driven method that represents the specificity of each individual's shape \cite{vidal2021perceptual}.
@@ -91,7 +91,7 @@ This work is at the crossroad of URL for time series and shape analysis; we hope
 %However, time series data with their specific structure has not been properly adressed.
 
  First, we propose not to see time series through their curve $\{s_t:\eqsp t\in\msi\}$, but through their graph $\msg(s)=\{(t,s(t)):\eqsp t\in \msi\} $. 
- Then, building on the shape analysis litterature, we follow the Large Deformation Diffeomorphic Metric Mapping (LDDMM) framework \cite{beg2005computing,vaillant2004statistics} to analyze these graphs.
+ Then, building on the shape analysis litterature \cite{beg2005computing,vaillant2004statistics}, we follow the Large Deformation Diffeomorphic Metric Mapping (LDDMM) framework \cite{beg2005computing,vaillant2004statistics} to analyze these graphs.
   The idea is to represent each element $(\msg(s^j))_{j\in[N]}$ of the dataset as the transformation of a reference graph $\msg(\mathbf{s}_0)$ by a diffeomorphism.
   Then, the diffeomorphism is learned by integrating an ordinary differential equation parameterized by a Reproducing Kernel Hilbert Space (RKHS).
    The parameters $(\alpha_j)_{j\in[N]}$ encoding the diffemorphisms $(\phi_j)_{j\in[N]}$ yield the representation features of the graphs $(\msg(s^j))_{j\in[N]}$.
@@ -102,6 +102,7 @@ This work is at the crossroad of URL for time series and shape analysis; we hope
    %In this regard, this work is not an application of LDDMM to 1D curves \cite{glaunes2008large}.
     We solve this issue by specifying the class of diffeomorphisms to consider and showing how to learn them.
      This change is fruitful in representing time transformation as illustrated in \Cref{fig:transport}.
+     In particular, the method can handle \textit{irregularly sampled} time series having \textit{different sizes}.
 
      Our contributions can be summarized as follows:
      \begin{itemize}
