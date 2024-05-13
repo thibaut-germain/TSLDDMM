@@ -220,29 +220,45 @@ $v \in \rml^2([0,1],\msv) \mapsto \mathscr{L}(\phi^{v}.\mathbf{x},\mathbf{y})$, 
    In addition, we have to find a parametric family $\msv_{\Theta} \subset \rml^2([0,1],\msv)$, parameterized by $\Theta$, which allows us to solve this minimization problem efficiently. 
 
 %\paragraph*{Regularizing the problem to derive uniqueness.}
-It has been proposed in \cite{miller2006geodesic} to interpret $\msv$ as a tangent space relative to the space of deformations.
-Following this geometric point of view, geodesics can be constructed on the space of deformations by using the norm of $\msv$. 
-More precisely, on the group of diffeomorphisms $\msh=\{ \phi^v:\eqsp v\in \rml^2([0,1],\msv)\}$,
- the following squared norm can be defined
+It has been proposed in \cite{miller2006geodesic} to interpret $\msv$ as a tangent space relative to the group of diffeomorphisms $\msh=\{ \phi^v:\eqsp v\in \rml^2([0,1],\msv)\}$.
+Following this geometric point of view, geodesics can be constructed on $\msh$ by using the following squared norm 
  \begin{equation}
   \label{eq:geodesics_original}
     \mathscr{R}^2: g\in \msh\mapsto \inf_{ v\in \rml^2([0,1],\msv):\eqsp g=\phi^v} \int_0^1 || v_\tau||_\msv^2\dd \tau
  \end{equation}
-     as the minimal "energy" needed to perform the deformation $g$.
-By \citep[Theorem 6]{glaunes2005transport}, there exists $v^*\in \rml^2([0,1],\msv)$ such that the previous infimum is a minimum in $v^*$ such that $(\phi^{v^*}_\tau)_{\tau\in[0,1]}$ can be understood as the geodesic between the identity function and $g$.
-However, given a diffeomorphism $g$, computing $\mathscr{R}(g)$ is intractable in most cases. 
-To circumvent this issue, another characterization of geodesics can be considered.
- As in Riemannian geometry, 
- instead of defining geodesics from their starting and end points, it is possible to define them from their starting point (here, the identity function) and an initial velocity $v_0\in\msv$.
- \sam{To CHANGE}
- In other words, an Exponential map on deformations is wanted:
-given $v_0\in\msv$, it has been suggested to generate diffeomorphisms as $\varphi^{\{v_0\}}=\phi^v$ with
+By deriving differential constraints related to the minimum of \eqref{eq:geodesics_original} and using Cauchy lipshcitz conditions, geodesics can be defined only by giving the starting point and the initial velocity $v_0\in \msv$, as straight lines in Euclidean space.
+Denoting by $w(v_0)$ the geodesic starting from the identity with inital velocity $v_0$, the exponential map is defined as $\varphi^{\{v_0\}}\triangleq \phi^v$ and the previous matching problem becomes a \textit{geodesic shooting problem}:
+ \begin{equation}
+  \label{eq:geodesics_shooting}
+  \inf_{v_0 \in \msv} \mathscr{L}(\varphi^{\{v_0\}}.\mathbf{x},\mathbf{y}).
+ \end{equation}
+ Using $\varphi^{\{v_0\}}$ instead of $\phi^v$ for any $v\in \rml^2([0,1],\msv)$ regularizes the problem and induces a sparse representation for the learning diffeomorphisms.
+ Moreover, by setting $\msv$ as an RKHS, the geodesic shooting problem has a unique solution and becomes tractable, as described in the next section.
+
+
+
+
+% More precisely, on the group of diffeomorphisms $\msh=\{ \phi^v:\eqsp v\in \rml^2([0,1],\msv)\}$,
+%  the following squared norm can be defined
 %  \begin{equation}
-%   \label{eq:geodesics_shooting}
-%   v=\underset{w\in \rml^2([0,1],\msv):\eqsp w_0=v_0}{\argmin} \int_0^1 || w_\tau||_\msv^2\dd \tau\eqsp ,
+%   \label{eq:geodesics_original}
+%     \mathscr{R}^2: g\in \msh\mapsto \inf_{ v\in \rml^2([0,1],\msv):\eqsp g=\phi^v} \int_0^1 || v_\tau||_\msv^2\dd \tau
 %  \end{equation}
-% since with this definition it holds $\mathscr{R}^2(\phi^v)= \int_0^1 || v_\tau||_\msv^2\dd \tau $.
- By setting $\msv$ as an RKHS, the geodesic shooting problem \eqref{eq:geodesics_shooting} has a unique solution and becomes tractable, as described in the next section.
+%      as the minimal "energy" needed to perform the deformation $g$.
+% By \citep[Theorem 6]{glaunes2005transport}, there exists $v^*\in \rml^2([0,1],\msv)$ such that the previous infimum is a minimum in $v^*$ such that $(\phi^{v^*}_\tau)_{\tau\in[0,1]}$ can be understood as the geodesic between the identity function and $g$.
+% However, given a diffeomorphism $g$, computing $\mathscr{R}(g)$ is intractable in most cases. 
+% To circumvent this issue, another characterization of geodesics can be considered.
+%  As in Riemannian geometry, 
+%  instead of defining geodesics from their starting and end points, it is possible to define them from their starting point (here, the identity function) and an initial velocity $v_0\in\msv$.
+%  \sam{To CHANGE}
+%  %In other words, an Exponential map on deformations is wanted:
+% given $v_0\in\msv$, it has been suggested to generate diffeomorphisms as $\varphi^{\{v_0\}}=\phi^v$ with
+% %  \begin{equation}
+% %   \label{eq:geodesics_shooting}
+% %   v=\underset{w\in \rml^2([0,1],\msv):\eqsp w_0=v_0}{\argmin} \int_0^1 || w_\tau||_\msv^2\dd \tau\eqsp ,
+% %  \end{equation}
+% % since with this definition it holds $\mathscr{R}^2(\phi^v)= \int_0^1 || v_\tau||_\msv^2\dd \tau $.
+%  By setting $\msv$ as an RKHS, the geodesic shooting problem \eqref{eq:geodesics_shooting} has a unique solution and becomes tractable, as described in the next section.
 % Moreover, we have $\mathscr{R}(\varphi^{\{v_0\}})=||v_0||_\msv$ such that we can work with $v_0\in \msv $ instead of $v\in \rml^2([0,1],\msv)$.
 %  Therefore, compared to CNF, only $v_0$ is parametrized by using the geodesic structure and not each $v_\tau$ for any $\tau\in[0,1]$.
 %  Moreover, we have $\mathscr{R}(\phi^{\{v_0\}})=||v_0||_\msv$ such that we can work with $v_0\in \msv $ instead of $v\in L^2([0,1],\msv)$.
