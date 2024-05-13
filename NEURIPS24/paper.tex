@@ -151,8 +151,22 @@
 \end{figure*}
 
 \section{Related Works}
-The main idea is to represent these different objects in a complete Riemannian manifold $(\mathcal{M},\mathbf{g})$ with a metric $\mathbf{g}$ adapted to the geometry of the problem \cite{miller2006geodesic}.
+Shape analysis focus on the statistical analysis of various mathematical objects invariant under rotations, dilations, or time parameterization.
+ The main idea is to represent these different objects in a complete Riemannian manifold $(\mathcal{M},\mathbf{g})$ with a metric $\mathbf{g}$ adapted to the geometry of the problem \cite{miller2006geodesic}.
  Then, any set of points in $\mathcal{M}$ can be represented as points in the tangent space of their Frechet mean $\mathbf{m}_0$ \cite{pal2017riemannian,le2001locating} by considering their logarithms.
+ The goal is then to find a well suited Riemannian struvture according to the studied object.
+
+ A time series graph can be seen a curve and LDDMM structure is relevant to tackle curves as presented in \cite{glaunes2008large}. %, LDDMM structure is relevant to tackle curves and
+  However, time series graph has more structure as depicted in \Cref{fig:diffeo} due to the temporal evolution. 
+  \cite{qiu2009time} tracks anatomical shape changes in serial images using LDDMM, but distinguish from us by including the temporal evolution at a higher level: the goal is to perform longitudinal data modeling.
+
+  Leaving the LDDMM representation, \cite{srivastava2010shape,heo2024logistic} address the representation of curves having unitary velocity by using the Square-Root Velocity (SRV) representation.
+ However, the SRV representation applies after a reparametrization in time, such that the original time evolution of the time series is not represented in the final features.
+  Again, the time series graph structure is not respected.
+   Very recently in a functionnal data analysis framework \cite{wu2024shape} (Shape-FPCA) improved by giving also a representation for the original time evolution.
+    Nevertheless, this methods applies only on time series of \textit{same size} and is made for \textit{continuous objects}, making the estimation more sensitive to noise.
+  %However, the case of time series has not been adequately addressed, considering the special attention the time axis requires.
+  %For instance, the SRV representation applies after a reparametrization in time, such that the original time evolution of the time series is not represented in the final features.
 % Depending on the tasks, e.g classification \cite{ismail2019deep}, anomaly detection \cite{blazquez2021review}, forecasting \cite{torres2021deep} or clustering , a meaningful vector representation of time series can be derived.
 %  Initially, in this research, handcrafted features were computed from time series, such as the mean, wavelets \cite{percival2000wavelet}, or Fourier coefficients \cite{bloomfield2004fourier}, depending on expert knowledge.
 %   However, this approach is time-consuming and potentially biased by priors.
@@ -164,12 +178,12 @@ The main idea is to represent these different objects in a complete Riemannian m
 %     However, they may lack precision on small and homogeneous datasets with only one typical shape, often arising from clinical experiments addressing a specific phenomenon (refer to figures).
 %      While current unsupervised methods separate representations into clusters, our focus is on the inter-individual variability within one cluster.
 %       Typically, we aim to perform Principal Components Analysis (PCA) \cite{bro2014principal} on individual patterns with similar shapes. The representation is dependant on the input dataset.
-
+[Ajouter littérature de URL demander à Sisi ?]
  %\citet{srivastava2010shape,heo2024logistic} address the representation of curves $C:\msi \to \Rset^d$, $\msi\subset \Rset$, having unitary velocity by using the Square-Root Velocity (SRV) representation.
  %However, the case of time series has not been adequately addressed, considering the special attention the time axis requires.
  %For instance, the SRV representation applies after a reparametrization in time, such that the original time evolution of the time series is not represented in the final features.
- In this regard, this work is not an application of LDDMM to 1D curves \cite{glaunes2008large}.
- Compared to Normalizing Flows \cite{rezende2015variational,kobyzev2020normalizing} or Continuous Normalizing Flows \cite{chen2018neural,grathwohl2019scalable,salman2018deep} for diffeomorphisms learning, the number of hyperparameters to tune is minimal, and the related optimization problem is well-posed.
+ %In this regard, this work is not an application of LDDMM to 1D curves \cite{glaunes2008large}.
+ %Compared to Normalizing Flows \cite{rezende2015variational,kobyzev2020normalizing} or Continuous Normalizing Flows \cite{chen2018neural,grathwohl2019scalable,salman2018deep} for diffeomorphisms learning, the number of hyperparameters to tune is minimal, and the related optimization problem is well-posed.
 \section{Notations}
 We denote by integer ranges by $[k:l]=\{k,\ldots,l\}\subset \mathcal{P}(\Zset)$ and $ [l]=[1:l]$ with $k,l\in \Nset$,
 by $\rmC^m(\msi,\mse)$ the set of $m$-times continously differentiable function defined on an open set $\msu$ to a normed vector space $\mse$,
@@ -224,9 +238,9 @@ It has been proposed in \cite{miller2006geodesic} to interpret $\msv$ as a tange
 Following this geometric point of view, geodesics can be constructed on $\msh$ by using the following squared norm 
  \begin{equation}
   \label{eq:geodesics_original}
-    \mathscr{R}^2: g\in \msh\mapsto \inf_{ v\in \rml^2([0,1],\msv):\eqsp g=\phi^v} \int_0^1 || v_\tau||_\msv^2\dd \tau
+    \mathscr{R}^2: g\in \msh\mapsto \inf_{ v\in \rml^2([0,1],\msv):\eqsp g=\phi^v} \int_0^1 || v_\tau||_\msv\dd \tau
  \end{equation}
-By deriving differential constraints related to the minimum of \eqref{eq:geodesics_original} and using Cauchy lipshcitz conditions, geodesics can be defined only by giving the starting point and the initial velocity $v_0\in \msv$, as straight lines in Euclidean space.
+By deriving differential constraints related to the minimum of \eqref{eq:geodesics_original} and using Cauchy lipshcitz conditions, geodesics can be defined only by giving the starting point and the initial velocity $v_0\in \msv$ \cite{miller2006geodesic}, as straight lines in Euclidean space.
 Denoting by $w(v_0)$ the geodesic starting from the identity with inital velocity $v_0$, the exponential map is defined as $\varphi^{\{v_0\}}\triangleq \phi^v$ and the previous matching problem becomes a \textit{geodesic shooting problem}:
  \begin{equation}
   \label{eq:geodesics_shooting}
@@ -707,7 +721,7 @@ For further readings on curves and surfaces representation as varifolds, readers
 
 \section{Experiments}
 \label{section:experiments}
-
+[L'intro est ce necessaire ?]
 
 
 First, we show on synthetic data that the proposed representation is identifiable provided that the hyperparameters and the reference graph are wisely selected, i.e.,

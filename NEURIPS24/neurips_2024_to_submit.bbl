@@ -119,6 +119,12 @@ Will Grathwohl, Ricky~TQ Chen, Jesse Bettencourt, and David Duvenaud.
 \newblock In {\em International Conference on Learning Representations},
   page~7, 2019.
 
+\bibitem{heo2024logistic}
+Tae-Young Heo, Joon~Myoung Lee, Myung~Hun Woo, Hyeongseok Lee, and Min~Ho Cho.
+\newblock Logistic regression models for elastic shape of curves based on
+  tangent representations.
+\newblock {\em Journal of the Korean Statistical Society}, pages 1--19, 2024.
+
 \bibitem{hoymann2012lung}
 Heinz~Gerd Hoymann.
 \newblock Lung function measurements in rodents in safety pharmacology studies.
@@ -207,6 +213,12 @@ John Paparrizos and Luis Gravano.
 \newblock In {\em Proceedings of the 2015 ACM SIGMOD international conference
   on management of data}, pages 1855--1870, 2015.
 
+\bibitem{qiu2009time}
+Anqi Qiu, Marilyn Albert, Laurent Younes, and Michael~I Miller.
+\newblock Time sequence diffeomorphic metric mapping and parallel transport
+  track time-dependent shape changes.
+\newblock {\em NeuroImage}, 45(1):S51--S60, 2009.
+
 \bibitem{rezende2015variational}
 Danilo Rezende and Shakir Mohamed.
 \newblock Variational inference with normalizing flows.
@@ -223,6 +235,12 @@ Gota Shirato, Natalia Andrienko, and Gennady Andrienko.
 \newblock Identifying, exploring, and interpreting time series shapes in
   multivariate time intervals.
 \newblock {\em Visual Informatics}, 7(1):77--91, 2023.
+
+\bibitem{srivastava2010shape}
+Anuj Srivastava, Eric Klassen, Shantanu~H Joshi, and Ian~H Jermyn.
+\newblock Shape analysis of elastic curves in euclidean spaces.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  33(7):1415--1428, 2010.
 
 \bibitem{tonekaboni2021unsupervised}
 Sana Tonekaboni, Danny Eytan, and Anna Goldenberg.
@@ -247,6 +265,11 @@ Kai Wang, Youjin Zhao, Qingyu Xiong, Min Fan, Guotan Sun, Longkun Ma, Tong Liu,
 \newblock Research on healthy anomaly detection model based on deep learning
   from multiple time-series physiological signals.
 \newblock {\em Scientific Programming}, 2016, 2016.
+
+\bibitem{wu2024shape}
+Yuexuan Wu, Chao Huang, and Anuj Srivastava.
+\newblock Shape-based functional data analysis.
+\newblock {\em TEST}, 33(1):1--47, 2024.
 
 \bibitem{ye2012heartbeat}
 Can Ye, BVK~Vijaya Kumar, and Miguel~Tavares Coimbra.
