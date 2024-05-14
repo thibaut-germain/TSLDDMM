@@ -101,18 +101,9 @@
     %  we learn a time series of reference $\mathbf{s}_0$ encoding the common part of the individuals as well as diffeomorphisms $(\phi^j)_{j\in[N]}$ encoding the specificities of each individual:
     %  $s^j$ is seen as the transformation of $\mathbf{s}_0$ by $\phi_j$.
     %  Then, the parameters $(\alpha_j)_{j\in[N]}$ encoding the diffeomorphisms $(\phi^j)_{j\in[N]}$ are used as the features representation related to each time series $s^j$.
-    In this paper, we propose an unsupervised representation learning method (URL) for time series %\cite{trirat2024universal,meng2023unsupervised}
-     by giving a special attention to their \textit{shapes} for studying inter-variability in biomedical applications.
-    In particular, the method can handle \textit{irregularly sampled} time series with \textit{variable sizes}.
-    This work belongs to the shape analysis literrature: %which focus on the statistical analysis of various mathematical objects invariant under rotations, dilations, or time parameterization.
-     we extend Large Deformation Diffeomorphic Metric Mapping (LDDMM) %\cite{beg2005computing,vaillant2004statistics}
-      to the case of time series data by applying deformations to their graph.
-    However, the method is not a simple application of LDDMM since time series graph have more structure than curves.
-     Indeed, a graph time series transformed by a general diffeomorphism is not always a graph time series.
-      We solve this issue by establishing a representation theorem on time series graph and derive its consequences on LDDMM.
-    This work is at the crossroad of URL for time series and shape analysis; we hope it will benefit to both communities.
-    % These features can be post-processed with any statistical or machine learning tools. 
-     We demonstrate the advantages of our representation compared to existing methods using synthetic data and real-world examples, motivated by applications in medicine.
+    This paper introduces an unsupervised representation learning (URL) algorithm for time series tailored to biomedical inter-individual studies. The proposed algorithm manages irregularly sampled multivariate time series of variable lengths and provides shape-based representations of temporal data.
+    At the crossroads between URL for time series and shape analysis, the algorithm extends the Large Deformation Diffeomorphic Metric Mapping (LDDMM) to the case of time series. This extension is a nontrivial application of the LDDMM framework since it involves applying deformations to the graph of time series, which have more structure than curves due to the inclusion of the temporal dimension. 
+    In this work, we establish a representation theorem for the graph of a time series and derive its consequences on the LDDMM framework. We showcase the advantages of our representation compared to existing methods using synthetic data and real-world examples motivated by biomedical applications.
 \end{abstract}
 
 
