@@ -98,14 +98,14 @@
 
 \begin{abstract}
     %TO CHANGE]
-    Analyzing the inter-individual variability within a cluster of time series is particularly appealing in medicine and biology.
-    Individuals have specificities depending on their genes or disease
-     while sharing, on average, a similar pattern in the features of their corresponding time series. For instance, an electrocardiogram presents a typical shape of the heartbeat, which varies depending on the individual.
-    This paper introduces an unsupervised representation learning (URL) algorithm for time series tailored to biomedical inter-individual studies.
-    The idea is to represent time series as the deformation of a time series of reference using Large Deformation Diffeomorphic Metric Mapping (LDDMM).
-     Once the deformations and time series of reference are learned, the vector representations of time series are then given by the parametrization of the deformation.
-     At the crossroads between URL for time series and shape analysis, the proposed algorithm manages irregularly sampled multivariate time series of variable lengths and provides shape-based representations of temporal data. 
-    In this work, we establish a representation theorem for the graph of a time series and derive its consequences on the LDDMM framework. We showcase the advantages of our representation compared to existing methods using synthetic data and real-world examples motivated by biomedical applications.
+    Analyzing inter-individual variability of physiological functions is particularly appealing in medicine and biology to describe or quantify health conditions.
+     Such analysis can be done by comparing individuals to a reference one using their time series as biomedical data.
+     % In biomedical research, time series data is a prevalent source of information, necessitating dedicated methods comparing them and averaging them to derive a valuable reference time series. 
+ This paper introduces an unsupervised representation learning (URL) algorithm for time series tailored to biomedical inter-individual studies.
+ The idea is to represent time series as deformations of a reference time series. The deformations are diffeomorphisms parameterized and learned by our method called TS-LDDMM.
+  Once the deformations and the reference time series are learned, the vector representations of individual time series are given by the parametrization of their corresponding deformation.
+   At the crossroads between URL for time series and shape analysis, the proposed algorithm handles irregularly sampled multivariate time series of variable lengths and provides shape-based representations of temporal data. 
+ In this work, we establish a representation theorem for the graph of a time series and derive its consequences on the LDDMM framework. We showcase the advantages of our representation compared to existing methods using synthetic data and real-world examples motivated by biomedical applications.
 \end{abstract}
 
 
