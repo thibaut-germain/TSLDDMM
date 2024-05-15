@@ -156,14 +156,14 @@ Shape analysis focus on the statistical analysis of various mathematical objects
  Then, any set of points in $\mathcal{M}$ can be represented as points in the tangent space of their Frechet mean $\mathbf{m}_0$ \cite{pal2017riemannian,le2001locating} by considering their logarithms.
  The goal is then to find a well suited Riemannian struvture according to the studied object.
 
- A time series graph can be seen a curve and LDDMM structure is relevant to tackle curves as presented in \cite{glaunes2008large}. %, LDDMM structure is relevant to tackle curves and
-  However, time series graph has more structure as depicted in \Cref{fig:diffeo} due to the temporal evolution. 
+ A time series graph can be seen as a curve and LDDMM structure is relevant to tackle curves as presented in \cite{glaunes2008large}. %, LDDMM structure is relevant to tackle curves and
+  However, time series graph has more structure than curves as depicted in \Cref{fig:diffeo} due to the temporal evolution. 
   \cite{qiu2009time} tracks anatomical shape changes in serial images using LDDMM, but distinguish from us by including the temporal evolution at a higher level: the goal is to perform longitudinal data modeling.
 
   Leaving the LDDMM representation, \cite{srivastava2010shape,heo2024logistic} address the representation of curves having unitary velocity by using the Square-Root Velocity (SRV) representation.
  However, the SRV representation applies after a reparametrization in time, such that the original time evolution of the time series is not represented in the final features.
   Again, the time series graph structure is not respected.
-   Very recently in a functionnal data analysis framework \cite{wu2024shape} (Shape-FPCA) improved by giving also a representation for the original time evolution.
+   Very recently in a functionnal data analysis framework, a paper \cite{wu2024shape} (Shape-FPCA) improved by giving a representation for the original time evolution.
     Nevertheless, this methods applies only on time series of \textit{same size} and is made for \textit{continuous objects}, making the estimation more sensitive to noise.
   %However, the case of time series has not been adequately addressed, considering the special attention the time axis requires.
   %For instance, the SRV representation applies after a reparametrization in time, such that the original time evolution of the time series is not represented in the final features.
