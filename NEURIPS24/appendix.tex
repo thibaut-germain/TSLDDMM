@@ -240,28 +240,77 @@ respiratory cycles whose duration exceeds 1 second; the average respiratory cycl
 300 ms. We randomly sampled 10 respiratory cycles per minute and mouse. It leads to a dataset of 
 12,732 (time, genotype)-annotated respiratory cycles. 
 
+\section{Classification: Comparison with shape analysis methods}
 
-\section{Classification datasets}
-\label{appendix:classification_dataset}
+In this section, we compare classification performances of TS-LDDMM with other state-of-the-art methods coming from shape analysis on 15 shape-based datasets of time-series.
 
-All datasets were taken from UCR/UEA archives \cite{dau2019ucr,bagnall2018uea}. Among all available 
-datasets\footnote{https://timeseriesclassification.com}, we selected 4 datasets related to time series 
-shape comparison. All datasets were downloaded with the python package aeon\footnote{https://www.aeon-toolkit.org/en/stable/} 
-which already includes the train test split. Essential dataset information is summarized in \Cref{appendix:table:datasets}.
+\paragraph{Methods} We compare TS-LDDMM with a method from function~\cite{wu2024shape}
+
+\paragraph{Protocole}
 
 \begin{table}[hbt!]
   \centering
-  \caption{Time series datasets summary for shape based classification.}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{llrrrr}
+    \toprule
+     & \textbf{Dataset} & \textbf{Shape-FPCA (2024)} & \textbf{TCLR (2024)} & \textbf{LDDMM (2008)} & \textbf{TS-LDDMM (ours)} \\
+    \midrule
+    \multirow[c]{7}{*}{Univariate} & ArrowHead & 0.18 & 0.75 & \underline{0.84} & \textbf{0.91} \\
+     & BME & 0.16 & \underline{1.00} & 0.82 & \textbf{1.00} \\
+     & ECG200 & 0.40 & 0.67 & \textbf{0.81} & \underline{0.79} \\
+     & FacesUCR & 0.08 & \underline{0.73} & 0.69 & \textbf{0.86} \\
+     & GunPoint & 0.93 & \underline{0.97} & 0.83 & \textbf{1.00} \\
+     & PhalangesOutlinesCorrect & 0.39 & \textbf{0.63} & \underline{0.53} & 0.52 \\
+     & Trace & 0.55 & \underline{1.00} & 0.46 & \textbf{1.00} \\
+    \cline{1-6}
+    \multirow[c]{8}{*}{Multivariate} & ArticularyWordRecognition & -- & -- & \underline{0.98} & \textbf{1.00} \\
+     & Cricket & -- & -- & \underline{0.77} & \textbf{0.93} \\
+     & ERing & -- & -- & \underline{0.95} & \textbf{0.98} \\
+     & Handwriting & -- & -- & \underline{0.22} & \textbf{0.44} \\
+     & Libras & -- & -- & \underline{0.56} & \textbf{0.60} \\
+     & NATOPS & -- & -- & \underline{0.82} & \textbf{0.82} \\
+     & RacketSports & -- & -- & \textbf{0.83} & \underline{0.79} \\
+     & UWaveGestureLibrary & -- & -- & \underline{0.72} & \textbf{0.81} \\
+    \bottomrule
+    \end{tabular}
+    %
+  }
+    
+\end{table}
+
+
+\section{Classification datasets}
+\label{appendix:classification_dataset}
+We selected 15 shape-based datasets (7 univariates and 8 multivariates) from the from the University of East Anglia (UEA) and the University of California Riverside (UCR) Time Series Classification Repository\footnote{https://timeseriesclassification.com} \cite{dau2019ucr,bagnall2018uea}. All datasets were downloaded with the python package aeon\footnote{https://www.aeon-toolkit.org/en/stable/}. Essential datasets information are summarized in \Cref{appendix:table:datasets} and further can be found in \cite{dau2019ucr,bagnall2018uea}.
+
+\begin{table}[hbt!]
+  \centering
+  \caption{UCR/UEA shape-based time series datasets for classification.}
+  \resizebox{\columnwidth}{!}{%
   \begin{tabular}{lllllll}
     \toprule
-    Dataset & Train size & test size & Lenghth & Number of classes & Number of dimensions & Type \\
+    & \textbf{Dataset} &  \textbf{Size} & \textbf{Lengh} & \textbf{Number of classes} & \textbf{Number of dimensions} & \textbf{Type} \\
     \midrule
-    \href{https://timeseriesclassification.com/description.php?Dataset=ArrowHead}{ArrowHead} & 36 & 175 & 251 & 3 & 1 & IMAGE \\
-    \href{https://timeseriesclassification.com/description.php?Dataset=ECG200}{ECG200} & 100 & 100 & 96 & 2 & 1 & ECG \\
-    \href{https://timeseriesclassification.com/description.php?Dataset=GunPoint}{GunPoint} & 50 & 150 & 150 & 2 & 1 & MOTION \\
-    \href{https://timeseriesclassification.com/description.php?Dataset=NATOPS}{NATOPS} & 180 & 180 & 51 & 6 & 24 & MOTION \\
+    \multirow[c]{7}{*}{Univariate} &  ArrowHead & 211 & 251 & 3 & 1 & IMAGE \\
+    & BME & 180 & 128 & 3 & 1 & SIMULATED \\
+    & ECG200 & 200 & 96 & 2 & 1 & ECG \\
+    & FacesUCR & 2250 & 131 & 14 & 1 & IMAGE \\
+    & GunPoint & 200 & 150 & 2 & 1 & MOTION \\
+    & PhalangesOutlinesCorrect & 2658 & 80 & 2 & 1 & IMAGE \\
+    & Trace & 200 & 275 & 4 & 1 & SENSOR \\
+    \cline{1-7}
+    \multirow[c]{8}{*}{Multivariate}& ArticularyWordRecognition & 575 & 144 & 25 & 9 & SENSOR \\
+    & Cricket & 180 & 1197 & 12 & 6 & MOTION \\
+    & ERing & 60 & 65 & 6 & 4 & SENSOR \\
+    & Handwriting & 1000 & 152 & 26 & 3 & MOTION \\
+    & Libras & 360 & 45 & 15 & 2 & VIDEO \\ 
+    & NATOPS & 360 & 51 & 6 & 24 & MOTION \\
+    & RacketSports & 303 & 30 & 4 & 6 & SENSOR \\
+    & UWaveGestureLibrary & 240 & 315 & 8 &3 & SENSOR \\
     \bottomrule
   \end{tabular}
+  %
+  }
   \label{appendix:table:datasets}
 \end{table}
 
