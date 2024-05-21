@@ -178,7 +178,7 @@ Shape analysis focuses on statistical analysis of mathematical objects invariant
  Extending Neural ODEs, Neural Stochastic Differential Equations (Neural SDEs) introduce regularization effects \cite{liu2019neural}, although optimization remains challenging.
   Leveraging techniques from continuous-discrete filtering theory, Ansari et al. \cite{ansari2023neural} applied succesfully Neural SDEs to irregular time series.
   Oh \textit{et al.} \cite{oh2024stable} improved these results by incorporating the concept of controlled paths into the drift term, similar to how Neural CDEs outperform Neural ODEs.
-  With TS-LDDMM, the representation is also driven by an ODE, but the velocity field is parameterized with kernels and optimized to have a minimal norm.
+  With TS-LDDMM, the representation is also derived from an ODE, but the velocity field is parameterized with kernels and optimized to have a minimal norm, which enhance interpretability.
 
 \section{Notations}
 We denote by integer ranges by $[k:l]=\{k,\ldots,l\}\subset \mathcal{P}(\Zset)$ and $ [l]=[1:l]$ with $k,l\in \Nset$,
