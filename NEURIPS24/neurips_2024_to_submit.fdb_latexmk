@@ -1,12 +1,13 @@
 # Fdb version 3
-["bibtex neurips_2024_to_submit"] 1716216664 "neurips_2024_to_submit.aux" "neurips_2024_to_submit.bbl" "neurips_2024_to_submit" 1716216695
+["bibtex neurips_2024_to_submit"] 1716289500 "neurips_2024_to_submit.aux" "neurips_2024_to_submit.bbl" "neurips_2024_to_submit" 1716289511
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "neurips_2024_to_submit.aux" 1716216694 25103 38e54294a7ba0af181c287da5c6bee10 "pdflatex"
+  "experiment.aux" 1716289510 6483 dcb5892086b19f26bf864b0568237635 "pdflatex"
+  "neurips_2024_to_submit.aux" 1716289510 19706 97971564d1c9eda1d67d0fb45f93cbb4 "pdflatex"
   "ref.bib" 1715761964 22098 0caff2f68d36d1be0f1c9ee9fd1040b8 ""
   (generated)
   "neurips_2024_to_submit.bbl"
   "neurips_2024_to_submit.blg"
-["pdflatex"] 1716216693 "/Users/tgermain/Documents/code/TSLDDMM/NEURIPS24/neurips_2024_to_submit.tex" "neurips_2024_to_submit.pdf" "neurips_2024_to_submit" 1716216695
+["pdflatex"] 1716289509 "/Users/tgermain/Documents/code/TSLDDMM/NEURIPS24/neurips_2024_to_submit.tex" "neurips_2024_to_submit.pdf" "neurips_2024_to_submit" 1716289511
   "/Users/tgermain/Documents/code/TSLDDMM/NEURIPS24/neurips_2024_to_submit.tex" 1716216364 30883 fab5aa55ffb9474b16c496a11df8da17 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -312,15 +313,17 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1657130813 2826434 8561934b3fd5aee688db39e120fb5d14 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "appendix.tex" 1716216693 34606 e2fa6fd57862228bfd521098d8770683 ""
+  "appendix.tex" 1716289376 36010 07df2389def740ec18671eae79929aaf ""
   "def.tex" 1715680722 15466 ac899e068c5981d0e6e1d8f22f8815eb ""
+  "experiment.aux" 1716289510 6483 dcb5892086b19f26bf864b0568237635 "pdflatex"
+  "experiment.tex" 1716289477 18094 a4e77d956cdc9387fb80849d87efa8bb ""
   "header.tex" 1715680722 3363 064463123d22cab012bcc4aa2231b9dd ""
   "neurips_2024.sty" 1715680722 11625 b5f853b54a7a098e9e5b837f826d5daa ""
-  "neurips_2024_to_submit.aux" 1716216694 25103 38e54294a7ba0af181c287da5c6bee10 "pdflatex"
-  "neurips_2024_to_submit.bbl" 1716216665 12740 adfde74d034cf2d4f22f0bb117561110 "bibtex neurips_2024_to_submit"
-  "neurips_2024_to_submit.out" 1716216694 4288 dcb2c8dd594952670592049238eb464a "pdflatex"
+  "neurips_2024_to_submit.aux" 1716289510 19706 97971564d1c9eda1d67d0fb45f93cbb4 "pdflatex"
+  "neurips_2024_to_submit.bbl" 1716289500 12740 adfde74d034cf2d4f22f0bb117561110 "bibtex neurips_2024_to_submit"
+  "neurips_2024_to_submit.out" 1716289510 4472 0d445483f34ca7af05d5356bc057edf2 "pdflatex"
   "neurips_2024_to_submit.tex" 1716216364 30883 fab5aa55ffb9474b16c496a11df8da17 ""
-  "paper.tex" 1716210271 93896 87489687d5fc8a0741af29e69022ed84 ""
+  "paper.tex" 1716289509 75822 12768dd2d74fb1749b7656f07eeeb875 ""
   "pictures/diffeo.jpeg" 1715680722 27157 2ceea9419e3273dc6a76da0f5cf0b0fd ""
   "pictures/exp_1_bis.pdf" 1715680722 130970 58a53acb719fc8a5dcb69eeb10e63512 ""
   "pictures/exp_2.pdf" 1715680722 69289 c17a49b4605968bf828e91a17070d98f ""
@@ -328,6 +331,7 @@
   "pictures/samples.pdf" 1715680722 20131 df44584508d694f6650feca4fca8e9ed ""
   "pictures/transport.jpeg" 1715680722 119612 3ea8631d343fcd89d6948ca7c4d19483 ""
   (generated)
+  "experiment.aux"
   "neurips_2024_to_submit.aux"
   "neurips_2024_to_submit.log"
   "neurips_2024_to_submit.out"

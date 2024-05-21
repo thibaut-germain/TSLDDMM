@@ -279,6 +279,31 @@ In this section, we compare classification performances of TS-LDDMM with other s
 \end{table}
 
 
+\section{Robustness to missing data}
+
+\begin{table}[hbt!]
+  \centering
+  \begin{tabular}{lcccc}
+    \toprule
+    \multirow[c]{2}{*}{\textbf{Methods}} & \multicolumn{4}{c}{\textbf{Test F1-score}} \\
+    \cline{2-5}
+     &  \textbf{Regular} & \textbf{30 \% dropped} &  \textbf{50 \% dropped} & \textbf{70 \% dropped} \\
+    \midrule
+    RNN (1999) & $0.64 \pm 0.21$ & $0.53 \pm 0.23$ & $0.48 \pm 0.21$ & $0.44 \pm 0.21$ \\
+    LSTM (1997) & $0.61 \pm 0.29$ & $0.57 \pm 0.29$ & $0.53 \pm 0.25$ & $0.51 \pm 0.29$ \\
+    GRU (2014) & $0.71 \pm 0.26$ & $0.68 \pm 0.28$ & $0.66 \pm 0.28$ & $\underline{0.59 \pm 0.28}$ \\
+    MTAN (2021) & $0.59 \pm 0.28$ & $0.58 \pm 0.28$ & $0.54 \pm 0.29$ & $0.51 \pm 0.28$ \\
+    MIAM (2022) & $0.48 \pm 0.35$ & $0.42 \pm 0.33$ & $0.47 \pm 0.31$ & $0.35 \pm 0.31$ \\
+    ODE-LSTM (2020) & $0.63 \pm 0.24$ & $0.57 \pm 0.25$ & $0.51 \pm 0.24$ & $0.45 \pm 0.23$ \\
+    Neural SDE (2019) & $0.48 \pm 0.28$ & $0.47 \pm 0.26$ & $0.45 \pm 0.27$ & $0.45 \pm 0.25$ \\
+    Neural LNSDE (2024) & $0.7 \pm 0.27$ & $0.68 \pm 0.29$ & $\underline{0.67 \pm 0.25}$ & $\mathbf{0.66 \pm 0.23}$ \\
+    LDDMM (2008) & $\underline{0.72 \pm 0.2}$ & $\underline{0.7 \pm 0.21}$ & $0.57 \pm 0.25$ & $0.4 \pm 0.25$ \\
+    %\cline{1-5}
+    TS-LDDMM (ours) & $\mathbf{0.83 \pm 0.18}$ & $\mathbf{0.8 \pm 0.18}$ & $\mathbf{0.7 \pm 0.26}$ & $0.51 \pm 0.27$ \\
+    \bottomrule
+  \end{tabular}  
+\end{table}
+
 \section{Classification datasets}
 \label{appendix:classification_dataset}
 We selected 15 shape-based datasets (7 univariates and 8 multivariates) from the from the University of East Anglia (UEA) and the University of California Riverside (UCR) Time Series Classification Repository\footnote{https://timeseriesclassification.com} \cite{dau2019ucr,bagnall2018uea}. All datasets were downloaded with the python package aeon\footnote{https://www.aeon-toolkit.org/en/stable/}. Essential datasets information are summarized in \Cref{appendix:table:datasets} and further can be found in \cite{dau2019ucr,bagnall2018uea}.
