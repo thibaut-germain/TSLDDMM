@@ -1,5 +1,12 @@
 \begin{thebibliography}{10}
 
+\bibitem{ansari2023neural}
+Abdul~Fatir Ansari, Alvin Heng, Andre Lim, and Harold Soh.
+\newblock Neural continuous-discrete state space models for irregularly-sampled
+  time series.
+\newblock In {\em International Conference on Machine Learning}, pages
+  926--951. PMLR, 2023.
+
 \bibitem{asgari2023clustering}
 Asal Asgari.
 \newblock Clustering of clinical multivariate time-series utilizing recent
@@ -146,12 +153,23 @@ Hassan Ismail~Fawaz, Germain Forestier, Jonathan Weber, Lhassane Idoumghar, and
 \newblock Deep learning for time series classification: a review.
 \newblock {\em Data mining and knowledge discovery}, 33(4):917--963, 2019.
 
+\bibitem{jia2019neural}
+Junteng Jia and Austin~R Benson.
+\newblock Neural jump stochastic differential equations.
+\newblock {\em Advances in Neural Information Processing Systems}, 32, 2019.
+
 \bibitem{kaltenmark2017general}
 Irene Kaltenmark, Benjamin Charlier, and Nicolas Charon.
 \newblock A general framework for curve and surface comparison and registration
   with oriented varifolds.
 \newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
   Pattern Recognition}, pages 3346--3355, 2017.
+
+\bibitem{kidger2020neural}
+Patrick Kidger, James Morrill, James Foster, and Terry Lyons.
+\newblock Neural controlled differential equations for irregular time series.
+\newblock {\em Advances in Neural Information Processing Systems},
+  33:6696--6707, 2020.
 
 \bibitem{kobyzev2020normalizing}
 Ivan Kobyzev, Simon~JD Prince, and Marcus~A Brubaker.
@@ -163,6 +181,11 @@ Ivan Kobyzev, Simon~JD Prince, and Marcus~A Brubaker.
 Huiling Le.
 \newblock Locating fr{\'e}chet means with application to shape spaces.
 \newblock {\em Advances in Applied Probability}, 33(2):324--338, 2001.
+
+\bibitem{liu2019neural}
+Xuanqing Liu, Tesi Xiao, Si~Si, Qin Cao, Sanjiv Kumar, and Cho-Jui Hsieh.
+\newblock Neural sde: Stabilizing neural ode networks with stochastic noise.
+\newblock {\em arXiv preprint arXiv:1906.02355}, 2019.
 
 \bibitem{lubba2019catch22}
 Carl~H Lubba, Sarab~S Sethi, Philip Knaute, Simon~R Schultz, Ben~D Fulcher, and
@@ -205,6 +228,12 @@ Vit Niennattrakul and Chotirat~Ann Ratanamahatana.
   Conference, Beijing, China, May 27-30, 2007, Proceedings, Part I 7}, pages
   513--520. Springer, 2007.
 
+\bibitem{oh2024stable}
+YongKyung Oh, Dongyoung Lim, and Sungil Kim.
+\newblock Stable neural stochastic differential equations in analyzing
+  irregular time series data.
+\newblock {\em arXiv preprint arXiv:2402.14989}, 2024.
+
 \bibitem{pal2017riemannian}
 Susovan Pal, Roger~P Woods, Suchit Panjiyar, Elizabeth Sowell, Katherine~L
   Narr, and Shantanu~H Joshi.
@@ -236,6 +265,12 @@ Hadi Salman, Payman Yadollahpour, Tom Fletcher, and Kayhan Batmanghelich.
 \newblock Deep diffeomorphic normalizing flows.
 \newblock {\em arXiv preprint arXiv:1810.03256}, 2018.
 
+\bibitem{schuster1997bidirectional}
+Mike Schuster and Kuldip~K Paliwal.
+\newblock Bidirectional recurrent neural networks.
+\newblock {\em IEEE transactions on Signal Processing}, 45(11):2673--2681,
+  1997.
+
 \bibitem{shirato2023identifying}
 Gota Shirato, Natalia Andrienko, and Gennady Andrienko.
 \newblock Identifying, exploring, and interpreting time series shapes in
@@ -259,6 +294,12 @@ Patara Trirat, Yooju Shin, Junhyeok Kang, Youngeun Nam, Jihye Na, Minyoung Bae,
   Joeun Kim, Byunghyun Kim, and Jae-Gil Lee.
 \newblock Universal time-series representation learning: A survey.
 \newblock {\em arXiv preprint arXiv:2401.03717}, 2024.
+
+\bibitem{tzen2019neural}
+Belinda Tzen and Maxim Raginsky.
+\newblock Neural stochastic differential equations: Deep latent gaussian models
+  in the diffusion limit.
+\newblock {\em arXiv preprint arXiv:1905.09883}, 2019.
 
 \bibitem{vaillant2004statistics}
 Marc Vaillant, Michael~I Miller, Laurent Younes, and Alain Trouv{\'e}.
@@ -289,6 +330,11 @@ Lexiang Ye and Eamonn Keogh.
 \newblock Time series shapelets: a new primitive for data mining.
 \newblock In {\em Proceedings of the 15th ACM SIGKDD international conference
   on Knowledge discovery and data mining}, pages 947--956, 2009.
+
+\bibitem{zagoruyko2016wide}
+Sergey Zagoruyko and Nikos Komodakis.
+\newblock Wide residual networks.
+\newblock {\em arXiv preprint arXiv:1605.07146}, 2016.
 
 \bibitem{zhuang2020adabelief}
 Juntang Zhuang, Tommy Tang, Yifan Ding, Sekhar~C Tatikonda, Nicha Dvornek,

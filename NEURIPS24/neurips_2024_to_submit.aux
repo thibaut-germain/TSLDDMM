@@ -23,35 +23,33 @@
 \citation{niennattrakul2007inaccuracies,shirato2023identifying}
 \citation{beg2005computing,vaillant2004statistics}
 \citation{beg2005computing,vaillant2004statistics}
-\citation{glaunes2008large}
 \providecommand\csxdef[2]{}
 \@writefile{toc}{\providecommand\autonum@processReference[2]{}}
 \@writefile{lof}{\providecommand\autonum@processReference[2]{}}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
-\citation{asgari2023clustering,germain2023unsupervised,paparrizos2015k,ye2009time}
-\citation{trirat2024universal,meng2023unsupervised}
-\citation{franceschi2019unsupervised,tonekaboni2021unsupervised,meng2023unsupervised}
-\citation{niennattrakul2007inaccuracies,shirato2023identifying}
+\citation{glaunes2008large}
+\citation{miller2006geodesic}
+\citation{pal2017riemannian,le2001locating}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A time series' graph $\mathsf  {G}=\{(t,s(t)): \tmspace  +\thickmuskip {.2777em}t\in \mathsf  {I}\} $ can lose its structure after applying a general diffeomorphism $\phi .\mathsf  {G}$: a time value can be related to two values on the space axis.}}{2}{figure.1}\protected@file@percent }
 \newlabel{fig:diffeo}{{1}{2}{A time series' graph $\msg =\{(t,s(t)): \eqsp t\in \msi \} $ can lose its structure after applying a general diffeomorphism $\phi .\msg $: a time value can be related to two values on the space axis}{figure.1}{}}
 \newlabel{fig:diffeo@cref}{{[figure][1][]1}{[1][2][]2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces LDDMM and TS-LDDMM are applied to ECG data. We observe that LDDMM, using a general Gaussian kernel, does not learn the time translation of the first spike but changes the space values, i.e., one spike disappears before emerging at a translated position. At the same time, TS-LDDMM handles the time change in the shape. This difference of \textit  {deformations} implies differences in features \textit  {representations}. }}{2}{figure.2}\protected@file@percent }
 \newlabel{fig:transport}{{2}{2}{LDDMM and TS-LDDMM are applied to ECG data. We observe that LDDMM, using a general Gaussian kernel, does not learn the time translation of the first spike but changes the space values, i.e., one spike disappears before emerging at a translated position. At the same time, TS-LDDMM handles the time change in the shape. This difference of \textit {deformations} implies differences in features \textit {representations}}{figure.2}{}}
 \newlabel{fig:transport@cref}{{[figure][2][]2}{[1][2][]2}}
-\citation{miller2006geodesic}
-\citation{pal2017riemannian,le2001locating}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Works}{2}{section.2}\protected@file@percent }
 \citation{glaunes2008large}
 \citation{qiu2009time}
 \citation{srivastava2010shape,heo2024logistic}
 \citation{wu2024shape}
-\citation{miller2006geodesic}
-\citation{pal2017riemannian,le2001locating}
-\citation{glaunes2008large}
-\citation{qiu2009time}
-\citation{srivastava2010shape,heo2024logistic}
-\citation{wu2024shape}
+\citation{chen2018neural,kidger2020neural,tzen2019neural,jia2019neural,liu2019neural,ansari2023neural}
+\citation{chen2018neural}
+\citation{zagoruyko2016wide}
+\citation{kidger2020neural}
+\citation{schuster1997bidirectional}
+\citation{liu2019neural}
+\citation{ansari2023neural}
+\citation{oh2024stable}
 \citation{beg2005computing}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Related Works}{3}{section.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Notations}{3}{section.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}Background on LDDMM}{3}{section.4}\protected@file@percent }
 \newlabel{section:LDDMM}{{4}{3}{Background on LDDMM}{section.4}{}}
@@ -64,7 +62,7 @@
 \citation{miller2006geodesic}
 \@writefile{toc}{\contentsline {paragraph}{Representing diffeomorpshims as deformations.}{4}{section*.1}\protected@file@percent }
 \newlabel{eq:LDDMM_dynamic}{{1}{4}{Representing diffeomorpshims as deformations}{equation.4.1}{}}
-\newlabel{eq:LDDMM_dynamic@cref}{{[equation][1][]1}{[1][4][]4}}
+\newlabel{eq:LDDMM_dynamic@cref}{{[equation][1][]1}{[1][3][]4}}
 \newlabel{eq:geodesics_original}{{2}{4}{Representing diffeomorpshims as deformations}{equation.4.2}{}}
 \newlabel{eq:geodesics_original@cref}{{[equation][2][]2}{[1][4][]4}}
 \csxdef {autonum@eq:geodesics_originalReferenced}{}
@@ -75,14 +73,14 @@
 \newlabel{eq:def_v0}{{4}{4}{Discrete parametrization of diffeomorpshim}{equation.4.4}{}}
 \newlabel{eq:def_v0@cref}{{[equation][4][]4}{[1][4][]4}}
 \csxdef {autonum@eq:geodesics_shootingReferenced}{}
+\newlabel{eq:integration}{{5}{4}{Discrete parametrization of diffeomorpshim}{equation.4.5}{}}
+\newlabel{eq:integration@cref}{{[equation][5][]5}{[1][4][]4}}
+\csxdef {autonum@eq:integrationReferenced}{}
 \citation{rezende2015variational,kobyzev2020normalizing}
 \citation{chen2018neural,grathwohl2019scalable,salman2018deep}
 \citation{feng2023multi,deng2020modeling}
 \citation{ye2012heartbeat,madona2021pqrst}
 \citation{vaillant2004statistics}
-\newlabel{eq:integration}{{5}{5}{Discrete parametrization of diffeomorpshim}{equation.4.5}{}}
-\newlabel{eq:integration@cref}{{[equation][5][]5}{[1][4][]5}}
-\csxdef {autonum@eq:integrationReferenced}{}
 \newlabel{eq:relaxation}{{6}{5}{Discrete parametrization of diffeomorpshim}{equation.4.6}{}}
 \newlabel{eq:relaxation@cref}{{[equation][6][]6}{[1][5][]5}}
 \csxdef {autonum@eq:def_v0Referenced}{}
@@ -94,10 +92,10 @@
 \newlabel{eq:transformation@cref}{{[equation][7][]7}{[1][5][]5}}
 \csxdef {autonum@eq:transformationReferenced}{}
 \@writefile{toc}{\contentsline {paragraph}{Optimization related to \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \autonum@processReference {autonum@referencerefOld}{autonum@use}{eq:transformation}\unskip \@@italiccorr )}}.}{5}{section*.5}\protected@file@percent }
-\citation{glaunes2008large}
 \csxdef {autonum@eq:transformationReferenced}{}
-\newlabel{eq:general_optimization_problem}{{8}{6}{Optimization related to \eqref {eq:transformation}}{equation.5.8}{}}
-\newlabel{eq:general_optimization_problem@cref}{{[equation][8][]8}{[1][5][]6}}
+\newlabel{eq:general_optimization_problem}{{8}{5}{Optimization related to \eqref {eq:transformation}}{equation.5.8}{}}
+\newlabel{eq:general_optimization_problem@cref}{{[equation][8][]8}{[1][5][]5}}
+\citation{glaunes2008large}
 \csxdef {autonum@eq:general_optimization_problemReferenced}{}
 \csxdef {autonum@eq:relaxationReferenced}{}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Application of LDDMM to time series analysis: TS-LDDMM}{6}{subsection.5.1}\protected@file@percent }
@@ -111,13 +109,13 @@
 \newlabel{paragraph:kernel_V@cref}{{[subsection][1][5]5.1}{[1][6][]6}}
 \@writefile{toc}{\contentsline {paragraph}{Choice for the kernel associated with the RKHS $\mathsf  {V}$}{6}{section*.7}\protected@file@percent }
 \csxdef {autonum@fig:transportReferenced}{}
+\csxdef {autonum@eq:relaxationReferenced}{}
+\newlabel{eq:kernel_TAS}{{9}{6}{Choice for the kernel associated with the RKHS $\msv $}{equation.5.9}{}}
+\newlabel{eq:kernel_TAS@cref}{{[equation][9][]9}{[1][6][]6}}
 \citation{dziugaite2015training,borgwardt2006integrating}
 \citation{kaltenmark2017general}
 \citation{kaltenmark2017general}
 \citation{kaltenmark2017general,charon2013varifold}
-\csxdef {autonum@eq:relaxationReferenced}{}
-\newlabel{eq:kernel_TAS}{{9}{7}{Choice for the kernel associated with the RKHS $\msv $}{equation.5.9}{}}
-\newlabel{eq:kernel_TAS@cref}{{[equation][9][]9}{[1][7][]7}}
 \newlabel{lemma:choice_of_kernel_V}{{1}{7}{}{lemma.1}{}}
 \newlabel{lemma:choice_of_kernel_V@cref}{{[lemma][1][]1}{[1][7][]7}}
 \csxdef {autonum@eq:integrationReferenced}{}
@@ -137,60 +135,66 @@
 \csxdef {autonum@eq:def_v0Referenced}{}
 \bibstyle{plain}
 \bibdata{ref.bib}
-\bibcite{asgari2023clustering}{{1}{}{{}}{{}}}
-\bibcite{bagnall2018uea}{{2}{}{{}}{{}}}
-\bibcite{bar2012studying}{{3}{}{{}}{{}}}
-\bibcite{beg2005computing}{{4}{}{{}}{{}}}
-\bibcite{berlinet2011reproducing}{{5}{}{{}}{{}}}
-\bibcite{borgwardt2006integrating}{{6}{}{{}}{{}}}
-\bibcite{carmeli2010vector}{{7}{}{{}}{{}}}
-\bibcite{charon2013varifold}{{8}{}{{}}{{}}}
-\bibcite{chen2018neural}{{9}{}{{}}{{}}}
-\bibcite{dau2019ucr}{{10}{}{{}}{{}}}
-\bibcite{dempster2020rocket}{{11}{}{{}}{{}}}
-\bibcite{deng2020modeling}{{12}{}{{}}{{}}}
-\bibcite{durrleman2013sparse}{{13}{}{{}}{{}}}
-\bibcite{dziugaite2015training}{{14}{}{{}}{{}}}
-\bibcite{feng2023multi}{{15}{}{{}}{{}}}
+\bibcite{ansari2023neural}{{1}{}{{}}{{}}}
+\bibcite{asgari2023clustering}{{2}{}{{}}{{}}}
+\bibcite{bagnall2018uea}{{3}{}{{}}{{}}}
+\bibcite{bar2012studying}{{4}{}{{}}{{}}}
+\bibcite{beg2005computing}{{5}{}{{}}{{}}}
+\bibcite{berlinet2011reproducing}{{6}{}{{}}{{}}}
+\bibcite{borgwardt2006integrating}{{7}{}{{}}{{}}}
+\bibcite{carmeli2010vector}{{8}{}{{}}{{}}}
+\bibcite{charon2013varifold}{{9}{}{{}}{{}}}
+\bibcite{chen2018neural}{{10}{}{{}}{{}}}
+\bibcite{dau2019ucr}{{11}{}{{}}{{}}}
+\bibcite{dempster2020rocket}{{12}{}{{}}{{}}}
+\bibcite{deng2020modeling}{{13}{}{{}}{{}}}
+\bibcite{durrleman2013sparse}{{14}{}{{}}{{}}}
+\bibcite{dziugaite2015training}{{15}{}{{}}{{}}}
 \@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{11}{section.7}\protected@file@percent }
-\bibcite{franceschi2019unsupervised}{{16}{}{{}}{{}}}
-\bibcite{germain2023unsupervised}{{17}{}{{}}{{}}}
-\bibcite{glaunes2005transport}{{18}{}{{}}{{}}}
-\bibcite{glaunes2008large}{{19}{}{{}}{{}}}
-\bibcite{grathwohl2019scalable}{{20}{}{{}}{{}}}
-\bibcite{guscelli2019importance}{{21}{}{{}}{{}}}
-\bibcite{heo2024logistic}{{22}{}{{}}{{}}}
-\bibcite{hoymann2012lung}{{23}{}{{}}{{}}}
-\bibcite{hsu2003practical}{{24}{}{{}}{{}}}
-\bibcite{ismail2019deep}{{25}{}{{}}{{}}}
-\bibcite{kaltenmark2017general}{{26}{}{{}}{{}}}
-\bibcite{kobyzev2020normalizing}{{27}{}{{}}{{}}}
-\bibcite{le2001locating}{{28}{}{{}}{{}}}
-\bibcite{lubba2019catch22}{{29}{}{{}}{{}}}
-\bibcite{madona2021pqrst}{{30}{}{{}}{{}}}
-\bibcite{meng2023unsupervised}{{31}{}{{}}{{}}}
-\bibcite{miller2006geodesic}{{32}{}{{}}{{}}}
-\bibcite{muller2007dynamic}{{33}{}{{}}{{}}}
-\bibcite{nervo2019respiratory}{{34}{}{{}}{{}}}
-\bibcite{niennattrakul2007inaccuracies}{{35}{}{{}}{{}}}
-\bibcite{pal2017riemannian}{{36}{}{{}}{{}}}
-\bibcite{paparrizos2015k}{{37}{}{{}}{{}}}
-\bibcite{qiu2009time}{{38}{}{{}}{{}}}
-\bibcite{rezende2015variational}{{39}{}{{}}{{}}}
-\bibcite{salman2018deep}{{40}{}{{}}{{}}}
-\bibcite{shirato2023identifying}{{41}{}{{}}{{}}}
-\bibcite{srivastava2010shape}{{42}{}{{}}{{}}}
-\bibcite{tonekaboni2021unsupervised}{{43}{}{{}}{{}}}
-\bibcite{trirat2024universal}{{44}{}{{}}{{}}}
-\bibcite{vaillant2004statistics}{{45}{}{{}}{{}}}
-\bibcite{wang2016research}{{46}{}{{}}{{}}}
-\bibcite{wu2024shape}{{47}{}{{}}{{}}}
-\bibcite{ye2012heartbeat}{{48}{}{{}}{{}}}
-\bibcite{ye2009time}{{49}{}{{}}{{}}}
-\bibcite{zhuang2020adabelief}{{50}{}{{}}{{}}}
+\bibcite{feng2023multi}{{16}{}{{}}{{}}}
+\bibcite{franceschi2019unsupervised}{{17}{}{{}}{{}}}
+\bibcite{germain2023unsupervised}{{18}{}{{}}{{}}}
+\bibcite{glaunes2005transport}{{19}{}{{}}{{}}}
+\bibcite{glaunes2008large}{{20}{}{{}}{{}}}
+\bibcite{grathwohl2019scalable}{{21}{}{{}}{{}}}
+\bibcite{guscelli2019importance}{{22}{}{{}}{{}}}
+\bibcite{heo2024logistic}{{23}{}{{}}{{}}}
+\bibcite{hoymann2012lung}{{24}{}{{}}{{}}}
+\bibcite{hsu2003practical}{{25}{}{{}}{{}}}
+\bibcite{ismail2019deep}{{26}{}{{}}{{}}}
+\bibcite{jia2019neural}{{27}{}{{}}{{}}}
+\bibcite{kaltenmark2017general}{{28}{}{{}}{{}}}
+\bibcite{kidger2020neural}{{29}{}{{}}{{}}}
+\bibcite{kobyzev2020normalizing}{{30}{}{{}}{{}}}
+\bibcite{le2001locating}{{31}{}{{}}{{}}}
+\bibcite{liu2019neural}{{32}{}{{}}{{}}}
+\bibcite{lubba2019catch22}{{33}{}{{}}{{}}}
+\bibcite{madona2021pqrst}{{34}{}{{}}{{}}}
+\bibcite{meng2023unsupervised}{{35}{}{{}}{{}}}
+\bibcite{miller2006geodesic}{{36}{}{{}}{{}}}
+\bibcite{muller2007dynamic}{{37}{}{{}}{{}}}
+\bibcite{nervo2019respiratory}{{38}{}{{}}{{}}}
+\bibcite{niennattrakul2007inaccuracies}{{39}{}{{}}{{}}}
+\bibcite{oh2024stable}{{40}{}{{}}{{}}}
+\bibcite{pal2017riemannian}{{41}{}{{}}{{}}}
+\bibcite{paparrizos2015k}{{42}{}{{}}{{}}}
+\bibcite{qiu2009time}{{43}{}{{}}{{}}}
+\bibcite{rezende2015variational}{{44}{}{{}}{{}}}
+\bibcite{salman2018deep}{{45}{}{{}}{{}}}
+\bibcite{schuster1997bidirectional}{{46}{}{{}}{{}}}
+\bibcite{shirato2023identifying}{{47}{}{{}}{{}}}
+\bibcite{srivastava2010shape}{{48}{}{{}}{{}}}
+\bibcite{tonekaboni2021unsupervised}{{49}{}{{}}{{}}}
+\bibcite{trirat2024universal}{{50}{}{{}}{{}}}
+\bibcite{tzen2019neural}{{51}{}{{}}{{}}}
+\bibcite{vaillant2004statistics}{{52}{}{{}}{{}}}
+\bibcite{wang2016research}{{53}{}{{}}{{}}}
+\bibcite{wu2024shape}{{54}{}{{}}{{}}}
+\bibcite{ye2012heartbeat}{{55}{}{{}}{{}}}
+\bibcite{ye2009time}{{56}{}{{}}{{}}}
+\bibcite{zagoruyko2016wide}{{57}{}{{}}{{}}}
+\bibcite{zhuang2020adabelief}{{58}{}{{}}{{}}}
 \citation{glaunes2005transport}
-\citation{kaltenmark2017general,charon2013varifold}
-\citation{kaltenmark2017general}
 \@writefile{toc}{\contentsline {section}{\numberline {A}Proofs}{14}{appendix.A}\protected@file@percent }
 \newlabel{appendix:proofs}{{A}{14}{Proofs}{appendix.A}{}}
 \newlabel{appendix:proofs@cref}{{[appendix][1][2147483647]A}{[1][14][]14}}
@@ -201,26 +205,28 @@
 \csxdef {autonum@eq:proof1_last_eqReferenced}{}
 \csxdef {autonum@eq:integrationReferenced}{}
 \csxdef {autonum@eq:def_v0Referenced}{}
-\csxdef {autonum@eq:integrationReferenced}{}
-\csxdef {autonum@eq:def_v0Referenced}{}
-\csxdef {autonum@eq:LDDMM_dynamicReferenced}{}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Oriented varifold}{14}{appendix.B}\protected@file@percent }
-\newlabel{appendix:varifold}{{B}{14}{Oriented varifold}{appendix.B}{}}
-\newlabel{appendix:varifold@cref}{{[appendix][2][2147483647]B}{[1][14][]14}}
+\citation{kaltenmark2017general,charon2013varifold}
+\citation{kaltenmark2017general}
 \citation{carmeli2010vector}
 \citation{kaltenmark2017general}
 \citation{kaltenmark2017general}
+\csxdef {autonum@eq:integrationReferenced}{}
+\csxdef {autonum@eq:def_v0Referenced}{}
+\csxdef {autonum@eq:LDDMM_dynamicReferenced}{}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Oriented varifold}{15}{appendix.B}\protected@file@percent }
+\newlabel{appendix:varifold}{{B}{15}{Oriented varifold}{appendix.B}{}}
+\newlabel{appendix:varifold@cref}{{[appendix][2][2147483647]B}{[1][15][]15}}
 \newlabel{eq:def_mu_X}{{11}{15}{Oriented varifold}{equation.B.11}{}}
 \newlabel{eq:def_mu_X@cref}{{[equation][11][2147483647]11}{[1][15][]15}}
 \csxdef {autonum@eq:def_mu_XReferenced}{}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}Varifold kernels}{15}{subsection.B.1}\protected@file@percent }
-\newlabel{appendix:kernel_implementation}{{B.1}{15}{Varifold kernels}{subsection.B.1}{}}
-\newlabel{appendix:kernel_implementation@cref}{{[subappendix][1][2147483647,2]B.1}{[1][15][]15}}
 \citation{zhuang2020adabelief}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}Varifold kernels}{16}{subsection.B.1}\protected@file@percent }
+\newlabel{appendix:kernel_implementation}{{B.1}{16}{Varifold kernels}{subsection.B.1}{}}
+\newlabel{appendix:kernel_implementation@cref}{{[subappendix][1][2147483647,2]B.1}{[1][16][]16}}
 \csxdef {autonum@eq:kernel_TASReferenced}{}
 \@writefile{toc}{\contentsline {section}{\numberline {C}Tuning the hyperparameters of the TS-LDDMM kernel given in \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \autonum@processReference {autonum@referencerefOld}{autonum@use}{eq:kernel_TAS}\unskip \@@italiccorr )}}}{16}{appendix.C}\protected@file@percent }
 \newlabel{appendix:kernel_TS_LDDMM}{{C}{16}{Tuning the hyperparameters of the TS-LDDMM kernel given in \eqref {eq:kernel_TAS}}{appendix.C}{}}
-\newlabel{appendix:kernel_TS_LDDMM@cref}{{[appendix][3][2147483647]C}{[1][15][]16}}
+\newlabel{appendix:kernel_TS_LDDMM@cref}{{[appendix][3][2147483647]C}{[1][16][]16}}
 \@writefile{toc}{\contentsline {section}{\numberline {D}Numerical details}{16}{appendix.D}\protected@file@percent }
 \csxdef {autonum@eq:general_optimization_problemReferenced}{}
 \@writefile{toc}{\contentsline {subsection}{\numberline {D.1}Optimization details of \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \autonum@processReference {autonum@referencerefOld}{autonum@use}{eq:general_optimization_problem}\unskip \@@italiccorr )}}}{16}{subsection.D.1}\protected@file@percent }
@@ -229,19 +235,16 @@
 \@writefile{toc}{\contentsline {paragraph}{Initialization}{16}{section*.10}\protected@file@percent }
 \csxdef {autonum@eq:general_optimization_problemReferenced}{}
 \@writefile{toc}{\contentsline {paragraph}{Gradient descent.}{16}{section*.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.2}Synthetic experiments}{16}{subsection.D.2}\protected@file@percent }
-\newlabel{appendix:numerics_synthetic}{{D.2}{16}{Synthetic experiments}{subsection.D.2}{}}
-\newlabel{appendix:numerics_synthetic@cref}{{[subappendix][2][2147483647,4]D.2}{[1][16][]16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.3}Mouse experiments}{16}{subsection.D.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.4}Classification experiments}{16}{subsection.D.4}\protected@file@percent }
-\newlabel{appendix:classification_implementation}{{D.4}{16}{Classification experiments}{subsection.D.4}{}}
-\newlabel{appendix:classification_implementation@cref}{{[subappendix][4][2147483647,4]D.4}{[1][16][]16}}
 \citation{nervo2019respiratory}
 \citation{hoymann2012lung}
 \citation{nervo2019respiratory}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces A: Illustration of a double-chamber plethysmograph. The term \textit  {dpt} stands for differential pressure transducer which measures the pressure in each compartment, the pressure then being converted to flow. B: Nasal airflow (top) and lung volume (bottom). During inspiration, airflow is positive (grey) and during expiration, airflow is negative (pink).}}{17}{figure.6}\protected@file@percent }
-\newlabel{fig:mice_exp}{{6}{17}{A: Illustration of a double-chamber plethysmograph. The term \textit {dpt} stands for differential pressure transducer which measures the pressure in each compartment, the pressure then being converted to flow. B: Nasal airflow (top) and lung volume (bottom). During inspiration, airflow is positive (grey) and during expiration, airflow is negative (pink)}{figure.6}{}}
-\newlabel{fig:mice_exp@cref}{{[figure][6][2147483647]6}{[1][17][]17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.2}Synthetic experiments}{17}{subsection.D.2}\protected@file@percent }
+\newlabel{appendix:numerics_synthetic}{{D.2}{17}{Synthetic experiments}{subsection.D.2}{}}
+\newlabel{appendix:numerics_synthetic@cref}{{[subappendix][2][2147483647,4]D.2}{[1][17][]17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.3}Mouse experiments}{17}{subsection.D.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.4}Classification experiments}{17}{subsection.D.4}\protected@file@percent }
+\newlabel{appendix:classification_implementation}{{D.4}{17}{Classification experiments}{subsection.D.4}{}}
+\newlabel{appendix:classification_implementation@cref}{{[subappendix][4][2147483647,4]D.4}{[1][17][]17}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Parameters used in all the experiments. For synthetic data, $K_\mathsf  {G}$ refers to the kernel used in the generation, which is the same for the estimation only in the well-specified case. $\cc@accent {"7016}{l}$ refers to the average time series length and $N_d$ refers to the number of dimensions.}}{17}{table.3}\protected@file@percent }
 \newlabel{appendix:table:set_up_exp_practical}{{3}{17}{Parameters used in all the experiments. For synthetic data, $K_\msg $ refers to the kernel used in the generation, which is the same for the estimation only in the well-specified case. $\bar {l}$ refers to the average time series length and $N_d$ refers to the number of dimensions}{table.3}{}}
 \newlabel{appendix:table:set_up_exp_practical@cref}{{[table][3][2147483647]3}{[1][17][]17}}
@@ -252,6 +255,9 @@
 \citation{wu2024shape}
 \citation{dau2019ucr,bagnall2018uea}
 \citation{dau2019ucr,bagnall2018uea}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces A: Illustration of a double-chamber plethysmograph. The term \textit  {dpt} stands for differential pressure transducer which measures the pressure in each compartment, the pressure then being converted to flow. B: Nasal airflow (top) and lung volume (bottom). During inspiration, airflow is positive (grey) and during expiration, airflow is negative (pink).}}{18}{figure.6}\protected@file@percent }
+\newlabel{fig:mice_exp}{{6}{18}{A: Illustration of a double-chamber plethysmograph. The term \textit {dpt} stands for differential pressure transducer which measures the pressure in each compartment, the pressure then being converted to flow. B: Nasal airflow (top) and lung volume (bottom). During inspiration, airflow is positive (grey) and during expiration, airflow is negative (pink)}{figure.6}{}}
+\newlabel{fig:mice_exp@cref}{{[figure][6][2147483647]6}{[1][17][]18}}
 \@writefile{toc}{\contentsline {section}{\numberline {F}Classification: Comparison with shape analysis methods}{18}{appendix.F}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Methods}{18}{section*.12}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Protocole}{18}{section*.13}\protected@file@percent }
@@ -261,6 +267,6 @@
 \newlabel{appendix:classification_dataset@cref}{{[appendix][8][2147483647]H}{[1][18][]18}}
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces UCR/UEA shape-based time series datasets for classification.}}{19}{table.4}\protected@file@percent }
 \newlabel{appendix:table:datasets}{{4}{19}{UCR/UEA shape-based time series datasets for classification}{table.4}{}}
-\newlabel{appendix:table:datasets@cref}{{[table][4][2147483647]4}{[1][18][]19}}
+\newlabel{appendix:table:datasets@cref}{{[table][4][2147483647]4}{[1][19][]19}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\gdef \@abspage@last{25}
+\gdef \@abspage@last{26}

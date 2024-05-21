@@ -54,7 +54,7 @@ In physiology, studying the different \textit{shapes} in a time series related t
 However, a \textit{shape} has no clear definition; it is more an intuitive way to speak about the silhouette of a pattern in a time series. In this paper, we refer to as the shape of a time series, the graph of this signal.
 
 Although a community structure with representatives can be learned in an unsupervised way \cite{trirat2024universal,meng2023unsupervised} using contrastive loss \cite{franceschi2019unsupervised,tonekaboni2021unsupervised,meng2023unsupervised} or similarity measures \cite{asgari2023clustering,germain2023unsupervised,paparrizos2015k,ye2009time},
-studying the inter-individual variability of shapes within a cluster \cite{niennattrakul2007inaccuracies,shirato2023identifying} is still an open problem in URL.
+studying the inter-individual variability of shapes within a cluster \cite{niennattrakul2007inaccuracies,shirato2023identifying} is still an open problem in URL and even more for \textit{irregularly sampled} time series with \textit{variable lengths}.
      %In this paper, we aim to go beyond group structure by giving an unsupervised data-driven method that represents the specificity of each individual's shape \cite{vidal2021perceptual}.
   %For instance, the shape of a heartbeat in an Electrocardiogram (ECG) -the pattern- has been well studied \cite{madona2021pqrst} with the PQRST decomposition (see figure\sam{fill}).
   %There exist several methods to detect and segment patterns in a time series (\sam{mettre ref thibuat} ).
@@ -143,9 +143,9 @@ However, a graph time series transformation by a general diffeomorphism is not a
 %   Our goal is to analyze the inter-individual variability within a time series dataset, an approach of prime interest in physiological contexts \cite{guscelli2019importance,wang2016research,bar2012studying,germain2023unsupervised}. More specifically, we aim to find an unsupervised features representation method that encodes individual time series specificities compared to a reference one.
 % }
 
-\thi{
-  Studying shape differences between time series related to biological mechanisms is a common practice in physiology to characterize healthy and pathological functioning CITE. For instance, the shapes of heartbeats in electrocardiograms are discriminant for some cardiovascular pathologies CITE. Several approaches have been proposed for such comparison. Some employ shape-based similarity measures between time series \cite{asgari2023clustering,germain2023unsupervised,paparrizos2015k,ye2009time},  others embed time series as vectors of predefined features CITE, and, with the rise of deep neural networks, unsupervised learning representation of time series~\cite{trirat2024universal,meng2023unsupervised} has shown to be a valuable approach CITE notably with contrastive learning~\cite{franceschi2019unsupervised,tonekaboni2021unsupervised,meng2023unsupervised}. However, shape-based representation of time series within cohorts~\cite{niennattrakul2007inaccuracies,shirato2023identifying} remains an open problem in URL.
-}
+% \thi{
+%   Studying shape differences between time series related to biological mechanisms is a common practice in physiology to characterize healthy and pathological functioning CITE. For instance, the shapes of heartbeats in electrocardiograms are discriminant for some cardiovascular pathologies CITE. Several approaches have been proposed for such comparison. Some employ shape-based similarity measures between time series \cite{asgari2023clustering,germain2023unsupervised,paparrizos2015k,ye2009time},  others embed time series as vectors of predefined features CITE, and, with the rise of deep neural networks, unsupervised learning representation of time series~\cite{trirat2024universal,meng2023unsupervised} has shown to be a valuable approach CITE notably with contrastive learning~\cite{franceschi2019unsupervised,tonekaboni2021unsupervised,meng2023unsupervised}. However, shape-based representation of time series within cohorts~\cite{niennattrakul2007inaccuracies,shirato2023identifying} remains an open problem in URL.
+% }
 
 % \thi{
 %   Our work focuses explicitly on learning shape-based representation of time series. First, we propose not to see the shape of a time series through its curve $\{s_t:\eqsp t\in\msi\}$, but rather through its graph $\msg(s)=\{(t,s(t)):\eqsp t\in \msi\}$.
@@ -190,20 +190,19 @@ However, a graph time series transformation by a general diffeomorphism is not a
 \end{figure*}
 
 \section{Related Works}
-Shape analysis focus on the statistical analysis of various mathematical objects invariant under rotations, dilations, or time parameterization.
- The main idea is to represent these different objects in a complete Riemannian manifold $(\mathcal{M},\mathbf{g})$ with a metric $\mathbf{g}$ adapted to the geometry of the problem \cite{miller2006geodesic}.
- Then, any set of points in $\mathcal{M}$ can be represented as points in the tangent space of their Frechet mean $\mathbf{m}_0$ \cite{pal2017riemannian,le2001locating} by considering their logarithms.
- The goal is then to find a well suited Riemannian struvture according to the studied object.
+Shape analysis focuses on statistical analysis of mathematical objects invariant under some deformations like rotations, dilations, or time parameterization.
+   The main idea is to represent these objects in a complete Riemannian manifold $(\mathcal{M},\mathbf{g})$ with a metric $\mathbf{g}$ adapted to the geometry of the problem \cite{miller2006geodesic}.
+    Then, any set of points in $\mathcal{M}$ can be represented as points in the tangent space of their Frechet mean $\mathbf{m}_0$ \cite{pal2017riemannian,le2001locating} by considering their logarithms.
+     The goal is to find a well-suited Riemannian structure according to the nature of the studied object.
+     
+     LDDMM framework is a relevant shape analysis tool to represent curves as depicted in \cite{glaunes2008large}. However, graphs of time series are a well-structured type of curve due to the inclusion of the temporal dimension that requires specific care (\Cref{fig:diffeo}).
+      Closely related, \cite{qiu2009time} tracks anatomical shape changes in serial images using LDDMM but distinguishes from us by including the temporal evolution at a higher level: the goal is to perform longitudinal data modeling.
 
- A time series graph can be seen as a curve and LDDMM structure is relevant to tackle curves as presented in \cite{glaunes2008large}. %, LDDMM structure is relevant to tackle curves and
-  However, time series graph has more structure than curves as depicted in \Cref{fig:diffeo} due to the temporal evolution. 
-  \cite{qiu2009time} tracks anatomical shape changes in serial images using LDDMM, but distinguish from us by including the temporal evolution at a higher level: the goal is to perform longitudinal data modeling.
-
-  Leaving the LDDMM representation, \cite{srivastava2010shape,heo2024logistic} address the representation of curves having unitary velocity by using the Square-Root Velocity (SRV) representation.
- However, the SRV representation applies after a reparametrization in time, such that the original time evolution of the time series is not represented in the final features.
-  Again, the time series graph structure is not respected.
-   Very recently in a functionnal data analysis framework, a paper \cite{wu2024shape} (Shape-FPCA) improved by giving a representation for the original time evolution.
-    Nevertheless, this methods applies only on time series of \textit{same size} and is made for \textit{continuous objects}, making the estimation more sensitive to noise.
+       Leaving the LDDMM representation, \cite{srivastava2010shape,heo2024logistic} addresses the representation of curves with the Square-Root Velocity (SRV) representation.
+        However, the SRV representation is applied after a reparametrization of the temporal dimension on the unit length segment.
+         Consequently, the graph structure of the time series is not respected, and the original time evolution of the time series is not encoded in the final representation.
+          Very recently, in a functional data analysis framework, a paper \cite{wu2024shape} (Shape-FPCA) improved by representing the original time evolution.
+           Nevertheless, this method is made for \textit{continuous objects} and only applies to time series of \textit{same length}, making the estimation more sensitive to noise.
   %However, the case of time series has not been adequately addressed, considering the special attention the time axis requires.
   %For instance, the SRV representation applies after a reparametrization in time, such that the original time evolution of the time series is not represented in the final features.
 % Depending on the tasks, e.g classification \cite{ismail2019deep}, anomaly detection \cite{blazquez2021review}, forecasting \cite{torres2021deep} or clustering , a meaningful vector representation of time series can be derived.
@@ -217,16 +216,19 @@ Shape analysis focus on the statistical analysis of various mathematical objects
 %     However, they may lack precision on small and homogeneous datasets with only one typical shape, often arising from clinical experiments addressing a specific phenomenon (refer to figures).
 %      While current unsupervised methods separate representations into clusters, our focus is on the inter-individual variability within one cluster.
 %       Typically, we aim to perform Principal Components Analysis (PCA) \cite{bro2014principal} on individual patterns with similar shapes. The representation is dependant on the input dataset.
-[Ajouter littérature de URL demander à Sisi ?]
+
  %\citet{srivastava2010shape,heo2024logistic} address the representation of curves $C:\msi \to \Rset^d$, $\msi\subset \Rset$, having unitary velocity by using the Square-Root Velocity (SRV) representation.
  %However, the case of time series has not been adequately addressed, considering the special attention the time axis requires.
  %For instance, the SRV representation applies after a reparametrization in time, such that the original time evolution of the time series is not represented in the final features.
  %In this regard, this work is not an application of LDDMM to 1D curves \cite{glaunes2008large}.
  %Compared to Normalizing Flows \cite{rezende2015variational,kobyzev2020normalizing} or Continuous Normalizing Flows \cite{chen2018neural,grathwohl2019scalable,salman2018deep} for diffeomorphisms learning, the number of hyperparameters to tune is minimal, and the related optimization problem is well-posed.
+ Balancing between discrete and continuous elements is a challenging task.
+  In the deep learning literature \cite{chen2018neural, kidger2020neural, tzen2019neural, jia2019neural, liu2019neural, ansari2023neural}, Neural Ordinary Differential Equations (Neural ODEs) \cite{chen2018neural} learn continuous latent representations using a vector field parameterized by a neural network, serving as a continuous analogue to Residual Networks \cite{zagoruyko2016wide}.
+   This approach was further enhanced by Neural Controlled Differential Equations (Neural CDEs) \cite{kidger2020neural} for handling irregular time series, functioning as continuous-time analogs of RNNs \cite{schuster1997bidirectional}.
+ Extending Neural ODEs, Neural Stochastic Differential Equations (Neural SDEs) introduce regularization effects \cite{liu2019neural}, although optimization remains challenging.
+  Leveraging techniques from continuous-discrete filtering theory, Ansari et al. \cite{ansari2023neural} applied succesfully Neural SDEs to irregular time series.
+  Oh et al. \cite{oh2024stable} improved these results by incorporating the concept of controlled paths into the drift term, similar to how Neural CDEs outperform Neural ODEs.
 
-\thi{
-  Shape analysis focuses on statistical analysis of mathematical objects invariant under some deformations like rotations, dilations, or time parameterization. The main idea is to represent these objects in a complete Riemannian manifold $(\mathcal{M},\mathbf{g})$ with a metric $\mathbf{g}$ adapted to the geometry of the problem \cite{miller2006geodesic}. Then, any set of points in $\mathcal{M}$ can be represented as points in the tangent space of their Frechet mean $\mathbf{m}_0$ \cite{pal2017riemannian,le2001locating} by considering their logarithms. The goal is to find a well-suited Riemannian structure according to the nature of the studied object. LDDMM framework is a relevant shape analysis tool to represent curves as depicted in \cite{glaunes2008large}. However, graphs of time series are a well-structured type of curve due to the inclusion of the temporal dimension that requires specific care (\Cref{fig:diffeo}). Closely related, \cite{qiu2009time} tracks anatomical shape changes in serial images using LDDMM but distinguishes from us by including the temporal evolution at a higher level: the goal is to perform longitudinal data modeling. Leaving the LDDMM representation, \cite{srivastava2010shape,heo2024logistic} addresses the representation of curves with the Square-Root Velocity (SRV) representation. However, the SRV representation is applied after a reparametrization of the temporal dimension on the unit length segment. Consequently, the graph structure of the time series is not respected, and the original time evolution of the time series is not encoded in the final representation. Very recently, in a functional data analysis framework, a paper \cite{wu2024shape} (Shape-FPCA) improved by representing the original time evolution. Nevertheless, this method is made for \textit{continuous objects} and only applies to time series of \textit{same length}, making the estimation more sensitive to noise.
-}
 \section{Notations}
 We denote by integer ranges by $[k:l]=\{k,\ldots,l\}\subset \mathcal{P}(\Zset)$ and $ [l]=[1:l]$ with $k,l\in \Nset$,
 by $\rmC^m(\msi,\mse)$ the set of $m$-times continously differentiable function defined on an open set $\msu$ to a normed vector space $\mse$,
