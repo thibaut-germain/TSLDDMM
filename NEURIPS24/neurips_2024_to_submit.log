@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.6)  22 MAY 2024 00:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.6)  22 MAY 2024 00:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -992,48 +992,48 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 121.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 70.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 <./pictures/diffeo.jpeg, id=182, 445.9059pt x 166.9437pt>
 File: ./pictures/diffeo.jpeg Graphic file (type jpg)
 <use ./pictures/diffeo.jpeg>
-Package pdftex.def Info: ./pictures/diffeo.jpeg  used on input line 175.
+Package pdftex.def Info: ./pictures/diffeo.jpeg  used on input line 124.
 (pdftex.def)             Requested size: 278.23827pt x 104.1765pt.
 <./pictures/transport.jpeg, id=183, 1517.67pt x 289.08pt>
 File: ./pictures/transport.jpeg Graphic file (type jpg)
 <use ./pictures/transport.jpeg>
-Package pdftex.def Info: ./pictures/transport.jpeg  used on input line 184.
+Package pdftex.def Info: ./pictures/transport.jpeg  used on input line 133.
 (pdftex.def)             Requested size: 397.48499pt x 75.71039pt.
  [2 <./pictures/diffeo.jpeg> <./pictures/transport.jpeg>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1527) has occurred while \output is active []
 
  [3]
 
 Package natbib Warning: Author undefined for citation`miller2006geodesic' 
-(natbib)                on page 4 on input line 345.
+(natbib)                on page 4 on input line 295.
 
 [4
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.366    \begin{equation}
+l.316    \begin{equation}
                          ] [5
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.472 
+l.422 
       ] [6
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.604     \end{align}
+l.554     \end{align}
                      
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.604     \end{align}
+l.554     \end{align}
                      ] [7]
 \openout2 = `experiment.aux'.
 
@@ -1239,15 +1239,15 @@ Package rerunfilecheck Info: File `neurips_2024_to_submit.out' has not changed.
 (rerunfilecheck)             Checksum: B49FAB8E3AC2CB183ABC58F321689011;5582.
  ) 
 Here is how much of TeX's memory you used:
- 42110 strings out of 478268
- 936104 string characters out of 5846348
+ 42113 strings out of 478268
+ 936137 string characters out of 5846348
  1428066 words of memory out of 5000000
  59043 multiletter control sequences out of 15000+600000
- 532837 words of font info for 299 fonts, out of 8000000 for 9000
+ 533062 words of font info for 301 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,20n,83p,1122b,679s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on neurips_2024_to_submit.pdf (28 pages, 1001707 bytes).
+Output written on neurips_2024_to_submit.pdf (28 pages, 1001941 bytes).
 PDF statistics:
  836 PDF objects out of 1000 (max. 8388607)
  698 compressed objects within 7 object streams
