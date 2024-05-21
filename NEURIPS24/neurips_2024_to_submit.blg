@@ -1,48 +1,49 @@
 This is BibTeX, Version 0.99d (TeX Live 2022)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: neurips_2024_to_submit.aux
-I found no \citation commands---while reading file neurips_2024_to_submit.aux
-I found no \bibdata command---while reading file neurips_2024_to_submit.aux
-I found no \bibstyle command---while reading file neurips_2024_to_submit.aux
-You've used 0 entries,
-            0 wiz_defined-function locations,
-            83 strings with 518 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+A level-1 auxiliary file: experiment.aux
+The style file: plain.bst
+Database file #1: ref.bib
+Warning--empty journal in asgari2023clustering
+You've used 58 entries,
+            2118 wiz_defined-function locations,
+            821 strings with 15700 characters,
+and the built_in function-call counts, 21764 in all, are:
+= -- 2114
+> -- 1259
+< -- 10
++ -- 501
+- -- 436
+* -- 1643
+:= -- 3685
+add.period$ -- 176
+call.type$ -- 58
+change.case$ -- 389
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+cite$ -- 59
+duplicate$ -- 724
+empty$ -- 1498
+format.name$ -- 436
+if$ -- 4420
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
+int.to.str$ -- 58
+missing$ -- 58
+newline$ -- 292
+num.names$ -- 116
+pop$ -- 358
+preamble$ -- 1
+purify$ -- 332
 quote$ -- 0
-skip$ -- 0
+skip$ -- 531
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 1337
+swap$ -- 147
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 3 error messages)
+type$ -- 230
+warning$ -- 1
+while$ -- 199
+width$ -- 60
+write$ -- 626
+(There was 1 warning)
