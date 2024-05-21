@@ -1,89 +1,22 @@
 \section{Experiments}
 \label{section:experiments}
-[L'intro est ce necessaire ?]
 
+For consiceness, several experiments are relagated in Appendix: 
 
-First, we show on synthetic data that the proposed representation is identifiable provided that the hyperparameters and the reference graph are wisely selected, i.e.,
- the parameter $v_0^*$ generating a deformation $\varphi^{\{v_0^*\}}$ of a time series graph $\msg$ can be estimated from the data $\msg,\varphi^{\{v_0^*\}}.\msg$ by solving the geodesic shooting problem \eqref{eq:relaxation}.
+\begin{enumerate}
+    \item \textbf{TS-LDDMM representation identifiability, \Cref{appendix:identifiability}:} Results show that TS-LDDMM representations are identifiable or weakly identifiable depending on the specification of the velocity field kernel $K_G$.
+    \item \textbf{Classification benchmark on regulary sampled datasets, \Cref{appendix:classification_shape_analysis}:} Results shows that methods based on TS-LDDMM representation outperform other methods from shape analysis on classification of 15 shape-based datasets (7 univariates \& 8 multivariates).
+    \item \textbf{Robustness to irregular sampling} We compared the robustness of TS-LDDMM representation with 9 URL methods handling irregularly sampled multivariate time series on 15 shape-based datasets (7 univariates \& 8 multivariates). We assess methods' classification performances under regular sampling (0\% missing rate) and three irregular sampling regimes (30\%,50\%, and 70\% missing rates), according to the protocol depicted in \cite{kidger2020neural}. \textbf{Results} show that our method, TS-LDDMM, outperforms all methods for sampling regimes with missing rates: 0\%,30\%, and 50\%. The performance decrease of the Support Vector Machine classifier (SVC) based on TS-LDDMM representation is sensibly due to the misspecification of its regularization parameter.
+\end{enumerate}
+
+experiment on r.  As well, comparison of TS-LDDMM representation with other shape-analysis methods on a classification task is relagated in \Cref{appendix:classification_shape_analysis}.
+
+First, we show on synthetic data that the proposed representation is identifiable
  Secondly, we illustrate the qualitative interest of TS-LDDMM in studying inter-individual variability on a clinical dataset.
   Thirdly, we demonstrate the quantitative performance of our representation by performing classification on shape-based datasets.
   The method is implemented on Python using the library JAX\footnote{https://github.com/google/jax}. The code was compiled on a server with NVIDIA RTX A2000 12GB GPU, Intel(R) Xeon(R) Gold 5220R CPU @ 2.20GHz, and 250 GB of RAM. The code will be available on Github.
-\subsection{Synthetic experiments}
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=0.5\linewidth]{pictures/samples.pdf}
-    \vspace{-2.5em}
-    \caption{Plots of $\varphi^{\{v_0(\mathbf{\alpha}^*,\msx)\}}.\msx$ for different values of $\mathbf{\alpha}^*$ according to its sampling parameter $t_a,s_a,m_s $, taking $\msx=\msg(s_0)$ with $s_0:k\in [300]\to \sin(2\pi k/300) $.}
-    \label{fig:exemple_synthetic}
-    \vspace{-1em}
-\end{figure}
 
-\begin{table}
-    \caption{Values of $\scrl(\varphi^{\{v_0(\mathbf{\alpha}^*,\msx)\}}.\msx,\varphi^{\{\hat{v}_0\}}.\msx)$ as $\mathbf{\alpha}^*$ is sampled according to Gen(10,10,50) and $\hat{v}_0$ is estimated using $K_\msg$ with varying parameters $\sigma_{T,1},\sigma_x$.}
-      \centering
-         \begin{tabular}{lrrrrrrr}
-         \toprule
-         $\sigma_{T,0} \backslash \sigma_x$  & 1 & 10 & 50 & 100 & 200 & 300 \\
-         \midrule
-         0.1 & 2e+0 & 3e-4  & 1e-5&4e-6&7e-4&4e-3 \\
-        1 & 4e-2 & 1e-4  & 1e-5&4e-6&7e-4 &4e-3  \\
-         100 & 4e-2 & 2e-4  & 1e-5&4e-6&7e-4&4e-3  \\
-         \bottomrule
-         \end{tabular}
-      \label{table:synthetic2}
-      \vspace{-1em}
-  \end{table}
- 
-
-
-% \begin{subfigure}{0.7\linewidth}
-%   \centering
-%   \resizebox{\columnwidth}{!}{%
-%      \begin{tabular}{lrrrr}
-%      \toprule
-%      $\sigma_{T,0} \backslash \sigma_x$  & 0.1 & 1 & 100 \\
-%      \midrule
-%      1 & 2e+0 & 4e-2 & 4e-2 \\
-%      10 & 3e-4 & 1e-4  & 2e-4 \\
-%      50 & 1e-5 & 1e-5  & 1e-5 \\
-%      100 & 4e-6 & 4e-6 & 4e-6 \\
-%      200 & 7e-4 & 7e-4 & 7e-4 \\
-%      300 & 4e-3 & 4e-3 & 4e-3 \\
-%      \bottomrule
-%      \end{tabular}
-%      %
-%      }
-%  \caption{Values of $\scrl(y^*,\varphi^{\{\hat{v}_0\}}.\msx)$ where $y^*$ is sampled according to Gen(10,10,50) and $\hat{v}_0$ is estimated using $K_\msg$ with varying parameters $\sigma_{T,1},\sigma_x$.}
-% \end{subfigure}
-First, we show the model identifiability when the kernel $K_G$ is well specified: the estimated parameter is a good approximation of the generating parameter when the generation and the estimation procedure use the same hyperparameters for the RKHS kernel $K_\msg$.
-All the hyperparameter values for generation and estimation are given in \Cref{appendix:numerics_synthetic}.
-We fix the initial control points as $\msx=\left(x_k=(k,\sin(2\pi k/300))\right)_{k\in[300]} $.
-Given $m_{s}\in \Nset_{>0}$ and $t_{a},s_{a}>0$, we randomly generate initial momentums $\mathbf{\alpha}^*=(\alpha_k^*)_{k\in[\mathbf{n}_0]}$ with the following sampling, called Gen($m_s,t_a,s_a$):
- For any $k\in[\mathbf{n}_0]$, $\mathbf{\alpha}_k'$ is sampled according to a Gaussian normal distribution $\mathcal{N}(0_{d+1},I_{d+1})$.
-Then, $(\alpha_k')_{k\in[\mathbf{n}_0]}$ is regularized by a rolling average of size $m_{s}$, we get $\bar{\mathbf{\alpha}}'=(\bar{\alpha}_k')_{k\in[\mathbf{n}_0]}$.
-Finally, we normalize $\bar{\mathbf{\alpha}}'$ to derive $\mathbf{\alpha}^*$ such that $|([\alpha_k^*]_t)_{k\in[\mathbf{n}_0]}|=t_{\text{amp}}$ and $|([\alpha_k^*]_s)_{k\in[\mathbf{n}_0]}|=s_{\text{amp}}$ for any $k\in[\mathbf{n}_0]$, denoting by $[\alpha_k^*]_t,[\alpha_k^*]_s$ the time and space coordinates of $\alpha_k^*$ respectively.
-Note that the regularizing step $(\mathbf{\alpha}_k')_{k\in[\mathbf{n}_0]}\to \bar{\mathbf{\alpha}}' $ is necessary to obtain realistic deformations which take into account the regularity induced by the RKHS $\msv$.
-%  uniformly on the set $\mss_M=\{ (\alpha_k)_{k\in[\mathbf{n}_0]}\in (\Rset^{d+1})^{\mathbf{n}_0}:\eqsp |\alpha_k|=M\}  $ with $M>0,\mathbf{n}_0\in \Nset_{>0}$,
-%  then we regularize $\mathbf{\alpha}$ by convolving
-%   with ... to get the generation parameter $\mathbf{\alpha}^*$.
-Then, using $v_0(\mathbf{\alpha}^*,\msx)$ as defined in \eqref{eq:def_v0} with initial momentums $\mathbf{\alpha}^*$ and control points $\msx$, we apply the induced deformation $\varphi^{\{v_0\}} $ by \eqref{eq:integration} to $\msx$ and obtain $\varphi^{\{v_0\}}.\msx$.
-Finally, we solve \eqref{eq:relaxation} to recover an estimation $\hat{\mathbf{\alpha}}$ of $\mathbf{\alpha}^*$ and report the average relative error (ARE) $|v_0(\hat{\mathbf{\alpha}},\msx)-v_0(\mathbf{\alpha}^*,\msx)|_\msv/|v_0(\mathbf{\alpha}^*,\msx)|_\msv$ on 50 repetitions.
-This procedure is performed for any $m_{s},t_{a},s_{a}\in \{10,50,100\}\times \{5,10,15,20\}^2 $.
- Mean, standard deviation, and maximum of the ARE on all these hyperparameters choices are respectively $\mathbf{0.10, 0.03, 0.17}$.
- Therefore, the estimation procedure \eqref{eq:relaxation} offers a good approximation of the true parameter when the kernel $K_\msg$ is well specified.
- We observe that the estimation is difficult when $t_a\ll s_a$ because the time series can be very noisy as illustrated in \Cref{fig:exemple_synthetic}: this impacts the Varifold loss which is sensitive to tangents.
-  
- Secondly, we demonstrate a weak identifiability when the kernel $K_\msg$ is misspecified: we can reconstruct the graph time series' after deformations even if the hyperparameters of $K_\msg$
-  are different during the generation and the estimation.
-   The hyperparameters of $K_\msg$ during generation are $(c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x)=(1,0.1,100,1,1)$ and we fix $\sigma_{T,1},c_0,c_1=(1,1,0.1) $ for $K_\msg$ during estimation.
-   We aim to understand the impact of $\sigma_{T,1},\sigma_x$ on the reconstruction since they are encoding the smoothness of the transformation according to time and space.  
-
-    For any choice of the hyperparameters $\sigma_{T,1},\sigma_x\in \{1,10,50,100,200,300 \}\times \{0.1,1,100\}$ related to $K_\msg$ in the estimation,
-     we average $\scrl(\varphi^{\{v_0(\mathbf{\alpha}^*,\msx)\}}.\msx,\varphi^{\{\hat{v}_0\}}.\msx)$ on 50 repetitions when $\mathbf{\alpha}^*$ is sampled according to Gen$(10,10,50)$ and $\hat{v}_0=v_0(\hat{\alpha},\msx)$ denoting by $\hat{\alpha}$ the result of the minimization \eqref{eq:relaxation}.
-  We observe in \Cref{table:synthetic2} that the reconstruction is almost perfect except in the case when $\sigma_{t,0}=1$ during estimation, while $ \sigma_{t,0}=100$ during generation.
-   Compared to $\sigma_{T,0}$, $\sigma_x$ has nearly no impact on the reconstruction.
-   In \Cref{appendix:kernel_implementation}-\ref{appendix:kernel_TS_LDDMM}, we propose guidelines to drive future hyperparameters tuning and further discussions related to $\sigma_{T,1},c_0,c_1$. 
-\subsection{Qualitative analysis of respiratory behavior in mice}
+\subsection{Analysis of respiratory behavior in mice}
 %We consider a dataset composed of mouse respiratory time series before and after a drug injection.
 % A complete presentation of this dataset is given in \Cref{appendix:mouse_dataset}.
 %  The mouse are divided in two groups depending on their genotypes : \textit{colq} and \textit{wt}.

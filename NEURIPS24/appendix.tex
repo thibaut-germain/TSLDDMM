@@ -127,25 +127,57 @@ The parameter $\sigma_{T,1}$ should be of the same order as $f_e$: two different
  We take $c_0\approx 10 c_1 $, we want to encourage time transformation before space transformation. We take $(c_0,c_1)=(1,0.1)$ in all experiments.
 
 
-\section{Numerical details}
-A report of all the hyperparameters selected is given in \Cref{appendix:table:set_up_exp_practical}.
-\subsection{Optimization details of \eqref{eq:general_optimization_problem}}
+\section{Experimental settings}
+
+All experiments were performed on a Debian 6.1.69-1 server with NVIDIA RTX A2000 12GB GPU, Intel(R) Xeon(R) Gold 5220R CPU @ 2.20GHz, and 250 GB of RAM. The source code will be available on Github.
+
+\subsection{Optimization details of TS-LDDMM~\eqref{eq:general_optimization_problem}}
 \label{appendix:optimizers_details}
-\paragraph{Initialization}
-At the initialization of \eqref{eq:general_optimization_problem}, all the momentums parameter are set to $0$ and the graph of reference is set to the graph of a time series in the dataset having a mediane samples size.
+
+We implemented TS-LDDMM in Python with the JAX library \footnote{https://github.com/google/jax}.
+
+\paragraph{Initialization.}
+As initialization of \eqref{eq:general_optimization_problem}, all momentum parameters are set to $0$, and the initial graph of reference is picked from the dataset such that its length is equal to the median length observed in the dataset.
 
 \paragraph{Gradient descent.}
-The chosen gradient descent method is "adabelief" \cite{zhuang2020adabelief} implemented in the library OPTAX\footnote{https://optax.readthedocs.io/en/latest/}.
-There are two main parameters in the gradient descent: the number of steps nb\_steps, and the maximum value of step size $\eta_M$.
-The stepsize has a particular scheduling: 
+The chosen gradient descent method is "adabelief" \cite{zhuang2020adabelief} implemented in the OPTAX library~\footnote{https://optax.readthedocs.io/en/latest/}.
+The gradient descent has two main parameters: the number of steps (nb\_steps) and the maximum stepsize value ($\eta_M$).
+The stepsize has a scheduling scheme: 
 \begin{itemize}
-  \item Warmup period on $0.1 \times$ nb\_steps steps: the stepsize increases linearly from $0$ to $\eta_M$. The goal is to learn progressively the parameters.
-   If the stepsize is too large at the start, smaller steps at the end can't make up for the mistakes made at the beginning. 
-  \item Fine tuning periode on $ 0.9  \times$ nb\_steps : the stepsize decreases from $\eta_M$ to $0$ with a cosine decay implemented in the OPTAX scheduler,
-   i.e. the decreasing factor as the form $0.5  (1 + \cos(\pi  t/T))$. 
+  \item Warmup period on $0.1 \times$ nb\_steps steps: the stepsize increases linearly from $0$ to $\eta_M$. The goal is to learn progressively the parameters. If the step size is too large at the start, smaller steps at the end cannot make up for the mistakes made at the beginning. 
+  \item Fine tuning periode on $ 0.9  \times$ nb\_steps : the stepsize decreases from $\eta_M$ to $0$ with a cosine decay implemented in the OPTAX scheduler, i.e. the decreasing factor as the form $0.5  (1 + \cos(\pi  t/T))$. 
 \end{itemize}
-The sharper the deformations, the larger the number of steps and the maximum value of step size should be selected.
-We suggest nb\_steps=300, $\eta_M=0.1 $ for small deformations and nb\_steps=800, $\eta_M=0.3 $ for big ones (time dilation with a factor $\lambda\geq 2$).
+By default, we set nb\_steps to 400 and $\eta_M$ to 0.1.
+
+\subsection{Identifiability experiment}
+This experiement only involves the TS-LDDMM method in two different settings: 
+\begin{itemize}
+  \item \textbf{The velocity field kernel $K_G$ is well-specified:} The velocity field kernel $K_G$ is set to $ (c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x) = (1,0.1,100,1,1)$, the varifold loss kernels $(k_{pos},k_{dir})$ are set to $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x}) = (2,1,2,0.6)$, and the optimizer has 400 steps with a maximum stepsize $\eta_M$ of 0.05.
+  \item \textbf{The velocity field kernel $K_G$ is missspecified:} The velocity field kernel $K_G$ is set with  $(c_0,c_1,\sigma_{T,1}) = (1,0.1,1)$, $\sigma_{T,0}$ ranging in $(1,5,10,50,100,200,300)$, and $\sigma_x$  ranging in $(0.1,1,10,100)$. The varifold loss kernels $(k_{pos},k_{dir})$ are set to $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x}) = (2,1,2,0.6)$, and the optimizer has 400 steps with a maximum stepsize $\eta_M$ of 0.05.
+\end{itemize}
+TS-LDDMM parameters of the experiment are summarized in \Cref{appendix:table:set_up_exp_practical}
+
+\subsection{Mice respiratory behaviors experiment}
+
+This experiment involves TS-LDDMM and LDDMM~\cite{glaunes2008large} methods. Both methods are run twice, first on respiratory cycles before exposure to the irritant molecule to capture mice breathing behavior at rest and on all respiratory cycles to capture the influence of the irritant molecule. Exposure to the irritant molecule leads to significant shape deformation in the respiratory cycles, and the terms must be added to the varifold loss to capture deformations at a large time scale. 
+
+\paragraph{TS-LDDMMM parameters.}
+\begin{itemize}
+  \item \textbf{Before exposure:} The velocity field kernel $K_G$ is set to $ (c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x) = (1,0.1,150,1,2)$. The varifold loss is the sum of three varifolds to capture shapes variations at different scales with parameters: (Varifold 1,Varifold 2,Varifold 3): $\left((5,2,5,1),(2,1,2,0.6),(1,0.6,1,0.6)\right)$ and the mapper $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$. The optimizer has 800 steps with a maximum stepsize $\eta_M$ of 0.3.
+  \item \textbf{Before/after exposure:} The velocity field kernel $K_G$ is set to $ (c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x) = (1,0.1,220,1,2)$. The varifold loss is the sum of four varifolds to capture shapes variations at different scales with parameters: (Varifold 1,Varifold 2,Varifold 3, Varifold 4): $\left((30,2,30,1),(5,2,5,1),(2,1,2,0.6),(1,0.1,1,0.1)\right)$ and the mapper $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$. The optimizer has 800 steps with a maximum stepsize $\eta_M$ of 0.3.
+\end{itemize}
+
+\paragraph{LDDMMM parameters.} Note that varifold losses are unchanged between TS-LDDMM and LDDMM. Compared to TS-LDDMM, the convergence of LDDMM is more sensitive to the maximum stepsize $\eta_m$, which must remain small for LDDMM to guarantee the convergence.
+\begin{itemize}
+  \item \textbf{Before exposure:} The velocity field kernel $K_G$ is an anysotropic Gaussian kernel with parameters $\sigma_{T} =150$ for the time dimension and $\sigma_x = 2$ for space dimensions. 
+  The varifold loss is the sum of three varifolds to capture shapes variations at different scales with parameters: (Varifold 1,Varifold 2,Varifold 3): $\left((5,2,5,1),(2,1,2,0.6),(1,0.6,1,0.6)\right)$ and the mapper $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$. The optimizer has 800 steps with a maximum stepsize $\eta_M$ of 0.01.
+  \item \textbf{Before/after exposure:} The velocity field kernel $K_G$ is an anysotropic Gaussian kernel with parameters $\sigma_{T} =220$ for the time dimension and $\sigma_x = 2$ for space dimensions.
+  The varifold loss is the sum of four varifolds to capture shapes variations at different scales with parameters: (Varifold 1,Varifold 2,Varifold 3, Varifold 4): $\left((30,2,30,1),(5,2,5,1),(2,1,2,0.6),(1,0.1,1,0.1)\right)$ and the mapper $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$. The optimizer has 800 steps with a maximum stepsize $\eta_M$ of 0.01.
+\end{itemize}
+\subsection{Benchmark}
+
+A report of all the hyperparameters selected is given in \Cref{appendix:table:set_up_exp_practical}.
+
 
 \subsection{Synthetic experiments}
 \label{appendix:numerics_synthetic}
@@ -190,17 +222,19 @@ As well, we used the Support Vector Classifier from scikit-learn with thee regul
             \midrule
             Parameter & (nb\_steps,$\eta_M$) &$(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$ & $(c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x)$ \\
             \midrule
-            Synthetic data well-specified &(300,0.1) &$(2,1,2,0.6)$& $(1,0.1,100,1,1)$   \\
-            Synthetic data misspecified  & (300,0.1)  & $ (2,1,2,0.6)$ &$(1,0.1,100,1,1)$  \\
+            Synthetic data well-specified &(400,0.1) &$(2,1,2,0.6)$& $(1,0.1,100,1,1)$   \\
+            Synthetic data misspecified  & (400,0.1)  & $ (2,1,2,0.6)$ &$(1,0.1,100,1,1)$  \\
             Mouse before injection  & (400,0.3)  & $ (2,1,2,0.6)$ &$(1,0.1,100,1,1)$  \\
-            Mouse before/after injection  & (800,0.3)  & $ (5,1,5,0.6)$ &$(1,0.1,150,1,1)$  \\
-            classification  & (400,0.1)  & $(\max(2,0.03\bar{l}),N_d,\max(2,0.03\bar{l}),0.6)$  & $(1,0.1,0.33\bar{l},1,N_d)$  \\
+            Mouse before/after injection  & (400,0.3)  & $ (5,1,5,0.6)$ &$(1,0.1,150,1,1)$  \\
+            Classification  & (400,0.1)  & $(2,N_d,2,N_d)$  & $(1,0.1,0.33\bar{l},1,N_d)$  \\
 
             \bottomrule
           \end{tabular}
         \label{appendix:table:set_up_exp_practical}
     \end{table}
-\section{Mouse respiratory dataset}
+
+\section{Datasets}
+\subsection{Mouse respiratory cycle dataset}
 
 \begin{figure}
   \centering
@@ -240,7 +274,127 @@ respiratory cycles whose duration exceeds 1 second; the average respiratory cycl
 300 ms. We randomly sampled 10 respiratory cycles per minute and mouse. It leads to a dataset of 
 12,732 (time, genotype)-annotated respiratory cycles. 
 
-\section{Classification: Comparison with shape analysis methods}
+\subsection{Shape-based UCR/UEA time series classification datasets}
+\label{appendix:classification_dataset}
+We selected 15 shape-based datasets (7 univariates and 8 multivariates) from the from the University of East Anglia (UEA) and the University of California Riverside (UCR) Time Series Classification Repository\footnote{https://timeseriesclassification.com} \cite{dau2019ucr,bagnall2018uea}. All datasets were downloaded with the python package aeon\footnote{https://www.aeon-toolkit.org/en/stable/}. Essential datasets information are summarized in \Cref{appendix:table:datasets} and further can be found in \cite{dau2019ucr,bagnall2018uea}.
+
+\begin{table}[hbt!]
+  \centering
+  \caption{UCR/UEA shape-based time series datasets for classification.}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{lllllll}
+    \toprule
+    & \textbf{Dataset} &  \textbf{Size} & \textbf{Lengh} & \textbf{Number of classes} & \textbf{Number of dimensions} & \textbf{Type} \\
+    \midrule
+    \multirow[c]{7}{*}{Univariate} &  ArrowHead & 211 & 251 & 3 & 1 & IMAGE \\
+    & BME & 180 & 128 & 3 & 1 & SIMULATED \\
+    & ECG200 & 200 & 96 & 2 & 1 & ECG \\
+    & FacesUCR & 2250 & 131 & 14 & 1 & IMAGE \\
+    & GunPoint & 200 & 150 & 2 & 1 & MOTION \\
+    & PhalangesOutlinesCorrect & 2658 & 80 & 2 & 1 & IMAGE \\
+    & Trace & 200 & 275 & 4 & 1 & SENSOR \\
+    \cline{1-7}
+    \multirow[c]{8}{*}{Multivariate}& ArticularyWordRecognition & 575 & 144 & 25 & 9 & SENSOR \\
+    & Cricket & 180 & 1197 & 12 & 6 & MOTION \\
+    & ERing & 60 & 65 & 6 & 4 & SENSOR \\
+    & Handwriting & 1000 & 152 & 26 & 3 & MOTION \\
+    & Libras & 360 & 45 & 15 & 2 & VIDEO \\ 
+    & NATOPS & 360 & 51 & 6 & 24 & MOTION \\
+    & RacketSports & 303 & 30 & 4 & 6 & SENSOR \\
+    & UWaveGestureLibrary & 240 & 315 & 8 &3 & SENSOR \\
+    \bottomrule
+  \end{tabular}
+  %
+  }
+  \label{appendix:table:datasets}
+\end{table}
+
+\section{Experiments}
+
+\subsection{Identifiability experiments}
+\label{appendix:identifiability}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.5\linewidth]{pictures/samples.pdf}
+  \vspace{-2.5em}
+  \caption{Plots of $\varphi^{\{v_0(\mathbf{\alpha}^*,\msx)\}}.\msx$ for different values of $\mathbf{\alpha}^*$ according to its sampling parameter $t_a,s_a,m_s $, taking $\msx=\msg(s_0)$ with $s_0:k\in [300]\to \sin(2\pi k/300) $.}
+  \label{fig:exemple_synthetic}
+  \vspace{-1em}
+\end{figure}
+
+\begin{table}
+  \caption{Values of $\scrl(\varphi^{\{v_0(\mathbf{\alpha}^*,\msx)\}}.\msx,\varphi^{\{\hat{v}_0\}}.\msx)$ as $\mathbf{\alpha}^*$ is sampled according to Gen(10,10,50) and $\hat{v}_0$ is estimated using $K_\msg$ with varying parameters $\sigma_{T,1},\sigma_x$.}
+    \centering
+       \begin{tabular}{lrrrrrrr}
+       \toprule
+       $\sigma_{T,0} \backslash \sigma_x$  & 1 & 10 & 50 & 100 & 200 & 300 \\
+       \midrule
+       0.1 & 2e+0 & 3e-4  & 1e-5&4e-6&7e-4&4e-3 \\
+      1 & 4e-2 & 1e-4  & 1e-5&4e-6&7e-4 &4e-3  \\
+       100 & 4e-2 & 2e-4  & 1e-5&4e-6&7e-4&4e-3  \\
+       \bottomrule
+       \end{tabular}
+    \label{table:synthetic2}
+    \vspace{-1em}
+\end{table}
+
+
+
+% \begin{subfigure}{0.7\linewidth}
+%   \centering
+%   \resizebox{\columnwidth}{!}{%
+%      \begin{tabular}{lrrrr}
+%      \toprule
+%      $\sigma_{T,0} \backslash \sigma_x$  & 0.1 & 1 & 100 \\
+%      \midrule
+%      1 & 2e+0 & 4e-2 & 4e-2 \\
+%      10 & 3e-4 & 1e-4  & 2e-4 \\
+%      50 & 1e-5 & 1e-5  & 1e-5 \\
+%      100 & 4e-6 & 4e-6 & 4e-6 \\
+%      200 & 7e-4 & 7e-4 & 7e-4 \\
+%      300 & 4e-3 & 4e-3 & 4e-3 \\
+%      \bottomrule
+%      \end{tabular}
+%      %
+%      }
+%  \caption{Values of $\scrl(y^*,\varphi^{\{\hat{v}_0\}}.\msx)$ where $y^*$ is sampled according to Gen(10,10,50) and $\hat{v}_0$ is estimated using $K_\msg$ with varying parameters $\sigma_{T,1},\sigma_x$.}
+% \end{subfigure}
+
+provided that the hyperparameters and the reference graph are wisely selected, i.e., the parameter $v_0^*$ generating a deformation $\varphi^{\{v_0^*\}}$ of a time series graph $\msg$ can be estimated from the data $\msg,\varphi^{\{v_0^*\}}.\msg$ by solving the geodesic shooting problem \eqref{eq:relaxation}. 
+
+First, we show the model identifiability when the kernel $K_G$ is well specified: the estimated parameter is a good approximation of the generating parameter when the generation and the estimation procedure use the same hyperparameters for the RKHS kernel $K_\msg$.
+All the hyperparameter values for generation and estimation are given in \Cref{appendix:numerics_synthetic}.
+We fix the initial control points as $\msx=\left(x_k=(k,\sin(2\pi k/300))\right)_{k\in[300]} $.
+Given $m_{s}\in \Nset_{>0}$ and $t_{a},s_{a}>0$, we randomly generate initial momentums $\mathbf{\alpha}^*=(\alpha_k^*)_{k\in[\mathbf{n}_0]}$ with the following sampling, called Gen($m_s,t_a,s_a$):
+For any $k\in[\mathbf{n}_0]$, $\mathbf{\alpha}_k'$ is sampled according to a Gaussian normal distribution $\mathcal{N}(0_{d+1},I_{d+1})$.
+Then, $(\alpha_k')_{k\in[\mathbf{n}_0]}$ is regularized by a rolling average of size $m_{s}$, we get $\bar{\mathbf{\alpha}}'=(\bar{\alpha}_k')_{k\in[\mathbf{n}_0]}$.
+Finally, we normalize $\bar{\mathbf{\alpha}}'$ to derive $\mathbf{\alpha}^*$ such that $|([\alpha_k^*]_t)_{k\in[\mathbf{n}_0]}|=t_{\text{amp}}$ and $|([\alpha_k^*]_s)_{k\in[\mathbf{n}_0]}|=s_{\text{amp}}$ for any $k\in[\mathbf{n}_0]$, denoting by $[\alpha_k^*]_t,[\alpha_k^*]_s$ the time and space coordinates of $\alpha_k^*$ respectively.
+Note that the regularizing step $(\mathbf{\alpha}_k')_{k\in[\mathbf{n}_0]}\to \bar{\mathbf{\alpha}}' $ is necessary to obtain realistic deformations which take into account the regularity induced by the RKHS $\msv$.
+%  uniformly on the set $\mss_M=\{ (\alpha_k)_{k\in[\mathbf{n}_0]}\in (\Rset^{d+1})^{\mathbf{n}_0}:\eqsp |\alpha_k|=M\}  $ with $M>0,\mathbf{n}_0\in \Nset_{>0}$,
+%  then we regularize $\mathbf{\alpha}$ by convolving
+%   with ... to get the generation parameter $\mathbf{\alpha}^*$.
+Then, using $v_0(\mathbf{\alpha}^*,\msx)$ as defined in \eqref{eq:def_v0} with initial momentums $\mathbf{\alpha}^*$ and control points $\msx$, we apply the induced deformation $\varphi^{\{v_0\}} $ by \eqref{eq:integration} to $\msx$ and obtain $\varphi^{\{v_0\}}.\msx$.
+Finally, we solve \eqref{eq:relaxation} to recover an estimation $\hat{\mathbf{\alpha}}$ of $\mathbf{\alpha}^*$ and report the average relative error (ARE) $|v_0(\hat{\mathbf{\alpha}},\msx)-v_0(\mathbf{\alpha}^*,\msx)|_\msv/|v_0(\mathbf{\alpha}^*,\msx)|_\msv$ on 50 repetitions.
+This procedure is performed for any $m_{s},t_{a},s_{a}\in \{10,50,100\}\times \{5,10,15,20\}^2 $.
+Mean, standard deviation, and maximum of the ARE on all these hyperparameters choices are respectively $\mathbf{0.10, 0.03, 0.17}$.
+Therefore, the estimation procedure \eqref{eq:relaxation} offers a good approximation of the true parameter when the kernel $K_\msg$ is well specified.
+We observe that the estimation is difficult when $t_a\ll s_a$ because the time series can be very noisy as illustrated in \Cref{fig:exemple_synthetic}: this impacts the Varifold loss which is sensitive to tangents.
+
+Secondly, we demonstrate a weak identifiability when the kernel $K_\msg$ is misspecified: we can reconstruct the graph time series' after deformations even if the hyperparameters of $K_\msg$
+are different during the generation and the estimation.
+ The hyperparameters of $K_\msg$ during generation are $(c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x)=(1,0.1,100,1,1)$ and we fix $\sigma_{T,1},c_0,c_1=(1,1,0.1) $ for $K_\msg$ during estimation.
+ We aim to understand the impact of $\sigma_{T,1},\sigma_x$ on the reconstruction since they are encoding the smoothness of the transformation according to time and space.  
+
+  For any choice of the hyperparameters $\sigma_{T,1},\sigma_x\in \{1,10,50,100,200,300 \}\times \{0.1,1,100\}$ related to $K_\msg$ in the estimation,
+   we average $\scrl(\varphi^{\{v_0(\mathbf{\alpha}^*,\msx)\}}.\msx,\varphi^{\{\hat{v}_0\}}.\msx)$ on 50 repetitions when $\mathbf{\alpha}^*$ is sampled according to Gen$(10,10,50)$ and $\hat{v}_0=v_0(\hat{\alpha},\msx)$ denoting by $\hat{\alpha}$ the result of the minimization \eqref{eq:relaxation}.
+We observe in \Cref{table:synthetic2} that the reconstruction is almost perfect except in the case when $\sigma_{t,0}=1$ during estimation, while $ \sigma_{t,0}=100$ during generation.
+ Compared to $\sigma_{T,0}$, $\sigma_x$ has nearly no impact on the reconstruction.
+ In \Cref{appendix:kernel_implementation}-\ref{appendix:kernel_TS_LDDMM}, we propose guidelines to drive future hyperparameters tuning and further discussions related to $\sigma_{T,1},c_0,c_1$. 
+
+
+\subsection{Classification: Comparison with shape analysis methods}
+\label{appendix:classification_shape_analysis}
 
 In this section, we compare classification performances of TS-LDDMM with other state-of-the-art methods coming from shape analysis on 15 shape-based datasets of time-series.
 
@@ -302,41 +456,6 @@ In this section, we compare classification performances of TS-LDDMM with other s
     TS-LDDMM (ours) & $\mathbf{0.83 \pm 0.18}$ & $\mathbf{0.8 \pm 0.18}$ & $\mathbf{0.7 \pm 0.26}$ & $0.51 \pm 0.27$ \\
     \bottomrule
   \end{tabular}  
-\end{table}
-
-\section{Classification datasets}
-\label{appendix:classification_dataset}
-We selected 15 shape-based datasets (7 univariates and 8 multivariates) from the from the University of East Anglia (UEA) and the University of California Riverside (UCR) Time Series Classification Repository\footnote{https://timeseriesclassification.com} \cite{dau2019ucr,bagnall2018uea}. All datasets were downloaded with the python package aeon\footnote{https://www.aeon-toolkit.org/en/stable/}. Essential datasets information are summarized in \Cref{appendix:table:datasets} and further can be found in \cite{dau2019ucr,bagnall2018uea}.
-
-\begin{table}[hbt!]
-  \centering
-  \caption{UCR/UEA shape-based time series datasets for classification.}
-  \resizebox{\columnwidth}{!}{%
-  \begin{tabular}{lllllll}
-    \toprule
-    & \textbf{Dataset} &  \textbf{Size} & \textbf{Lengh} & \textbf{Number of classes} & \textbf{Number of dimensions} & \textbf{Type} \\
-    \midrule
-    \multirow[c]{7}{*}{Univariate} &  ArrowHead & 211 & 251 & 3 & 1 & IMAGE \\
-    & BME & 180 & 128 & 3 & 1 & SIMULATED \\
-    & ECG200 & 200 & 96 & 2 & 1 & ECG \\
-    & FacesUCR & 2250 & 131 & 14 & 1 & IMAGE \\
-    & GunPoint & 200 & 150 & 2 & 1 & MOTION \\
-    & PhalangesOutlinesCorrect & 2658 & 80 & 2 & 1 & IMAGE \\
-    & Trace & 200 & 275 & 4 & 1 & SENSOR \\
-    \cline{1-7}
-    \multirow[c]{8}{*}{Multivariate}& ArticularyWordRecognition & 575 & 144 & 25 & 9 & SENSOR \\
-    & Cricket & 180 & 1197 & 12 & 6 & MOTION \\
-    & ERing & 60 & 65 & 6 & 4 & SENSOR \\
-    & Handwriting & 1000 & 152 & 26 & 3 & MOTION \\
-    & Libras & 360 & 45 & 15 & 2 & VIDEO \\ 
-    & NATOPS & 360 & 51 & 6 & 24 & MOTION \\
-    & RacketSports & 303 & 30 & 4 & 6 & SENSOR \\
-    & UWaveGestureLibrary & 240 & 315 & 8 &3 & SENSOR \\
-    \bottomrule
-  \end{tabular}
-  %
-  }
-  \label{appendix:table:datasets}
 \end{table}
 
 

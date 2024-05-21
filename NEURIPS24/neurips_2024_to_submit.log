@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.24)  21 MAY 2024 16:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.6)  21 MAY 2024 18:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.tex
-(/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.tex
+**/Users/tgermain/Documents/code/TSLDDMM/NEURIPS24/neurips_2024_to_submit.tex
+(/Users/tgermain/Documents/code/TSLDDMM/NEURIPS24/neurips_2024_to_submit.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -22,7 +22,7 @@ File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
-) (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024.sty
+) (./neurips_2024.sty
 Package: neurips_2024 2024/03/31 NeurIPS 2024 submission/camera-ready style file
  (/usr/local/texlive/2022/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
@@ -377,7 +377,7 @@ Package cleveref Info: `amsthm' support loaded on input line 3026.
 Package cleveref Info: always capitalise cross-reference names on input line 7830.
 Package cleveref Info: always capitalise cross-reference names on input line 7852.
 Package cleveref Info: no abbreviation of names on input line 7852.
-) (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/header.tex (/usr/local/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty
+) (./header.tex (/usr/local/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen189
@@ -773,7 +773,7 @@ Package: accents 2006/05/12 v1.4 Math Accent Tools
 \c@assumptionsup=\count351
 \c@assumptionnona=\count352
 \c@assumptionnonsup=\count353
-) (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/def.tex) (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.aux (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/experiment.aux))
+) (./def.tex) (./neurips_2024_to_submit.aux (./experiment.aux))
 \openout1 = `neurips_2024_to_submit.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
@@ -874,7 +874,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 87.
 LaTeX Info: Redefining \pageref on input line 87.
 LaTeX Info: Redefining \nameref on input line 87.
- (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.out) (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.out)
+ (./neurips_2024_to_submit.out) (./neurips_2024_to_submit.out)
 \@outlinefile=\write4
 \openout4 = `neurips_2024_to_submit.out'.
 
@@ -958,7 +958,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `phv' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/paper.tex
+ (./paper.tex
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -971,17 +971,17 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 12
  (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-<./pictures/diffeo.jpeg, id=161, 445.9059pt x 166.9437pt>
+<./pictures/diffeo.jpeg, id=181, 445.9059pt x 166.9437pt>
 File: ./pictures/diffeo.jpeg Graphic file (type jpg)
 <use ./pictures/diffeo.jpeg>
 Package pdftex.def Info: ./pictures/diffeo.jpeg  used on input line 174.
 (pdftex.def)             Requested size: 278.23827pt x 104.1765pt.
-<./pictures/transport.jpeg, id=162, 1517.67pt x 289.08pt>
+<./pictures/transport.jpeg, id=182, 1517.67pt x 289.08pt>
 File: ./pictures/transport.jpeg Graphic file (type jpg)
 <use ./pictures/transport.jpeg>
 Package pdftex.def Info: ./pictures/transport.jpeg  used on input line 183.
 (pdftex.def)             Requested size: 397.48499pt x 75.71039pt.
- [2 </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/diffeo.jpeg> </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/transport.jpeg>]
+ [2 <./pictures/diffeo.jpeg> <./pictures/transport.jpeg>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
@@ -1012,29 +1012,23 @@ l.603     \end{align}
                      ] [7]
 \openout2 = `experiment.aux'.
 
- (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/experiment.tex
-<pictures/samples.pdf, id=343, 433.62pt x 180.675pt>
-File: pictures/samples.pdf Graphic file (type pdf)
-<use pictures/samples.pdf>
-Package pdftex.def Info: pictures/samples.pdf  used on input line 14.
-(pdftex.def)             Requested size: 198.7425pt x 82.81099pt.
- [8
-
- </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/pictures/samples.pdf>]
-<./pictures/exp_1_bis.pdf, id=389, 1881.0275pt x 692.5875pt>
+ (./experiment.tex
+<./pictures/exp_1_bis.pdf, id=366, 1881.0275pt x 692.5875pt>
 File: ./pictures/exp_1_bis.pdf Graphic file (type pdf)
 <use ./pictures/exp_1_bis.pdf>
-Package pdftex.def Info: ./pictures/exp_1_bis.pdf  used on input line 95.
+Package pdftex.def Info: ./pictures/exp_1_bis.pdf  used on input line 28.
 (pdftex.def)             Requested size: 377.60951pt x 139.03287pt.
-<./pictures/exp_2.pdf, id=390, 1300.86pt x 200.75pt>
+<./pictures/exp_2.pdf, id=367, 1300.86pt x 200.75pt>
 File: ./pictures/exp_2.pdf Graphic file (type pdf)
 <use ./pictures/exp_2.pdf>
-Package pdftex.def Info: ./pictures/exp_2.pdf  used on input line 105.
+Package pdftex.def Info: ./pictures/exp_2.pdf  used on input line 38.
 (pdftex.def)             Requested size: 377.60951pt x 58.27113pt.
- [9 </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/exp_1_bis.pdf> </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/exp_2.pdf>]) [10]) (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.bbl [11
+ [8
+
+ <./pictures/exp_1_bis.pdf>]) [9 <./pictures/exp_2.pdf>] [10]) (./neurips_2024_to_submit.bbl [11
 
 
-] [12] [13]) (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/appendix.tex [14
+] [12] [13]) (./appendix.tex [14
 pdfTeX warning (ext4): destination with the same identifier (name{equation.A.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1102,51 +1096,90 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 132.
+(hyperref)                removing `\hbox' on input line 134.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 132.
+(hyperref)                removing `\mathsurround' on input line 134.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 132.
+(hyperref)                removing `\z@' on input line 134.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\unskip' on input line 132.
+(hyperref)                removing `\unskip' on input line 134.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@italiccorr' on input line 132.
+(hyperref)                removing `\@@italiccorr' on input line 134.
 
 [16]
-Overfull \hbox (74.04523pt too wide) in paragraph at lines 186--202
+Underfull \hbox (badness 1297) in paragraph at lines 156--157
+\OML/cmm/m/it/10 ^^[[]$ \T1/ptm/m/n/10 (+20) rang-ing in $\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 100)$\T1/ptm/m/n/10 (+20) . The var-i-fold loss ker-nels $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 k[]; k[]\OT1/cmr/m/n/10 )$ \T1/ptm/m/n/10 (+20) are set to
+ []
+
+
+Underfull \hbox (badness 1546) in paragraph at lines 166--167
+\T1/ptm/m/n/10 (+20) vari-a-tions at dif-fer-ent scales with pa-ram-e-ters: (Var-i-fold 1,Var-i-fold 2,Var-i-fold 3):
+ []
+
+
+Underfull \hbox (badness 2027) in paragraph at lines 167--168
+\T1/ptm/m/n/10 (+20) vari-a-tions at dif-fer-ent scales with pa-ram-e-ters: (Var-i-fold 1,Var-i-fold 2,Var-i-fold 3,
+ []
+
+
+Underfull \hbox (badness 2837) in paragraph at lines 167--168
+\T1/ptm/m/n/10 (+20) Var-i-fold 4): $[]$ and the map-per
+ []
+
+
+Underfull \hbox (badness 2368) in paragraph at lines 174--176
+[]\T1/ptm/b/n/10 (+20) Before/after ex-po-sure: \T1/ptm/m/n/10 (+20) The ve-loc-ity field ker-nel $\OML/cmm/m/it/10 K[]$ \T1/ptm/m/n/10 (+20) is an anysotropic Gaus-
+ []
+
+
+Underfull \hbox (badness 1394) in paragraph at lines 174--176
+\T1/ptm/m/n/10 (+20) sian ker-nel with pa-ram-e-ters $\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = 220$ \T1/ptm/m/n/10 (+20) for the time di-men-sion and $\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = 2$
+ []
+
+[17]
+Overfull \hbox (26.1235pt too wide) in paragraph at lines 218--234
  [][] 
  []
 
-<pictures/mice_exp.png, id=520, 492.3996pt x 214.401pt>
+<pictures/mice_exp.png, id=515, 492.3996pt x 214.401pt>
 File: pictures/mice_exp.png Graphic file (type png)
 <use pictures/mice_exp.png>
-Package pdftex.def Info: pictures/mice_exp.png  used on input line 207.
+Package pdftex.def Info: pictures/mice_exp.png  used on input line 241.
 (pdftex.def)             Requested size: 397.48499pt x 173.07825pt.
-[17] [18 </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/pictures/mice_exp.png (PNG copy)>]) [19] [20] [21] [22] [23] [24] [25] [26] (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.aux (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/experiment.aux))
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18] [19 <./pictures/mice_exp.png (PNG copy)>]
+<pictures/samples.pdf, id=544, 433.62pt x 180.675pt>
+File: pictures/samples.pdf Graphic file (type pdf)
+<use pictures/samples.pdf>
+Package pdftex.def Info: pictures/samples.pdf  used on input line 319.
+(pdftex.def)             Requested size: 198.7425pt x 82.81099pt.
+ [20 <./pictures/samples.pdf>]) [21] [22] [23] [24] [25] [26] [27] [28] (./neurips_2024_to_submit.aux (./experiment.aux))
 Package rerunfilecheck Info: File `neurips_2024_to_submit.out' has not changed.
-(rerunfilecheck)             Checksum: 0D445483F34CA7AF05D5356BC057EDF2;4472.
+(rerunfilecheck)             Checksum: 88CF6B829A0C178E97DE07F0C6A6A68D;5489.
  ) 
 Here is how much of TeX's memory you used:
- 40647 strings out of 478268
- 909111 string characters out of 5846346
+ 40672 strings out of 478268
+ 907227 string characters out of 5846348
  1404071 words of memory out of 5000000
- 57616 multiletter control sequences out of 15000+600000
- 532583 words of font info for 295 fonts, out of 8000000 for 9000
+ 57625 multiletter control sequences out of 15000+600000
+ 532710 words of font info for 297 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,20n,83p,1152b,729s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,20n,83p,1122b,679s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.pdf (26 pages, 905636 bytes).
+Output written on neurips_2024_to_submit.pdf (28 pages, 913898 bytes).
 PDF statistics:
- 779 PDF objects out of 1000 (max. 8388607)
- 653 compressed objects within 7 object streams
- 183 named destinations out of 1000 (max. 500000)
- 61675 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 822 PDF objects out of 1000 (max. 8388607)
+ 694 compressed objects within 7 object streams
+ 196 named destinations out of 1000 (max. 500000)
+ 61715 words of extra memory for PDF output out of 61914 (max. 10000000)
 
