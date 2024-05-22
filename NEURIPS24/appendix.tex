@@ -116,7 +116,7 @@ where $\sigma_{\pos,t}, \sigma_{\pos,x}, \sigma_{\dir,t}, \sigma_{\dir,x}>0 $ ar
   The more significant the time change, the higher $m$ should be. The intuition comes from the fact that the width $\sigma_{\pos,t}, \sigma_{\dir,t}$ rules the time windows used to perform the comparison, and $\sigma_{\pos,x}, \sigma_{\dir,x}$ affects the space window.
    The size of the windows should be selected depending on the variations in the data.
 
-\section{Tuning the hyperparameters of the TS-LDDMM kernel given in \eqref{eq:kernel_TAS}}
+\section{Tuning the hyperparameters of the TS-LDDMM velocity field kernel}
 \label{appendix:kernel_TS_LDDMM}
 The parameter $\sigma_{T,0}$ should be chosen \textit{large} compared the sampling frequency $f_e$ and compared to average standard deviation $\bar{\sigma}_s$ of the time series, e.g $\sigma_{T,0}=100$ as $\bar{\sigma}_s\approx f_e\approx  1 $.
 It makes the time transformation smoother. If $\sigma_{T,0}$ is too small, for instance, $\sigma_{T,0}=f_e $, the effect of the time deformation is too localized, and there are not enough samples to make it visible.
@@ -131,7 +131,7 @@ The parameter $\sigma_{T,1}$ should be of the same order as $f_e$: two different
 
 All experiments were performed on a Debian 6.1.69-1 server with NVIDIA RTX A2000 12GB GPU, Intel(R) Xeon(R) Gold 5220R CPU @ 2.20GHz, and 250 GB of RAM. The source code will be available on Github.
 
-\subsection{Optimization details of TS-LDDMM~\eqref{eq:general_optimization_problem}}
+\subsection{Optimization details of TS-LDDMM \& LDDMM}
 \label{appendix:optimizers_details}
 
 We implemented TS-LDDMM in Python with the JAX library \footnote{https://github.com/google/jax}.
@@ -149,15 +149,7 @@ The stepsize has a scheduling scheme:
 \end{itemize}
 By default, we set nb\_steps to 400 and $\eta_M$ to 0.1.
 
-\subsection{Identifiability experiment}
-This experiement only involves the TS-LDDMM method in two different settings: 
-\begin{itemize}
-  \item \textbf{The velocity field kernel $K_G$ is well-specified:} The velocity field kernel $K_G$ is set to $ (c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x) = (1,0.1,100,1,1)$, the varifold loss kernels $(k_{pos},k_{dir})$ are set to $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x}) = (2,1,2,0.6)$, and the optimizer has 400 steps with a maximum stepsize $\eta_M$ of 0.05.
-  \item \textbf{The velocity field kernel $K_G$ is missspecified:} The velocity field kernel $K_G$ is set with  $(c_0,c_1,\sigma_{T,1}) = (1,0.1,1)$, $\sigma_{T,0}$ ranging in $(1,5,10,50,100,200,300)$, and $\sigma_x$  ranging in $(0.1,1,10,100)$. The varifold loss kernels $(k_{pos},k_{dir})$ are set to $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x}) = (2,1,2,0.6)$, and the optimizer has 400 steps with a maximum stepsize $\eta_M$ of 0.05.
-\end{itemize}
-TS-LDDMM parameters of the experiment are summarized in \Cref{appendix:table:set_up_exp_practical}
-
-\subsection{Mice respiratory behaviors experiment}
+\subsection{Settings for experiment: analysis of respiratory behavior in mice}
 \label{appendix: mice_exp_setting}
 
 This experiment involves TS-LDDMM and LDDMM~\cite{glaunes2008large} methods. Both methods are run twice, first on respiratory cycles before exposure to the irritant molecule to capture mice breathing behavior at rest and on all respiratory cycles to capture the influence of the irritant molecule. Exposure to the irritant molecule leads to significant shape deformation in the respiratory cycles, and the terms must be added to the varifold loss to capture deformations at a large time scale. 
@@ -175,10 +167,34 @@ This experiment involves TS-LDDMM and LDDMM~\cite{glaunes2008large} methods. Bot
   \item \textbf{Before/after exposure:} The velocity field kernel $K_G$ is an anysotropic Gaussian kernel with parameters $\sigma_{T} =220$ for the time dimension and $\sigma_x = 2$ for space dimensions.
   The varifold loss is the sum of four varifolds to capture shapes variations at different scales with parameters: (Varifold 1,Varifold 2,Varifold 3, Varifold 4): $\left((30,2,30,1),(5,2,5,1),(2,1,2,0.6),(1,0.1,1,0.1)\right)$ and the mapper $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$. The optimizer has 800 steps with a maximum stepsize $\eta_M$ of 0.01.
 \end{itemize}
-\subsection{Benchmark}
 
-A report of all the hyperparameters selected is given in \Cref{appendix:table:set_up_exp_practical}.
 
+\subsection{Settings for experiment: TS-LDDMM representation identifiability}
+\label{appendix: settings_identifiability}
+This experiment only involves the TS-LDDMM method in two different settings: 
+\begin{itemize}
+  \item \textbf{The velocity field kernel $K_G$ is well-specified:} The velocity field kernel $K_G$ is set to $ (c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x) = (1,0.1,100,1,1)$, the varifold loss kernels $(k_{pos},k_{dir})$ are set to $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x}) = (2,1,2,0.6)$, and the optimizer has 400 steps with a maximum stepsize $\eta_M$ of 0.05.
+  \item \textbf{The velocity field kernel $K_G$ is missspecified:} The velocity field kernel $K_G$ is set with  $(c_0,c_1,\sigma_{T,1}) = (1,0.1,1)$, $\sigma_{T,0}$ ranging in $(1,5,10,50,100,200,300)$, and $\sigma_x$  ranging in $(0.1,1,10,100)$. The varifold loss kernels $(k_{pos},k_{dir})$ are set to $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x}) = (2,1,2,0.6)$, and the optimizer has 400 steps with a maximum stepsize $\eta_M$ of 0.05.
+\end{itemize}
+
+\subsection{Settings for experiment: Robustness to irregular sampling}
+This experiment is inspired from \cite{oh2024stable} where authors performs an extensive comparison of Neural Ordinary Differential Equations (Neural ODEs) methods~\cite{kidger2020neural}. Methods, network architectures, and training strategy are taken from its associated Github\footnote{\url{https://github.com/yongkyung-oh/Stable-Neural-SDEs}} and describe in what follows.
+\label{appendix: settings_robustness}
+\subsubsection{Benchmark methods}
+In related work, we give an overview of Neurals ODEs methods and its relation with TS-LDDMM.  
+\begin{itemize}
+  \item RNN-based methods: Baseline reccurent neural networks including RNN~\cite{medsker1999recurrent}, LSTM~\cite{hochreiter1997long}, and GRU~\cite{chung2014empirical}.
+
+  \item Attention-based methods: Multi-Time Attention Networks (MTAN)~\cite{shukla2021multi} and Multi-Integration Attention Module (MIAM)~\cite{lee2022multi}. Both handles multivariate time series irregularly sampled with attention mechanisms.
+  \item Neural ODEs: ODE-LSTM~\cite{lechner2020learning} a form of Neural-ODEs used to learned continous latent representations. 
+  \item Neural SDEs:  Neural SDE~\cite{liu2019neural} and Neural LNSDE~\cite{oh2024stable} have been proposed to model randomness in time-series using drift and diffusion terms as an extension of Neural-ODEs. 
+  \item Shape-Analysis methods: TS-LDDMM (ours) and LDDMM~\cite{glaunes2008large}. From shape analysis, both methods learn representations by solving ODEs parametrized with Kernels. While both methods hamdle multivariate signal irregularly sampled, TS-LDDMM is specifically desgined for time series.
+\end{itemize}
+
+
+
+\subsection{Settings for experiment: Classification benchmark on regularly sampled datasets}
+\label{appendix: settings_classification}
 
 \subsection{Synthetic experiments}
 \label{appendix:numerics_synthetic}

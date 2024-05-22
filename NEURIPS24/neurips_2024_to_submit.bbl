@@ -60,6 +60,12 @@ Ricky~TQ Chen, Yulia Rubanova, Jesse Bettencourt, and David~K Duvenaud.
 \newblock Neural ordinary differential equations.
 \newblock {\em Advances in neural information processing systems}, 31, 2018.
 
+\bibitem{chung2014empirical}
+Junyoung Chung, Caglar Gulcehre, KyungHyun Cho, and Yoshua Bengio.
+\newblock Empirical evaluation of gated recurrent neural networks on sequence
+  modeling.
+\newblock {\em arXiv preprint arXiv:1412.3555}, 2014.
+
 \bibitem{dau2019ucr}
 Hoang~Anh Dau, Anthony Bagnall, Kaveh Kamgar, Chin-Chia~Michael Yeh, Yan Zhu,
   Shaghayegh Gharghabi, Chotirat~Ann Ratanamahatana, and Eamonn Keogh.
@@ -132,6 +138,11 @@ Tae-Young Heo, Joon~Myoung Lee, Myung~Hun Woo, Hyeongseok Lee, and Min~Ho Cho.
   tangent representations.
 \newblock {\em Journal of the Korean Statistical Society}, pages 1--19, 2024.
 
+\bibitem{hochreiter1997long}
+Sepp Hochreiter and J{\"u}rgen Schmidhuber.
+\newblock Long short-term memory.
+\newblock {\em Neural computation}, 9(8):1735--1780, 1997.
+
 \bibitem{hoymann2012lung}
 Heinz~Gerd Hoymann.
 \newblock Lung function measurements in rodents in safety pharmacology studies.
@@ -166,6 +177,18 @@ Huiling Le.
 \newblock Locating fr{\'e}chet means with application to shape spaces.
 \newblock {\em Advances in Applied Probability}, 33(2):324--338, 2001.
 
+\bibitem{lechner2020learning}
+Mathias Lechner and Ramin Hasani.
+\newblock Learning long-term dependencies in irregularly-sampled time series.
+\newblock {\em arXiv preprint arXiv:2006.04418}, 2020.
+
+\bibitem{lee2022multi}
+Yurim Lee, Eunji Jun, Jaehun Choi, and Heung-Il Suk.
+\newblock Multi-view integrative attention-based deep representation learning
+  for irregular clinical time-series data.
+\newblock {\em IEEE Journal of Biomedical and Health Informatics},
+  26(8):4270--4280, 2022.
+
 \bibitem{liu2019neural}
 Xuanqing Liu, Tesi Xiao, Si~Si, Qin Cao, Sanjiv Kumar, and Cho-Jui Hsieh.
 \newblock Neural sde: Stabilizing neural ode networks with stochastic noise.
@@ -175,6 +198,11 @@ Xuanqing Liu, Tesi Xiao, Si~Si, Qin Cao, Sanjiv Kumar, and Cho-Jui Hsieh.
 Putri Madona, Rahmat~Ilias Basti, and Muhammad~Mahrus Zain.
 \newblock Pqrst wave detection on ecg signals.
 \newblock {\em Gaceta Sanitaria}, 35:S364--S369, 2021.
+
+\bibitem{medsker1999recurrent}
+Larry Medsker and Lakhmi~C Jain.
+\newblock {\em Recurrent neural networks: design and applications}.
+\newblock CRC press, 1999.
 
 \bibitem{meng2023unsupervised}
 Qianwen Meng, Hangwei Qian, Yong Liu, Yonghui Xu, Zhiqi Shen, and Lizhen Cui.
@@ -204,7 +232,8 @@ Vit Niennattrakul and Chotirat~Ann Ratanamahatana.
 YongKyung Oh, Dongyoung Lim, and Sungil Kim.
 \newblock Stable neural stochastic differential equations in analyzing
   irregular time series data.
-\newblock {\em arXiv preprint arXiv:2402.14989}, 2024.
+\newblock In {\em The Twelfth International Conference on Learning
+  Representations}, 2024.
 
 \bibitem{pal2017riemannian}
 Susovan Pal, Roger~P Woods, Suchit Panjiyar, Elizabeth Sowell, Katherine~L
@@ -248,6 +277,11 @@ Gota Shirato, Natalia Andrienko, and Gennady Andrienko.
 \newblock Identifying, exploring, and interpreting time series shapes in
   multivariate time intervals.
 \newblock {\em Visual Informatics}, 7(1):77--91, 2023.
+
+\bibitem{shukla2021multi}
+Satya~Narayan Shukla and Benjamin~M Marlin.
+\newblock Multi-time attention networks for irregularly sampled time series.
+\newblock {\em arXiv preprint arXiv:2101.10318}, 2021.
 
 \bibitem{srivastava2010shape}
 Anuj Srivastava, Eric Klassen, Shantanu~H Joshi, and Ian~H Jermyn.
