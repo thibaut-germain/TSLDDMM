@@ -5,45 +5,45 @@ A level-1 auxiliary file: experiment.aux
 The style file: plain.bst
 Database file #1: ref.bib
 Warning--empty journal in asgari2023clustering
-You've used 58 entries,
+You've used 53 entries,
             2118 wiz_defined-function locations,
-            821 strings with 15700 characters,
-and the built_in function-call counts, 21764 in all, are:
-= -- 2114
-> -- 1259
-< -- 10
-+ -- 501
-- -- 436
-* -- 1643
-:= -- 3685
-add.period$ -- 176
-call.type$ -- 58
-change.case$ -- 389
+            795 strings with 14753 characters,
+and the built_in function-call counts, 19837 in all, are:
+= -- 1926
+> -- 1150
+< -- 9
++ -- 457
+- -- 398
+* -- 1491
+:= -- 3366
+add.period$ -- 162
+call.type$ -- 53
+change.case$ -- 356
 chr.to.int$ -- 0
-cite$ -- 59
-duplicate$ -- 724
-empty$ -- 1498
-format.name$ -- 436
-if$ -- 4420
+cite$ -- 54
+duplicate$ -- 666
+empty$ -- 1362
+format.name$ -- 398
+if$ -- 4028
 int.to.chr$ -- 0
-int.to.str$ -- 58
-missing$ -- 58
-newline$ -- 292
-num.names$ -- 116
-pop$ -- 358
+int.to.str$ -- 53
+missing$ -- 54
+newline$ -- 268
+num.names$ -- 106
+pop$ -- 326
 preamble$ -- 1
-purify$ -- 332
+purify$ -- 304
 quote$ -- 0
-skip$ -- 531
+skip$ -- 485
 stack$ -- 0
-substring$ -- 1337
-swap$ -- 147
-text.length$ -- 10
+substring$ -- 1200
+swap$ -- 135
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 230
+type$ -- 210
 warning$ -- 1
-while$ -- 199
-width$ -- 60
-write$ -- 626
+while$ -- 180
+width$ -- 55
+write$ -- 574
 (There was 1 warning)

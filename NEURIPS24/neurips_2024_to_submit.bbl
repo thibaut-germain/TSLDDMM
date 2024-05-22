@@ -66,12 +66,6 @@ Hoang~Anh Dau, Anthony Bagnall, Kaveh Kamgar, Chin-Chia~Michael Yeh, Yan Zhu,
 \newblock The ucr time series archive.
 \newblock {\em IEEE/CAA Journal of Automatica Sinica}, 6(6):1293--1305, 2019.
 
-\bibitem{dempster2020rocket}
-Angus Dempster, Fran{\c{c}}ois Petitjean, and Geoffrey~I Webb.
-\newblock Rocket: exceptionally fast and accurate time series classification
-  using random convolutional kernels.
-\newblock {\em Data Mining and Knowledge Discovery}, 34(5):1454--1495, 2020.
-
 \bibitem{deng2020modeling}
 Ruizhi Deng, Bo~Chang, Marcus~A Brubaker, Greg Mori, and Andreas Lehrmann.
 \newblock Modeling continuous stochastic processes with dynamic normalizing
@@ -143,16 +137,6 @@ Heinz~Gerd Hoymann.
 \newblock Lung function measurements in rodents in safety pharmacology studies.
 \newblock {\em Frontiers in pharmacology}, 3:156, 2012.
 
-\bibitem{hsu2003practical}
-Chih-Wei Hsu, Chih-Chung Chang, Chih-Jen Lin, et~al.
-\newblock A practical guide to support vector classification, 2003.
-
-\bibitem{ismail2019deep}
-Hassan Ismail~Fawaz, Germain Forestier, Jonathan Weber, Lhassane Idoumghar, and
-  Pierre-Alain Muller.
-\newblock Deep learning for time series classification: a review.
-\newblock {\em Data mining and knowledge discovery}, 33(4):917--963, 2019.
-
 \bibitem{jia2019neural}
 Junteng Jia and Austin~R Benson.
 \newblock Neural jump stochastic differential equations.
@@ -187,13 +171,6 @@ Xuanqing Liu, Tesi Xiao, Si~Si, Qin Cao, Sanjiv Kumar, and Cho-Jui Hsieh.
 \newblock Neural sde: Stabilizing neural ode networks with stochastic noise.
 \newblock {\em arXiv preprint arXiv:1906.02355}, 2019.
 
-\bibitem{lubba2019catch22}
-Carl~H Lubba, Sarab~S Sethi, Philip Knaute, Simon~R Schultz, Ben~D Fulcher, and
-  Nick~S Jones.
-\newblock catch22: Canonical time-series characteristics: Selected through
-  highly comparative time-series analysis.
-\newblock {\em Data Mining and Knowledge Discovery}, 33(6):1821--1852, 2019.
-
 \bibitem{madona2021pqrst}
 Putri Madona, Rahmat~Ilias Basti, and Muhammad~Mahrus Zain.
 \newblock Pqrst wave detection on ecg signals.
@@ -208,11 +185,6 @@ Qianwen Meng, Hangwei Qian, Yong Liu, Yonghui Xu, Zhiqi Shen, and Lizhen Cui.
 Michael~I Miller, Alain Trouv{\'e}, and Laurent Younes.
 \newblock Geodesic shooting for computational anatomy.
 \newblock {\em Journal of mathematical imaging and vision}, 24:209--228, 2006.
-
-\bibitem{muller2007dynamic}
-Meinard M{\"u}ller.
-\newblock Dynamic time warping.
-\newblock {\em Information retrieval for music and motion}, pages 69--84, 2007.
 
 \bibitem{nervo2019respiratory}
 Aur{\'e}lie Nervo, Andr{\'e}-Guilhem Calas, Florian Nachon, and Eric Krejci.

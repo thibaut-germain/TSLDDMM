@@ -1,0 +1,46 @@
+
+\subsection{Quantitative performances of the TS-LDDMM representation in classification}
+Combined with a Support Vector Classifier (SVC) \cite{hsu2003practical}, TS-LDDMM representation can be used for 
+classification tasks using the kernel associated with the initial velocity space $\msv$.
+We compare TS-LDDMM-SVC classification performances with another SVC using representation 
+learned with T-loss \cite{franceschi2019unsupervised}, an unsupervised deep learning feature 
+representation method for time series. We also include fully supervised methods in deep learning 
+-ResNet, CNN \cite{ismail2019deep}- and machine learning: Catch22 \cite{lubba2019catch22}, Rocket
+\cite{dempster2020rocket}, Dynamic Time Wrapping k-Nearest Neighbors (DTW-kNN) 
+\cite{muller2007dynamic}. Methods are compared using f1-score on several shape-based UCR/UEA datasets 
+\cite{dau2019ucr,bagnall2018uea} introduced in \Cref{appendix:classification_dataset}. All implementation details are given 
+in \Cref{appendix:classification_implementation}.
+\Cref{table:classification} presents the reuslts. TS-LDDMM-SVC consistently outperforms the other unsupervised methods. It is ranked 1,3,4,3 for all methods combined, 
+demonstrating its competitiveness as an unsupervised method on time series dataset homogeneous regarding shape.
+%TS-LDDMM representation can be used in a Support Vector Classifier (SVC) \cite{hsu2003practical} using the kernel of the space of initial velocity $\msv$.
+%We compare its capacity of representation to an SVC using T-Loss representation \cite{franceschi2019unsupervised}, which is an unsupervised representation deep learning method for time series,
+%and to others fully supervised methods using deep learning -ResNet, CNN \cite{ismail2019deep}- or not: Catch22 \cite{lubba2019catch22}, Rocket \cite{dempster2020rocket}, Dynamic Time Wrapping \cite{muller2007dynamic} k-Nearest Neighbors (DTW-kNN).
+%These methods are compared using f1-score on several datasets introduced in \Cref{appendix:classification_dataset}. All details of implementations are given in \Cref{appendix:classification_implementation}.
+%TS-LDDMM-SVC is always ranked 2 or 3 behind a fully supervised method, demonstrating its competitiveness as an unsupervised method.
+%The more homogeneous the shapes in the dataset are, the better TS-LDDMM-SVC performs.
+
+
+\begin{table}[t]
+  \vspace{-0.5em}
+  \caption{Classification results in f1-score (U: unsupervised, S: supervised, DL: deep learning, ML: machine learning). \textbf{x} best unsupervised method, \underline{x} best supervised method.}
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{lllrrrr}
+    \toprule
+     &  &  & ArrowHead & ECG200 & GunPoint & NATOPS \\
+    \midrule
+    \multirow[m]{3}{*}{U} & \multirow[t]{3}{*}{} & TS-LDDMM-SVC & \textbf{0.84} & \textbf{0.82} & \textbf{0.94} & \textbf{0.93} \\
+     &  & T-loss-SVC & 0.57 & 0.76 & 0.82 & 0.88 \\
+     &  & DTW-kNN & 0.70 & 0.75 & 0.91 & 0.88 \\
+    \cline{1-7} 
+    \multirow[m]{5}{*}{S} & \multirow[m]{2}{*}{DL} & CNN & 0.70 & 0.79 & 0.85 & \underline{0.96} \\
+     &  & ResNet & 0.77 & 0.87 & 0.97 & 0.95 \\
+    \cline{2-7}
+     & \multirow[m]{2}{*}{ML} & Catch22 & 0.73 & 0.81 & 0.96 & 0.89 \\
+     &  & Rocket & \underline{0.81} & \underline{0.91} & \underline{1.00} & 0.88 \\
+    \bottomrule
+    \end{tabular}
+    \label{table:classification}
+  %
+}
+\vspace{-2em}
+  \end{table}
