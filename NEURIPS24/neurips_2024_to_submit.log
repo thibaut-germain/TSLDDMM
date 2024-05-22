@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.24)  22 MAY 2024 15:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.24)  22 MAY 2024 16:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1149,13 +1149,13 @@ Package rerunfilecheck Info: File `neurips_2024_to_submit.out' has not changed.
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 724 ({)
+### simple group (level 1) entered at line 725 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 42122 strings out of 478268
- 938067 string characters out of 5846346
+ 42126 strings out of 478268
+ 938149 string characters out of 5846346
  1430067 words of memory out of 5000000
- 59046 multiletter control sequences out of 15000+600000
+ 59050 multiletter control sequences out of 15000+600000
  532742 words of font info for 305 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,20n,83p,1152b,792s stack positions out of 10000i,1000n,20000p,200000b,200000s
