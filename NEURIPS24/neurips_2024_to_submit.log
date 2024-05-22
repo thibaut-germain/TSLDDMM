@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.24)  22 MAY 2024 17:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.24)  22 MAY 2024 18:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1015,28 +1015,28 @@ Package pdftex.def Info: ./pictures/transport.jpeg  used on input line 134.
 [2 </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/diffeo.jpeg> </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/transport.jpeg>]
 
 Package natbib Warning: Author undefined for citation`miller2006geodesic' 
-(natbib)                on page 3 on input line 258.
+(natbib)                on page 3 on input line 257.
 
 [3] [4
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.374      \begin{equation}
-                           ] [5
+l.371  \begin{equation}
+                       ] [5
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.517     \begin{align}
+l.513     \begin{align}
                        
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.517     \begin{align}
+l.513     \begin{align}
                        ]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.524     \end{align}
+l.520     \end{align}
                       [6] (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/experiment.tex
 
 LaTeX Warning: Reference `appendix:identifiability' on page 1 undefined on input line 8.
@@ -1077,7 +1077,7 @@ Package pdftex.def Info: ./pictures/exp2.pdf  used on input line 111.
 (pdftex.def)             Requested size: 377.60951pt x 61.06937pt.
 ) [8 </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/./pictures/exp2.pdf>]
 
-LaTeX Warning: Reference `appendix:classification_shape_analysis' on page 1 undefined on input line 715.
+LaTeX Warning: Reference `appendix:classification_shape_analysis' on page 1 undefined on input line 714.
 
 ) (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1197,11 +1197,7 @@ LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `neurips_2024_to_submit.out' has not changed.
 (rerunfilecheck)             Checksum: 49D6DF1E9E08602BD8F7B95ACECE5B27;5885.
- )
-(\end occurred inside a group at level 1)
-
-### simple group (level 1) entered at line 725 ({)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
  42126 strings out of 478268
  938364 string characters out of 5846346
@@ -1209,9 +1205,9 @@ Here is how much of TeX's memory you used:
  59055 multiletter control sequences out of 15000+600000
  532488 words of font info for 301 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,20n,83p,1152b,845s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,20n,83p,1152b,731s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.pdf (26 pages, 1032665 bytes).
+Output written on /Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.pdf (26 pages, 1032627 bytes).
 PDF statistics:
  870 PDF objects out of 1000 (max. 8388607)
  731 compressed objects within 8 object streams
