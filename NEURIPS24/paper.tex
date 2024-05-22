@@ -711,9 +711,10 @@ Shape analysis focuses on statistical analysis of mathematical objects invariant
  Oh \textit{et al.} \cite{oh2024stable} improved these results by incorporating the concept of controlled paths into the drift term, similar to how Neural CDEs outperform Neural ODEs.
  With TS-LDDMM, the representation is also derived from an ODE, but the velocity field is parameterized with kernels and optimized to have a minimal norm, which enhances interpretability.
 
- All these state-of-the-art methods previously mentionned \cite{glaunes2008large,oh2024stable,wu2024shape,heo2024logistic} are comapred to TS-LDDMM in \Cref{appendix:classification_shape_analysis}.
-  \section{Limitations}
+ All these state-of-the-art methods previously mentionned \cite{glaunes2008large,oh2024stable,wu2024shape,heo2024logistic} are compared to TS-LDDMM in \Cref{appendix:classification_shape_analysis}.
+  \section{Limitations and conclusion}
   \label{sec:limitations}
+  \paragraph*{Limitations}
   While TS-LDDMM performs well on shape-based datasets, it assumes a certain degree of homogeneity with the existence of a reference time series graph$\msg_0$.
  Extending TS-LDDMM to more heterogeneous datasets using clustering is ongoing work.
  TS-LDDMM employs kernel computations, which require specific libraries (e.g., KeOps \cite{charlier2021kernel}) to be efficient and scalable.
@@ -722,7 +723,7 @@ Shape analysis focuses on statistical analysis of mathematical objects invariant
  Additionally, TS-LDDMM requires tuning several hyperparameters, though this is a common requirement among competitors \cite{glaunes2008large, oh2024stable, wu2024shape, heo2024logistic}.
  In future work, adaptive methods are expected to be developed to provide a more user-friendly interface.
   %\color{red} rappeler les limites de la méthodes : petite dimension à cause des kernels, tuner les hyper paramètres correctement, version adaptative}
-\section{Conclusion}
+\paragraph*{Conclusion}
 \vspace{-1ex}
 This paper proposes a feature representation method, TS-LDDMM, designed for 
 shape comparison on homogeneous time series datasets. We show on a real dataset 
