@@ -232,27 +232,8 @@ We selected 15 shape-based datasets (7 univariates and 8 multivariates) from the
   \label{appendix:table:datasets}
 \end{table}
 
-\section{Appendix for experiment: Analysis of respiratory behavior in mice}
-\subsection{Settings}
-\label{appendix: mice_exp_setting}
-
-This experiment involves TS-LDDMM and LDDMM~\cite{glaunes2008large} methods. Both methods are run twice, first on respiratory cycles before exposure to the irritant molecule to capture mice breathing behavior at rest and on all respiratory cycles to capture the influence of the irritant molecule. Exposure to the irritant molecule leads to significant shape deformation in the respiratory cycles, and the terms must be added to the varifold loss to capture deformations at a large time scale. 
-
-\paragraph{TS-LDDMM parameters.}
-\begin{itemize}
-  \item \textbf{Before exposure:} The velocity field kernel $K_G$ is set to $ (c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x) = (1,0.1,150,1,2)$. The varifold loss is the sum of three varifolds to capture shapes variations at different scales with parameters: (Varifold 1,Varifold 2,Varifold 3): $\left((5,2,5,1),(2,1,2,0.6),(1,0.6,1,0.6)\right)$ and the mapper $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$. The optimizer has 800 steps with a maximum stepsize $\eta_M$ of 0.3.
-  \item \textbf{Before/after exposure:} The velocity field kernel $K_G$ is set to $ (c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x) = (1,0.1,220,1,2)$. The varifold loss is the sum of four varifolds to capture shapes variations at different scales with parameters: (Varifold 1,Varifold 2,Varifold 3, Varifold 4): $\left((30,2,30,1),(5,2,5,1),(2,1,2,0.6),(1,0.1,1,0.1)\right)$ and the mapper $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$. The optimizer has 800 steps with a maximum stepsize $\eta_M$ of 0.3.
-\end{itemize}
-
-\paragraph{LDDMM parameters.} Note that varifold losses are unchanged between TS-LDDMM and LDDMM. Compared to TS-LDDMM, the convergence of LDDMM is more sensitive to the maximum stepsize $\eta_m$, which must remain small for LDDMM to guarantee the convergence.
-\begin{itemize}
-  \item \textbf{Before exposure:} The velocity field kernel $K_G$ is an anysotropic Gaussian kernel with parameters $\sigma_{T} =150$ for the time dimension and $\sigma_x = 2$ for space dimensions. 
-  The varifold loss is the sum of three varifolds to capture shapes variations at different scales with parameters: (Varifold 1,Varifold 2,Varifold 3): $\left((5,2,5,1),(2,1,2,0.6),(1,0.6,1,0.6)\right)$ and the mapper $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$. The optimizer has 800 steps with a maximum stepsize $\eta_M$ of 0.01.
-  \item \textbf{Before/after exposure:} The velocity field kernel $K_G$ is an anysotropic Gaussian kernel with parameters $\sigma_{T} =220$ for the time dimension and $\sigma_x = 2$ for space dimensions.
-  The varifold loss is the sum of four varifolds to capture shapes variations at different scales with parameters: (Varifold 1,Varifold 2,Varifold 3, Varifold 4): $\left((30,2,30,1),(5,2,5,1),(2,1,2,0.6),(1,0.1,1,0.1)\right)$ and the mapper $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$. The optimizer has 800 steps with a maximum stepsize $\eta_M$ of 0.01.
-\end{itemize}
-
 \section{Appendix for experiment: TS-LDDMM representation identifiability}
+\label{appendix: identifiability}
 In this experiment, we evaluate the ability of TS-LDDMM to retrieve the parameter $v_0^*$ that encodes the deformation $\varphi^{\{v_0^*\}}$ acting on a time series graph $\msg$ by solving the geodesic shooting problem \eqref{eq:relaxation} between $\msg$ and $\varphi^{\{v_0^*\}}.\msg$. Parameter identifiability is an important property for subsequent statistical analysis. Results show that TS-LDDMM representations are identifiable or weakly identifiable depending on the velocity field kernel $K_G$ specification.
 
 \subsection{Settings}
@@ -409,6 +390,7 @@ Overall, TS-LDDMM is a relevant and consistent shape-based representation for ir
 
 
 \section{Appendix for experiment: Classification benchmark on regularly sampled datasets}
+\label{appendix: shape_classification}
 
 In this section, we compare the classification performances of TS-LDDMM with other methods from shape analysis on 15 shape-based datasets of time series regularly sampled. TS-LDDMM outperforms other methods on 12 out of 15, highlighting its relevance for shape analysis when dealing with time series. 
 
@@ -477,4 +459,26 @@ Overall, TS-LDDMM representations are well suited for shape-based time series cl
   }
     
 \end{table}
+
+
+\section{Appendix for experiment: Analysis of respiratory behavior in mice}
+\label{appendix: mice_exp_setting}
+
+\subsection{Settings}
+
+This experiment involves TS-LDDMM and LDDMM~\cite{glaunes2008large} methods. Both methods are run twice, first on respiratory cycles before exposure to the irritant molecule to capture mice breathing behavior at rest and on all respiratory cycles to capture the influence of the irritant molecule. Exposure to the irritant molecule leads to significant shape deformation in the respiratory cycles, and the terms must be added to the varifold loss to capture deformations at a large time scale. 
+
+\paragraph{TS-LDDMM parameters.}
+\begin{itemize}
+  \item \textbf{Before exposure:} The velocity field kernel $K_G$ is set to $ (c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x) = (1,0.1,150,1,2)$. The varifold loss is the sum of three varifolds to capture shapes variations at different scales with parameters: (Varifold 1,Varifold 2,Varifold 3): $\left((5,2,5,1),(2,1,2,0.6),(1,0.6,1,0.6)\right)$ and the mapper $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$. The optimizer has 800 steps with a maximum stepsize $\eta_M$ of 0.3.
+  \item \textbf{Before/after exposure:} The velocity field kernel $K_G$ is set to $ (c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x) = (1,0.1,220,1,2)$. The varifold loss is the sum of four varifolds to capture shapes variations at different scales with parameters: (Varifold 1,Varifold 2,Varifold 3, Varifold 4): $\left((30,2,30,1),(5,2,5,1),(2,1,2,0.6),(1,0.1,1,0.1)\right)$ and the mapper $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$. The optimizer has 800 steps with a maximum stepsize $\eta_M$ of 0.3.
+\end{itemize}
+
+\paragraph{LDDMM parameters.} Note that varifold losses are unchanged between TS-LDDMM and LDDMM. Compared to TS-LDDMM, the convergence of LDDMM is more sensitive to the maximum stepsize $\eta_m$, which must remain small for LDDMM to guarantee the convergence.
+\begin{itemize}
+  \item \textbf{Before exposure:} The velocity field kernel $K_G$ is an anysotropic Gaussian kernel with parameters $\sigma_{T} =150$ for the time dimension and $\sigma_x = 2$ for space dimensions. 
+  The varifold loss is the sum of three varifolds to capture shapes variations at different scales with parameters: (Varifold 1,Varifold 2,Varifold 3): $\left((5,2,5,1),(2,1,2,0.6),(1,0.6,1,0.6)\right)$ and the mapper $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$. The optimizer has 800 steps with a maximum stepsize $\eta_M$ of 0.01.
+  \item \textbf{Before/after exposure:} The velocity field kernel $K_G$ is an anysotropic Gaussian kernel with parameters $\sigma_{T} =220$ for the time dimension and $\sigma_x = 2$ for space dimensions.
+  The varifold loss is the sum of four varifolds to capture shapes variations at different scales with parameters: (Varifold 1,Varifold 2,Varifold 3, Varifold 4): $\left((30,2,30,1),(5,2,5,1),(2,1,2,0.6),(1,0.1,1,0.1)\right)$ and the mapper $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$. The optimizer has 800 steps with a maximum stepsize $\eta_M$ of 0.01.
+\end{itemize}
 
