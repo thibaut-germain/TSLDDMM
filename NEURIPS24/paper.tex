@@ -23,8 +23,9 @@
 % One option to tackle this issue is to derive ...
 % feature representation of time series which depends on the problem at hand.
 % which is parti... -> which is of prime interest in ...
-
+\vspace{-1ex}
 \section{Introduction}
+\vspace{-1ex}
 %https://arxiv.org/abs/1811.00075
 %Appliqué sur les "UWaveGestureLibrary","ArticularyWordRecognition","Cricket" pour l'archive UEA
 %"ArrowHead", "BME", "ECG200","FacesUCR","GunPoint" dans le cas univarié
@@ -67,11 +68,11 @@ However, a graph time series transformation by a general diffeomorphism is not a
     %  \end{itemize}
     Our contributions can be summarized as follows:
     \begin{itemize}
-       \item We propose an unsupervised method (TS-LDDMM) to analyze the inter-individual variability of shapes in a time series dataset. In particular, the method can handle multivariate time series \textit{irregularly sampled} and with \textit{variable sizes}.
+       \item We propose an unsupervised method (TS-LDDMM) to analyze the inter-individual variability of shapes in a time series dataset (\Cref{section:methodology}). In particular, the method can handle multivariate time series \textit{irregularly sampled} and with \textit{variable sizes}.
        \item We motivate our extension of LDDMM to time series by introducing a theoretical framework with a representation theorem for time series graph (\Cref{theorem:representation}) and kernels related to their structure (\Cref{lemma:choice_of_kernel_V}).
-       \item We demonstrate the identifiability of the model by estimating the true generating parameter of synthetic data, and we highlight the sensitivity of our method concerning its hyperparameters, also providing guidelines for tuning.
-       \item We highlight the \textit{interpretability} of TS-LDDMM for studying the inter-individual variability in a clinical dataset.
-        \item We illustrate the quantitative interest of such representation on classification tasks on real shape-based datasets.
+       \item We demonstrate the identifiability of the model by estimating the true generating parameter of synthetic data, and we highlight the sensitivity of our method concerning its hyperparameters (\Cref{appendix:identifiability}), also providing guidelines for tuning (\Cref{appendix:kernel_TS_LDDMM}).
+       \item We highlight the \textit{interpretability} of TS-LDDMM for studying the inter-individual variability in a clinical dataset (\Cref{section:experiments}).
+        \item We illustrate the quantitative interest of such representation on classification tasks on real shape-based datasets with regular and irregular sampling (\Cref{appendix:classification_shape_analysis}).
  \end{itemize}
 
     %To the best of our knowledge, these theoretical and practical works have never been done before.
@@ -139,47 +140,7 @@ However, a graph time series transformation by a general diffeomorphism is not a
   
 \end{figure*}
 
-\section{Related Works}
-Shape analysis focuses on statistical analysis of mathematical objects invariant under some deformations like rotations, dilations, or time parameterization.
-   The main idea is to represent these objects in a complete Riemannian manifold $(\mathcal{M},\mathbf{g})$ with a metric $\mathbf{g}$ adapted to the geometry of the problem \cite{miller2006geodesic}.
-    Then, any set of points in $\mathcal{M}$ can be represented as points in the tangent space of their Frechet mean $\mathbf{m}_0$ \cite{pal2017riemannian,le2001locating} by considering their logarithms.
-     The goal is to find a well-suited Riemannian structure according to the nature of the studied object.
-     
-     LDDMM framework is a relevant shape analysis tool to represent curves as depicted in \cite{glaunes2008large}. However, graphs of time series are a well-structured type of curve due to the inclusion of the temporal dimension that requires specific care (\Cref{fig:diffeo}).
-     In a similar vein, Qiu \textit{et al} \cite{qiu2009time} proposes a method for tracking anatomical shape changes in serial images using LDDMM. They include temporal evolution, but not for the same purpose: the aim is to perform longitudinal modeling of brain images.
-
-       Leaving the LDDMM representation, the results of \cite{srivastava2010shape,heo2024logistic} addresses the representation of curves with the Square-Root Velocity (SRV) representation.
-        However, the SRV representation is applied after a reparametrization of the temporal dimension on the unit length segment.
-         Consequently, the graph structure of the time series is not respected, and the original time evolution of the time series is not encoded in the final representation.
-          Very recently, in a functional data analysis framework, a paper \cite{wu2024shape} (Shape-FPCA) improved by representing the original time evolution.
-           Nevertheless, this method is made for \textit{continuous objects} and only applies to time series of \textit{same length}, making the estimation more sensitive to noise.
-  %However, the case of time series has not been adequately addressed, considering the special attention the time axis requires.
-  %For instance, the SRV representation applies after a reparametrization in time, such that the original time evolution of the time series is not represented in the final features.
-% Depending on the tasks, e.g classification \cite{ismail2019deep}, anomaly detection \cite{blazquez2021review}, forecasting \cite{torres2021deep} or clustering , a meaningful vector representation of time series can be derived.
-%  Initially, in this research, handcrafted features were computed from time series, such as the mean, wavelets \cite{percival2000wavelet}, or Fourier coefficients \cite{bloomfield2004fourier}, depending on expert knowledge.
-%   However, this approach is time-consuming and potentially biased by priors.
-%   Observing the success of neural networks, features are automatically extracted by choosing an objective to optimize and a neural architecture tailored to the problem.
-%    Taking a set of time series as input, features can be identified by solving specific supervised tasks—classification \cite{ismail2019deep}, anomaly detection \cite{blazquez2021review}, forecasting \cite{torres2021deep}— or in an unsupervised manner by deriving labels from the inputs \cite{meng2023unsupervised}.
-%    \thi{Rajouter une image, et une phrase par rapport au temps}
-%    Although the deep learning approach is particularly effective for supervised tasks, annotated datasets are rare, making unsupervised methods more practical.
-%    These methods have proven effective in identifying different patterns in the data and providing a vector representation that segregates well into clusters \cite{meng2023unsupervised}.
-%     However, they may lack precision on small and homogeneous datasets with only one typical shape, often arising from clinical experiments addressing a specific phenomenon (refer to figures).
-%      While current unsupervised methods separate representations into clusters, our focus is on the inter-individual variability within one cluster.
-%       Typically, we aim to perform Principal Components Analysis (PCA) \cite{bro2014principal} on individual patterns with similar shapes. The representation is dependant on the input dataset.
-
- %\citet{srivastava2010shape,heo2024logistic} address the representation of curves $C:\msi \to \Rset^d$, $\msi\subset \Rset$, having unitary velocity by using the Square-Root Velocity (SRV) representation.
- %However, the case of time series has not been adequately addressed, considering the special attention the time axis requires.
- %For instance, the SRV representation applies after a reparametrization in time, such that the original time evolution of the time series is not represented in the final features.
- %In this regard, this work is not an application of LDDMM to 1D curves \cite{glaunes2008large}.
- %Compared to Normalizing Flows \cite{rezende2015variational,kobyzev2020normalizing} or Continuous Normalizing Flows \cite{chen2018neural,grathwohl2019scalable,salman2018deep} for diffeomorphisms learning, the number of hyperparameters to tune is minimal, and the related optimization problem is well-posed.
- Balancing between discrete and continuous elements is a challenging task.
-  In the deep learning literature \cite{chen2018neural, kidger2020neural, tzen2019neural, jia2019neural, liu2019neural, ansari2023neural}, Neural Ordinary Differential Equations (Neural ODEs) \cite{chen2018neural} learn continuous latent representations using a vector field parameterized by a neural network, serving as a continuous analogue to Residual Networks \cite{zagoruyko2016wide}.
-   This approach was further enhanced by Neural Controlled Differential Equations (Neural CDEs) \cite{kidger2020neural} for handling irregular time series, functioning as continuous-time analogs of RNNs \cite{schuster1997bidirectional}.
- Extending Neural ODEs, Neural Stochastic Differential Equations (Neural SDEs) introduce regularization effects \cite{liu2019neural}, although optimization remains challenging.
-  Leveraging techniques from continuous-discrete filtering theory, Ansari et al. \cite{ansari2023neural} applied succesfully Neural SDEs to irregular time series.
-  Oh \textit{et al.} \cite{oh2024stable} improved these results by incorporating the concept of controlled paths into the drift term, similar to how Neural CDEs outperform Neural ODEs.
-  With TS-LDDMM, the representation is also derived from an ODE, but the velocity field is parameterized with kernels and optimized to have a minimal norm, which enhance interpretability.
-
+  \vspace{-1ex}
 \section{Notations}
 We denote by integer ranges by $[k:l]=\{k,\ldots,l\}\subset \mathcal{P}(\Zset)$ and $ [l]=[1:l]$ with $k,l\in \Nset$,
 by $\rmC^m(\msi,\mse)$ the set of $m$-times continously differentiable function defined on an open set $\msu$ to a normed vector space $\mse$,
@@ -188,7 +149,9 @@ and by $\Nset_{>0}$ is the set of positive integers.
 %We are in a sub class of curve quotiented by temporal reparametrisation since a time series' graph can be understood as the equivalent class of t ->(t,s(t))
 
 %Reproducing Kernel Hilbert Space (RKHS)
+\vspace{-1ex}
 \section{Background on LDDMM}
+\vspace{-1ex}
 \label{section:LDDMM}
 
 In this part, we expose how to
@@ -202,7 +165,7 @@ In this part, we expose how to
 The basic problem that we consider in this section is the following. Given a set of targets $\mathbf{y}=(y_i)_{i\in[T_2]}$ in $\Rset^{d'}$\footnote{Note that we denote by $d'\in\nset$ the ambient space}, a set of starting points $\mathbf{x}=(x_{i})_{i\in[T_1]}$ in $\Rset^{d'}$, we aim to find a diffeomorphism $\phi$ such that the finite set of points $\mathbf{y}$ is similar in a certain sense to the set of finite sets of transformed points $\phi \cdot \mathbf{x} =(\phi(x_i))_{i\in[T_1]} $.
  The function $\phi$ is occasionally referred to as a \textit{deformation}. In general, these sets $\mathbf{x},\mathbf{y}$ are meshes of continous objects, e.g surfaces, curves, images and so on.
 
- 
+ \vspace{-1ex}
 % LDDMM is designed to analyzed an existing dataset, while NF and CNF are made to generalize a dataset for data augmentation.
 \paragraph{Representing diffeomorpshims as deformations.}
 Such \textit{deformations} $\phi$ are constructed via differential flow equations, for any $x_0\in \Rset^{d'} $ and $\tau\in[0,1]$:
@@ -278,7 +241,7 @@ Denoting by $w(v_0)$ the geodesic starting from the identity with inital velocit
 
 
 
-
+\vspace{-1ex}
 \paragraph{Discrete parametrization of diffeomorpshim.}
 %\alain{adapt this without mentioning applicaiton to time seriess}
 %\sam{Est ce qu'on devrait pas introduire la dicretization du graphe ici et dire que l'on peut utiliser le théoreme de représentation}
@@ -351,6 +314,7 @@ $\mathbf{n}_0$ control points $\msx_0=(x_{k,0})_{k\in[\mathbf{n}_0]}\in (\Rset^{
     
 %  \end{algorithmic}
 %  \end{algorithm}
+\vspace{-1ex}
 \paragraph{Relation to Continuous Normalizing Flows.}
 
 One particular popular choice to address the problem of learning a diffeomorphism or a velocity field is Normalizing Flows \cite{rezende2015variational,kobyzev2020normalizing} (NF) or their continuous counterpart \cite{chen2018neural,grathwohl2019scalable,salman2018deep} (CNF).
@@ -364,10 +328,12 @@ parametrization of the velocity field. LDDMM uses kernels to
 derive closed form formula and enhance interpretability while
 NF and CNF take advantage of deep neural networks to scale with
 large dataset in high dimensions.
+\vspace{-1ex}
 \section{Methodology}
+\label{section:methodology}
 %\paragraph{Assumptions}
 %Denoting by $C^0(\msi,\msj) $ the space of continous functions between two sets $\msi,\msj$,
-
+\vspace{-1ex}
 We consider in this paper observations which consist in a population of $N$ multivariate time series, for any $j\in[N]$, $s^j \in \rmC^1(\msi_j,\Rset^{d})$. 
 However, we can only access a $n_j$-samples $\tsig^j=(\tsig_i^j=s^j(t^j_i))_{i\in[n_j]}$ collected at timestamps $(t^j_i)_{i\in[n_j]}$ for any $j \in [N]$.
  Note that \textbf{the number of samples $n_j$ is not necessary the same accross individuals} and the timestamps can be \textbf{irregularly sampled}.
@@ -383,6 +349,7 @@ However, we can only access a $n_j$-samples $\tsig^j=(\tsig_i^j=s^j(t^j_i))_{i\i
   %   there exist a common pattern $\mathbf{s}_0: \msi \to \Rset^d$ and individual time reparametrisations $ \psi_j\in\mcd(\msi,\msi_j) $ such that,
   %   for any $j\in[N]$, $s^j=\mathbf{s}_0\circ \psi_j^{-1} $.]
 %  \paragraph{Goals}%\sam{potentiellement changer l'ordre de time and space}
+\vspace{-1ex}
 \paragraph*{The deformation problem.}
 In this paper, we aim to study the inter-individual variability in the dataset by finding a relevant representation of each time series.
 Inspired from the framework of shape analysis \cite{vaillant2004statistics}, addressing similar problems in morphology,
@@ -401,6 +368,7 @@ We aim to learn $\msg(\bfs_0)$ and $(\phi_j)_{j\in[N]} $.
  
  
      %\sam{Parler de l'unicté?}
+     \vspace{-1ex}
      \paragraph{Optimization related to \eqref{eq:transformation}.}
      Defining the \textit{discretized graphs} of the time series $(s^j)_{j\in[N]}$ and a discretization of the reference graph $\msg(\mathbf{s}_0)$  as, for any $j\in[N]$,
      \begin{equation}
@@ -468,7 +436,9 @@ We aim to learn $\msg(\bfs_0)$ and $(\phi_j)_{j\in[N]} $.
 %  \end{algorithm}
 
 Nevertheless, \eqref{eq:general_optimization_problem} ask to define a kernel and a loss in order to perform geodesic shooting \ref{eq:relaxation}, which is the purpose of the next subsection.
+\vspace{-1ex}
    \subsection{Application of LDDMM to time series analysis: TS-LDDMM}
+   \vspace{-1ex}
 %\tcr{Mettre l'applicaiton clair pour les times series}
 
         \label{section:time_series_specificity}
@@ -479,7 +449,7 @@ Nevertheless, \eqref{eq:general_optimization_problem} ask to define a kernel and
 To address this challenge, we need to identify an RKHS kernel $K:\Rset^{d+1}\times \Rset^{d+1}\to \Rset^{(d+1)^2}$ that generates deformations preserving the structure of the time series graph. This goal motivates us to clarify, in \Cref{theorem:representation}, the specific representation of diffeomorphisms we require before presenting a class of kernels that produce deformations with this representation.
 
 Similarly, selecting a loss function on sets $\mathscr{L}$ that considers the temporal evolution in a time series' graph is crucial for meaningful comparisons with time series data. Consequently, we introduce the oriented Varifold distance. 
-      
+\vspace{-1ex}
        \paragraph{A representation separating space and time.}
        We prove that two time series graphs can always be linked by a time transformation composed of a space transformation. Moreover, a time series graph transformed by this kind of transformation is always a time series graph.
         We define $\Psi_\gamma\in \mcd(\Rset^{d+1}) : (t,x)\in\Rset^{d+1}\to (\gamma(t),x)$ for any $\gamma\in \mcd(\Rset)$ and $\Phi_f:  (t,x)\in\Rset^{d+1}\to (t,f(t,x)) $ for any $f\in \rmC^1(\Rset^{d+1},\Rset^d)$. 
@@ -537,7 +507,7 @@ Similarly, selecting a loss function on sets $\mathscr{L}$ that considers the te
    As a result, $\Psi_\gamma $ can be understood as a temporal reparametrization and $\Phi_f$ encodes the transformation about the space.
  \end{remark}
 
-
+ \vspace{-1ex}
     \paragraph{Choice for the kernel associated with the RKHS $\msv$}
     \label{paragraph:kernel_V}
     As depicted on \Cref{fig:diffeo}-\ref{fig:transport}, we can not use any kernel $K$ to apply the previous methodology to learn deformations on time series' graphs.
@@ -607,6 +577,7 @@ This choice for $K_\msg$ is motivated by the representation \Cref{theorem:repres
 % $s_i: t\in[0,T_0]\mapsto s(t)\in \Rset^d $ is only known through its samples $(S_i^j(t_i)=s_i)_{i\in[N]} $ at timestamps $(t_i)_{i\in[T]}$.
 
 %\sam{améliorer transition}
+\vspace{-1ex}
 \paragraph{Loss}
 
 This section specifies the distance function $\scrl$ introduced in the loss function defined in \eqref{eq:relaxation}. 
@@ -642,7 +613,7 @@ such that for any $(x,\overrightarrow{u}),(y,\overrightarrow{v}) \in (\Rset^{d+1
    Note that the loss kernel $k$ has nothing to do with the velocity field kernel denoted by $K_\msg$ or $K$ specified in \Cref{paragraph:kernel_V}.
 Finally, we define the data fidelity loss function, $\scrl$, as $ d_{\msw^*}^2$, which is differentiable with regards to its first variable.
 For further readings on curves and surfaces representation as varifolds, readers can refer to \cite{kaltenmark2017general,charon2013varifold}. 
-
+{\color{red} mettre une phrase sur la loss multiscale}
 
 %\sam{TO improve by Thibaut
 %\thi{parler du fait qu'on a pas pairing, grace au difféo on conserve la structure}
@@ -670,7 +641,7 @@ For further readings on curves and surfaces representation as varifolds, readers
 
 
 
-\sam{Parler de méthode adaptatif ici}
+%\sam{Parler de méthode adaptatif ici}
   
 
 
@@ -713,10 +684,39 @@ For further readings on curves and surfaces representation as varifolds, readers
 %         where $S_I^{-1} = T^{-1} \circ S_J^{-1} \circ T$
 
 
+\vspace{-1ex}
+\input{experiment}
+\vspace{-1ex}
 
-\include{experiment}
+\section{Related Works}
+\vspace{-1ex}
+Shape analysis focuses on statistical analysis of mathematical objects invariant under some deformations like rotations, dilations, or time parameterization.
+   The main idea is to represent these objects in a complete Riemannian manifold $(\mathcal{M},\mathbf{g})$ with a metric $\mathbf{g}$ adapted to the geometry of the problem \cite{miller2006geodesic}.
+    Then, any set of points in $\mathcal{M}$ can be represented as points in the tangent space of their Frechet mean $\mathbf{m}_0$ \cite{pal2017riemannian,le2001locating} by considering their logarithms.
+     The goal is to find a well-suited Riemannian structure according to the nature of the studied object.
+     
+     LDDMM framework is a relevant shape analysis tool to represent curves as depicted in \cite{glaunes2008large}. However, graphs of time series are a well-structured type of curve due to the inclusion of the temporal dimension that requires specific care (\Cref{fig:diffeo}).
+     In a similar vein, Qiu \textit{et al} \cite{qiu2009time} proposes a method for tracking anatomical shape changes in serial images using LDDMM. They include temporal evolution, but not for the same purpose: the aim is to perform longitudinal modeling of brain images.
 
+       Leaving the LDDMM representation, the results of \cite{srivastava2010shape,heo2024logistic} addresses the representation of curves with the Square-Root Velocity (SRV) representation.
+        However, the SRV representation is applied after a reparametrization of the temporal dimension on the unit length segment.
+         Consequently, the graph structure of the time series is not respected, and the original time evolution of the time series is not encoded in the final representation.
+          Very recently, in a functional data analysis framework, a paper \cite{wu2024shape} (Shape-FPCA) improved by representing the original time evolution.
+           Nevertheless, this method is made for \textit{continuous objects} and only applies to time series of \textit{same length}, making the estimation more sensitive to noise.
+
+ Balancing between discrete and continuous elements is a challenging task.
+  In the deep learning literature \cite{chen2018neural, kidger2020neural, tzen2019neural, jia2019neural, liu2019neural, ansari2023neural}, Neural Ordinary Differential Equations (Neural ODEs) \cite{chen2018neural} learn continuous latent representations using a vector field parameterized by a neural network, serving as a continuous analogue to Residual Networks \cite{zagoruyko2016wide}.
+   This approach was further enhanced by Neural Controlled Differential Equations (Neural CDEs) \cite{kidger2020neural} for handling irregular time series, functioning as continuous-time analogs of RNNs \cite{schuster1997bidirectional}.
+ Extending Neural ODEs, Neural Stochastic Differential Equations (Neural SDEs) introduce regularization effects \cite{liu2019neural}, although optimization remains challenging.
+  Leveraging techniques from continuous-discrete filtering theory, Ansari et al. \cite{ansari2023neural} applied succesfully Neural SDEs to irregular time series.
+  Oh \textit{et al.} \cite{oh2024stable} improved these results by incorporating the concept of controlled paths into the drift term, similar to how Neural CDEs outperform Neural ODEs.
+  With TS-LDDMM, the representation is also derived from an ODE, but the velocity field is parameterized with kernels and optimized to have a minimal norm, which enhance interpretability.
+
+  All these state-of-the-art methods previously mentionned \cite{glaunes2008large,oh2024stable,wu2024shape,heo2024logistic} are comapred to TS-LDDMM in \Cref{appendix:classification_shape_analysis}.
+  \section{Limitations}
+  {\color{red} rappeler les limites de la méthodes : petite dimension à cause des kernels, tuner les hyper paramètres correctement, version adaptative}
 \section{Conclusion}
+\vspace{-1ex}
 In this paper, we propose a feature representation method, TS-LDDMM, designed for 
 shape comparison in homogeneous time series datasets. We show on a real dataset 
 its ability to study, with high interpretability, the inter-individual shape 
@@ -724,6 +724,8 @@ variability. As an unsupervised approach, it is user-friendly and enables knowle
 transfer for different supervised tasks such as classification. Although TS-LDDMM 
 is already competitive for classification, its performances can be leveraged on 
 more heterogeneous datasets using a hierarchical clustering extension, which is relagated for future work. 
+
+
 
 %\section{Societal impact}
 %This paper presents work whose goal is to advance the field of Machine Learning. There are many potential societal consequences of our work, none which we feel must be specifically highlighted here.
