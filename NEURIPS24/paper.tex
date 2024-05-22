@@ -70,9 +70,9 @@ However, a graph time series transformation by a general diffeomorphism is not a
     \begin{itemize}
        \item We propose an unsupervised method (TS-LDDMM) to analyze the inter-individual variability of shapes in a time series dataset (\Cref{section:methodology}). In particular, the method can handle multivariate time series \textit{irregularly sampled} and with \textit{variable sizes}.
        \item We motivate our extension of LDDMM to time series by introducing a theoretical framework with a representation theorem for time series graph (\Cref{theorem:representation}) and kernels related to their structure (\Cref{lemma:choice_of_kernel_V}).
-       \item We demonstrate the identifiability of the model by estimating the true generating parameter of synthetic data, and we highlight the sensitivity of our method concerning its hyperparameters (\Cref{appendix:identifiability}), also providing guidelines for tuning (\Cref{appendix:kernel_TS_LDDMM}).
+       \item We demonstrate the identifiability of the model by estimating the true generating parameter of synthetic data, and we highlight the sensitivity of our method concerning its hyperparameters (\Cref{appendix: settings_identifiability}), also providing guidelines for tuning (\Cref{appendix:kernel_TS_LDDMM}).
        \item We highlight the \textit{interpretability} of TS-LDDMM for studying the inter-individual variability in a clinical dataset (\Cref{section:experiments}).
-        \item We illustrate the quantitative interest of such representation on classification tasks on real shape-based datasets with regular and irregular sampling (\Cref{appendix:classification_shape_analysis}).
+        \item We illustrate the quantitative interest of such representation on classification tasks on real shape-based datasets with regular and irregular sampling (\Cref{appendix: robustness}-\ref{appendix: settings_classification}).
  \end{itemize}
 
     %To the best of our knowledge, these theoretical and practical works have never been done before.
@@ -694,9 +694,9 @@ Shape analysis focuses on statistical analysis of mathematical objects invariant
  Then, any set of points in $\mathcal{M}$ can be represented as points in the tangent space of their Frechet mean $\mathbf{m}_0$ \cite{pal2017riemannian,le2001locating} by considering their logarithms.
  The goal is to find a well-suited Riemannian structure according to the nature of the studied object.
  
- LDDMM framework is a relevant shape analysis tool to represent curves as depicted in \cite{glaunes2008large}. However, graphs of time series are a well-structured type of curve due to the inclusion of the temporal dimension that requires specific care (\Cref{fig:diffeo}).
- In a similar vein, Qiu \textit{et al} \cite{qiu2009time} proposes a method for tracking anatomical shape changes in serial images using LDDMM. They include temporal evolution, but not for the same purpose: the aim is to perform longitudinal modeling of brain images.
-
+ %LDDMM framework is a relevant shape analysis tool to represent curves as depicted in \cite{glaunes2008large}. However, graphs of time series are a well-structured type of curve due to the inclusion of the temporal dimension that requires specific care (\Cref{fig:diffeo}).
+ %In a similar vein, Qiu \textit{et al} \cite{qiu2009time} proposes a method for tracking anatomical shape changes in serial images using LDDMM. They include temporal evolution, but not for the same purpose: the aim is to perform longitudinal modeling of brain images.
+ Qiu \textit{et al} \cite{qiu2009time} proposes a method for tracking anatomical shape changes in serial images using LDDMM. They include temporal evolution, but not for the same purpose: the aim is to perform longitudinal modeling of brain images.
  Leaving the LDDMM representation, the results of \cite{srivastava2010shape,heo2024logistic} address the representation of curves with the Square-Root Velocity (SRV) representation.
  However, the SRV representation is applied after reparametrization of the temporal dimension of the unit length segment.
  Consequently, the graph structure of the time series is not respected, and the original time evolution of the time series is not encoded in the final representation.
@@ -711,27 +711,30 @@ Shape analysis focuses on statistical analysis of mathematical objects invariant
  Oh \textit{et al.} \cite{oh2024stable} improved these results by incorporating the concept of controlled paths into the drift term, similar to how Neural CDEs outperform Neural ODEs.
  With TS-LDDMM, the representation is also derived from an ODE, but the velocity field is parameterized with kernels and optimized to have a minimal norm, which enhances interpretability.
 
- All these state-of-the-art methods previously mentionned \cite{glaunes2008large,oh2024stable,wu2024shape,heo2024logistic} are compared to TS-LDDMM in \Cref{appendix:classification_shape_analysis}.
+ %All these state-of-the-art methods previously mentionned \cite{glaunes2008large,oh2024stable,wu2024shape,heo2024logistic} are compared to TS-LDDMM in \Cref{appendix: settings_classification}.
+ \vspace{-1ex}
   \section{Limitations and conclusion}
+  \vspace{-1ex}
   \label{sec:limitations}
-  \paragraph*{Limitations}
-  While TS-LDDMM performs well on shape-based datasets, it assumes a certain degree of homogeneity with the existence of a reference time series graph$\msg_0$.
- Extending TS-LDDMM to more heterogeneous datasets using clustering is ongoing work.
- TS-LDDMM employs kernel computations, which require specific libraries (e.g., KeOps \cite{charlier2021kernel}) to be efficient and scalable.
- However, in our experiments, the time complexity of TS-LDDMM is comparable to that of competitors.
- It is clear that TS-LDDMM needs to be extended to handle very large datasets with high-dimensional time series (such as videos).
- Additionally, TS-LDDMM requires tuning several hyperparameters, though this is a common requirement among competitors \cite{glaunes2008large, oh2024stable, wu2024shape, heo2024logistic}.
- In future work, adaptive methods are expected to be developed to provide a more user-friendly interface.
-  %\color{red} rappeler les limites de la méthodes : petite dimension à cause des kernels, tuner les hyper paramètres correctement, version adaptative}
-\paragraph*{Conclusion}
-\vspace{-1ex}
-This paper proposes a feature representation method, TS-LDDMM, designed for 
+  %\paragraph*{Limitations}
+  This paper proposes a feature representation method, TS-LDDMM, designed for 
 shape comparison on homogeneous time series datasets. We show on a real dataset 
 its ability to study, with high interpretability, the inter-individual shape 
 variability. As an unsupervised approach, it is user-friendly and enables knowledge 
 transfer for different supervised tasks such as classification. Although TS-LDDMM 
 is already competitive for classification, its performances can be leveraged on 
 more heterogeneous datasets using a hierarchical clustering extension, which is relegated for future work. 
+%   While TS-LDDMM performs well on shape-based datasets, it assumes a certain degree of homogeneity with the existence of a reference time series graph$\msg_0$.
+%  Extending TS-LDDMM to more heterogeneous datasets using clustering is ongoing work.
+ TS-LDDMM employs kernel computations, which require specific libraries (e.g., KeOps \cite{charlier2021kernel}) to be efficient and scalable.
+ However, in our experiments, the time complexity of TS-LDDMM is comparable to that of competitors.
+ It is clear that TS-LDDMM needs to be extended to handle very large datasets with high-dimensional time series (such as videos).
+ Additionally, TS-LDDMM requires tuning several hyperparameters, though this is a common requirement among competitors \cite{glaunes2008large, oh2024stable, wu2024shape, heo2024logistic}.
+ In future work, adaptive methods are expected to be developed to provide a more user-friendly interface.
+  %\color{red} rappeler les limites de la méthodes : petite dimension à cause des kernels, tuner les hyper paramètres correctement, version adaptative}
+% \paragraph*{Conclusion}
+% \vspace{-1ex}
+
 
 
 

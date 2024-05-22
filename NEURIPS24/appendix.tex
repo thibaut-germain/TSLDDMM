@@ -289,7 +289,7 @@ This experiment only involves the TS-LDDMM method in two different settings:
 provided that the hyperparameters and the reference graph are wisely selected, i.e., the parameter $v_0^*$ generating a deformation $\varphi^{\{v_0^*\}}$ of a time series graph $\msg$ can be estimated from the data $\msg,\varphi^{\{v_0^*\}}.\msg$ by solving the geodesic shooting problem \eqref{eq:relaxation}. 
 
 First, we show the model identifiability when the kernel $K_G$ is well specified: the estimated parameter is a good approximation of the generating parameter when the generation and the estimation procedure use the same hyperparameters for the RKHS kernel $K_\msg$.
-All the hyperparameter values for generation and estimation are given in \Cref{appendix:numerics_synthetic}.
+`%All the hyperparameter values for generation and estimation are given in \Cref{appendix:numerics_synthetic}.
 We fix the initial control points as $\msx=\left(x_k=(k,\sin(2\pi k/300))\right)_{k\in[300]} $.
 Given $m_{s}\in \Nset_{>0}$ and $t_{a},s_{a}>0$, we randomly generate initial momentums $\mathbf{\alpha}^*=(\alpha_k^*)_{k\in[\mathbf{n}_0]}$ with the following sampling, called Gen($m_s,t_a,s_a$):
 For any $k\in[\mathbf{n}_0]$, $\mathbf{\alpha}_k'$ is sampled according to a Gaussian normal distribution $\mathcal{N}(0_{d+1},I_{d+1})$.
@@ -403,7 +403,7 @@ Overall, TS-LDDMM is a relevant and consistent shape-based representation for ir
 
 
 
-\subsection{Appendix for experiment: Classification benchmark on regularly sampled datasets}
+\section{Appendix for experiment: Classification benchmark on regularly sampled datasets}
 
 In this section, we compare the classification performances of TS-LDDMM with other methods from shape analysis on 15 shape-based datasets of time series regularly sampled. TS-LDDMM outperforms other methods on 12 out of 15, highlighting its relevance for shape analysis when dealing with time series. 
 
@@ -419,9 +419,9 @@ In this section, we compare the classification performances of TS-LDDMM with oth
 
 
 
-\paragraph{Methods} We compare TS-LDDMM with a method from function~\cite{wu2024shape}
+%\paragraph{Methods} We compare TS-LDDMM with a method from function~\cite{wu2024shape}
 
-\paragraph{Protocole}
+%\paragraph{Protocole}
 
 \begin{table}[hbt!]
   \centering
