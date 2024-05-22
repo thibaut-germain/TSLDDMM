@@ -271,7 +271,6 @@
 \newlabel{appendix:kernel_implementation}{{B.1}{14}{Varifold kernels}{subsection.B.1}{}}
 \newlabel{appendix:kernel_implementation@cref}{{[subappendix][1][2147483647,2]B.1}{[1][14][]14}}
 \citation{zhuang2020adabelief}
-\citation{glaunes2008large}
 \@writefile{toc}{\contentsline {section}{\numberline {C}Tuning the hyperparameters of the TS-LDDMM velocity field kernel}{15}{appendix.C}\protected@file@percent }
 \newlabel{appendix:kernel_TS_LDDMM}{{C}{15}{Tuning the hyperparameters of the TS-LDDMM velocity field kernel}{appendix.C}{}}
 \newlabel{appendix:kernel_TS_LDDMM@cref}{{[appendix][3][2147483647]C}{[1][15][]15}}
@@ -284,9 +283,47 @@
 \@writefile{toc}{\contentsline {paragraph}{Initialization.}{15}{section*.20}\protected@file@percent }
 \csxdef {autonum@eq:general_optimization_problemReferenced}{}
 \@writefile{toc}{\contentsline {paragraph}{Gradient descent.}{15}{section*.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.2}Settings for experiment: analysis of respiratory behavior in mice}{15}{subsection.D.2}\protected@file@percent }
-\newlabel{appendix: mice_exp_setting}{{D.2}{15}{Settings for experiment: analysis of respiratory behavior in mice}{subsection.D.2}{}}
-\newlabel{appendix: mice_exp_setting@cref}{{[subappendix][2][2147483647,4]D.2}{[1][15][]15}}
+\@writefile{toc}{\contentsline {section}{\numberline {E}Datasets}{15}{appendix.E}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.1}Mouse respiratory cycle dataset}{15}{subsection.E.1}\protected@file@percent }
+\newlabel{appendix:mouse_dataset}{{E.1}{15}{Mouse respiratory cycle dataset}{figure.caption.22}{}}
+\newlabel{appendix:mouse_dataset@cref}{{[subappendix][1][2147483647,5]E.1}{[1][15][]15}}
+\citation{nervo2019respiratory}
+\citation{hoymann2012lung}
+\citation{nervo2019respiratory}
+\citation{germain2023unsupervised}
+\citation{dau2019ucr,bagnall2018uea}
+\citation{dau2019ucr,bagnall2018uea}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces A: Illustration of a double-chamber plethysmograph. The term \textit  {dpt} stands for differential pressure transducer which measures the pressure in each compartment, the pressure then being converted to flow. B: Nasal airflow (top) and lung volume (bottom). During inspiration, airflow is positive (grey) and during expiration, airflow is negative (pink).\relax }}{16}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:mice_exp}{{6}{16}{A: Illustration of a double-chamber plethysmograph. The term \textit {dpt} stands for differential pressure transducer which measures the pressure in each compartment, the pressure then being converted to flow. B: Nasal airflow (top) and lung volume (bottom). During inspiration, airflow is positive (grey) and during expiration, airflow is negative (pink).\relax }{figure.caption.22}{}}
+\newlabel{fig:mice_exp@cref}{{[figure][6][2147483647]6}{[1][15][]16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.2}Shape-based UCR/UEA time series classification datasets}{16}{subsection.E.2}\protected@file@percent }
+\newlabel{appendix:classification_dataset}{{E.2}{16}{Shape-based UCR/UEA time series classification datasets}{subsection.E.2}{}}
+\newlabel{appendix:classification_dataset@cref}{{[subappendix][2][2147483647,5]E.2}{[1][16][]16}}
+\citation{glaunes2008large}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces UCR/UEA shape-based time series datasets for classification.\relax }}{17}{table.caption.23}\protected@file@percent }
+\newlabel{appendix:table:datasets}{{1}{17}{UCR/UEA shape-based time series datasets for classification.\relax }{table.caption.23}{}}
+\newlabel{appendix:table:datasets@cref}{{[table][1][2147483647]1}{[1][16][]17}}
+\@writefile{toc}{\contentsline {section}{\numberline {F}Appendix for experiment: Analysis of respiratory behavior in mice}{17}{appendix.F}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {F.1}Settings}{17}{subsection.F.1}\protected@file@percent }
+\newlabel{appendix: mice_exp_setting}{{F.1}{17}{Settings}{subsection.F.1}{}}
+\newlabel{appendix: mice_exp_setting@cref}{{[subappendix][1][2147483647,6]F.1}{[1][17][]17}}
+\@writefile{toc}{\contentsline {paragraph}{TS-LDDMMM parameters.}{17}{section*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{LDDMMM parameters.}{17}{section*.25}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Plots of $\varphi ^{\{v_0(\mathbf  {\alpha }^*,\mathsf  {X})\}}.\mathsf  {X}$ for different values of $\mathbf  {\alpha }^*$ according to its sampling parameter $t_a,s_a,m_s $, taking $\mathsf  {X}=\mathsf  {G}(s_0)$ with $s_0:k\in [300]\to \qopname  \relax o{sin}(2\pi k/300) $.\relax }}{18}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:exemple_synthetic}{{7}{18}{Plots of $\varphi ^{\{v_0(\mathbf {\alpha }^*,\msx )\}}.\msx $ for different values of $\mathbf {\alpha }^*$ according to its sampling parameter $t_a,s_a,m_s $, taking $\msx =\msg (s_0)$ with $s_0:k\in [300]\to \sin (2\pi k/300) $.\relax }{figure.caption.26}{}}
+\newlabel{fig:exemple_synthetic@cref}{{[figure][7][2147483647]7}{[1][18][]18}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Values of $\mathscr  {L}(\varphi ^{\{v_0(\mathbf  {\alpha }^*,\mathsf  {X})\}}.\mathsf  {X},\varphi ^{\{\cc@accent {"705E}{v}_0\}}.\mathsf  {X})$ as $\mathbf  {\alpha }^*$ is sampled according to Gen(10,10,50) and $\cc@accent {"705E}{v}_0$ is estimated using $K_\mathsf  {G}$ with varying parameters $\sigma _{T,1},\sigma _x$.\relax }}{18}{table.caption.27}\protected@file@percent }
+\newlabel{table:synthetic2}{{2}{18}{Values of $\scrl (\varphi ^{\{v_0(\mathbf {\alpha }^*,\msx )\}}.\msx ,\varphi ^{\{\hat {v}_0\}}.\msx )$ as $\mathbf {\alpha }^*$ is sampled according to Gen(10,10,50) and $\hat {v}_0$ is estimated using $K_\msg $ with varying parameters $\sigma _{T,1},\sigma _x$.\relax }{table.caption.27}{}}
+\newlabel{table:synthetic2@cref}{{[table][2][2147483647]2}{[1][18][]18}}
+\@writefile{toc}{\contentsline {section}{\numberline {G}Appendix for experiment: TS-LDDMM representation identifiability}{18}{appendix.G}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {G.1}Settings}{18}{subsection.G.1}\protected@file@percent }
+\newlabel{appendix: settings_identifiability}{{G.1}{18}{Settings}{subsection.G.1}{}}
+\newlabel{appendix: settings_identifiability@cref}{{[subappendix][1][2147483647,7]G.1}{[1][18][]18}}
+\csxdef {autonum@eq:relaxationReferenced}{}
+\csxdef {autonum@eq:def_v0Referenced}{}
+\csxdef {autonum@eq:integrationReferenced}{}
+\csxdef {autonum@eq:relaxationReferenced}{}
+\csxdef {autonum@eq:relaxationReferenced}{}
 \citation{oh2024stable}
 \citation{kidger2020neural}
 \citation{medsker1999recurrent}
@@ -294,74 +331,30 @@
 \citation{chung2014empirical}
 \citation{shukla2021multi}
 \citation{lee2022multi}
-\@writefile{toc}{\contentsline {paragraph}{TS-LDDMMM parameters.}{16}{section*.22}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{LDDMMM parameters.}{16}{section*.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.3}Settings for experiment: TS-LDDMM representation identifiability}{16}{subsection.D.3}\protected@file@percent }
-\newlabel{appendix: settings_identifiability}{{D.3}{16}{Settings for experiment: TS-LDDMM representation identifiability}{subsection.D.3}{}}
-\newlabel{appendix: settings_identifiability@cref}{{[subappendix][3][2147483647,4]D.3}{[1][16][]16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.4}Settings for experiment: Robustness to irregular sampling}{16}{subsection.D.4}\protected@file@percent }
-\newlabel{appendix: settings_robustness}{{D.4}{16}{Settings for experiment: Robustness to irregular sampling}{subsection.D.4}{}}
-\newlabel{appendix: settings_robustness@cref}{{[subappendix][4][2147483647,4]D.4}{[1][16][]16}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {D.4.1}Benchmark methods}{16}{subsubsection.D.4.1}\protected@file@percent }
 \citation{lechner2020learning}
 \citation{liu2019neural}
 \citation{oh2024stable}
 \citation{glaunes2008large}
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.5}Settings for experiment: Classification benchmark on regularly sampled datasets}{17}{subsection.D.5}\protected@file@percent }
-\newlabel{appendix: settings_classification}{{D.5}{17}{Settings for experiment: Classification benchmark on regularly sampled datasets}{subsection.D.5}{}}
-\newlabel{appendix: settings_classification@cref}{{[subappendix][5][2147483647,4]D.5}{[1][17][]17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.6}Synthetic experiments}{17}{subsection.D.6}\protected@file@percent }
-\newlabel{appendix:numerics_synthetic}{{D.6}{17}{Synthetic experiments}{subsection.D.6}{}}
-\newlabel{appendix:numerics_synthetic@cref}{{[subappendix][6][2147483647,4]D.6}{[1][17][]17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.7}Mouse experiments}{17}{subsection.D.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {D.8}Classification experiments}{17}{subsection.D.8}\protected@file@percent }
-\newlabel{appendix:classification_implementation}{{D.8}{17}{Classification experiments}{subsection.D.8}{}}
-\newlabel{appendix:classification_implementation@cref}{{[subappendix][8][2147483647,4]D.8}{[1][17][]17}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Parameters used in all the experiments. For synthetic data, $K_\mathsf  {G}$ refers to the kernel used in the generation, which is the same for the estimation only in the well-specified case. $\cc@accent {"7016}{l}$ refers to the average time series length and $N_d$ refers to the number of dimensions.\relax }}{17}{table.caption.24}\protected@file@percent }
-\newlabel{appendix:table:set_up_exp_practical}{{1}{17}{Parameters used in all the experiments. For synthetic data, $K_\msg $ refers to the kernel used in the generation, which is the same for the estimation only in the well-specified case. $\bar {l}$ refers to the average time series length and $N_d$ refers to the number of dimensions.\relax }{table.caption.24}{}}
-\newlabel{appendix:table:set_up_exp_practical@cref}{{[table][1][2147483647]1}{[1][17][]17}}
-\citation{nervo2019respiratory}
-\citation{hoymann2012lung}
-\citation{nervo2019respiratory}
-\citation{germain2023unsupervised}
-\citation{dau2019ucr,bagnall2018uea}
-\citation{dau2019ucr,bagnall2018uea}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces A: Illustration of a double-chamber plethysmograph. The term \textit  {dpt} stands for differential pressure transducer which measures the pressure in each compartment, the pressure then being converted to flow. B: Nasal airflow (top) and lung volume (bottom). During inspiration, airflow is positive (grey) and during expiration, airflow is negative (pink).\relax }}{18}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:mice_exp}{{6}{18}{A: Illustration of a double-chamber plethysmograph. The term \textit {dpt} stands for differential pressure transducer which measures the pressure in each compartment, the pressure then being converted to flow. B: Nasal airflow (top) and lung volume (bottom). During inspiration, airflow is positive (grey) and during expiration, airflow is negative (pink).\relax }{figure.caption.25}{}}
-\newlabel{fig:mice_exp@cref}{{[figure][6][2147483647]6}{[1][18][]18}}
-\@writefile{toc}{\contentsline {section}{\numberline {E}Datasets}{18}{appendix.E}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.1}Mouse respiratory cycle dataset}{18}{subsection.E.1}\protected@file@percent }
-\newlabel{appendix:mouse_dataset}{{E.1}{18}{Mouse respiratory cycle dataset}{figure.caption.25}{}}
-\newlabel{appendix:mouse_dataset@cref}{{[subappendix][1][2147483647,5]E.1}{[1][18][]18}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {E.2}Shape-based UCR/UEA time series classification datasets}{18}{subsection.E.2}\protected@file@percent }
-\newlabel{appendix:classification_dataset}{{E.2}{18}{Shape-based UCR/UEA time series classification datasets}{subsection.E.2}{}}
-\newlabel{appendix:classification_dataset@cref}{{[subappendix][2][2147483647,5]E.2}{[1][18][]18}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Plots of $\varphi ^{\{v_0(\mathbf  {\alpha }^*,\mathsf  {X})\}}.\mathsf  {X}$ for different values of $\mathbf  {\alpha }^*$ according to its sampling parameter $t_a,s_a,m_s $, taking $\mathsf  {X}=\mathsf  {G}(s_0)$ with $s_0:k\in [300]\to \qopname  \relax o{sin}(2\pi k/300) $.\relax }}{19}{figure.caption.27}\protected@file@percent }
-\newlabel{fig:exemple_synthetic}{{7}{19}{Plots of $\varphi ^{\{v_0(\mathbf {\alpha }^*,\msx )\}}.\msx $ for different values of $\mathbf {\alpha }^*$ according to its sampling parameter $t_a,s_a,m_s $, taking $\msx =\msg (s_0)$ with $s_0:k\in [300]\to \sin (2\pi k/300) $.\relax }{figure.caption.27}{}}
-\newlabel{fig:exemple_synthetic@cref}{{[figure][7][2147483647]7}{[1][19][]19}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces UCR/UEA shape-based time series datasets for classification.\relax }}{19}{table.caption.26}\protected@file@percent }
-\newlabel{appendix:table:datasets}{{2}{19}{UCR/UEA shape-based time series datasets for classification.\relax }{table.caption.26}{}}
-\newlabel{appendix:table:datasets@cref}{{[table][2][2147483647]2}{[1][19][]19}}
-\@writefile{toc}{\contentsline {section}{\numberline {F}Experiments}{19}{appendix.F}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {F.1}Identifiability experiments}{19}{subsection.F.1}\protected@file@percent }
-\newlabel{appendix:identifiability}{{F.1}{19}{Identifiability experiments}{subsection.F.1}{}}
-\newlabel{appendix:identifiability@cref}{{[subappendix][1][2147483647,6]F.1}{[1][19][]19}}
-\csxdef {autonum@eq:relaxationReferenced}{}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Values of $\mathscr  {L}(\varphi ^{\{v_0(\mathbf  {\alpha }^*,\mathsf  {X})\}}.\mathsf  {X},\varphi ^{\{\cc@accent {"705E}{v}_0\}}.\mathsf  {X})$ as $\mathbf  {\alpha }^*$ is sampled according to Gen(10,10,50) and $\cc@accent {"705E}{v}_0$ is estimated using $K_\mathsf  {G}$ with varying parameters $\sigma _{T,1},\sigma _x$.\relax }}{19}{table.caption.28}\protected@file@percent }
-\newlabel{table:synthetic2}{{3}{19}{Values of $\scrl (\varphi ^{\{v_0(\mathbf {\alpha }^*,\msx )\}}.\msx ,\varphi ^{\{\hat {v}_0\}}.\msx )$ as $\mathbf {\alpha }^*$ is sampled according to Gen(10,10,50) and $\hat {v}_0$ is estimated using $K_\msg $ with varying parameters $\sigma _{T,1},\sigma _x$.\relax }{table.caption.28}{}}
-\newlabel{table:synthetic2@cref}{{[table][3][2147483647]3}{[1][19][]19}}
-\citation{wu2024shape}
-\csxdef {autonum@eq:def_v0Referenced}{}
-\csxdef {autonum@eq:integrationReferenced}{}
-\csxdef {autonum@eq:relaxationReferenced}{}
-\csxdef {autonum@eq:relaxationReferenced}{}
+\citation{oh2024stable}
 \csxdef {autonum@eq:relaxationReferenced}{}
 \csxdef {autonum@appendix:kernel_TS_LDDMMReferenced}{}
-\@writefile{toc}{\contentsline {subsection}{\numberline {F.2}Classification: Comparison with shape analysis methods}{20}{subsection.F.2}\protected@file@percent }
-\newlabel{appendix:classification_shape_analysis}{{F.2}{20}{Classification: Comparison with shape analysis methods}{subsection.F.2}{}}
-\newlabel{appendix:classification_shape_analysis@cref}{{[subappendix][2][2147483647,6]F.2}{[1][20][]20}}
-\@writefile{toc}{\contentsline {paragraph}{Methods}{20}{section*.29}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Protocole}{20}{table.caption.31}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {G}Robustness to missing data}{20}{appendix.G}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {H}Appendix for experiment: Robustness to irregular sampling}{19}{appendix.H}\protected@file@percent }
+\newlabel{appendix: robustness}{{H}{19}{Appendix for experiment: Robustness to irregular sampling}{appendix.H}{}}
+\newlabel{appendix: robustness@cref}{{[appendix][8][2147483647]H}{[1][19][]19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.1}Benchmark methods}{19}{subsection.H.1}\protected@file@percent }
+\newlabel{appendix: benchmark robustness}{{H.1}{19}{Benchmark methods}{subsection.H.1}{}}
+\newlabel{appendix: benchmark robustness@cref}{{[subappendix][1][2147483647,8]H.1}{[1][19][]19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.2}Model architecture}{19}{subsection.H.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Neural ODEs methods}{19}{section*.28}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{TS-LDDMM and LDDMM}{19}{section*.29}\protected@file@percent }
+\citation{wu2024shape}
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.3}Protocol}{20}{subsection.H.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.4}Results}{20}{subsection.H.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.5}Appendix for experiment: Classification benchmark on regularly sampled datasets}{20}{subsection.H.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {H.6}Settings}{20}{subsection.H.6}\protected@file@percent }
+\newlabel{appendix: settings_classification}{{H.6}{20}{Settings}{subsection.H.6}{}}
+\newlabel{appendix: settings_classification@cref}{{[subappendix][6][2147483647,8]H.6}{[1][20][]20}}
+\@writefile{toc}{\contentsline {paragraph}{Methods}{20}{section*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Protocole}{20}{table.caption.33}\protected@file@percent }
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
 \gdef \@abspage@last{27}
