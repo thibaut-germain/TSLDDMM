@@ -9,7 +9,13 @@
 
 \section{Societal impact}
 \label{appendix:societal_impact}
-
+We believe that the paper has a positive societal impact for the following reasons:
+\begin{itemize}
+\item TS-LDDMM is an interpretable method for understanding inter-individual variability in biomedical datasets, potentially offering new insights in medicine.
+\item TS-LDDMM bridges the gap between the shape analysis community and the unsupervised representation learning (URL) community, fostering potential future collaborations between these fields.
+\end{itemize}
+However, the computational cost of the method may raise environmental concerns similar to those associated with deep learning \cite{oh2024stable}.
+ Additionally, while TS-LDDMM has promising biomedical applications, it could also be misused for creating poison.
 \section{Proofs}
 \label{appendix:proofs}
 Denote by $\msg(s)\triangleq \{ (t,s(t)): \eqsp t\in \msi \} $ the graph of a time series $s: \msi \to \Rset^d$ and $ \phi.\msg(s)\triangleq\{ \phi(t,s(t)): \eqsp t\in \msi\} $ the action of  $\phi\in \mcd(\Rset^{d+1}) $ on $\msg(s)$.

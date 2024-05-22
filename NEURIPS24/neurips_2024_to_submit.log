@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.24)  22 MAY 2024 16:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.24)  22 MAY 2024 17:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1082,94 +1082,94 @@ LaTeX Warning: Reference `appendix:classification_shape_analysis' on page 1 unde
 ) (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9] [10] [11] [12]) (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/appendix.tex [13
-pdfTeX warning (ext4): destination with the same identifier (name{equation.B.10}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.55 \end{proof}
-                ]
-Overfull \hbox (62.69633pt too wide) detected at line 94
+ [9] [10] [11] [12]) (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/appendix.tex [13]
+Overfull \hbox (62.69633pt too wide) detected at line 100
 [][][]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ^^V[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^V[]\OMS/cmsy/m/n/10 j[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 l[]k\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 x[]; []\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; [][]\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 l[] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 2 [] [] \OML/cmm/m/it/10 l[]k\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 x[]; []\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y[]; []\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 l[] \OT1/cmr/m/n/10 + [] \OML/cmm/m/it/10 l[]k\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 y[]; []\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y[]; []\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 l[] :
  []
 
 [14
+pdfTeX warning (ext4): destination with the same identifier (name{equation.B.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.109 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{equation.C.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.111 \begin{equation}
-                      
+l.109 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{equation.C.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.111 \begin{equation}
-                      
+l.109 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{equation.C.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.111 \begin{equation}
-                      ]
+l.109 
+      ]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.C.12}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.111 \begin{equation}
+l.117 \begin{equation}
                       
 pdfTeX warning (ext4): destination with the same identifier (name{equation.C.12}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.111 \begin{equation}
+l.117 \begin{equation}
                       
 pdfTeX warning (ext4): destination with the same identifier (name{equation.C.12}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.111 \begin{equation}
+l.117 \begin{equation}
                       
 pdfTeX warning (ext4): destination with the same identifier (name{equation.C.12}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.111 \begin{equation}
+l.117 \begin{equation}
                        [15]
-<pictures/mice_exp.png, id=525, 492.3996pt x 214.401pt>
+<pictures/mice_exp.png, id=523, 492.3996pt x 214.401pt>
 File: pictures/mice_exp.png Graphic file (type png)
 <use pictures/mice_exp.png>
-Package pdftex.def Info: pictures/mice_exp.png  used on input line 158.
+Package pdftex.def Info: pictures/mice_exp.png  used on input line 164.
 (pdftex.def)             Requested size: 397.48499pt x 173.07825pt.
  [16 </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/pictures/mice_exp.png (PNG copy)>]
-Underfull \hbox (badness 1546) in paragraph at lines 237--238
+Underfull \hbox (badness 1546) in paragraph at lines 243--244
 \T1/ptm/m/n/10 (+20) vari-a-tions at dif-fer-ent scales with pa-ram-e-ters: (Var-i-fold 1,Var-i-fold 2,Var-i-fold 3):
  []
 
 
-Underfull \hbox (badness 2027) in paragraph at lines 238--239
+Underfull \hbox (badness 2027) in paragraph at lines 244--245
 \T1/ptm/m/n/10 (+20) vari-a-tions at dif-fer-ent scales with pa-ram-e-ters: (Var-i-fold 1,Var-i-fold 2,Var-i-fold 3,
  []
 
 
-Underfull \hbox (badness 2837) in paragraph at lines 238--239
+Underfull \hbox (badness 2837) in paragraph at lines 244--245
 \T1/ptm/m/n/10 (+20) Var-i-fold 4): $[]$ and the map-per
  []
 
-
-Underfull \hbox (badness 2368) in paragraph at lines 245--247
+[17]
+Underfull \hbox (badness 2368) in paragraph at lines 251--253
 []\T1/ptm/b/n/10 (+20) Before/after ex-po-sure: \T1/ptm/m/n/10 (+20) The ve-loc-ity field ker-nel $\OML/cmm/m/it/10 K[]$ \T1/ptm/m/n/10 (+20) is an anysotropic Gaus-
  []
 
 
-Underfull \hbox (badness 1394) in paragraph at lines 245--247
+Underfull \hbox (badness 1394) in paragraph at lines 251--253
 \T1/ptm/m/n/10 (+20) sian ker-nel with pa-ram-e-ters $\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = 220$ \T1/ptm/m/n/10 (+20) for the time di-men-sion and $\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = 2$
  []
 
-[17]
-Underfull \hbox (badness 1297) in paragraph at lines 255--256
+
+Underfull \hbox (badness 1297) in paragraph at lines 261--262
 \OML/cmm/m/it/10 ^^[[]$ \T1/ptm/m/n/10 (+20) rang-ing in $\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 100)$\T1/ptm/m/n/10 (+20) . The var-i-fold loss ker-nels $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 k[]; k[]\OT1/cmr/m/n/10 )$ \T1/ptm/m/n/10 (+20) are set to
  []
 
 <pictures/samples.pdf, id=556, 433.62pt x 180.675pt>
 File: pictures/samples.pdf Graphic file (type pdf)
 <use pictures/samples.pdf>
-Package pdftex.def Info: pictures/samples.pdf  used on input line 260.
+Package pdftex.def Info: pictures/samples.pdf  used on input line 266.
 (pdftex.def)             Requested size: 198.7425pt x 82.81099pt.
 
-LaTeX Warning: Reference `appendix:numerics_synthetic' on page 1 undefined on input line 286.
+LaTeX Warning: Reference `appendix:numerics_synthetic' on page 1 undefined on input line 292.
 
 [18 </Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/pictures/samples.pdf>] [19]) (/Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/checklist.tex [20] [21]
 
@@ -1205,16 +1205,16 @@ Package rerunfilecheck Info: File `neurips_2024_to_submit.out' has not changed.
 Here is how much of TeX's memory you used:
  42126 strings out of 478268
  938364 string characters out of 5846346
- 1428067 words of memory out of 5000000
+ 1429067 words of memory out of 5000000
  59055 multiletter control sequences out of 15000+600000
  532488 words of font info for 301 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,20n,83p,1152b,841s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,20n,83p,1152b,845s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.pdf (26 pages, 1031807 bytes).
+Output written on /Users/samuelgruffaz/Documents/Thèse_vrai/Thibaut_colab_PCA/TSLDDMM/NEURIPS24/neurips_2024_to_submit.pdf (26 pages, 1032665 bytes).
 PDF statistics:
- 869 PDF objects out of 1000 (max. 8388607)
- 730 compressed objects within 8 object streams
+ 870 PDF objects out of 1000 (max. 8388607)
+ 731 compressed objects within 8 object streams
  204 named destinations out of 1000 (max. 500000)
  60215 words of extra memory for PDF output out of 61914 (max. 10000000)
 
