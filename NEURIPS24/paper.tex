@@ -431,7 +431,7 @@ We aim to learn $\msg(\bfs_0)$ and $(\phi_j)_{j\in[N]} $.
 %  \end{algorithmic}
 %  \end{algorithm}
 
-Nevertheless, \eqref{eq:general_optimization_problem} asks to define a kernel and a loss in order to perform geodesic shooting \ref{eq:relaxation}, which is the purpose of the following subsection.
+Nevertheless, \eqref{eq:general_optimization_problem} asks to define a kernel and a loss in order to perform geodesic shooting \eqref{eq:relaxation}, which is the purpose of the following subsection.
 \vspace{-1ex}
    \subsection{Application of LDDMM to time series analysis: TS-LDDMM}
    \vspace{-1ex}
@@ -440,14 +440,14 @@ Nevertheless, \eqref{eq:general_optimization_problem} asks to define a kernel an
         \label{section:time_series_specificity}
         This section presents our theoretical contribution: we tailor the LDDMM framework to handle time series data.
         The reason is that applying a general diffeomorphism $\phi$ from $\Rset^{d+1}$ to a time series' graph $\msg(s)$ can result in a set $\phi.\msg(s)$ that does not correspond to the graph of any time series, as illustrated in the \Cref{fig:diffeo}.
-        Thus, time series graphs have more structure than a simple 1D curve \cite{glaunes2008large} and deserve their unique analysis, which will prove fruitful as demonstrated in \ref{section:experiments}.
+        Thus, time series graphs have more structure than a simple 1D curve \cite{glaunes2008large} and deserve their unique analysis, which will prove fruitful as demonstrated in \Cref{section:experiments}.
        
        To address this challenge, we need to identify an RKHS kernel $K:\Rset^{d+1}\times \Rset^{d+1}\to \Rset^{(d+1)^2}$ that generates deformations preserving the structure of the time series graph. This goal motivates us to clarify, in \Cref{theorem:representation}, the specific representation of diffeomorphisms we require before presenting a class of kernels that produce deformations with this representation.
        
        Similarly, selecting a loss function on sets $\mathscr{L}$ that considers the temporal evolution in a time series' graph is crucial for meaningful comparisons with time series data. Consequently, we introduce the oriented Varifold distance. 
 \vspace{-1ex}
        \paragraph{A representation separating space and time.}
-       We prove that two time series graphs can always be linked by a time transformation composed of a space transformation. Moreover, a time series graph transformed by this kind of transformation is always a time series graph.
+       We prove that two time series graphs can always be linked by a time transformation composed with a space transformation. Moreover, a time series graph transformed by this kind of transformation is always a time series graph.
         We define $\Psi_\gamma\in \mcd(\Rset^{d+1}) : (t,x)\in\Rset^{d+1}\to (\gamma(t),x)$ for any $\gamma\in \mcd(\Rset)$ and $\Phi_f:  (t,x)\in\Rset^{d+1}\to (t,f(t,x)) $ for any $f\in \rmC^1(\Rset^{d+1},\Rset^d)$. 
         We have the following representation theorem.
         All proofs are given in \Cref{appendix:proofs}. 
