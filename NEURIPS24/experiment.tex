@@ -13,7 +13,7 @@ For conciseness, several experiments are relegated in appendix:
       \textbf{Results} show that our method, TS-LDDMM, outperforms all methods for sampling regimes with missing rates: 0\%, 30\%, and 50\%.
       %{\color{red} J'enlèverai cette phrase ou je développerai en Appendix : The performance decrease of the Kernel-SVC based on TS-LDDMM representation is sensibly due to the misspecification of its regularization parameter.}
     
-    \item \textbf{Classification benchmark on regularly sampled datasets, \Cref{appendix: settings_classification}:} We compare performances of a kernel support vector machine (SVC) algorithm based on TS-LDDMM representation with 3 state-of-the-art classification methods from shape analysis on 15 shape-based datasets (7 univariates \& 8 multivariates). \textbf{Results} in \Cref{table:wewin} show that the TS-LDDMM-based method outperforms other methods (best performances over 13 datasets), making TS-LDDMM representation relevant for time series shape analysis.
+    \item \textbf{Classification benchmark on regularly sampled datasets, \Cref{appendix: settings_classification}:} We compare performances of a kernel support vector machine (SVC) algorithm based on TS-LDDMM representation with 3 state-of-the-art classification methods from shape analysis on 15 shape-based datasets (7 univariates \& 8 multivariates). \textbf{Results} show that the TS-LDDMM-based method outperforms other methods (best performances over 13 datasets), making TS-LDDMM representation relevant for time series shape analysis.
 \end{enumerate}
 \begin{figure*}[t]
   \centering
@@ -34,7 +34,30 @@ For conciseness, several experiments are relegated in appendix:
   \label{fig:exp1}
 \end{figure*}
 
-
+\vspace{-1ex}
+\begin{figure*}[t]
+  \centering
+  \begin{subfigure}[b]{0.15\textwidth}
+    \centering
+    \includegraphics[width = \textwidth]{pictures/exp_1_cycle_example.jpeg}
+    \caption{colq cycle}
+    \label{fig:colq-cycle}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.15\textwidth}
+    \centering
+    \includegraphics[width = \textwidth]{pictures/exp_1_scatter.jpeg}
+    \caption{PC1 vs PC2}
+    \label{fig: pcs-scatter}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.15\textwidth}
+    \centering
+    \includegraphics[width = \textwidth]{pictures/exp_1_wt.jpeg}
+    \caption{wt cycle}
+    \label{fig:wt-reference}
+  \end{subfigure}
+  \caption{\Cref{fig:colq-cycle} is a \textbf{colq} respiratory cycle. \Cref*{fig: pcs-scatter} displays individual mouse reference respiratory cycle in the TS-LDDMM PC1-PC2 coordinates. \Cref{fig:wt-reference} is a referent respiratory cycle of a \textbf{wt} mouse learned with TS-LDDMM. }
+  \vspace{-1em}
+\end{figure*}
 \vspace{-1ex}
 \subsection{Interpretability: analysis of respiratory behavior in mice}
 \label{section:interpretability}
@@ -71,61 +94,8 @@ description of the dataset is given in the \Cref{appendix:mouse_dataset}.
   The first experiment includes $N_1 = 700$ respiratory cycles collected before exposure. The second experiment includes $N_2 = 1400$ respiratory cycles with 25\% (resp. 75\%) before (resp. after) exposure.
    \Cref{appendix: mice_exp_setting} describes methods settings.
     Essentially, varifold losses are identical for both methods, and the velocity field kernels are set to encompass time and space scales. 
-    \begin{table}[t]
-      \centering
-      \resizebox{\columnwidth}{!}{%
-      \begin{tabular}{llrrrr}
-        \toprule
-         & \textbf{Dataset} & \textbf{Shape-FPCA (2024)} & \textbf{TCLR (2024)} & \textbf{LDDMM (2008)} & \textbf{TS-LDDMM (ours)} \\
-        \midrule
-        \multirow[c]{7}{*}{Univariate} & ArrowHead & 0.18 & 0.75 & \underline{0.84} & \textbf{0.91} \\
-         & BME & 0.16 & \underline{1.00} & 0.82 & \textbf{1.00} \\
-         & ECG200 & 0.40 & 0.67 & \textbf{0.81} & \underline{0.79} \\
-         & FacesUCR & 0.08 & \underline{0.73} & 0.69 & \textbf{0.86} \\
-         & GunPoint & 0.93 & \underline{0.97} & 0.83 & \textbf{1.00} \\
-         & PhalangesOutlinesCorrect & 0.39 & \textbf{0.63} & \underline{0.53} & 0.52 \\
-         & Trace & 0.55 & \underline{1.00} & 0.46 & \textbf{1.00} \\
-        \cline{1-6}
-        \multirow[c]{8}{*}{Multivariate} & ArticularyWordRecognition & -- & -- & \underline{0.98} & \textbf{1.00} \\
-         & Cricket & -- & -- & \underline{0.77} & \textbf{0.93} \\
-         & ERing & -- & -- & \underline{0.95} & \textbf{0.98} \\
-         & Handwriting & -- & -- & \underline{0.22} & \textbf{0.44} \\
-         & Libras & -- & -- & \underline{0.56} & \textbf{0.60} \\
-         & NATOPS & -- & -- & \underline{0.82} & \textbf{0.82} \\
-         & RacketSports & -- & -- & \textbf{0.83} & \underline{0.79} \\
-         & UWaveGestureLibrary & -- & -- & \underline{0.72} & \textbf{0.81} \\
-        \bottomrule
-        \end{tabular}
-        %
-      }
-      \label{table:wewin}
-      \caption{All the state-of-the-art methods \cite{glaunes2008large,oh2024stable,wu2024shape,heo2024logistic} mentionned in related works are compared to TS-LDDMM in \Cref{appendix: settings_classification}.}
-        
-    \end{table}
+    
     \vspace{-1ex}
-    \vspace{-1ex}\begin{wrapfigure}{r}{0.5\textwidth}
-      \centering
-      \begin{subfigure}[b]{0.15\textwidth}
-        \centering
-        \includegraphics[width = \textwidth]{pictures/exp_1_cycle_example.jpeg}
-        \caption{colq cycle}
-        \label{fig:colq-cycle}
-      \end{subfigure}
-      \begin{subfigure}[b]{0.15\textwidth}
-        \centering
-        \includegraphics[width = \textwidth]{pictures/exp_1_scatter.jpeg}
-        \caption{PC1 vs PC2}
-        \label{fig: pcs-scatter}
-      \end{subfigure}
-      \begin{subfigure}[b]{0.15\textwidth}
-        \centering
-        \includegraphics[width = \textwidth]{pictures/exp_1_wt.jpeg}
-        \caption{wt cycle}
-        \label{fig:wt-reference}
-      \end{subfigure}
-      \caption{\Cref{fig:colq-cycle} is a \textbf{colq} respiratory cycle. \Cref*{fig: pcs-scatter} displays individual mouse reference respiratory cycle in the TS-LDDMM PC1-PC2 coordinates. \Cref{fig:wt-reference} is a referent respiratory cycle of a \textbf{wt} mouse learned with TS-LDDMM. }
-      \vspace{-1em}
-    \end{wrapfigure}
 \paragraph{Breathing behaviors before exposure.}
  We focus on the analysis of the two first Principal Components (PC) for TS-LDDMM (\Cref{fig:ts-lddmm shooting}), and LDDMM (\Cref{fig:lddmm shooting}).
   A respiratory cycle is an inspiration (positive flow) followed by an expiration (negative flow); \Cref{fig:wt-reference} displays an example of \textbf{wt} mouse respiratory cycle.
