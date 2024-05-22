@@ -253,6 +253,8 @@ This experiment involves TS-LDDMM and LDDMM~\cite{glaunes2008large} methods. Bot
 \end{itemize}
 
 \section{Appendix for experiment: TS-LDDMM representation identifiability}
+In this experiment, we evaluate the ability of TS-LDDMM to retrieve the parameter $v_0^*$ that encodes the deformation $\varphi^{\{v_0^*\}}$ acting on a time series graph $\msg$ by solving the geodesic shooting problem \eqref{eq:relaxation} between $\msg$ and $\varphi^{\{v_0^*\}}.\msg$. Parameter identifiability is an important property for subsequent statistical analysis. Results show that TS-LDDMM representations are identifiable or weakly identifiable depending on the velocity field kernel $K_G$ specification.
+
 \subsection{Settings}
 \label{appendix: settings_identifiability}
 This experiment only involves the TS-LDDMM method in two different settings: 
@@ -264,10 +266,8 @@ This experiment only involves the TS-LDDMM method in two different settings:
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.5\linewidth]{pictures/samples.pdf}
-  \vspace{-1em}
   \caption{Plots of $\varphi^{\{v_0(\mathbf{\alpha}^*,\msx)\}}.\msx$ for different values of $\mathbf{\alpha}^*$ according to its sampling parameter $t_a,s_a,m_s $, taking $\msx=\msg(s_0)$ with $s_0:k\in [300]\to \sin(2\pi k/300) $.}
   \label{fig:exemple_synthetic}
-  \vspace{-1em}
 \end{figure}
 
 \begin{table}
@@ -283,13 +283,15 @@ This experiment only involves the TS-LDDMM method in two different settings:
        \bottomrule
        \end{tabular}
     \label{table:synthetic2}
-    \vspace{-1em}
 \end{table}
 
 provided that the hyperparameters and the reference graph are wisely selected, i.e., the parameter $v_0^*$ generating a deformation $\varphi^{\{v_0^*\}}$ of a time series graph $\msg$ can be estimated from the data $\msg,\varphi^{\{v_0^*\}}.\msg$ by solving the geodesic shooting problem \eqref{eq:relaxation}. 
 
+\paragraph{The velocity field kernel $K_G$ is well specified.}
+
 First, we show the model identifiability when the kernel $K_G$ is well specified: the estimated parameter is a good approximation of the generating parameter when the generation and the estimation procedure use the same hyperparameters for the RKHS kernel $K_\msg$.
-`%All the hyperparameter values for generation and estimation are given in \Cref{appendix:numerics_synthetic}.
+All the hyperparameter values for generation and estimation are given in \Cref{appendix: settings_identifiability}.
+
 We fix the initial control points as $\msx=\left(x_k=(k,\sin(2\pi k/300))\right)_{k\in[300]} $.
 Given $m_{s}\in \Nset_{>0}$ and $t_{a},s_{a}>0$, we randomly generate initial momentums $\mathbf{\alpha}^*=(\alpha_k^*)_{k\in[\mathbf{n}_0]}$ with the following sampling, called Gen($m_s,t_a,s_a$):
 For any $k\in[\mathbf{n}_0]$, $\mathbf{\alpha}_k'$ is sampled according to a Gaussian normal distribution $\mathcal{N}(0_{d+1},I_{d+1})$.
@@ -304,16 +306,18 @@ Mean, standard deviation, and maximum of the ARE on all these hyperparameters ch
 Therefore, the estimation procedure \eqref{eq:relaxation} offers a good approximation of the true parameter when the kernel $K_\msg$ is well specified.
 We observe that the estimation is difficult when $t_a\ll s_a$ because the time series can be very noisy as illustrated in \Cref{fig:exemple_synthetic}: this impacts the Varifold loss which is sensitive to tangents.
 
-Secondly, we demonstrate a weak identifiability when the kernel $K_\msg$ is misspecified: we can reconstruct the graph time series' after deformations even if the hyperparameters of $K_\msg$
+\paragraph{The velocity field kernel $K_G$ is misspecified.}
+
+We demonstrate a weak identifiability when the kernel $K_\msg$ is misspecified: we can reconstruct the graph time series' after deformations even if the hyperparameters of $K_\msg$
 are different during the generation and the estimation.
  The hyperparameters of $K_\msg$ during generation are $(c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x)=(1,0.1,100,1,1)$ and we fix $\sigma_{T,1},c_0,c_1=(1,1,0.1) $ for $K_\msg$ during estimation.
  We aim to understand the impact of $\sigma_{T,1},\sigma_x$ on the reconstruction since they are encoding the smoothness of the transformation according to time and space.  
 
-  For any choice of the hyperparameters $\sigma_{T,1},\sigma_x\in \{1,10,50,100,200,300 \}\times \{0.1,1,100\}$ related to $K_\msg$ in the estimation,
-   we average $\scrl(\varphi^{\{v_0(\mathbf{\alpha}^*,\msx)\}}.\msx,\varphi^{\{\hat{v}_0\}}.\msx)$ on 50 repetitions when $\mathbf{\alpha}^*$ is sampled according to Gen$(10,10,50)$ and $\hat{v}_0=v_0(\hat{\alpha},\msx)$ denoting by $\hat{\alpha}$ the result of the minimization \eqref{eq:relaxation}.
+For any choice of the hyperparameters $\sigma_{T,1},\sigma_x\in \{1,10,50,100,200,300 \}\times \{0.1,1,100\}$ related to $K_\msg$ in the estimation,
+we average $\scrl(\varphi^{\{v_0(\mathbf{\alpha}^*,\msx)\}}.\msx,\varphi^{\{\hat{v}_0\}}.\msx)$ on 50 repetitions when $\mathbf{\alpha}^*$ is sampled according to Gen$(10,10,50)$ and $\hat{v}_0=v_0(\hat{\alpha},\msx)$ denoting by $\hat{\alpha}$ the result of the minimization \eqref{eq:relaxation}.
 We observe in \Cref{table:synthetic2} that the reconstruction is almost perfect except in the case when $\sigma_{t,0}=1$ during estimation, while $ \sigma_{t,0}=100$ during generation.
- Compared to $\sigma_{T,0}$, $\sigma_x$ has nearly no impact on the reconstruction.
- In \Cref{appendix:kernel_implementation}-\ref{appendix:kernel_TS_LDDMM}, we propose guidelines to drive future hyperparameters tuning and further discussions related to $\sigma_{T,1},c_0,c_1$. 
+Compared to $\sigma_{T,0}$, $\sigma_x$ has nearly no impact on the reconstruction.
+In \Cref{appendix:kernel_implementation}-\ref{appendix:kernel_TS_LDDMM}, we propose guidelines to drive future hyperparameters tuning and further discussions related to $\sigma_{T,1},c_0,c_1$. 
 
 \section{Appendix for experiment: Robustness to irregular sampling}
 \label{appendix: robustness}
@@ -348,10 +352,11 @@ To learn TS-LDDMM (resp. LDDMM) representations, the velocity field kernel $K_G$
 
 
 \subsection{Protocol}
+
 In this experiment, we investigate the robustness to missing samples and the classification performance of TS-LDDMM compared to Neural ODEs on 15 datasets described in \Cref{appendix:classification_dataset}. For fairness between methods of different architectures, the evaluation protocol on each dataset and method is as follows: 
 \begin{enumerate}
-  \item The dataset is spilt in train 75\%, validation 15\%, and test 15\%.
-  \item hyperparameters are tuned with train and validation sets and a missing rate of 0\%.
+  \item Spilt the dataset in train 75\%, validation 15\%, and test 15\%.
+  \item Tune hyperparameters with train and validation sets and a missing rate of 0\%.
   \item For each missing rate in [0\%,30\%,50\%,70\%]
     \begin{itemize}
       \item Remove samples in time series in the train and test sets according to the missing rate and the drop procedure described in~\cite{kidger2020neural}.
@@ -410,21 +415,41 @@ In this section, we compare the classification performances of TS-LDDMM with oth
 
 \subsection{Benchmark metohds}
 \begin{itemize}
-  \item SRV-based method: we include TCLR~\cite{heo2024logistic} a logistic regression on the tangent space of the Frechet mean with Square Root Velocity (SRV representation). We also include Shape-FPCA~\cite{wu2024shape} that encodes both the time series and its time parameterization. Both methods are implemented with the Python library \texttt{FDASRSF}~\footnote{https://fdasrsf-python.readthedocs.io/en/latest/}, which cannot handle multivariate time series.
+  \item SRV-based method: we include TCLR~\cite{heo2024logistic} a logistic regression on the tangent space of the Frechet mean with Square Root Velocity (SRV representation). We also include Shape-FPCA~\cite{wu2024shape} that encodes both the time series and its time parameterization. 
   \item LDDMM-Based : TS-LDDMM (ours) and LDDMM~\cite{glaunes2008large}. Both methods learn representations by solving ODEs parametrized with Kernels. While both methods handle multivariate signals, TS-LDDMM is specifically designed for time series.
  \end{itemize}
-\subsection{Settings}
-\label{appendix: settings_classification}
+
+\subsection{Model settings}
+
+\paragraph{TCLR \& Shape-FPCA}
+Shape-FPCA is available in the Python library \texttt{FDASRSF}~\footnote{https://fdasrsf-python.readthedocs.io/en/latest/}. Once the shape-FPCA representations are learned, they are fed to an \href{https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC}{SVC} from \texttt{scikit-learn}. \texttt{FDASRSF} provides SRV representation methods that we combined with a \href{https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegressionCV.html}{logistic regression} from \texttt{scikit-learn} to implement TCLR. For both methods, the number of steps to learn the Frechet mean is set to 50, and the regularization hyperparameter C is set through grid search on a validation set with the macro f1-score. Other parameters are set to default.  
+
+\paragraph{TS-LDDMM \& LDDMM}
+Representations learned with TS-LDDMM or LDDMM are fed to an SVC from \texttt{scikit-learn}. All SVC's hyperparameters are set to default except the regularization term C, which is set through grid search on a validation set with the macro f1-score. 
+
+To learn TS-LDDMM (resp. LDDMM) representations, the velocity field kernel $K_G$ is set to $ (c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x) = (1,0.1,0.33\bar{l},1,n_d)$, (resp. $ (\sigma_{T},\sigma_x) = (0.33\bar{l},n_d)$) where $\bar{l}$ is the average time series length and $n_d$ the number of dimensions. For both methods and all datasets, the varifold loss kernels $(k_{pos},k_{dir})$ are identical and set to $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x}) = (2,n_d,2,n_d)$. For TS-LDDMM (resp. LDDMM), the optimizer is set with 400 epochs (resp. 400) and a maximum learning rate $\eta_M = 0.1$ (resp. $\eta_M = 0.01$). In all cases, the initial reference graph is selected in the dataset as a time series with the median length.
 
 
+\paragraph{Protocole}
+For each dataset and method, the evaluation protocol is a simple train,validation test with hyperparameter tuning:
+\begin{enumerate}
+  \item Split The dataset in train 75\%, validation 15\%, and test 15\%.
+  \item Training and hyperparameters tuning with train and validation sets
+  \item Evaluate the macro f1-score on the test set 
+\end{enumerate}
 
 
-%\paragraph{Methods} We compare TS-LDDMM with a method from function~\cite{wu2024shape}
+\subsection{Results}
+In this experiment, we investigate the classification performances of several methods from shape analysis on 15 shape-based time series datasets (7 univariate and 8 multivariate). The performances are evaluated in terms of macro f1-score. Results are aggregated in \Cref{table: shape classif}. 
 
-%\paragraph{Protocole}
+The TS-LDDMM-based classifier outperforms other methods on 12 out of 15 datasets. TCLR is the second-best performer on univariate datasets; however, its current implementation with \texttt{FDASRSF} does not extend to the multivariate case, which limits usage. LDDMM performances are lower than TCLR, and Shape-FPCA is the worst performer. 
+
+Overall, TS-LDDMM representations are well suited for shape-based time series classification, and its extension to multivariate irregularly sampled time series makes it a relevant option for time series shape analysis.
 
 \begin{table}[hbt!]
   \centering
+  \caption{F1-score comparison between methods from shape analysis on 15 datasets. \textbf{First} and \underline{second} best performers.}
+  \label{table: shape classif}
   \resizebox{\columnwidth}{!}{%
   \begin{tabular}{llrrrr}
     \toprule
