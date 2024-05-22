@@ -49,6 +49,13 @@ Claudio Carmeli, Ernesto De~Vito, Alessandro Toigo, and Veronica Umanit{\'a}.
 \newblock Vector valued reproducing kernel hilbert spaces and universality.
 \newblock {\em Analysis and Applications}, 8(01):19--61, 2010.
 
+\bibitem{charlier2021kernel}
+Benjamin Charlier, Jean Feydy, Joan~Alexis Glaunes, Fran{\c{c}}ois-David
+  Collin, and Ghislain Durif.
+\newblock Kernel operations on the gpu, with autodiff, without memory
+  overflows.
+\newblock {\em Journal of Machine Learning Research}, 22(74):1--6, 2021.
+
 \bibitem{charon2013varifold}
 Nicolas Charon and Alain Trouv{\'e}.
 \newblock The varifold representation of nonoriented shapes for diffeomorphic
