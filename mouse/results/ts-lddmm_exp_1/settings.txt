@@ -1,0 +1,8 @@
+Kv = VFTSGaussKernel(1,0.1,150,1,2)
+Kl1 = TSGaussGaussKernel(5,2,5,1)
+Kl2 = TSGaussGaussKernel(2,1,2,0.6)
+Kl3 = TSGaussGaussKernel(1,0.6,1,0.6)
+Kls=[Kl1,Kl2,Kl3]
+dataloss = SumVarifoldLoss(Kls)
+schedule = warmup_cosine_decay_schedule(0,0.3,80,800,0)
+optimizer = optax.adabelief(schedule)

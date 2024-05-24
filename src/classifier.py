@@ -2,7 +2,7 @@ import numpy as np
 import optax
 
 from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score,f1_score
 from src.utils import MaskMomentaGramMatrix,batch_dataset,unbatch_dataset
 from src.lddmm import batch_one_to_many_registration
 from src.barycenter import batch_barycenter_registration
@@ -42,8 +42,29 @@ class MomentaSVC(SVC):
         batched_ps,self.qbar_,self.qbar_mask_ = batch_barycenter_registration(batched_X,batched_X_mask,self.Kv,self.dataloss,init,init_mask,self.barycenter_initializer,self.niter,self.optimizer,self.gamma_loss,self.nt,self.deltat,self.verbose)
         self.ps_ = self._unbached(batched_ps)
         self._mgm = MaskMomentaGramMatrix(self.Kv,self.qbar_,self.qbar_mask_)
-        X_svc = self._mgm(self.ps_,self.ps_)
-        super().fit(X_svc,y)
+        self.X_svc_ = self._mgm(self.ps_,self.ps_)
+        self.y_ = y
+        super().fit(self.X_svc_,self.y_)
+        return self
+    
+    def set_C(self,X,X_mask,y,C_lst):
+        batched_X,batched_X_mask = self._batch(X,X_mask)
+        batched_ps,_,_ = batch_one_to_many_registration(self.qbar_,self.qbar_mask_,batched_X,batched_X_mask,self.Kv,self.dataloss,self.registration_initializer,self.gamma_loss,self.niter,self.optimizer,self.nt,self.deltat,self.verbose)
+        ps = self._unbached(batched_ps)
+        X_svc = self._mgm(ps,self.ps_)
+        best_C = 0
+        best_score = -np.inf
+        for C in C_lst: 
+            self.C = C
+            super().fit(self.X_svc_,self.y_)
+            y_pred = super().predict(X_svc)
+            score = f1_score(y,y_pred,average="macro")
+            print(f"Validation -- C: {C} -- f1score: {score}")
+            if score > best_score: 
+                best_C = C
+                best_score = score.copy()
+        self.C = best_C
+        print(f"Best C :{self.C}")
         return self
     
     def predict(self,X,X_mask):
@@ -56,6 +77,9 @@ class MomentaSVC(SVC):
     def score(self,X,X_mask,y):
         y_pred = self.predict(X,X_mask)
         return accuracy_score(y,y_pred)
+    
+
+
 
 from sklearn.svm import SVC,OneClassSVM
 from sklearn.metrics import accuracy_score
