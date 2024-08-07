@@ -1,4 +1,4 @@
-<h1 align="center">Persistence-based Motif Discovery in Time Series</h1>
+<h1 align="center">TS-LDDMM: Time series shape analysis</h1>
 
 ## Abstract
 
