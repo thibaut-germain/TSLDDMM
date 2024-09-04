@@ -190,8 +190,8 @@ estimated by minimizing
 $v \in \rml^2([0,1],\msv) \mapsto \mathscr{L}(\phi^{v}.\mathbf{x},\mathbf{y})$, where $\mathscr{L}$ is an appropriate loss function.
  However, two computational challenges arise.
   First, this optimization problem is ill-posed, and a penalty term is needed to obtain a unique solution.
-   In addition, we have to find a parametric family $\msv_{\Theta} \subset \rml^2([0,1],\msv)$, parameterized by $\Theta$, which allows us to solve this minimization problem efficiently. 
-
+   In addition, a parametric family $\msv_{\Theta} \subset \rml^2([0,1],\msv)$, parameterized by $\Theta$, is sought to efficiently solve this minimization problem. 
+\paragraph*{From deformations to geodesics.}
 %\paragraph*{Regularizing the problem to derive uniqueness.}
 It has been proposed in \cite{miller2006geodesic} to interpret $\msv$ as a tangent space relative to the group of diffeomorphisms $\msh=\{ \phi^v:\eqsp v\in \rml^2([0,1],\msv)\}$.
 Following this geometric point of view, geodesics can be constructed on $\msh$ by using the following squared norm 
@@ -200,7 +200,7 @@ Following this geometric point of view, geodesics can be constructed on $\msh$ b
     \mathscr{R}^2: g\in \msh\mapsto \inf_{ v\in \rml^2([0,1],\msv):\eqsp g=\phi^v} \int_0^1 || v_\tau||_\msv\dd \tau
  \end{equation}
 By deriving differential constraints related to the minimum of \eqref{eq:geodesics_original} and using Cauchy-Lipschitz conditions, geodesics can be defined only by giving the starting point and the initial velocity $v_0\in \msv$ \cite{miller2006geodesic}, as straight lines in Euclidean space.
-Denoting by $w(v_0)$ the geodesic starting from the identity with inital velocity $v_0$, the exponential map is defined as $\varphi^{\{v_0\}}\triangleq \phi^v$ and the previous matching problem becomes a \textit{geodesic shooting problem}:
+Denoting by $\tau \mapsto \rho_{v_0}(\tau)\in\msh$ the geodesic starting from the identity with inital velocity $v_0\in \msv$, the exponential map is defined as $\varphi^{\{v_0\}}\triangleq \rho_{v_0}(1)$. Using $\varphi^{\{v_0\}}$ instead of $\phi^v$, the previous matching problem becomes a \textit{geodesic shooting problem}:
  \begin{equation}
   \label{eq:geodesics_shooting}
   \inf_{v_0 \in \msv} \mathscr{L}(\varphi^{\{v_0\}}.\mathbf{x},\mathbf{y}).
@@ -254,7 +254,7 @@ $\mathbf{n}_0$ control points $\msx_0=(x_{k,0})_{k\in[\mathbf{n}_0]}\in (\Rset^{
     v_0\left(\alpha_0,\msx_0\right)(x)=\sum_{k=1}^{\mathbf{n}_0} K(x,x_{k,0})\alpha_{k,0} \eqsp .
   \end{equation}
    In our applications, the control points $(x_{k,0})_{k\in[\mathbf{n}_0]}$ can be understood as the discretized graph $(t_k,\mathbf{s}_0(t_k))_{k\in[\mathbf{n}_0]}$ of a starting time series $\mathbf{s}_0$. 
-  With this parametrization of $v_0$, \citet{miller2006geodesic} show that the velocity field $v$ of the solution of \eqref{eq:geodesics_shooting} keeps the same
+  With this parametrization of $v_0$, \cite{miller2006geodesic} show that the velocity field $v$ of the solution of \eqref{eq:geodesics_shooting} keeps the same
   structure along time, such that for any $x\in\Rset^{d'}$ and $\tau\in[0,1]$, 
   \begin{equation}
     \label{eq:specific_form}
@@ -333,6 +333,7 @@ large dataset in high dimensions.
 %\paragraph{Assumptions}
 %Denoting by $C^0(\msi,\msj) $ the space of continous functions between two sets $\msi,\msj$,
 \vspace{-1ex}
+\sam{Lien avec functional data analysis ? Insister sur le fait que concaténer temps et espace c'est moisi}
 We consider in this paper observations which consist in a population of $N$ multivariate time series, for any $j\in[N]$, $s^j \in \rmC^1(\msi_j,\Rset^{d})$. 
 However, we can only access a $n_j$-samples $\tsig^j=(\tsig_i^j=s^j(t^j_i))_{i\in[n_j]}$ collected at timestamps $(t^j_i)_{i\in[n_j]}$ for any $j \in [N]$.
  Note that \textbf{the number of samples $n_j$ is not necessarily the same across individuals} and the timestamps can be \textbf{irregularly sampled}.
@@ -575,7 +576,7 @@ This choice for $K_\msg$ is motivated by the representation \Cref{theorem:repres
 %\sam{améliorer transition}
 \vspace{-1ex}
 \paragraph{Loss}
-
+\sam{Simplifier cette partie ?}
 This section specifies the distance function $\scrl$ introduced in the loss function defined in \eqref{eq:relaxation}. 
 
 In practice, we can only access discretized graphs of time series, $(t_i^j,\tsig^j_i)_{i\in[n_j]}$ for any $j\in[N]$, that are potentially of 
