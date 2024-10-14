@@ -153,7 +153,7 @@ and by $\Nset_{>0}$ is the set of positive integers.
 \section{Background on LDDMM}
 \vspace{-1ex}
 \label{section:LDDMM}
-
+\sam{Shape-FPCA employs the Square Root Velocity Field (SRVF) representation to separate space and time. However, this method is designed for continuous objects and only applies to time series of the same length. This issue can be addressed through interpolation, but this approach is not always reliable in sparse and irregular sampling scenarios. Most FDA papers [2,3,4] that we are aware of cope with the same issue using interpolation or basis function expansion. In a nutshell, FDA methods have to deal with continuous objects, while LDDMM algorithms can keep a discrete-to-discrete analysis. }
 In this part, we expose how to
  learn the diffeomorphisms $(\phi_j)_{j\in[N]}$ using LDDMM, initially introduced in \cite{beg2005computing}.
  In a nutshell, for any $j\in [N]$, $\phi_j$ corresponds to a differential flow related to a learnable velocity field belonging to a well-chosen Reproducing Kernel Hilbert Space (RKHS).
@@ -197,7 +197,7 @@ It has been proposed in \cite{miller2006geodesic} to interpret $\msv$ as a tange
 Following this geometric point of view, geodesics can be constructed on $\msh$ by using the following squared norm 
  \begin{equation}
   \label{eq:geodesics_original}
-    \mathscr{R}^2: g\in \msh\mapsto \inf_{ v\in \rml^2([0,1],\msv):\eqsp g=\phi^v} \int_0^1 || v_\tau||_\msv\dd \tau
+    \mathscr{R}^2: g\in \msh\mapsto \inf_{ v\in \rml^2([0,1],\msv):\eqsp g=\phi^v} \int_0^1 || v_\tau||_\msv^2\dd \tau
  \end{equation}
 By deriving differential constraints related to the minimum of \eqref{eq:geodesics_original} and using Cauchy-Lipschitz conditions, geodesics can be defined only by giving the starting point and the initial velocity $v_0\in \msv$ \cite{miller2006geodesic}, as straight lines in Euclidean space.
 Denoting by $\tau \mapsto \rho_{v_0}(\tau)\in\msh$ the geodesic starting from the identity with inital velocity $v_0\in \msv$, the exponential map is defined as $\varphi^{\{v_0\}}\triangleq \rho_{v_0}(1)$. Using $\varphi^{\{v_0\}}$ instead of $\phi^v$, the previous matching problem becomes a \textit{geodesic shooting problem}:
@@ -691,6 +691,7 @@ A pedagogical \href{https://tslddmmapp.streamlit.app}{\underline{online applicat
 
 \section{Related Works}
 \vspace{-1ex}
+
 Shape analysis focuses on statistical analysis of mathematical objects invariant under some deformations like rotations, dilations, or time parameterization.
  The main idea is to represent these objects in a complete Riemannian manifold $(\mathcal{M},\mathbf{g})$ with a metric $\mathbf{g}$ adapted to the geometry of the problem \cite{miller2006geodesic}.
  Then, any set of points in $\mathcal{M}$ can be represented as points in the tangent space of their Frechet mean $\mathbf{m}_0$ \cite{pal2017riemannian,le2001locating} by considering their logarithms.
@@ -698,6 +699,9 @@ Shape analysis focuses on statistical analysis of mathematical objects invariant
  
  LDDMM framework is a relevant shape analysis tool to represent curves as depicted in \cite{glaunes2008large}. However, graphs of time series are a well-structured type of curve due to the inclusion of the temporal dimension that requires specific care (\Cref{fig:diffeo}).
  In a similar vein, Qiu \textit{et al} \cite{qiu2009time} proposes a method for tracking anatomical shape changes in serial images using LDDMM. They include temporal evolution, but not for the same purpose: the aim is to perform longitudinal modeling of brain images.
+
+ LDDMM framework has weaker assumptions than the Metamorphosis framework \cite{blanz2003face}. The 3DMM framework requires that each mesh be re-parametrized into a consistent form where the number of vertices, triangulation, and the anatomical meaning of each vertex are consistent across all meshes, as stated in the introduction of \cite{booth20163d}.
+ In our context, we do not need such pre-processing; the time series graph can have different sizes.
 
  Leaving the LDDMM representation, the results of \cite{srivastava2010shape,heo2024logistic} address the representation of curves with the Square-Root Velocity (SRV) representation.
  However, the SRV representation is applied after reparametrization of the temporal dimension of the unit length segment.

@@ -37,6 +37,19 @@ Alain Berlinet and Christine Thomas-Agnan.
   statistics}.
 \newblock Springer Science \& Business Media, 2011.
 
+\bibitem{blanz2003face}
+Volker Blanz and Thomas Vetter.
+\newblock Face recognition based on fitting a 3d morphable model.
+\newblock {\em IEEE Transactions on pattern analysis and machine intelligence},
+  25(9):1063--1074, 2003.
+
+\bibitem{booth20163d}
+James Booth, Anastasios Roussos, Stefanos Zafeiriou, Allan Ponniah, and David
+  Dunaway.
+\newblock A 3d morphable model learnt from 10,000 faces.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 5543--5552, 2016.
+
 \bibitem{borgwardt2006integrating}
 Karsten~M Borgwardt, Arthur Gretton, Malte~J Rasch, Hans-Peter Kriegel,
   Bernhard Sch{\"o}lkopf, and Alex~J Smola.
