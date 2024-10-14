@@ -7,7 +7,7 @@
 
 
 % ready for submission
-\usepackage{neurips_2024}
+\usepackage[final]{neurips_2024}
 
 
 % to compile a preprint version, e.g., for submission to arXiv, add add the
@@ -54,34 +54,31 @@
 
 
 \author{%
-  David S.~Hippocampus\thanks{Use footnote for providing further information
-    about author (webpage, alternative address)---\emph{not} for acknowledging
-    funding agencies.} \\
-  Department of Computer Science\\
-  Cranberry-Lemon University\\
-  Pittsburgh, PA 15213 \\
-  \texttt{hippo@cs.cranberry-lemon.edu} \\
+  Thibaut Germain \thanks{Corresponding author. Contact at \texttt{thibaut.germain@ens-paris-saclay.fr}} \\
+  Centre Borelli, ENS Paris-Saclay\\
+  4 av. des sciences, 91190 \\
+  %\texttt{thibaut.germain@ens-paris-saclay.fr} \\
   % examples of more authors
-  % \And
-  % Coauthor \\
-  % Affiliation \\
+  \And
+  Samuel Gruffaz \\
+  Centre Borelli, ENS Paris-Saclay\\
+  4 av. des sciences, 91190 \\
   % Address \\
-  % \texttt{email} \\
-  % \AND
-  % Coauthor \\
-  % Affiliation \\
-  % Address \\
-  % \texttt{email} \\
-  % \And
-  % Coauthor \\
-  % Affiliation \\
-  % Address \\
-  % \texttt{email} \\
-  % \And
-  % Coauthor \\
-  % Affiliation \\
-  % Address \\
-  % \texttt{email} 
+  %\texttt{samuel.gruffaz@ens-paris-saclay.fr} \\
+  \AND
+  Charles Truong \\
+  Centre Borelli, ENS Paris-Saclay\\
+  4 av. des sciences, 91190 \\
+  %\texttt{charles.truong@ens-paris-saclay.fr} \\
+  \And
+  Laurent Oudre \\
+  Centre Borelli, ENS Paris-Saclay\\
+  4 av. des sciences, 91190 \\
+  \And
+  Alain Durmus \\
+  CMAP, CNRS, Ecole polytechnique\\
+  Institut Polytechnique de Paris\\
+  91120 Palaiseau, France \\
 }
 \input{header.tex}
 \input{def.tex}
@@ -109,20 +106,21 @@ In this work, we establish a representation theorem for the graph of a time seri
 
 
 \input{paper.tex}
+\begin{ack}
+  Use unnumbered first level headings for the acknowledgments. All acknowledgments
+  go at the end of the paper before the list of references. Moreover, you are required to declare
+  funding (financial activities supporting the submitted work) and competing interests (related financial activities outside the submitted work).
+  More information about this disclosure can be found at: \url{https://neurips.cc/Conferences/2024/PaperInformation/FundingDisclosure}.
+  
+  
+  Do {\bf not} include this section in the anonymized submission, only in the final paper. You can use the \texttt{ack} environment provided in the style file to automatically hide this section in the anonymized submission.
+  \end{ack}
 
 \bibliographystyle{plain}
 \bibliography{ref.bib}
 
+\newpage
 
-\begin{ack}
-Use unnumbered first level headings for the acknowledgments. All acknowledgments
-go at the end of the paper before the list of references. Moreover, you are required to declare
-funding (financial activities supporting the submitted work) and competing interests (related financial activities outside the submitted work).
-More information about this disclosure can be found at: \url{https://neurips.cc/Conferences/2024/PaperInformation/FundingDisclosure}.
-
-
-Do {\bf not} include this section in the anonymized submission, only in the final paper. You can use the \texttt{ack} environment provided in the style file to automatically hide this section in the anonymized submission.
-\end{ack}
 
 
 
