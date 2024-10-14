@@ -292,6 +292,11 @@ Mike Schuster and Kuldip~K Paliwal.
 \newblock {\em IEEE transactions on Signal Processing}, 45(11):2673--2681,
   1997.
 
+\bibitem{shang2014survey}
+Han~Lin Shang.
+\newblock A survey of functional principal component analysis.
+\newblock {\em AStA Advances in Statistical Analysis}, 98:121--142, 2014.
+
 \bibitem{shirato2023identifying}
 Gota Shirato, Natalia Andrienko, and Gennady Andrienko.
 \newblock Identifying, exploring, and interpreting time series shapes in
@@ -339,6 +344,12 @@ Kai Wang, Youjin Zhao, Qingyu Xiong, Min Fan, Guotan Sun, Longkun Ma, Tong Liu,
   from multiple time-series physiological signals.
 \newblock {\em Scientific Programming}, 2016, 2016.
 
+\bibitem{warmenhoven2021pca}
+John Warmenhoven, Norma Bargary, Dominik Liebl, Andrew Harrison, Mark~A
+  Robinson, Edward Gunning, and Giles Hooker.
+\newblock Pca of waveforms and functional pca: A primer for biomechanics.
+\newblock {\em Journal of Biomechanics}, 116:110106, 2021.
+
 \bibitem{wu2024shape}
 Yuexuan Wu, Chao Huang, and Anuj Srivastava.
 \newblock Shape-based functional data analysis.
@@ -356,6 +367,12 @@ Lexiang Ye and Eamonn Keogh.
 \newblock Time series shapelets: a new primitive for data mining.
 \newblock In {\em Proceedings of the 15th ACM SIGKDD international conference
   on Knowledge discovery and data mining}, pages 947--956, 2009.
+
+\bibitem{yu2017principal}
+Qunqun Yu, Xiaosun Lu, and JS~Marron.
+\newblock Principal nested spheres for time-warped functional data analysis.
+\newblock {\em Journal of Computational and Graphical Statistics},
+  26(1):144--151, 2017.
 
 \bibitem{zagoruyko2016wide}
 Sergey Zagoruyko and Nikos Komodakis.

@@ -153,7 +153,7 @@ and by $\Nset_{>0}$ is the set of positive integers.
 \section{Background on LDDMM}
 \vspace{-1ex}
 \label{section:LDDMM}
-\sam{Shape-FPCA employs the Square Root Velocity Field (SRVF) representation to separate space and time. However, this method is designed for continuous objects and only applies to time series of the same length. This issue can be addressed through interpolation, but this approach is not always reliable in sparse and irregular sampling scenarios. Most FDA papers [2,3,4] that we are aware of cope with the same issue using interpolation or basis function expansion. In a nutshell, FDA methods have to deal with continuous objects, while LDDMM algorithms can keep a discrete-to-discrete analysis. }
+
 In this part, we expose how to
  learn the diffeomorphisms $(\phi_j)_{j\in[N]}$ using LDDMM, initially introduced in \cite{beg2005computing}.
  In a nutshell, for any $j\in [N]$, $\phi_j$ corresponds to a differential flow related to a learnable velocity field belonging to a well-chosen Reproducing Kernel Hilbert Space (RKHS).
@@ -333,7 +333,7 @@ large dataset in high dimensions.
 %\paragraph{Assumptions}
 %Denoting by $C^0(\msi,\msj) $ the space of continous functions between two sets $\msi,\msj$,
 \vspace{-1ex}
-\sam{Lien avec functional data analysis ? Insister sur le fait que concaténer temps et espace c'est moisi}
+%\sam{Lien avec functional data analysis ? Insister sur le fait que concaténer temps et espace c'est moisi}
 We consider in this paper observations which consist in a population of $N$ multivariate time series, for any $j\in[N]$, $s^j \in \rmC^1(\msi_j,\Rset^{d})$. 
 However, we can only access a $n_j$-samples $\tsig^j=(\tsig_i^j=s^j(t^j_i))_{i\in[n_j]}$ collected at timestamps $(t^j_i)_{i\in[n_j]}$ for any $j \in [N]$.
  Note that \textbf{the number of samples $n_j$ is not necessarily the same across individuals} and the timestamps can be \textbf{irregularly sampled}.
@@ -535,8 +535,15 @@ This choice for $K_\msg$ is motivated by the representation \Cref{theorem:repres
     %   For the same reason, we have $\phi^v\in \mcd(\Rset^{d+1})$, and thus its last coordinates denoted by $f$ belongs to $\rmC^1(\Rset^{d+1},\Rset^d)$, and by construction $\phi^v=\Psi_\gamma\circ\Phi_f $.
     % \end{proof
     \begin{remark}
+      \label{remark:spaceandtime}
       With this choice of kernel, the features associated with the time transformation can be extracted from the momentums $(\alpha_{k,0})_{k\in[\mathbf{n}_0]}\in (\Rset^{d+1})^{\mathbf{n}_0}$ in \eqref{eq:def_v0} by taking the coordinates related to time.
       However, the features related to the space transformation are not only in the space coordinates since the related kernel $K_{\text{space}}$ depends on time as well.
+      The kernel's representation has been carefully designed to integrate both space and time, while ensuring that time remains independent of space.
+       Initially, we considered separating the spatial and temporal components.
+        However, post-hoc analysis of such a representation proved to be challenging.
+         The separated spatial and temporal representations are correlated, and understanding this correlation is essential for interpreting the data.
+          As a result, concatenating the two representations becomes necessary, though there is no straightforward method for doing so, as they are not commensurable.
+           Consequently, we opted for a representation that inherently integrates both space and time.
       \end{remark}
       In \Cref{appendix:kernel_TS_LDDMM}, we give guidelines for selecting the hyperparameters $(\sigma_{T,0},\sigma_{T,1},\sigma_x,c_0,c_1)$.
   
@@ -700,14 +707,15 @@ Shape analysis focuses on statistical analysis of mathematical objects invariant
  LDDMM framework is a relevant shape analysis tool to represent curves as depicted in \cite{glaunes2008large}. However, graphs of time series are a well-structured type of curve due to the inclusion of the temporal dimension that requires specific care (\Cref{fig:diffeo}).
  In a similar vein, Qiu \textit{et al} \cite{qiu2009time} proposes a method for tracking anatomical shape changes in serial images using LDDMM. They include temporal evolution, but not for the same purpose: the aim is to perform longitudinal modeling of brain images.
 
- LDDMM framework has weaker assumptions than the Metamorphosis framework \cite{blanz2003face}. The 3DMM framework requires that each mesh be re-parametrized into a consistent form where the number of vertices, triangulation, and the anatomical meaning of each vertex are consistent across all meshes, as stated in the introduction of \cite{booth20163d}.
- In our context, we do not need such pre-processing; the time series graph can have different sizes.
-
  Leaving the LDDMM representation, the results of \cite{srivastava2010shape,heo2024logistic} address the representation of curves with the Square-Root Velocity (SRV) representation.
  However, the SRV representation is applied after reparametrization of the temporal dimension of the unit length segment.
  Consequently, the graph structure of the time series is not respected, and the original time evolution of the time series is not encoded in the final representation.
- Very recently, in a functional data analysis framework, a paper \cite{wu2024shape} (Shape-FPCA) improved by representing the original time evolution.
- Nevertheless, this method is made for \textit{continuous objects} and only applies to time series of \textit{same length}, making the estimation more sensitive to noise.
+ Very recently, in a functional data analysis (FDA) framework, a paper \cite{wu2024shape} (Shape-FPCA) improved by representing the original time evolution.
+ However, the space and time representations remain correlated, complicating post-hoc analysis, as discussed in  \Cref{remark:spaceandtime}.
+ Additionally, this method is tailored for \textit{continuous objects} and applies only to time series of the \textit{same length}, making the estimation more sensitive to noise. 
+ This issue can be addressed through interpolation, but this approach is not always reliable in sparse and irregular sampling scenarios.
+ Most FDA approaches, as seen in \cite{shang2014survey,yu2017principal,warmenhoven2021pca}, address this challenge using interpolation or basis function expansion
+ In summary, FDA methods typically separate space and time representations for continuous objects, whereas TS-LDDMM algorithm maintain a discrete-to-discrete analysis, inherently integrating both space and time representations.
 
  Balancing between discrete and continuous elements is a challenging task.
  In the deep learning literature \cite{chen2018neural, kidger2020neural, tzen2019neural, jia2019neural, liu2019neural, ansari2023neural}, Neural Ordinary Differential Equations (Neural ODEs) \cite{chen2018neural} learn continuous latent representations using a vector field parameterized by a neural network, serving as a continuous analog to Residual Networks \cite{zagoruyko2016wide}.
@@ -718,6 +726,10 @@ Shape analysis focuses on statistical analysis of mathematical objects invariant
  With TS-LDDMM, the representation is also derived from an ODE, but the velocity field is parameterized with kernels and optimized to have a minimal norm, which enhances interpretability.
 
  All these state-of-the-art methods previously mentionned \cite{glaunes2008large,oh2024stable,wu2024shape,heo2024logistic} are compared to TS-LDDMM in \Cref{appendix: robustness} and \Cref{appendix: shape_classification}.
+
+ Compared to the Metamorphosis framework \cite{blanz2003face}, LDDMM framework has weaker assumptions.
+ The 3DMM framework requires that each mesh be re-parametrized into a consistent form where the number of vertices, triangulation, and the anatomical meaning of each vertex are consistent across all meshes, as stated in the introduction of \cite{booth20163d}.
+In our context, we do not need such pre-processing; the time series graph can have different sizes.
  \vspace{-1ex}
   \section{Limitations and conclusion}
   \vspace{-1ex}
