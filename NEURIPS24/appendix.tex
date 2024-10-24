@@ -96,7 +96,10 @@ Thus, given two sets of triplets $X=(l_i,x_i,\overrightarrow{v}_i)_{i\in[T_0-1]}
 \end{equation}
  we have,
 \begin{equation}
-   |\mu_X-\mu_Y |_{\msw^*}^2 = \sum_{i,j = 1}^{T_0-1}l_i k((x_i,\overrightarrow{v_i}),(x_i,\overrightarrow{v_i}^0))l_j - 2 \sum_{i=1}^{T_0-1}\sum_{j=1}^{T_1-1}l_i k((x_i,\overrightarrow{v_i}),(y_i,\overrightarrow{w_i}))l_j' + \sum_{i,j = 1}^{T_1-1}l_i' k((y_i,\overrightarrow{w_i}),(y_i,\overrightarrow{w_i}))l_j' \eqsp.
+  \begin{array}{ll}
+    |\mu_X-\mu_Y |_{\msw^*}^2 = & \sum_{i,j = 1}^{T_0-1}l_i k((x_i,\overrightarrow{v_i}),(x_i,\overrightarrow{v_i}^0))l_j + \sum_{i,j = 1}^{T_1-1}l_i' k((y_i,\overrightarrow{w_i}),(y_i,\overrightarrow{w_i}))l_j' \\
+    & - 2 \sum_{i=1}^{T_0-1}\sum_{j=1}^{T_1-1}l_i k((x_i,\overrightarrow{v_i}),(y_i,\overrightarrow{w_i}))l_j' \eqsp.
+  \end{array}
 \end{equation}
 Then, using the identification $X\to \mu_X, Y\to \mu_Y$, we can define a distance on sets of triplets as $d_{\msw^*,3}(X,Y)=|\mu_X-\mu_Y|_{\msw^*}^2$.
 
@@ -395,7 +398,7 @@ Overall, TS-LDDMM is a relevant and consistent shape-based representation for ir
 In this section, we compare the classification performances of TS-LDDMM with other methods from shape analysis on 15 shape-based datasets of time series regularly sampled. TS-LDDMM outperforms other methods on 12 out of 15, highlighting its relevance for shape analysis when dealing with time series. 
 
 
-\subsection{Benchmark metohds}
+\subsection{Benchmark methods}
 \begin{itemize}
   \item SRV-based method: we include TCLR~\cite{heo2024logistic} a logistic regression on the tangent space of the Frechet mean with Square Root Velocity (SRV representation). We also include Shape-FPCA~\cite{wu2024shape} that encodes both the time series and its time parameterization. 
   \item LDDMM-Based : TS-LDDMM (ours) and LDDMM~\cite{glaunes2008large}. Both methods learn representations by solving ODEs parametrized with Kernels. While both methods handle multivariate signals, TS-LDDMM is specifically designed for time series.
@@ -412,7 +415,7 @@ Representations learned with TS-LDDMM or LDDMM are fed to an SVC from \texttt{sc
 To learn TS-LDDMM (resp. LDDMM) representations, the velocity field kernel $K_G$ is set to $ (c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x) = (1,0.1,0.33\bar{l},1,n_d)$, (resp. $ (\sigma_{T},\sigma_x) = (0.33\bar{l},n_d)$) where $\bar{l}$ is the average time series length and $n_d$ the number of dimensions. For both methods and all datasets, the varifold loss kernels $(k_{pos},k_{dir})$ are identical and set to $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x}) = (2,n_d,2,n_d)$. For TS-LDDMM (resp. LDDMM), the optimizer is set with 400 epochs (resp. 400) and a maximum learning rate $\eta_M = 0.1$ (resp. $\eta_M = 0.01$). In all cases, the initial reference graph is selected in the dataset as a time series with the median length.
 
 
-\paragraph{Protocole}
+\subsection{Protocol}
 For each dataset and method, the evaluation protocol is a simple train,validation test with hyperparameter tuning:
 \begin{enumerate}
   \item Split The dataset in train 75\%, validation 15\%, and test 15\%.
@@ -461,12 +464,32 @@ Overall, TS-LDDMM representations are well suited for shape-based time series cl
 \end{table}
 
 
+\section{Appendix for the experiment: Noise sensitivity}
+This experiment evaluates the influence of noise on the learning of the reference sequence for TS-LDDMM and SRVF Kacher-mean, a subroutine of Shape-FPCA~\cite{wu2024shape}. 
+
+\subsection{Protocol}
+The dataset includes 100 sine waves with randomly generated time parametrization by following the procedure described in \Cref{appendix: settings_identifiability} with $\text{Gen}(50,1,0)$ and uniformly resampled. The dataset has been altered under four scenarios with an additive Gaussian noise centered and with standard deviation $\sigma_\epsilon \in \{0,0.05,0.1,0.2\}$. The referent sequence is learned for each scenario, and the $L_2$-norm error between the exact and the learned barycenter is computed. 
+
+\subsection{Method settings}
+For SRVF, the number of steps to learn the Kacher-mean is set to 20. Regarding TS-LDDMM, the velocity field kernel $K_G$ is set to $ (c_0,c_1,\sigma_{T,0},\sigma_{T,1},\sigma_x) = (1,0.1,65,1,1)$, and the varifold loss kernels $(k_{pos},k_{dir})$ are set to $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x}) = (5,1,1,1)$. For TS-LDDMM, the optimizer is set with 400 epochs and a maximum learning rate $\eta_M = 0.1$. In all cases, the initial reference graph is selected in the dataset as a time series with the median length.
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 0.9\linewidth]{pictures/noise sensitivity/noise sensitivity.pdf}
+  \caption{Illustration of the learned barycenter (red) compared to the exact barycenter (green) for both TS-LDDMM \textbf{(a)} and Shape-FPCA \textbf{(b)}. The computation has been done for different level of noise $\epsilon \sim \mathcal{N}(0,\sigma_\epsilon)$ with $\sigma_\epsilon \in \{0,0.05,0.1,0.2\}$.}
+  \label{fig: noise sensitivity}
+\end{figure}
+
+\subsection{Results}
+\Cref{fig: noise sensitivity} illustrates the results. Noise level affects the learning reference graph in both cases, as depicted by the increasing error and the illustrations. However, the overall sine wave shape is better preserved by TS-LDDMM compared to SRVF Kacher-mean, for which the sine wave amplitude decreases as the noise increases. In addition, for TS-LDDMM, the regularity of the reference graph can be controlled by penalizing the norm of the velocity fields in the loss function. Further work on penalization will be conducted to handle noisy data better.
+
+
 \section{Appendix for experiment: Analysis of respiratory behavior in mice}
 \label{appendix: mice_exp_setting}
 
 \subsection{Settings}
 
-This experiment involves TS-LDDMM and LDDMM~\cite{glaunes2008large} methods. Both methods are run twice, first on respiratory cycles before exposure to the irritant molecule to capture mice breathing behavior at rest and on all respiratory cycles to capture the influence of the irritant molecule. Exposure to the irritant molecule leads to significant shape deformation in the respiratory cycles, and the terms must be added to the varifold loss to capture deformations at a large time scale. 
+This experiment involves TS-LDDMM, LDDMM~\cite{glaunes2008large} and Shape-FPCA~\cite{wu2024shape} methods. Two scenarios are investigated: before drug exposure and before/after drug exposure. All methods are investigated on both scenarios. 
 
 \paragraph{TS-LDDMM parameters.}
 \begin{itemize}
@@ -481,4 +504,25 @@ This experiment involves TS-LDDMM and LDDMM~\cite{glaunes2008large} methods. Bot
   \item \textbf{Before/after exposure:} The velocity field kernel $K_G$ is an anysotropic Gaussian kernel with parameters $\sigma_{T} =220$ for the time dimension and $\sigma_x = 2$ for space dimensions.
   The varifold loss is the sum of four varifolds to capture shapes variations at different scales with parameters: (Varifold 1,Varifold 2,Varifold 3, Varifold 4): $\left((30,2,30,1),(5,2,5,1),(2,1,2,0.6),(1,0.1,1,0.1)\right)$ and the mapper $(\sigma_{\pos,t}, \sigma_{\pos,t}, \sigma_{\dir,t}, \sigma_{\dir,x})$. The optimizer has 800 steps with a maximum stepsize $\eta_M$ of 0.01.
 \end{itemize}
+
+\paragraph{Shape-FPCA parameters.}
+For both scenarios, respiratory cycles are linearly interpolated and resampled to 200 points, and the length of the original time interval is kept. The computation of the Kacher-mean is done in a maximum of 50 iterations, and srv representations of the realigned time series and time parametrization are concatenated with cycle durations. When concatenating these vectors, the choice of amplitude factors is made to minimize the reconstruction error from the principal components analysis by following the procedure described in \cite{wu2024shape}. Shape-FPCA does not handle multivariate data, and we only kept the nasal airflow for this method. 
+
+\subsection{Addiotinal results}
+\Cref{fig: after tslddmm} presents results for TS-LDDMM and \Cref{fig: after shapefpca}  presents results for Shape-FPCA.
+The main components look similar. However, a subtle difference, yet important, can be noticed. With Shape-FPCA, the deformation tends to be a uniform time scaling, whereas, with TS-LDDMM, the time dilatation mainly occurs during the pause between inspiration and expiration. Qualitatively, this last deformation fits the physiological phenomenon: Mice's muscles cannot relax after exposure to the irritant molecule, leading to pauses between inspiration and expiration~\cite{nervo2019respiratory}. Qualitatively, contrary to Shape-FPCA, which manages to represent the main phenomena in the data, the deformations of TS-LDDMM capture subtle physiological behaviors essential for understanding the phenomenon at hand.
+
+\begin{figure}
+  \centering
+  \includegraphics[width = \linewidth]{pictures/exp after/exp after.pdf}
+  \caption{Analysis of the first Principal Component (PC1) related to mice ventilation before and after exposure with TS-LDDMM representations. \textbf{(a)} displays PC densities per mice genotype, \textbf{(b)} illustrates deformations of the reference respiratory cycle $\mathbf{c}_0$ along PC1, and \textbf{(c)} displays all respiratory cycles with respect to time in PC1 and PC3 coordinates}
+  \label{fig: after tslddmm}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = \linewidth]{pictures/exp after/exp after fpca.pdf}
+  \caption{Analysis of the first Principal Component (PC1) related to mice ventilation before and after exposure with shape-FPCA representations. \textbf{(a)} displays PC densities per mice genotype, \textbf{(b)} illustrates deformations of the reference respiratory cycle $\mathbf{c}_0$ along PC1, and \textbf{(c)} displays all respiratory cycles with respect to time in PC1 and PC2 coordinates}
+  \label{fig: after shapefpca}
+\end{figure}
 

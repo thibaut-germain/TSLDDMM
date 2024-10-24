@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex neurips_2024_to_submit"] 1729703270.58094 "neurips_2024_to_submit.aux" "neurips_2024_to_submit.bbl" "neurips_2024_to_submit" 1729703440.37549 0
+["bibtex neurips_2024_to_submit"] 1729795133.30265 "neurips_2024_to_submit.aux" "neurips_2024_to_submit.bbl" "neurips_2024_to_submit" 1729795569.22264 0
   "./ref.bib" 1729674622.5932 30045 f5e0928352b75a0415160b6b83fd0050 ""
   "/usr/local/texlive/2024/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "neurips_2024_to_submit.aux" 1729703440.00996 30499 d080a2016a79da7aae9377fde6f6e800 "pdflatex"
+  "neurips_2024_to_submit.aux" 1729795568.86234 34313 72c4648307e8aaaffba60ec7d1ffa505 "pdflatex"
   (generated)
   "neurips_2024_to_submit.bbl"
   "neurips_2024_to_submit.blg"
   (rewritten before read)
-["pdflatex"] 1729703438.48899 "/Users/tgermain/Documents/code/TSLDDMM/NEURIPS24/neurips_2024_to_submit.tex" "neurips_2024_to_submit.pdf" "neurips_2024_to_submit" 1729703440.37571 0
+["pdflatex"] 1729795567.28915 "/Users/tgermain/Documents/code/TSLDDMM/NEURIPS24/neurips_2024_to_submit.tex" "neurips_2024_to_submit.pdf" "neurips_2024_to_submit" 1729795569.22285 0
   "/Users/tgermain/Documents/code/TSLDDMM/NEURIPS24/neurips_2024_to_submit.tex" 1729674622.59154 6182 8760ac0589358801a171f4f703a9a868 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -330,23 +330,25 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1725538219.73993 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1725538193 8221448 650134946092dbc77fc95331219cfd0b ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "appendix.tex" 1729674622.57857 44190 016feaf7312772b3d6ee873b03f60ec5 ""
+  "appendix.tex" 1729794838.22379 49041 114357579a852bf0b7857fc526536289 ""
   "checklist.tex" 1716405496.46199 23977 a85cda93d5aad0106539a3fafbfef1d2 ""
   "def.tex" 1715680722.599 15466 ac899e068c5981d0e6e1d8f22f8815eb ""
-  "experiment.tex" 1729703438.24202 16469 fc6e01c61fa653b3806bdf18a3cb227f ""
+  "experiment.tex" 1729795495.38075 16705 bb6f239a23a4f9b4cb39c1281e852939 ""
   "header.tex" 1729695632.30146 3379 6f9b0d2e96c9ba770edffed5b3d78fcf ""
   "neurips_2024.sty" 1716307201.06114 11625 b5f853b54a7a098e9e5b837f826d5daa ""
-  "neurips_2024_to_submit.aux" 1729703440.00996 30499 d080a2016a79da7aae9377fde6f6e800 "pdflatex"
-  "neurips_2024_to_submit.bbl" 1729703270.69091 16000 c68ac03c25e0ff45abb9f00195d0a9b0 "bibtex neurips_2024_to_submit"
-  "neurips_2024_to_submit.out" 1729703440.01234 6048 b85643faa193fca1148dbd6e318788bf "pdflatex"
+  "neurips_2024_to_submit.aux" 1729795568.86234 34313 72c4648307e8aaaffba60ec7d1ffa505 "pdflatex"
+  "neurips_2024_to_submit.bbl" 1729795133.4189 16000 c68ac03c25e0ff45abb9f00195d0a9b0 "bibtex neurips_2024_to_submit"
+  "neurips_2024_to_submit.out" 1729795568.86433 6919 73ec4ad7159ab8ee06ceb9b6379c3ccb "pdflatex"
   "neurips_2024_to_submit.tex" 1729674622.59154 6182 8760ac0589358801a171f4f703a9a868 ""
-  "paper.tex" 1729674748.14343 67378 e73d1d614ee8e2318a801bf385a12a88 ""
+  "paper.tex" 1729795567.03744 67346 dee96f52650d9af246e275f003855ff3 ""
   "pictures/diffeo.jpeg" 1715680722.6059 27157 2ceea9419e3273dc6a76da0f5cf0b0fd ""
+  "pictures/exp after/exp after fpca.pdf" 1729788271.32758 797460 b3adb86ca36eecd80e5c2c5650e7a3eb ""
   "pictures/exp after/exp after.pdf" 1729694550.01682 812901 f32600d9747874fbebf5a4c4750e3f81 ""
   "pictures/exp_1_cycle_example.jpeg" 1716331395.84362 14356 fa10df04d5e72e0d48138a194977385e ""
   "pictures/exp_1_scatter.jpeg" 1716331395.84391 11800 ba3527b3c0c94dd2265e85e3fec4464a ""
   "pictures/exp_1_wt.jpeg" 1716375633.98741 16539 972927c05acf4b59a1aa01dbbf62fed7 ""
   "pictures/mice_exp.png" 1715680722.60913 80209 a6039e8b9f529f078b97103b7a6aefc4 ""
+  "pictures/noise sensitivity/noise sensitivity.pdf" 1729789459.72663 1255847 11cfea3fcf0eaf448251a67a71c534e3 ""
   "pictures/samples.pdf" 1715680722.61004 20131 df44584508d694f6650feca4fca8e9ed ""
   "pictures/shooting before/shooting before.pdf" 1729695176.14323 2016650 17a7c3c8613968e41e3ea06ec925ecb5 ""
   "pictures/transport.jpeg" 1715680722.61041 119612 3ea8631d343fcd89d6948ca7c4d19483 ""
