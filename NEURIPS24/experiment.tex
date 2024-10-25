@@ -14,6 +14,8 @@ For conciseness, several experiments are relegated in appendix:
       %{\color{red} J'enlèverai cette phrase ou je développerai en Appendix : The performance decrease of the Kernel-SVC based on TS-LDDMM representation is sensibly due to the misspecification of its regularization parameter.}
     
     \item \textbf{Classification benchmark on regularly sampled datasets, \Cref{appendix: shape_classification}:} We compare performances of a kernel support vector machine (SVC) algorithm based on TS-LDDMM representation with 3 state-of-the-art classification methods from shape analysis on 15 shape-based datasets (7 univariates \& 8 multivariates). \textbf{Results} show that the TS-LDDMM-based method outperforms other methods (best performances over 13 datasets), making TS-LDDMM representation relevant for time series shape analysis.
+    
+    \item \textbf{Noise sensitivity for learning the reference graph, \Cref{appendix: noise sensitivity}:} We evaluate the noise sensitivity of TS-LDDMM and Shape-FPCA \cite{wu2024shape} for learning the reference graph on a synthetic dataset and for several levels of additive Gaussian noise. \textbf{Results} show that both methods are sensitive to noise. However, TS-LDDMM preserves the overall shape while shape-FPCA alters the shape depending on the noise level. 
 \end{enumerate}
 
 \begin{figure}

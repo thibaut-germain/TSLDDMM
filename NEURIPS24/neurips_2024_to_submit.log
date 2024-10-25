@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.5)  24 OCT 2024 20:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.5)  25 OCT 2024 13:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -825,24 +825,24 @@ Package: accents 2006/05/12 v1.4 Math Accent Tools
 ) (./def.tex) (./neurips_2024_to_submit.aux)
 \openout1 = `neurips_2024_to_submit.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -910,24 +910,24 @@ LaTeX Font Info:    ... okay on input line 87.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 87.
+Package hyperref Info: Link coloring OFF on input line 92.
 (./neurips_2024_to_submit.out) (./neurips_2024_to_submit.out)
 \@outlinefile=\write4
 \openout4 = `neurips_2024_to_submit.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 87.
-Package microtype Info: Applying patch `item' on input line 87.
-Package microtype Info: Applying patch `toc' on input line 87.
-Package microtype Info: Applying patch `eqnum' on input line 87.
-Package microtype Info: Applying patch `footnote' on input line 87.
-Package microtype Info: Applying patch `verbatim' on input line 87.
+LaTeX Info: Redefining \microtypecontext on input line 92.
+Package microtype Info: Applying patch `item' on input line 92.
+Package microtype Info: Applying patch `toc' on input line 92.
+Package microtype Info: Applying patch `eqnum' on input line 92.
+Package microtype Info: Applying patch `footnote' on input line 92.
+Package microtype Info: Applying patch `verbatim' on input line 92.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 87.
+LaTeX Info: Redefining \showhyphens on input line 92.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -958,33 +958,33 @@ Package caption Info: End \AtBeginDocument code.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 87.
+ on input line 92.
 
 \autonum@environmentWidth=\skip79
 (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 92.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 92.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 87.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 92.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 87.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 92.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 98.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 103.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
@@ -1007,12 +1007,12 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 
 LaTeX Warning: Reference `appendix: settings_classification' on page 2 undefined on input line 76.
 
-<./pictures/diffeo.jpeg, id=211, 445.9059pt x 166.9437pt>
+<./pictures/diffeo.jpeg, id=205, 445.9059pt x 166.9437pt>
 File: ./pictures/diffeo.jpeg Graphic file (type jpg)
 <use ./pictures/diffeo.jpeg>
 Package pdftex.def Info: ./pictures/diffeo.jpeg  used on input line 126.
 (pdftex.def)             Requested size: 278.23827pt x 104.1765pt.
-<./pictures/transport.jpeg, id=212, 1517.67pt x 289.08pt>
+<./pictures/transport.jpeg, id=206, 1517.67pt x 289.08pt>
 File: ./pictures/transport.jpeg Graphic file (type jpg)
 <use ./pictures/transport.jpeg>
 Package pdftex.def Info: ./pictures/transport.jpeg  used on input line 135.
@@ -1037,34 +1037,34 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.4.9})
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.600 
-      ] (./experiment.tex
-<pictures/shooting before/shooting before.pdf, id=362, 2336.73pt x 561.09625pt>
+      ] (./experiment.tex [7]
+<pictures/shooting before/shooting before.pdf, id=382, 2336.73pt x 561.09625pt>
 File: pictures/shooting before/shooting before.pdf Graphic file (type pdf)
 <use pictures/shooting before/shooting before.pdf>
-Package pdftex.def Info: pictures/shooting before/shooting before.pdf  used on input line 21.
+Package pdftex.def Info: pictures/shooting before/shooting before.pdf  used on input line 23.
 (pdftex.def)             Requested size: 397.48499pt x 95.43646pt.
-<pictures/exp_1_cycle_example.jpeg, id=363, 289.08pt x 289.08pt>
+<pictures/exp_1_cycle_example.jpeg, id=383, 289.08pt x 289.08pt>
 File: pictures/exp_1_cycle_example.jpeg Graphic file (type jpg)
 <use pictures/exp_1_cycle_example.jpeg>
-Package pdftex.def Info: pictures/exp_1_cycle_example.jpeg  used on input line 31.
+Package pdftex.def Info: pictures/exp_1_cycle_example.jpeg  used on input line 33.
 (pdftex.def)             Requested size: 59.62032pt x 59.61906pt.
-<pictures/exp_1_scatter.jpeg, id=364, 289.08pt x 289.08pt>
+<pictures/exp_1_scatter.jpeg, id=384, 289.08pt x 289.08pt>
 File: pictures/exp_1_scatter.jpeg Graphic file (type jpg)
 <use pictures/exp_1_scatter.jpeg>
-Package pdftex.def Info: pictures/exp_1_scatter.jpeg  used on input line 37.
+Package pdftex.def Info: pictures/exp_1_scatter.jpeg  used on input line 39.
 (pdftex.def)             Requested size: 59.62032pt x 59.61906pt.
-<pictures/exp_1_wt.jpeg, id=365, 289.08pt x 289.08pt>
+<pictures/exp_1_wt.jpeg, id=385, 289.08pt x 289.08pt>
 File: pictures/exp_1_wt.jpeg Graphic file (type jpg)
 <use pictures/exp_1_wt.jpeg>
-Package pdftex.def Info: pictures/exp_1_wt.jpeg  used on input line 43.
+Package pdftex.def Info: pictures/exp_1_wt.jpeg  used on input line 45.
 (pdftex.def)             Requested size: 59.62032pt x 59.61906pt.
- [7] [8 <./pictures/shooting before/shooting before.pdf> <./pictures/exp_1_cycle_example.jpeg> <./pictures/exp_1_scatter.jpeg> <./pictures/exp_1_wt.jpeg>]
-<pictures/exp after/exp after.pdf, id=434, 1157.32375pt x 200.75pt>
+ [8 <./pictures/shooting before/shooting before.pdf> <./pictures/exp_1_cycle_example.jpeg> <./pictures/exp_1_scatter.jpeg> <./pictures/exp_1_wt.jpeg>]
+<pictures/exp after/exp after.pdf, id=437, 1157.32375pt x 200.75pt>
 File: pictures/exp after/exp after.pdf Graphic file (type pdf)
 <use pictures/exp after/exp after.pdf>
-Package pdftex.def Info: pictures/exp after/exp after.pdf  used on input line 73.
+Package pdftex.def Info: pictures/exp after/exp after.pdf  used on input line 75.
 (pdftex.def)             Requested size: 397.48499pt x 68.94637pt.
-) [9 <./pictures/exp after/exp after.pdf>]) [10] (./neurips_2024_to_submit.bbl [11] [12] [13]) [14] (./appendix.tex [15
+) [9 <./pictures/exp after/exp after.pdf>]) (./neurips_2024_to_submit.bbl [10] [11] [12] [13]) [14] (./appendix.tex [15
 pdfTeX warning (ext4): destination with the same identifier (name{equation.B.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1112,48 +1112,48 @@ Package pdftex.def Info: pictures/samples.pdf  used on input line 252.
 Underfull \vbox (badness 3108) has occurred while \output is active []
 
  [20] [21] [22] [23]
-<pictures/noise sensitivity/noise sensitivity.pdf, id=747, 1027.84pt x 816.04875pt>
+<pictures/noise sensitivity/noise sensitivity.pdf, id=748, 1027.84pt x 816.04875pt>
 File: pictures/noise sensitivity/noise sensitivity.pdf Graphic file (type pdf)
 <use pictures/noise sensitivity/noise sensitivity.pdf>
-Package pdftex.def Info: pictures/noise sensitivity/noise sensitivity.pdf  used on input line 478.
+Package pdftex.def Info: pictures/noise sensitivity/noise sensitivity.pdf  used on input line 479.
 (pdftex.def)             Requested size: 357.73405pt x 284.0275pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [24 <./pictures/noise sensitivity/noise sensitivity.pdf>]
-Underfull \hbox (badness 1546) in paragraph at lines 496--497
+Underfull \hbox (badness 1546) in paragraph at lines 497--498
 \T1/ptm/m/n/10 (+20) vari-a-tions at dif-fer-ent scales with pa-ram-e-ters: (Var-i-fold 1,Var-i-fold 2,Var-i-fold 3):
  []
 
 
-Underfull \hbox (badness 2027) in paragraph at lines 497--498
+Underfull \hbox (badness 2027) in paragraph at lines 498--499
 \T1/ptm/m/n/10 (+20) vari-a-tions at dif-fer-ent scales with pa-ram-e-ters: (Var-i-fold 1,Var-i-fold 2,Var-i-fold 3,
  []
 
 
-Underfull \hbox (badness 2837) in paragraph at lines 497--498
+Underfull \hbox (badness 2837) in paragraph at lines 498--499
 \T1/ptm/m/n/10 (+20) Var-i-fold 4): $[]$ and the map-per
  []
 
 
-Underfull \hbox (badness 2368) in paragraph at lines 504--506
+Underfull \hbox (badness 2368) in paragraph at lines 505--507
 []\T1/ptm/b/n/10 (+20) Before/after ex-po-sure: \T1/ptm/m/n/10 (+20) The ve-loc-ity field ker-nel $\OML/cmm/m/it/10 K[]$ \T1/ptm/m/n/10 (+20) is an anysotropic Gaus-
  []
 
 
-Underfull \hbox (badness 1394) in paragraph at lines 504--506
+Underfull \hbox (badness 1394) in paragraph at lines 505--507
 \T1/ptm/m/n/10 (+20) sian ker-nel with pa-ram-e-ters $\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = 220$ \T1/ptm/m/n/10 (+20) for the time di-men-sion and $\OML/cmm/m/it/10 ^^[[] \OT1/cmr/m/n/10 = 2$
  []
 
 [25]
 File: pictures/exp after/exp after.pdf Graphic file (type pdf)
 <use pictures/exp after/exp after.pdf>
-Package pdftex.def Info: pictures/exp after/exp after.pdf  used on input line 517.
+Package pdftex.def Info: pictures/exp after/exp after.pdf  used on input line 518.
 (pdftex.def)             Requested size: 397.48499pt x 68.94637pt.
-<pictures/exp after/exp after fpca.pdf, id=785, 1157.32375pt x 200.75pt>
+<pictures/exp after/exp after fpca.pdf, id=786, 1157.32375pt x 200.75pt>
 File: pictures/exp after/exp after fpca.pdf Graphic file (type pdf)
 <use pictures/exp after/exp after fpca.pdf>
-Package pdftex.def Info: pictures/exp after/exp after fpca.pdf  used on input line 524.
+Package pdftex.def Info: pictures/exp after/exp after fpca.pdf  used on input line 525.
 (pdftex.def)             Requested size: 397.48499pt x 68.94637pt.
 ) (./checklist.tex [26 <./pictures/exp after/exp after fpca.pdf>] [27] [28] [29] [30] [31]) [32] (./neurips_2024_to_submit.aux)
  ***********
@@ -1168,18 +1168,18 @@ Package rerunfilecheck Info: File `neurips_2024_to_submit.out' has not changed.
 (rerunfilecheck)             Checksum: 73EC4AD7159AB8EE06CEB9B6379C3CCB;6919.
  ) 
 Here is how much of TeX's memory you used:
- 42300 strings out of 474116
- 935375 string characters out of 5743683
+ 42307 strings out of 474116
+ 935478 string characters out of 5743683
  1959187 words of memory out of 5000000
- 63345 multiletter control sequences out of 15000+600000
- 624061 words of font info for 330 fonts, out of 8000000 for 9000
+ 63347 multiletter control sequences out of 15000+600000
+ 624254 words of font info for 333 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,20n,96p,1769b,859s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on neurips_2024_to_submit.pdf (32 pages, 5688589 bytes).
+Output written on neurips_2024_to_submit.pdf (32 pages, 5687816 bytes).
 PDF statistics:
- 1063 PDF objects out of 1200 (max. 8388607)
- 903 compressed objects within 10 object streams
- 241 named destinations out of 1000 (max. 500000)
+ 1064 PDF objects out of 1200 (max. 8388607)
+ 904 compressed objects within 10 object streams
+ 242 named destinations out of 1000 (max. 500000)
  57204 words of extra memory for PDF output out of 61914 (max. 10000000)
 

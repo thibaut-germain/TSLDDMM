@@ -145,7 +145,7 @@ However, a graph time series transformation by a general diffeomorphism is not a
 \section{Notations}
 We denote by integer ranges by $[k:l]=\{k,\ldots,l\}\subset \mathcal{P}(\Zset)$ and $ [l]=[1:l]$ with $k,l\in \Nset$,
 by $\rmC^m(\msi,\mse)$ the set of $m$-times continously differentiable function defined on an open set $\msu$ to a normed vector space $\mse$,
- by $||u||_\infty=\inf_{x\in \msu} |u(x)| $ for any bounded function $u:\msu \to \mse$,
+ by $||u||_\infty=\sup_{x\in \msu} |u(x)| $ for any bounded function $u:\msu \to \mse$,
 and by $\Nset_{>0}$ is the set of positive integers. 
 %We are in a sub class of curve quotiented by temporal reparametrisation since a time series' graph can be understood as the equivalent class of t ->(t,s(t))
 
@@ -731,11 +731,11 @@ Shape analysis focuses on statistical analysis of mathematical objects invariant
  The 3DMM framework requires that each mesh be re-parametrized into a consistent form where the number of vertices, triangulation, and the anatomical meaning of each vertex are consistent across all meshes, as stated in the introduction of \cite{booth20163d}.
 In our context, we do not need such pre-processing; the time series graph can have different sizes.
  \vspace{-1ex}
-  \section{Limitations and conclusion}
-  \vspace{-1ex}
-  \label{sec:limitations}
+\section{Limitations and conclusion}
+\vspace{-1ex}
+\label{sec:limitations}
   
-  This paper proposes a feature representation method, TS-LDDMM, designed for 
+This paper proposes a feature representation method, TS-LDDMM, designed for 
 shape comparison on homogeneous time series datasets. We show on a real dataset 
 its ability to study, with high interpretability, the inter-individual shape 
 variability. As an unsupervised approach, it is user-friendly and enables knowledge 

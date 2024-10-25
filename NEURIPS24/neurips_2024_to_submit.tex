@@ -41,7 +41,7 @@
 \usepackage{wrapfig}
 \usepackage[capitalize,noabbrev]{cleveref}
 
-\title{Shapes analysis for time series.}
+\title{Shapes analysis for time series}
 
 
 % The \author macro works with any number of authors. There are two commands
@@ -54,24 +54,24 @@
 
 
 \author{%
-  Thibaut Germain \thanks{Corresponding author. Contact at \texttt{thibaut.germain@ens-paris-saclay.fr}} \\
+  Thibaut Germain$^1$\thanks{Corresponding author. Contact at \texttt{thibaut.germain@ens-paris-saclay.fr}}\\
   Centre Borelli, ENS Paris-Saclay\\
   4 av. des sciences, 91190 \\
   %\texttt{thibaut.germain@ens-paris-saclay.fr} \\
   % examples of more authors
   \And
-  Samuel Gruffaz \\
+  Samuel Gruffaz$^1$\\
   Centre Borelli, ENS Paris-Saclay\\
   4 av. des sciences, 91190 \\
   % Address \\
   %\texttt{samuel.gruffaz@ens-paris-saclay.fr} \\
   \AND
-  Charles Truong \\
+  Charles Truong$^1$\\
   Centre Borelli, ENS Paris-Saclay\\
   4 av. des sciences, 91190 \\
   %\texttt{charles.truong@ens-paris-saclay.fr} \\
   \And
-  Laurent Oudre \\
+  Laurent Oudre$^1$\\
   Centre Borelli, ENS Paris-Saclay\\
   4 av. des sciences, 91190 \\
   \And
@@ -80,13 +80,18 @@
   Institut Polytechnique de Paris\\
   91120 Palaiseau, France \\
 }
+
+
 \input{header.tex}
 \input{def.tex}
+
 \newcommand\sam[1]{\textcolor{blue}{#1}}
 \newcommand\thi[1]{\textcolor{orange}{#1}}
+
+
 \begin{document}
-
-
+\footnotetext[1]{Complete affiliation: Université Paris Saclay, Université Paris Cité, ENS Paris Saclay, CNRS, SSA, INSERM, Centre
+Borelli, F-91190, Gif-sur-Yvette, France.}
 \maketitle
 %In this paper we propose an unsupervised representation method (TS-LDDMM) to analyze inter-individual variability of time series dataset.
     %Inspired by the shape analysis literature, we extend Large Deformation Diffeomorphic Metric Mapping (LDDMM) to time series, considering the temporal evolution as their distinctive feature.  
@@ -105,17 +110,12 @@ In this work, we establish a representation theorem for the graph of a time seri
 
 
 
+
 \input{paper.tex}
 \begin{ack}
-  \sam{tofill }
-  Use unnumbered first level headings for the acknowledgments. All acknowledgments
-  go at the end of the paper before the list of references. Moreover, you are required to declare
-  funding (financial activities supporting the submitted work) and competing interests (related financial activities outside the submitted work).
-  More information about this disclosure can be found at: \url{https://neurips.cc/Conferences/2024/PaperInformation/FundingDisclosure}.
-  
-  
-  Do {\bf not} include this section in the anonymized submission, only in the final paper. You can use the \texttt{ack} environment provided in the style file to automatically hide this section in the anonymized submission.
-  \end{ack}
+This work was supported by grants from Région Ile-de-France (DIM MathInnov).
+Charles Truong is funded by the PhLAMES chair of ENS Paris-Saclay.
+\end{ack}
 
 \bibliographystyle{plain}
 \bibliography{ref.bib}
