@@ -4,9 +4,9 @@ from jax import vmap,grad,jit
 from jax.tree_util import Partial
 import optax
 
-from src.lddmm import LDDMMLoss,TimeLDDMMLoss
+from src.lddmm import LDDMMLoss,TimeLDDMMLoss,Shooting
 from src.loss import VarifoldLoss
-from src.optimizer import Optimizer, BatchBarycenterOptimizer,BatchBarycenterTimeOptimizer
+from src.optimizer import Optimizer, BatchBarycenterOptimizer,BatchBarycenterTimeOptimizer,BatchIteratedBarycenterOptimizer
 
 ####################################################################################################################################
 ####################################################################################################################################
@@ -64,6 +64,24 @@ def batch_varifold_barycenter_registration(batched_sigs,batched_sigs_masks,Kv,Kl
     dataloss = VarifoldLoss(Kl)
     return batch_barycenter_registration(batched_sigs,batched_sigs_masks,Kv,dataloss,init,init_mask,time_initializer,niter,optimizer,gamma_loss,nt,deltat,verbose)
 
+def batch_iterated_barycenter_registration(batched_sigs,batched_sigs_masks,Kv,dataloss:callable,init=None,init_mask=None,niter=400, update_interval = 100, optimizer = optax.adam(learning_rate=0.1),gamma_loss =0.,nt=10,deltat=1.0,verbose=True):
+    if init is None: 
+        sigs_size = np.sum(batched_sigs_masks,axis=2)
+        median_length_idx = np.unravel_index(np.argsort(sigs_size.flatten(),kind='stable')[sigs_size.shape[0]//2],sigs_size.shape)[:-1]
+        q0 = batched_sigs[median_length_idx]
+        q0_mask = batched_sigs_masks[median_length_idx]
+    else: 
+        q0 = init
+        q0_mask = init_mask
+
+    #batched_p0 = jnp.zeros_like(batched_sigs,dtype = jnp.float32)
+    batched_p0 = jnp.zeros((batched_sigs.shape[0],batched_sigs.shape[1],*q0.shape))
+    bloss = BarycenterLDDMMLoss(Kv,dataloss,gamma_loss,nt,deltat)
+    shoot = Shooting(Kv,nt,deltat)
+    if niter <= update_interval:
+        raise ValueError("niter must be greater than update interval")
+    opt = BatchIteratedBarycenterOptimizer(shoot,bloss,niter,update_interval,optimizer,verbose)
+    return *opt(batched_p0,q0,q0_mask,batched_sigs,batched_sigs_masks),q0_mask
 
 ####################################################################################################################################
 ####################################################################################################################################
